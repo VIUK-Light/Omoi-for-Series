@@ -1,0 +1,9 @@
+[
+  { "id": "take-couples-provisional-001", "audience": "couples", "level": 1, "text": "最近、一緒にやってみたいことは？", "category": "日常", "source": "provisional" },
+  { "id": "take-couples-provisional-002", "audience": "couples", "level": 1, "text": "相手の好きなところをひとつ教えて。", "category": "関係", "source": "provisional" },
+  { "id": "take-couples-provisional-003", "audience": "couples", "level": 2, "text": "相手の意外だった一面は？", "category": "発見", "source": "provisional" },
+  { "id": "take-couples-provisional-004", "audience": "couples", "level": 2, "text": "一緒にいるとき、どんな時間が心地いい？", "category": "関係", "source": "provisional" },
+  { "id": "take-couples-provisional-005", "audience": "couples", "level": 3, "text": "意見がぶつかったとき、どうしてほしい？", "category": "対話", "source": "provisional" },
+  { "id": "take-couples-provisional-006", "audience": "couples", "level": 3, "text": "これから二人で大切にしたいことは？", "category": "未来", "source": "provisional" },
+  { "id": "take-couples-provisional-007", "audience": "couples", "level": 4, "text": "二人の関係で、これから変えていきたいことはある？", "category": "関係", "source": "provisional" }
+]
