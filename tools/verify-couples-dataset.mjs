@@ -3,14 +3,15 @@
  * verify-couples-dataset.mjs
  *
  * shared/questions/couples.json が Loves 正本ソースと
- * 「ランタイム値として完全一致」しているかを独立検証する恒久監査スクリプト。
+ * リリースキュレーション契約に従っているかを独立検証する恒久監査スクリプト。
  *
  * 検証項目:
  *   0. 入力 cards.ts の SHA-256 がカノニカル blob と一致(tools/PROVENANCE.md)
  *   1. 抽出件数 = 701 / レベル別件数(L1=167, L2=169, L3=167, L4=198)
- *   2. 順序を含めた全問の id / level / text / category のデコード済み値一致(verbatim 定義)
- *   3. ID の一意性
- *   4. スキーマ準拠(キー集合・audience・level 範囲・source)・テキスト非空
+ *   2. Loves 700問の順序を含めたデコード済み値一致 + 編集置換1問の一致
+ *   3. 個人的な固定文言が残っていないこと
+ *   4. ID の一意性
+ *   5. スキーマ準拠(キー集合・audience・level 範囲・source)・テキスト非空
  *
  * 使い方:
  *   node tools/verify-couples-dataset.mjs <cards.ts へのパス> [couples.json へのパス]
@@ -26,7 +27,20 @@ const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
 const CANONICAL_PATH = "Loveds/web/src/data/cards.ts";
 const EXPECTED_TOTAL = 701;
 const EXPECTED_PER_LEVEL = { 1: 167, 2: 169, 3: 167, 4: 198 };
+const RELEASE_EXCLUDED_IDS = new Set(["love-1-3"]);
+const RELEASE_REPLACEMENTS = new Map([
+  ["love-1-3", {
+    id: "editorial-couples-1-1",
+    audience: "couples",
+    level: 1,
+    text: "好きな人には、言葉で気持ちを伝えたい？態度で伝われば十分？",
+    category: "romance",
+    source: "editorial",
+  }],
+]);
+const FORBIDDEN_TEXTS = ["なぎささん大好きだよ！"];
 const ALLOWED_KEYS = new Set(["id", "audience", "level", "text", "category", "source"]);
+const ALLOWED_SOURCES = new Set(["loves", "editorial"]);
 
 const toolsDir = dirname(fileURLToPath(import.meta.url));
 const sourceArg = process.argv[2];
@@ -106,37 +120,66 @@ for (const level of [1, 2, 3, 4]) {
 
 const migrated = JSON.parse(readFileSync(resolve(jsonArg), "utf8"));
 
-console.log("\n[2] verbatim 一致(順序含む・デコード済み値比較)");
+console.log("\n[2] リリースデータ一致(順序含む・デコード済み値比較)");
 if (!Array.isArray(migrated)) {
   fail("couples.json が配列ではありません");
 } else {
-  if (migrated.length === sourceCards.length) pass(`件数一致: ${migrated.length}`);
-  else fail(`件数不一致: JSON ${migrated.length} / ソース ${sourceCards.length}`);
+  if (migrated.length === EXPECTED_TOTAL) pass(`リリース件数一致: ${migrated.length}`);
+  else fail(`リリース件数不一致: JSON ${migrated.length} / 期待 ${EXPECTED_TOTAL}`);
+
+  const expectedRelease = sourceCards
+    .filter((card) => !RELEASE_EXCLUDED_IDS.has(card.id))
+    .map((card) => ({
+      id: card.id,
+      audience: "couples",
+      level: card.level,
+      text: card.text,
+      category: card.category,
+      source: "loves",
+    }));
+  for (const [excludedId, replacement] of RELEASE_REPLACEMENTS) {
+    const insertionIndex = sourceCards.findIndex((card) => card.id === excludedId);
+    if (insertionIndex === -1) {
+      fail(`置換対象が正本ソースにありません: ${excludedId}`);
+    } else {
+      expectedRelease.splice(insertionIndex, 0, replacement);
+    }
+  }
 
   let mismatchCount = 0;
   const maxReports = 10;
-  for (let index = 0; index < Math.max(migrated.length, sourceCards.length); index += 1) {
+  for (let index = 0; index < Math.max(migrated.length, expectedRelease.length); index += 1) {
     const jsonCard = migrated[index];
-    const srcCard = sourceCards[index];
-    if (!jsonCard || !srcCard) {
+    const expectedCard = expectedRelease[index];
+    if (!jsonCard || !expectedCard) {
       mismatchCount += 1;
       if (mismatchCount <= maxReports) fail(`index ${index}: 片方のみ存在`);
       continue;
     }
-    for (const field of ["id", "level", "text", "category"]) {
-      if (jsonCard[field] !== srcCard[field]) {
+    for (const field of ["id", "audience", "level", "text", "category", "source"]) {
+      if (jsonCard[field] !== expectedCard[field]) {
         mismatchCount += 1;
         if (mismatchCount <= maxReports) {
-          fail(`index ${index} (${srcCard.id}) の ${field} が不一致:\n      ソース: ${JSON.stringify(String(srcCard[field]).slice(0, 80))}\n      JSON  : ${JSON.stringify(String(jsonCard[field]).slice(0, 80))}`);
+          fail(`index ${index} (${expectedCard.id}) の ${field} が不一致:\n      期待: ${JSON.stringify(String(expectedCard[field]).slice(0, 80))}\n      JSON  : ${JSON.stringify(String(jsonCard[field]).slice(0, 80))}`);
         }
       }
     }
   }
-  if (mismatchCount === 0) pass("全 701 問の id / level / text / category が順序含め完全一致");
+  if (mismatchCount === 0) pass("Loves 700問 + 編集置換1問が順序含め一致");
   else fail(`不一致項目数: ${mismatchCount}(表示は先頭 ${maxReports} 件)`);
 }
 
-console.log("\n[3] ID の一意性");
+console.log("\n[3] 個人的な固定文言の除去");
+{
+  const forbiddenMatches = migrated.filter((card) => FORBIDDEN_TEXTS.includes(card.text));
+  if (forbiddenMatches.length === 0) pass("公開データに個人的な固定文言なし");
+  else {
+    for (const card of forbiddenMatches.slice(0, 5)) fail(`禁止文言: ${card.id}`);
+    fail(`禁止文言の残存数: ${forbiddenMatches.length}`);
+  }
+}
+
+console.log("\n[4] ID の一意性");
 {
   const seen = new Set();
   let duplicates = 0;
@@ -151,7 +194,7 @@ console.log("\n[3] ID の一意性");
   else fail(`重複 ID 合計: ${duplicates}`);
 }
 
-console.log("\n[4] スキーマ準拠");
+console.log("\n[5] スキーマ準拠");
 {
   let schemaErrors = 0;
   migrated.forEach((card, index) => {
@@ -170,7 +213,7 @@ console.log("\n[4] スキーマ準拠");
       schemaErrors += 1;
       if (schemaErrors <= 5) fail(`index ${index} (${card.id}): level=${JSON.stringify(card.level)}`);
     }
-    if (card.source !== "loves") {
+    if (!ALLOWED_SOURCES.has(card.source)) {
       schemaErrors += 1;
       if (schemaErrors <= 5) fail(`index ${index} (${card.id}): source=${JSON.stringify(card.source)}`);
     }
@@ -187,7 +230,7 @@ console.log("\n[4] スキーマ準拠");
 
 console.log("");
 if (failures === 0) {
-  console.log("結果: PASS — couples.json は Loves 正本ソースと完全一致しています。");
+  console.log("結果: PASS — couples.json は正本700問 + 編集置換1問のリリース契約に適合しています。");
   process.exit(0);
 } else {
   console.log(`結果: FAIL — ${failures} 件の問題を検出しました。`);

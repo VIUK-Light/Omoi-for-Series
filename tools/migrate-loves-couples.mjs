@@ -17,9 +17,11 @@
  *
  * 使い方:
  *   node tools/migrate-loves-couples.mjs <cards.ts へのパス>
+ *   node tools/migrate-loves-couples.mjs <cards.ts へのパス> --canonical
  *
  * 出力: shared/questions/couples.json
- *   - Level / text / id / category は元データのまま凍結(1問も移動・改変しない)
+ *   - 既定: リリース用データ(個人的な1問を除外し、編集質問1問で置換)
+ *   - --canonical: 元データ701問を抽出検証するが、公開JSONは変更しない
  *   - テンプレート生成カードは対象外
  */
 
@@ -33,13 +35,29 @@ const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
 const CANONICAL_PATH = "Loveds/web/src/data/cards.ts";
 const EXPECTED_TOTAL = 701;
 const EXPECTED_PER_LEVEL = { 1: 167, 2: 169, 3: 167, 4: 198 };
+const RELEASE_EXCLUDED_IDS = new Set(["love-1-3"]);
+const RELEASE_REPLACEMENTS = new Map([
+  ["love-1-3", {
+    id: "editorial-couples-1-1",
+    audience: "couples",
+    level: 1,
+    text: "好きな人には、言葉で気持ちを伝えたい？態度で伝われば十分？",
+    category: "romance",
+    source: "editorial",
+  }],
+]);
 
 const toolsDir = dirname(fileURLToPath(import.meta.url));
 const outputPath = resolve(toolsDir, "../shared/questions/couples.json");
 
 const inputArg = process.argv[2];
+const outputMode = process.argv[3] ?? "--release";
 if (!inputArg) {
   console.error("使い方: node tools/migrate-loves-couples.mjs <cards.ts へのパス>");
+  process.exit(1);
+}
+if (!["--release", "--canonical"].includes(outputMode)) {
+  console.error("第2引数は --release または --canonical を指定してください。");
   process.exit(1);
 }
 const inputPath = resolve(inputArg);
@@ -120,10 +138,10 @@ for (const level of [1, 2, 3, 4]) {
 // 契約フィールド: id / audience / level / text (+category)
 // - id       : Loves 元 ID をそのまま採用(トレーサビリティ)
 // - level    : 元 Level を凍結(表示名のみ別途 ForSeriesLevel として定義)
-// - text     : デコード済みランタイム値を逐語出力(改変禁止)
+// - text     : --canonicalではデコード済みランタイム値を逐語出力(改変禁止)
 // - category : 元カテゴリキー(表示ラベルは app.js 側で復元)
 
-const migrated = cards.map((card) => ({
+const canonical = cards.map((card) => ({
   id: card.id,
   audience: "couples",
   level: card.level,
@@ -132,6 +150,22 @@ const migrated = cards.map((card) => ({
   source: "loves",
 }));
 
-writeFileSync(outputPath, `${JSON.stringify(migrated, null, 2)}\n`, "utf8");
-console.log(`\n出力: ${outputPath} (${migrated.length} 問)`);
+const release = canonical.filter((card) => !RELEASE_EXCLUDED_IDS.has(card.id));
+for (const [excludedId, replacement] of RELEASE_REPLACEMENTS) {
+  const insertionIndex = cards.findIndex((card) => card.id === excludedId);
+  if (insertionIndex === -1) {
+    console.error(`[中断] リリース置換対象が見つかりません: ${excludedId}`);
+    process.exit(1);
+  }
+  release.splice(insertionIndex, 0, replacement);
+}
+
+if (outputMode === "--canonical") {
+  console.log(`\ncanonical抽出: ${canonical.length} 問。公開JSONは変更していません。`);
+  process.exit(0);
+}
+
+writeFileSync(outputPath, `${JSON.stringify(release, null, 2)}\n`, "utf8");
+console.log(`\n出力: ${outputPath} (${release.length} 問, --release)`);
+console.log("リリース監査: Loves 700問 + 編集質問1問。個人的なカードを除外しました。");
 console.log("完了。次に tools/verify-couples-dataset.mjs で検証してください。");

@@ -22,10 +22,13 @@
 
 ## Couplesのデータ
 
-`shared/questions/couples.json`には、Lovesの**手書き質問701問**を移行しています。
-移行時には、Loves元の`id`・`level`・`category`・質問文を保持し、Levelの再分類や質問文の書き換えを行っていません。
+`shared/questions/couples.json`には、Lovesの手書き質問をもとにした**701問**を収録しています。
+Loves元の700問は`id`・`level`・`category`・質問文を保持しています。
+個人的な固定文言だった1問は公開データから除外し、同じLevel・カテゴリに編集質問1問を追加しています。
+この編集は`source: "editorial"`として明示しています。
 
-データの`source`は`loves`です。テンプレートから生成されるsupplementalカードは今回の701問には含めていません。
+Loves由来のカードは`source: "loves"`、編集置換は`source: "editorial"`です。
+テンプレートから生成されるsupplementalカードは今回の701問には含めていません。
 
 ### 正本と再現性
 
@@ -39,11 +42,14 @@
 移行と監査は恒久的に再実行できます。
 
 ```sh
-node tools/migrate-loves-couples.mjs /path/to/Loveds_publish/Loveds/web/src/data/cards.ts
+node tools/migrate-loves-couples.mjs /path/to/Loveds_publish/Loveds/web/src/data/cards.ts --release
 node tools/verify-couples-dataset.mjs /path/to/Loveds_publish/Loveds/web/src/data/cards.ts
+node tools/verify-series-datasets.mjs
 ```
 
-検証では、TypeScriptとJSONのソース構文ではなく、文字列リテラルをデコードしたランタイム値として、`id`・`level`・`text`・`category`を順序を含めて比較します。
+`--canonical`を指定すると、正本701問の抽出だけを検証し、公開用JSONは変更しません。
+通常の`--release`では、個人的な固定文言を除外した700問と編集質問1問を出力します。
+検証では、TypeScriptとJSONのソース構文ではなく、文字列リテラルをデコードしたランタイム値として、Loves 700問の`id`・`level`・`text`・`category`を順序を含めて比較します。
 期待件数はLevel 1=167、Level 2=169、Level 3=167、Level 4=198です。
 
 ## 質問選択
@@ -51,6 +57,7 @@ node tools/verify-couples-dataset.mjs /path/to/Loveds_publish/Loveds/web/src/dat
 質問は選択中のシリーズとLevelのプールから、使用済みIDを除外してランダムに選びます。
 使用履歴はセッション内のメモリにのみ保持し、ページ再読み込みまたはLevel変更でリセットします。
 プールを使い切った場合はリセットして続行しますが、可能な場合は直前の質問をリセット直後の抽選から除外します。
+Level選択後は3 / 5 / 10 / 15問のセッション数を選べます。質問画面では「今回は話さない」で現在の問いを飛ばせます。
 
 ## 公開・リリースについて
 
@@ -59,4 +66,5 @@ node tools/verify-couples-dataset.mjs /path/to/Loveds_publish/Loveds/web/src/dat
 
 ## Family / Friends
 
-FamilyとFriendsの質問データは現在空です。Couplesの質問を機械的に言い換えず、それぞれの関係性に合わせた質問セットを設計します。
+FamilyとFriendsには、それぞれLevel 1〜4を20問ずつ、合計80問の編集質問を収録しています。
+Couplesの質問を機械的に言い換えず、家族・友達それぞれの関係性に合わせて設計しています。
