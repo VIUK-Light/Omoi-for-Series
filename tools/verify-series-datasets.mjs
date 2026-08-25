@@ -2,7 +2,8 @@
 /**
  * Omoi for 全シリーズの公開用JSONを検証するスモーク監査。
  * Couplesの正本一致は verify-couples-dataset.mjs が担当し、
- * このスクリプトは3シリーズ共通の公開データ契約を確認する。
+ * このスクリプトは3シリーズ共通の公開データ契約(件数・スキーマ・ID一意・
+ * 質問文の重複なし)を確認する。
  */
 
 import { readFileSync } from "node:fs";
@@ -12,8 +13,8 @@ import { fileURLToPath } from "node:url";
 const root = resolve(fileURLToPath(import.meta.url), "../..");
 const expected = {
   couples: { total: 701, sourceCounts: { loves: 698, editorial: 3 } },
-  family: { total: 80, sourceCounts: { editorial: 80 } },
-  friends: { total: 80, sourceCounts: { editorial: 80 } },
+  family: { total: 200, sourceCounts: { editorial: 200 } },
+  friends: { total: 200, sourceCounts: { editorial: 200 } },
 };
 const failures = [];
 const forbiddenTexts = ["なぎささん大好きだよ！"];
@@ -41,11 +42,26 @@ for (const [audience, contract] of Object.entries(expected)) {
   if (data.length !== contract.total) fail(`${audience}: 件数 ${data.length} (期待 ${contract.total})`);
 
   const ids = new Set();
+  // 重複テキスト検査は編集質問(editorial)のみ対象とする。
+  // Loves由来カードは正本ソースへの忠実性を優先するため、歴史的な重複を許容する。
+  const editorialTexts = new Map(); // 質問文 -> 初出のID
+  const lovesTexts = new Map();     // 質問文 -> 初出のID
   const levels = { 1: 0, 2: 0, 3: 0, 4: 0 };
   const sources = {};
   data.forEach((card, index) => {
     if (ids.has(card.id)) fail(`${audience}[${index}]: ID重複 ${card.id}`);
     ids.add(card.id);
+    const normalizedText = typeof card.text === "string" ? card.text.trim() : "";
+    if (normalizedText !== "") {
+      if (card.source === "editorial") {
+        const firstSeenId = editorialTexts.get(normalizedText) ?? lovesTexts.get(normalizedText);
+        if (firstSeenId) fail(`${audience}[${index}]: テキスト重複 ${card.id} (${firstSeenId} と同一)`);
+        editorialTexts.set(normalizedText, card.id);
+        lovesTexts.set(normalizedText, card.id);
+      } else {
+        lovesTexts.set(normalizedText, card.id);
+      }
+    }
     if (card.audience !== audience) fail(`${audience}[${index}]: audience=${card.audience}`);
     if (!Number.isInteger(card.level) || card.level < 1 || card.level > 4) fail(`${audience}[${index}]: level不正`);
     else levels[card.level] += 1;
