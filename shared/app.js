@@ -78,7 +78,7 @@
   const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
   const levelQuestions = () => questions.filter((question) => question.level === selectedLevel);
   const categoryLabel = (category) => categoryLabels[category] || category;
-  const header = () => `<header class="site-header"><a class="wordmark" href="../">Omoi for</a>${selectedLevel ? '<button class="text-button" data-action="levels" type="button">Level一覧へ</button>' : ''}</header>`;
+  const header = () => `<header class="site-header"><a class="wordmark" href="../">${escapeHtml(meta.title)}</a>${selectedLevel ? '<button class="text-button" data-action="levels" type="button">Level一覧へ</button>' : ''}</header>`;
 
   function resetQuestionPool() {
     usedQuestionIds = new Set();
