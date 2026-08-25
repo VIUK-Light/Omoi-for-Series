@@ -11,12 +11,13 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(import.meta.url), "../..");
 const expected = {
-  couples: { total: 701, sourceCounts: { loves: 700, editorial: 1 } },
+  couples: { total: 701, sourceCounts: { loves: 698, editorial: 3 } },
   family: { total: 80, sourceCounts: { editorial: 80 } },
   friends: { total: 80, sourceCounts: { editorial: 80 } },
 };
 const failures = [];
 const forbiddenTexts = ["なぎささん大好きだよ！"];
+const MAX_RELEASE_TEXT_LENGTH = 160;
 
 function fail(message) {
   failures.push(message);
@@ -49,6 +50,7 @@ for (const [audience, contract] of Object.entries(expected)) {
     if (!Number.isInteger(card.level) || card.level < 1 || card.level > 4) fail(`${audience}[${index}]: level不正`);
     else levels[card.level] += 1;
     if (typeof card.text !== "string" || card.text.trim() === "") fail(`${audience}[${index}]: textが空`);
+    if (typeof card.text === "string" && card.text.length > MAX_RELEASE_TEXT_LENGTH) fail(`${audience}[${index}]: textが長すぎます (${card.text.length}文字)`);
     if (typeof card.category !== "string" || card.category.trim() === "") fail(`${audience}[${index}]: categoryが空`);
     if (!Object.hasOwn(contract.sourceCounts, card.source)) fail(`${audience}[${index}]: source不正 ${card.source}`);
     sources[card.source] = (sources[card.source] || 0) + 1;

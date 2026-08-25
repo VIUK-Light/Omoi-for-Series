@@ -2,7 +2,7 @@
 
 Omoi for Couples(`shared/questions/couples.json`)のLoves由来質問は、
 以下の **Loves リポジトリのコミット済み Git blob** から抽出しています。
-公開用JSONには、個人的な固定文言を除外した700問と、同じLevel・カテゴリの編集質問1問を収録しています。
+公開用JSONには、個人的な固定文言1問と長大なシナリオ2問を除外した698問と、同じLevel・カテゴリの編集質問3問を収録しています。
 
 ## カノニカルソース
 
@@ -42,10 +42,12 @@ git -C /Volumes/SSD/Workspace/Projects/Loveds_publish show c6a6b2a:web/src/data/
 - 対象は `cards.ts` 内の**手書き静的カード配列 701 問のみ**。
   テンプレート生成カード(`supplementalTemplates` × `supplementalTopics`、約3,200問)は
   移行対象外(品質均一でノイズが多いため。将来必要なら同ファイルから決定論的に再生成可能)。
-- Loves由来700問のLevel・テキスト・id・categoryは**元データの値をそのまま凍結**(TypeScript/JSON の構文差は不問。
+- Loves由来698問のLevel・テキスト・id・categoryは**元データの値をそのまま凍結**(TypeScript/JSON の構文差は不問。
   ランタイム上のデコード済み文字列値の一致をもって verbatim と定義)。
 - `love-1-3`は公開データから除外し、`editorial-couples-1-1`(source=`editorial`)で置換。
   固定の個人名・個人的なメッセージをプロダクトの正本データへ残さないためのリリースキュレーションです。
+- `ethics-max-4-14`と`ethics-max-4-15`は公開画面で過度に長く、学校内のセンシティブな状況説明も含むため除外。
+  `editorial-couples-4-2`と`editorial-couples-4-3`で、問いの構造を保った短い編集質問に置換。
 - `followUps` フィールドは型宣言のみで実データ 0 件のため移行対象外。
 
 ## Level に関する重要な注意

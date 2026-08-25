@@ -8,7 +8,7 @@
  * 検証項目:
  *   0. 入力 cards.ts の SHA-256 がカノニカル blob と一致(tools/PROVENANCE.md)
  *   1. 抽出件数 = 701 / レベル別件数(L1=167, L2=169, L3=167, L4=198)
- *   2. Loves 700問の順序を含めたデコード済み値一致 + 編集置換1問の一致
+ *   2. Loves 698問の順序を含めたデコード済み値一致 + 編集置換3問の一致
  *   3. 個人的な固定文言が残っていないこと
  *   4. ID の一意性
  *   5. スキーマ準拠(キー集合・audience・level 範囲・source)・テキスト非空
@@ -27,7 +27,7 @@ const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
 const CANONICAL_PATH = "Loveds/web/src/data/cards.ts";
 const EXPECTED_TOTAL = 701;
 const EXPECTED_PER_LEVEL = { 1: 167, 2: 169, 3: 167, 4: 198 };
-const RELEASE_EXCLUDED_IDS = new Set(["love-1-3"]);
+const RELEASE_EXCLUDED_IDS = new Set(["love-1-3", "ethics-max-4-14", "ethics-max-4-15"]);
 const RELEASE_REPLACEMENTS = new Map([
   ["love-1-3", {
     id: "editorial-couples-1-1",
@@ -35,6 +35,22 @@ const RELEASE_REPLACEMENTS = new Map([
     level: 1,
     text: "好きな人には、言葉で気持ちを伝えたい？態度で伝われば十分？",
     category: "romance",
+    source: "editorial",
+  }],
+  ["ethics-max-4-14", {
+    id: "editorial-couples-4-2",
+    audience: "couples",
+    level: 4,
+    text: "自分にしつこく関わってきたり、事実ではない噂を流したりする人がいる。\n相手にも事情があると分かっていても、自分が傷つけられていいわけではない。\nあなたなら、相手の背景を考えて我慢する？\nはっきりやめてと伝える？\n信頼できる人に相談する？",
+    category: "ethicsMax",
+    source: "editorial",
+  }],
+  ["ethics-max-4-15", {
+    id: "editorial-couples-4-3",
+    audience: "couples",
+    level: 4,
+    text: "仲のいい友達が、別の人を傷つけるような冗談や悪口を言っていた。\n注意すれば関係が悪くなるかもしれない。\n黙っていれば、傷ついている人を見捨てるかもしれない。\nあなたなら、まず何をする？",
+    category: "ethicsMax",
     source: "editorial",
   }],
 ]);
@@ -165,7 +181,7 @@ if (!Array.isArray(migrated)) {
       }
     }
   }
-  if (mismatchCount === 0) pass("Loves 700問 + 編集置換1問が順序含め一致");
+  if (mismatchCount === 0) pass("Loves 698問 + 編集置換3問が順序含め一致");
   else fail(`不一致項目数: ${mismatchCount}(表示は先頭 ${maxReports} 件)`);
 }
 
@@ -230,7 +246,7 @@ console.log("\n[5] スキーマ準拠");
 
 console.log("");
 if (failures === 0) {
-  console.log("結果: PASS — couples.json は正本700問 + 編集置換1問のリリース契約に適合しています。");
+  console.log("結果: PASS — couples.json は正本698問 + 編集置換3問のリリース契約に適合しています。");
   process.exit(0);
 } else {
   console.log(`結果: FAIL — ${failures} 件の問題を検出しました。`);

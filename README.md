@@ -23,8 +23,8 @@
 ## Couplesのデータ
 
 `shared/questions/couples.json`には、Lovesの手書き質問をもとにした**701問**を収録しています。
-Loves元の700問は`id`・`level`・`category`・質問文を保持しています。
-個人的な固定文言だった1問は公開データから除外し、同じLevel・カテゴリに編集質問1問を追加しています。
+Loves元の698問は`id`・`level`・`category`・質問文を保持しています。
+個人的な固定文言1問と、リリース画面では長すぎるシナリオ2問を公開データから除外し、同じLevel・カテゴリに編集質問3問を追加しています。
 この編集は`source: "editorial"`として明示しています。
 
 Loves由来のカードは`source: "loves"`、編集置換は`source: "editorial"`です。
@@ -48,8 +48,8 @@ node tools/verify-series-datasets.mjs
 ```
 
 `--canonical`を指定すると、正本701問の抽出だけを検証し、公開用JSONは変更しません。
-通常の`--release`では、個人的な固定文言を除外した700問と編集質問1問を出力します。
-検証では、TypeScriptとJSONのソース構文ではなく、文字列リテラルをデコードしたランタイム値として、Loves 700問の`id`・`level`・`text`・`category`を順序を含めて比較します。
+通常の`--release`では、個人的な固定文言と長大なシナリオを除外した698問と編集質問3問を出力します。
+検証では、TypeScriptとJSONのソース構文ではなく、文字列リテラルをデコードしたランタイム値として、Loves 698問の`id`・`level`・`text`・`category`を順序を含めて比較します。
 期待件数はLevel 1=167、Level 2=169、Level 3=167、Level 4=198です。
 
 ## 質問選択

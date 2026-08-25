@@ -20,7 +20,7 @@
  *   node tools/migrate-loves-couples.mjs <cards.ts へのパス> --canonical
  *
  * 出力: shared/questions/couples.json
- *   - 既定: リリース用データ(個人的な1問を除外し、編集質問1問で置換)
+ *   - 既定: リリース用データ(個人的な1問と長大な2問を除外し、編集質問3問で置換)
  *   - --canonical: 元データ701問を抽出検証するが、公開JSONは変更しない
  *   - テンプレート生成カードは対象外
  */
@@ -35,7 +35,7 @@ const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
 const CANONICAL_PATH = "Loveds/web/src/data/cards.ts";
 const EXPECTED_TOTAL = 701;
 const EXPECTED_PER_LEVEL = { 1: 167, 2: 169, 3: 167, 4: 198 };
-const RELEASE_EXCLUDED_IDS = new Set(["love-1-3"]);
+const RELEASE_EXCLUDED_IDS = new Set(["love-1-3", "ethics-max-4-14", "ethics-max-4-15"]);
 const RELEASE_REPLACEMENTS = new Map([
   ["love-1-3", {
     id: "editorial-couples-1-1",
@@ -43,6 +43,22 @@ const RELEASE_REPLACEMENTS = new Map([
     level: 1,
     text: "好きな人には、言葉で気持ちを伝えたい？態度で伝われば十分？",
     category: "romance",
+    source: "editorial",
+  }],
+  ["ethics-max-4-14", {
+    id: "editorial-couples-4-2",
+    audience: "couples",
+    level: 4,
+    text: "自分にしつこく関わってきたり、事実ではない噂を流したりする人がいる。\n相手にも事情があると分かっていても、自分が傷つけられていいわけではない。\nあなたなら、相手の背景を考えて我慢する？\nはっきりやめてと伝える？\n信頼できる人に相談する？",
+    category: "ethicsMax",
+    source: "editorial",
+  }],
+  ["ethics-max-4-15", {
+    id: "editorial-couples-4-3",
+    audience: "couples",
+    level: 4,
+    text: "仲のいい友達が、別の人を傷つけるような冗談や悪口を言っていた。\n注意すれば関係が悪くなるかもしれない。\n黙っていれば、傷ついている人を見捨てるかもしれない。\nあなたなら、まず何をする？",
+    category: "ethicsMax",
     source: "editorial",
   }],
 ]);
@@ -167,5 +183,5 @@ if (outputMode === "--canonical") {
 
 writeFileSync(outputPath, `${JSON.stringify(release, null, 2)}\n`, "utf8");
 console.log(`\n出力: ${outputPath} (${release.length} 問, --release)`);
-console.log("リリース監査: Loves 700問 + 編集質問1問。個人的なカードを除外しました。");
+  console.log("リリース監査: Loves 698問 + 編集質問3問。個人的なカードと長大なシナリオ2問を置換しました。");
 console.log("完了。次に tools/verify-couples-dataset.mjs で検証してください。");
