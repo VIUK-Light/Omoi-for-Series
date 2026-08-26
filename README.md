@@ -6,9 +6,13 @@
 - `/couples/` — Omoi for Couples
 - `/family/` — Omoi for Family
 - `/friends/` — Omoi for Friends
-- `/howto.html` — Omoi forの使い方
+- `/howto.html` — Omoi for全体の使い方
+- `/couples/howto.html` — Omoi for Couples単体の使い方
+- `/family/howto.html` — Omoi for Family単体の使い方
+- `/friends/howto.html` — Omoi for Friends単体の使い方
 
-各シリーズ画面の上部にある「使い方」からもガイドを開けます。
+ハブの使い方ページではシリーズ選択から説明し、各シリーズ画面の上部にある「使い方」からは、そのシリーズ専用のガイドを開きます。
+そのため、`/couples/`、`/family/`、`/friends/`のURLを単体で共有しても、受け取った人はシリーズ選択なしで使い始められます。
 画面下部の`VIUK-Light`は公式Web（`https://viuk-light.org/`）へのリンクです。
 
 ## 既存Omoiとの分離

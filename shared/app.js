@@ -80,7 +80,7 @@
     const backButton = selectedLevel && sessionQuestions.length
       ? '<button class="text-button" data-action="levels" type="button">← Levelを変える</button>'
       : '';
-    return `<header class="site-header"><a class="wordmark" href="../">${brandMarkup()}</a><span class="header-actions"><a class="text-button text-link" href="../howto.html">使い方</a>${backButton}</span></header>`;
+    return `<header class="site-header"><a class="wordmark" href="../">${brandMarkup()}</a><span class="header-actions"><a class="text-button text-link" href="howto.html">使い方</a>${backButton}</span></header>`;
   }
 
   function footer() {
