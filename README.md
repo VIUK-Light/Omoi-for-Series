@@ -6,6 +6,10 @@
 - `/couples/` — Omoi for Couples
 - `/family/` — Omoi for Family
 - `/friends/` — Omoi for Friends
+- `/howto.html` — Omoi forの使い方
+
+各シリーズ画面の上部にある「使い方」からもガイドを開けます。
+画面下部の`VIUK-Light`は公式Web（`https://viuk-light.org/`）へのリンクです。
 
 ## 既存Omoiとの分離
 
