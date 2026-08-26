@@ -26,6 +26,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 }
 .site-header { align-items: center; display: flex; justify-content: space-between; min-height: 32px; }
 .wordmark { color: #171717; font-size: 17px; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+.brand-prefix { color: #171717; }
+.brand-target { color: var(--accent); }
 .text-button { background: transparent; border: 0; color: var(--muted); cursor: pointer; font-size: 13px; padding: 6px 0; }
 .text-button:hover { color: var(--accent); }
 .content-column { flex: 1; margin: 0 auto; padding: 88px 0 96px; width: min(100%, 640px); }
@@ -95,8 +97,14 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .hub-lead { color: #57534d; font-size: 16px; line-height: 1.6; margin: 20px 0 56px; }
 .hub-links { border-top: 1px solid var(--line); margin-top: 56px; }
 .hub-links a { align-items: center; border-bottom: 1px solid var(--line); color: #171717; display: grid; gap: 4px 18px; grid-template-columns: 1fr 24px; padding: 22px 0; text-decoration: none; transition: color 140ms ease, padding 140ms ease; }
-.hub-links a:hover { color: var(--accent); padding-left: 6px; padding-right: 6px; }
-.hub-links span { font-size: 18px; font-weight: 650; }
+.hub-links a:hover { padding-left: 6px; padding-right: 6px; }
+.hub-link-title { display: block; font-size: 18px; font-weight: 650; }
+.hub-links a.series-couples { --series-accent: #e87835; }
+.hub-links a.series-family { --series-accent: #769269; }
+.hub-links a.series-friends { --series-accent: #6687a2; }
+.hub-links .brand-target { color: var(--series-accent); }
+.hub-links a:hover .brand-prefix { color: #171717; }
+.hub-links a:hover .brand-target { color: var(--series-accent); }
 .hub-links small { color: #88837d; font-size: 13px; grid-column: 1; }
 .hub-links b { font-size: 18px; font-weight: 400; grid-column: 2; grid-row: 1 / span 2; }
 

@@ -9,9 +9,9 @@
   if (!audience || !app) return;
 
   const meta = {
-    couples: { title: 'Omoi for Couples', subtitle: 'ふたりの距離を、少しずつ近づける' },
-    family: { title: 'Omoi for Family', subtitle: '家族のことを、あらためて知る' },
-    friends: { title: 'Omoi for Friends', subtitle: '友だちと、まだ知らない話をする' }
+    couples: { title: 'Omoi for Couples', target: 'Couples', subtitle: 'ふたりの距離を、少しずつ近づける' },
+    family: { title: 'Omoi for Family', target: 'Family', subtitle: '家族のことを、あらためて知る' },
+    friends: { title: 'Omoi for Friends', target: 'Friends', subtitle: '友だちと、まだ知らない話をする' }
   }[audience];
   if (!meta) return;
 
@@ -52,6 +52,7 @@
   const levelQuestions = () => questions.filter((question) => question.level === selectedLevel);
   const selectedLevelMeta = () => levels.find((level) => level.value === selectedLevel);
   const categoryLabel = (category) => categoryLabels[category] || category;
+  const brandMarkup = () => `<span class="brand-prefix">Omoi for</span> <span class="brand-target">${escapeHtml(meta.target)}</span>`;
 
   function shuffle(items) {
     const result = [...items];
@@ -79,11 +80,11 @@
     const backButton = selectedLevel && sessionQuestions.length
       ? '<button class="text-button" data-action="levels" type="button">← Levelを変える</button>'
       : '';
-    return `<header class="site-header"><a class="wordmark" href="../">${escapeHtml(meta.title)}</a>${backButton}</header>`;
+    return `<header class="site-header"><a class="wordmark" href="../">${brandMarkup()}</a>${backButton}</header>`;
   }
 
   function footer() {
-    return `<footer class="site-footer"><span>${escapeHtml(meta.title)}</span><span>Omoi for</span></footer>`;
+    return `<footer class="site-footer"><span>${brandMarkup()}</span><span>Omoi for</span></footer>`;
   }
 
   function renderChoiceButton({ type, value, label, description, selected }) {
