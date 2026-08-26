@@ -70,7 +70,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .error-message p { margin: 0 0 4px; }
 .error-message .text-button { color: inherit; text-decoration: underline; }
 
-.site-footer { border-top: 1px solid var(--line); color: #aaa6a1; display: flex; font-size: 11px; justify-content: space-between; letter-spacing: .03em; padding-top: 15px; }
+.site-footer { border-top: 1px solid var(--line); color: #aaa6a1; display: flex; font-size: 11px; justify-content: flex-start; letter-spacing: .03em; padding-top: 15px; }
 .question-screen { display: flex; flex-direction: column; min-height: 600px; }
 .question-header { align-items: flex-start; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 36px 0 16px; }
 .section-label { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .08em; margin: 0 0 5px; text-transform: uppercase; }

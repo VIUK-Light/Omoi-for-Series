@@ -19,6 +19,11 @@ const expected = {
 const failures = [];
 const forbiddenTexts = ["なぎささん大好きだよ！"];
 const MAX_RELEASE_TEXT_LENGTH = 160;
+const records = [];
+
+function normalizeQuestionText(text) {
+  return text.normalize("NFKC").toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, "");
+}
 
 function fail(message) {
   failures.push(message);
@@ -48,6 +53,7 @@ for (const [audience, contract] of Object.entries(expected)) {
   const lovesTexts = new Map();     // 質問文 -> 初出のID
   const levels = { 1: 0, 2: 0, 3: 0, 4: 0 };
   const sources = {};
+  data.forEach((card) => records.push({ ...card, audience }));
   data.forEach((card, index) => {
     if (ids.has(card.id)) fail(`${audience}[${index}]: ID重複 ${card.id}`);
     ids.add(card.id);
@@ -81,6 +87,21 @@ for (const [audience, contract] of Object.entries(expected)) {
   }
   console.log(`${audience}: ${data.length}問 / L1-L4 ${Object.values(levels).join('-')} / sources ${JSON.stringify(sources)}`);
 }
+
+const textOwners = new Map();
+for (const record of records) {
+  const key = normalizeQuestionText(record.text);
+  if (!textOwners.has(key)) textOwners.set(key, []);
+  textOwners.get(key).push(record);
+}
+for (const owners of textOwners.values()) {
+  if (new Set(owners.map((record) => record.audience)).size > 1) {
+    fail(`シリーズ間の同一質問文: ${owners.map((record) => `${record.audience}/${record.id}`).join(' | ')}`);
+  }
+}
+const crossAudienceDuplicateGroups = [...textOwners.values()]
+  .filter((owners) => new Set(owners.map((record) => record.audience)).size > 1);
+console.log(`シリーズ間の完全一致: ${crossAudienceDuplicateGroups.length}グループ`);
 
 if (failures.length) {
   console.error(`結果: FAIL — ${failures.length}件`);

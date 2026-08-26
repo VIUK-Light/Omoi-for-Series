@@ -84,7 +84,7 @@
   }
 
   function footer() {
-    return `<footer class="site-footer"><span>${brandMarkup()}</span><span>Omoi for</span></footer>`;
+    return `<footer class="site-footer"><span>${brandMarkup()}</span></footer>`;
   }
 
   function renderChoiceButton({ type, value, label, description, selected }) {
