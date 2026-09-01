@@ -19,7 +19,7 @@
 
 既存Omoiは、社会・倫理・人生観などの非常に深い問いを扱う独立したプロダクトです。
 このリポジトリは既存OmoiのLevel定義・実装・データを共有しません。
-同じ1〜4の数値を使っていても、OmoiのLevelとFor SeriesのLevelは別の深さ尺度です。
+同じ1〜4の数値を使っていても、OmoiのLevelとFor SeriesのLevelは別の深さレベルです。
 
 このリポジトリのFor Series Levelは、Lovesの歴史的な意図をもとにしています。
 
