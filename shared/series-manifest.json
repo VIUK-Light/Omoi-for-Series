@@ -1,10 +1,35 @@
 {
   "schemaVersion": 1,
   "series": {
-    "couples": { "status": "published", "questionFile": "couples.json" },
-    "family": { "status": "published", "questionFile": "family.json" },
-    "friends": { "status": "published", "questionFile": "friends.json" },
-    "adults": { "status": "unpublished", "developmentPreview": true, "questionFile": "adults.json" },
-    "self-care": { "status": "unpublished", "developmentPreview": true, "questionFile": "self-care.json" }
+    "couples": {
+      "status": "published",
+      "questionFile": "couples.json",
+      "draftPreview": true,
+      "followUpFile": "couples.json"
+    },
+    "family": {
+      "status": "published",
+      "questionFile": "family.json",
+      "draftPreview": true,
+      "followUpFile": "family.json"
+    },
+    "friends": {
+      "status": "published",
+      "questionFile": "friends.json",
+      "draftPreview": true,
+      "followUpFile": "friends.json"
+    },
+    "adults": {
+      "status": "unpublished",
+      "developmentPreview": true,
+      "questionFile": "adults.json",
+      "draftPreview": true
+    },
+    "self-care": {
+      "status": "unpublished",
+      "developmentPreview": true,
+      "questionFile": "self-care.json",
+      "draftPreview": true
+    }
   }
 }

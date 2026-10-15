@@ -3,6 +3,8 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
+import { hasValidAiSource } from "../shared/content-policy.mjs";
+
 const root = resolve(fileURLToPath(import.meta.url), "../..");
 const seriesFiles = {
   adults: "adults.json",
@@ -13,6 +15,10 @@ const forbiddenPatterns = [
   /(?:性器|挿入|オーガズム|自慰|具体的な性行為の手順)/u,
   /(?:未成年|中学生|高校生).{0,12}(?:性的|性行為|セックス)|(?:性的|性行為|セックス).{0,12}(?:未成年|中学生|高校生)/u,
 ];
+
+export function hasUnsafeQuestionText(text) {
+  return forbiddenPatterns.some(pattern => pattern.test(String(text)));
+}
 
 export function normalizeQuestionText(value) {
   return String(value).normalize("NFKC").toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, "");
@@ -75,7 +81,7 @@ export function validateDataset(data, { series, legacyQuestions = [], requireRel
   if (data.schemaVersion !== 1) addIssue(issues, "error", "schemaVersion は 1 である必要があります。");
   if (data.series !== series) addIssue(issues, "error", `series は ${series} である必要があります。`);
   const acceptedStates = requireReleaseReady ? ["unpublished", "published"] : ["unpublished"];
-  if (!acceptedStates.includes(data.publicationStatus)) addIssue(issues, "error", "Grokの取り込みデータは publicationStatus=unpublished にしてください。");
+  if (!acceptedStates.includes(data.publicationStatus)) addIssue(issues, "error", "AI初期案の取り込みデータは publicationStatus=unpublished にしてください。");
   if (!Array.isArray(data.questions)) {
     addIssue(issues, "error", "questions は配列にしてください。");
     return { issues, readyForRelease: false, questionCount: 0 };
@@ -84,6 +90,7 @@ export function validateDataset(data, { series, legacyQuestions = [], requireRel
 
   const ids = new Set();
   const textOwners = new Map();
+  const followUpOwners = new Map();
   const legacyTextOwners = new Map();
   const poolCounts = new Map();
   const validCategories = /^[a-z][a-z0-9-]{1,39}$/;
@@ -116,8 +123,8 @@ export function validateDataset(data, { series, legacyQuestions = [], requireRel
     if (!Number.isInteger(question.sensitivity) || question.sensitivity < 0 || question.sensitivity > 3) addIssue(issues, "error", `${where}: sensitivity は0〜3の整数にしてください。`);
     if (!Array.isArray(question.contentNotes) || question.contentNotes.some((tag) => typeof tag !== "string" || !validCategories.test(tag))) addIssue(issues, "error", `${where}: contentNotes は英小文字スラッグの配列にしてください。`);
     if (question.reviewStatus !== "pending" && question.reviewStatus !== "approved") addIssue(issues, "error", `${where}: reviewStatus は pending または approved にしてください。`);
-    if (!question.source || question.source.kind !== "grok" || question.source.model !== "Grok" || question.source.stage !== "ai-initial-draft" || !/^\d{4}-\d{2}-\d{2}$/.test(question.source.generatedAt || "")) {
-      addIssue(issues, "error", `${where}: Grok初期案のsourceメタデータが不正です。`);
+    if (!hasValidAiSource(question.source)) {
+      addIssue(issues, "error", `${where}: AI初期案のsourceメタデータが不正です（Grok/Codexの実際の作成元を指定）。`);
     }
 
     const texts = [question.text, question.followUp].filter((text) => typeof text === "string");
@@ -130,6 +137,13 @@ export function validateDataset(data, { series, legacyQuestions = [], requireRel
     if (Number.isInteger(question.level) && ["lite", "deep"].includes(question.intensity)) {
       const key = `${question.intensity}:${question.level}`;
       poolCounts.set(key, (poolCounts.get(key) || 0) + 1);
+    }
+
+    const followUpKey = normalizeQuestionText(question.followUp || "");
+    if (followUpKey) {
+      if (followUpOwners.has(followUpKey)) addIssue(issues, "error", `${where}: 深掘り質問が ${followUpOwners.get(followUpKey)} と重複しています。`);
+      else followUpOwners.set(followUpKey, question.id || where);
+      if (followUpKey === normalizeQuestionText(question.text || "")) addIssue(issues, "error", `${where}: メイン質問と深掘り質問が同じです。`);
     }
 
     const normalized = normalizeQuestionText(question.text || "");
@@ -200,12 +214,12 @@ function parseArgs(args) {
 function printHelp() {
   console.log(`使い方: node tools/validate-grok-questions.mjs --series adults|self-care [--input FILE] [--import] [--release-ready]
 
-  検証のみ:        --input にGrok出力JSONを指定
+  検証のみ:        --input にAI出力JSON（Grok/Codex）を指定
   未公開で取り込む: --input FILE --import
   公開審査の準備確認: --input FILE --release-ready
 
 --import は構造検証に通り、対象データファイルが空のときだけ取り込みます。
-このコマンドは公開状態を変更せず、Grok質問を承認済みにもしません。`);
+このコマンドは公開状態を変更せず、AI質問を承認済みにもしません。`);
 }
 
 async function main() {

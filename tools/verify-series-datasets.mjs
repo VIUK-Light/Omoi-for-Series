@@ -9,6 +9,9 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateFollowUpDataset } from "./verify-followups.mjs";
+import { hasValidAiSource } from "../shared/content-policy.mjs";
+import { validateDataset } from "./validate-grok-questions.mjs";
 import { textSimilarity } from "./validate-grok-questions.mjs";
 
 const root = resolve(fileURLToPath(import.meta.url), "../..");
@@ -103,6 +106,13 @@ for (const audience of Object.keys(expected)) {
   if (release?.status !== "published" || release?.questionFile !== `${audience}.json`) {
     fail(`${audience}: 既存シリーズの公開状態または質問JSONパスが不正です`);
   }
+  if (release?.followUpFile !== `${audience}.json`) fail(`${audience}: 深掘り質問JSONパスが不正です`);
+  try {
+    const followUps = JSON.parse(readFileSync(resolve(root, `shared/followups/${audience}.json`), "utf8"));
+    const legacyQuestions = JSON.parse(readFileSync(resolve(root, `shared/questions/${audience}.json`), "utf8"));
+    const report = validateFollowUpDataset(followUps, legacyQuestions, audience);
+    for (const issue of report.issues) if (issue.severity === "error") fail(`${audience}: ${issue.message}`);
+  } catch (error) { fail(`${audience}: 深掘り質問データを検証できません: ${error.message}`); }
 }
 if (Object.keys(manifest?.series || {}).length !== 5) fail("公開マニフェストは5シリーズを管理する必要があります");
 
@@ -133,6 +143,15 @@ for (const audience of newSeries) {
   if (release?.status === "unpublished" && release.developmentPreview !== true) fail(`${audience}: 未公開シリーズは開発プレビュー設定を明示してください`);
   if (release?.status === "published" && data.questions.length === 0) fail(`${audience}: 空の質問データを公開できません`);
 
+  const contentReport = validateDataset(data, {
+    series: audience,
+    legacyQuestions: records.filter(record => record.audience !== audience),
+    requireReleaseReady: release?.status === "published",
+  });
+  for (const issue of contentReport.issues) {
+    if (issue.severity === "error") fail(`${audience}: ${issue.message}`);
+  }
+
   const ids = new Set();
   const texts = new Map();
   const pools = new Map();
@@ -157,7 +176,7 @@ for (const audience of newSeries) {
     if (!Number.isInteger(question.sensitivity) || question.sensitivity < 0 || question.sensitivity > 3) fail(`${where}: sensitivity が不正です`);
     if (!Array.isArray(question.contentNotes) || question.contentNotes.some((tag) => typeof tag !== "string" || !/^[a-z][a-z0-9-]{1,39}$/.test(tag))) fail(`${where}: contentNotes が不正です`);
     if (question.reviewStatus !== "pending" && question.reviewStatus !== "approved") fail(`${where}: reviewStatus が不正です`);
-    if (!question.source || question.source.kind !== "grok" || question.source.model !== "Grok" || question.source.stage !== "ai-initial-draft" || !/^\d{4}-\d{2}-\d{2}$/.test(question.source.generatedAt || "")) fail(`${where}: Grok初期案の出典メタデータが不正です`);
+    if (!hasValidAiSource(question.source)) fail(`${where}: AI初期案の出典メタデータが不正です`);
     if (release?.status === "published" && question.reviewStatus !== "approved") fail(`${where}: レビュー待ちの質問は公開できません`);
     if (typeof question.id === "string" && typeof question.category === "string" && Number.isInteger(question.level) && ["lite", "deep"].includes(question.intensity)) {
       const idPattern = new RegExp(`^${audience}-${question.category}-${question.intensity}-l${question.level}-\\d{3}$`);

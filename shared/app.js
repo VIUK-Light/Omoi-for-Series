@@ -4,6 +4,7 @@ import {
   followUpForQuestion,
   isDevelopmentHost,
 } from "./question-engine.mjs";
+import { hasValidAiSource, canShowReviewedContent, canPreviewDrafts, mergeLegacyFollowUps } from "./content-policy.mjs";
 
 // Omoi for Series専用の共通UI。既存「Omoi」のデータや質問定義は読み込みません。
 const audience = document.body.dataset.audience;
@@ -51,7 +52,7 @@ const series = {
 if (!series) throw new Error(`未対応のOmoi for Seriesです: ${audience}`);
 
 const intensities = [
-  { value: "lite", name: "Lite", description: "気軽に話せる、やさしい問い" },
+  { value: "lite", name: "Lite", description: series.solo ? "気軽に振り返る、やさしい問い" : "気軽に話せる、やさしい問い" },
   { value: "deep", name: "Deep", description: "気持ちや価値観に触れる問い" },
 ];
 const conversationStyles = [
@@ -77,7 +78,7 @@ const categoryLabels = {
 
 let questions = [];
 let selectedIntensity = "lite";
-let selectedStyle = "normal";
+let selectedStyle = "deep-dive";
 let currentQuestion = null;
 let questionsAsked = 0;
 let sessionActive = false;
@@ -86,7 +87,6 @@ let revealed = false;
 let cardNeedsEntrance = false;
 let loadState = "loading";
 let loadError = "";
-let developmentPreviewActive = false;
 let cardTransitionActive = false;
 let finishCardFlip = null;
 let usedByPool = new Map();
@@ -94,6 +94,16 @@ let usedByPool = new Map();
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
 }[character]));
+// Keep Japanese words together while allowing natural breaks between them.
+const japaneseWords = typeof Intl.Segmenter === "function"
+  ? new Intl.Segmenter("ja", { granularity: "word" })
+  : null;
+function questionMarkup(text) {
+  if (!japaneseWords) return escapeHtml(text);
+  return Array.from(japaneseWords.segment(text), ({ segment, isWordLike }) => isWordLike && Array.from(segment).length <= 6
+    ? `<span class="question-word">${escapeHtml(segment)}</span>`
+    : escapeHtml(segment)).join("");
+}
 const brandMarkup = () => `<span class="brand-prefix">Omoi for</span> <span class="brand-target">${escapeHtml(series.target)}</span>`;
 const selectedPool = () => filterQuestions(questions, { intensity: selectedIntensity });
 const categoryLabel = (category) => categoryLabels[category] || category;
@@ -186,7 +196,7 @@ function renderSelection() {
       : loadState === "ready" && pool.length === 0
         ? '<p class="selection-note" role="status">質問を準備しています。</p>'
           : "";
-  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content">${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}<h1 class="page-title">${escapeHtml(series.setupHeading)}</h1><p class="page-intro">${escapeHtml(series.setupCopy)}</p>${modeControls()}<div class="selection-actions"><button class="primary-button" data-action="start" type="button" ${canStart ? "" : "disabled"}>質問カードをはじめる <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg></button></div>${loadingNotice}</main>${footer()}</div>`;
+  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content"><h1 class="page-title">${escapeHtml(series.setupHeading)}</h1><p class="page-intro">${escapeHtml(series.setupCopy)}</p>${modeControls()}<div class="selection-actions"><button class="primary-button" data-action="start" type="button" ${canStart ? "" : "disabled"}>質問カードをはじめる <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg></button></div>${loadingNotice}</main>${footer()}</div>`;
 }
 
 function questionLength(text) {
@@ -213,9 +223,6 @@ function renderQuestion() {
     return;
   }
   const followUp = followUpForQuestion(question, audience);
-  const questionCategory = question.category
-    ? `<p class="question-category">${escapeHtml(categoryLabel(question.category))}</p>`
-    : "";
   const noteTags = Array.isArray(question.contentNotes) && question.contentNotes.length
     ? `<p class="content-notes">内容の話題: ${question.contentNotes.map(categoryLabel).map(escapeHtml).join("・")}</p>`
     : "";
@@ -226,7 +233,7 @@ function renderQuestion() {
   app.innerHTML = `<div class="site-shell session-shell">
     ${header({ canFinish: true })}
     <main class="session-content">
-      ${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}
+
       <p class="progress" aria-label="質問 ${questionsAsked}問目">質問 ${questionsAsked}</p>
       <div class="card-stage${enterClass}">
         <article id="question-card" class="question-card${revealed ? " is-revealed" : ""}" aria-labelledby="${revealed ? "follow-up-question" : "main-question"}">
@@ -235,8 +242,7 @@ function renderQuestion() {
               <p class="card-series-name">${brandMarkup()}</p>
               <div class="card-copy">
                 <div class="card-copy-content">
-                  ${questionCategory}
-                  <h1 id="main-question" class="question-text" data-length="${questionLength(question.text)}" tabindex="-1">${escapeHtml(question.text)}</h1>
+                  <h1 id="main-question" class="question-text" data-length="${questionLength(question.text)}" tabindex="-1">${questionMarkup(question.text)}</h1>
                   ${noteTags}
                 </div>
               </div>
@@ -247,7 +253,7 @@ function renderQuestion() {
               <div class="card-copy">
                 <div class="card-copy-content">
                   <p class="question-category">${backLabel}</p>
-                  <h2 id="follow-up-question" class="follow-up-text" data-length="${questionLength(followUp)}" tabindex="-1">${escapeHtml(followUp)}</h2>
+                  <h2 id="follow-up-question" class="follow-up-text" data-length="${questionLength(followUp)}" tabindex="-1">${questionMarkup(followUp)}</h2>
                   ${noteTags}
                 </div>
               </div>
@@ -347,7 +353,7 @@ async function loadQuestions() {
     if (!release || !["published", "unpublished"].includes(release.status)) throw new Error("シリーズ公開設定がありません。");
 
     const developmentPreview = release.status === "unpublished" && release.developmentPreview === true && isDevelopmentHost(window.location);
-    developmentPreviewActive = developmentPreview;
+    const allowDrafts = canPreviewDrafts(release, window.location);
     if (release.status === "unpublished" && !developmentPreview) {
       loadState = "unpublished";
       render();
@@ -360,10 +366,20 @@ async function loadQuestions() {
     if (Array.isArray(data)) {
       // 既存3シリーズの配列JSONをそのまま読める互換レイヤーです。
       questions = data.filter((question) => question && question.id && typeof question.text === "string" && Number.isInteger(question.level));
+      if (release.followUpFile) {
+        const followUpResponse = await fetch(`../shared/followups/${encodeURIComponent(release.followUpFile)}`);
+        if (!followUpResponse.ok) throw new Error(`follow-ups HTTP ${followUpResponse.status}`);
+        const followUpData = await followUpResponse.json();
+        questions = mergeLegacyFollowUps(questions, followUpData, audience, { allowDrafts });
+      }
+
     } else {
       if (data?.series !== audience || !Array.isArray(data?.questions)) throw new Error("シリーズの質問JSON形式が不正です。");
       if (release.status === "published" && data.publicationStatus !== "published") throw new Error("質問データが公開状態ではありません。");
-      questions = data.questions.filter((question) => question && question.series === audience && question.reviewStatus === "approved" && typeof question.text === "string" && question.text.trim() && typeof question.followUp === "string" && question.followUp.trim());
+      if (data.questions.some((question) => !question || question.series !== audience || !hasValidAiSource(question.source) || !["approved", "pending"].includes(question.reviewStatus) || typeof question.text !== "string" || !question.text.trim() || typeof question.followUp !== "string" || !question.followUp.trim())) {
+        throw new Error("質問データの作成元・レビュー情報または質問文が不正です。");
+      }
+      questions = data.questions.filter((question) => canShowReviewedContent(question.reviewStatus, { allowDrafts }));
     }
     loadState = questions.length ? "ready" : developmentPreview ? "preview-empty" : "empty";
     render();
@@ -426,5 +442,6 @@ app.addEventListener("click", (event) => {
 });
 
 window.addEventListener("resize", updateCardOverflow);
+document.fonts?.addEventListener("loadingdone", updateCardOverflow);
 render();
 loadQuestions();

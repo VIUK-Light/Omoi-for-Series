@@ -70,3 +70,12 @@ node tools/verify-couples-dataset.mjs <cards.ts へのパス> shared/questions/c
 
 `--canonical`は正本701問を抽出検証するだけで、公開JSONを書き換えない。
 入力ファイルは SHA-256 でカノニカル blob と照合され、不一致の場合は失敗する。
+
+
+## 追加したAI生成案（2026-10-15）
+
+ユーザーの許可によりCodex / GPT-6が生成しました。Grok生成とは扱いません。Adults64組とSelf-Care64組はメイン質問と各組固有の深掘りを持ちます。既存Couples477・Family166・Friends177の元配列は保持し、追加820文を`shared/followups/`に分離しています。
+
+全件`stage: ai-initial-draft`、`reviewStatus: pending`です。AIの相互チェックで誘導・経験の決めつけ・不自然な文章を修正しましたが、人が承認したとは記録しません。ローカル用の明示フラグとホスト判定が成立した場合のみ、レビュー前のカードを試せます。生成元・レビュー前のラベルはユーザー指示により画面に表示せず、状態はデータ側で保持します。新2シリーズの本番公開状態は`unpublished`です。
+
+`node tools/verify-followups.mjs`でID対応、欠落、重複、表現、作成元を検証します。

@@ -58,13 +58,15 @@ node tools/verify-series-datasets.mjs
 
 質問は選択中のシリーズとLite/Deepの全プールから1問ずつランダムに選びます。質問数に上限はなく、使用履歴はページ内のメモリにのみ保持します。同じプールでは未使用IDを優先し、プールを周回するときは直前の質問を可能なら避けます。ページ再読み込みやLite/Deepの変更で履歴をリセットします。「次へ」でカードを進め、「今日はここまで」でいつでも終了できます。
 
-通常スタイルでは質問の表面を表示します。深掘りスタイルでは「次へ」でカードが裏返り、追加質問を表示します。裏面でもう一度「次へ」を押すと次のカードへ進みます。カードは63:88の縦横比を保ち、最大幅304pxで表示します。反転中の連打を防ぎ、動きを減らす設定ではアニメーションを省きます。新シリーズは各質問の`followUp`を使い、既存3シリーズはシリーズ共通の短い追加質問を表示します。
+画面全体にUD書体のBIZ UDPゴシックを使います。Google Fontsから400・700を`display=swap`で読み込み、読み込み前や取得できない環境ではOSのゴシック体で表示します。見出し・質問本文は太字のゴシック体、背景は白です。
+
+会話スタイルは深掘りを初期選択にしています。通常スタイルでは質問の表面を表示します。深掘りスタイルでは「次へ」でカードが裏返り、追加質問を表示します。裏面でもう一度「次へ」を押すと次のカードへ進みます。カードは63:88の縦横比を保ち、最大幅304pxで表示します。反転中の連打を防ぎ、動きを減らす設定ではアニメーションを省きます。新シリーズは各質問の`followUp`を使い、既存3シリーズは`shared/followups/<series>.json`のID対応から個別の追加質問を読み込みます。元の質問配列は書き換えません。
 
 ## AdultsとSelf-Careのデータ
 
-初期質問はGrokで作る想定ですが、この変更ではGrokに質問生成を依頼していません。利用者がGrokに依頼するためのプロンプトは[`prompts/grok-adults-questions.md`](prompts/grok-adults-questions.md)と[`prompts/grok-self-care-questions.md`](prompts/grok-self-care-questions.md)にあります。出力先のJSON枠は`shared/questions/adults.json`と`shared/questions/self-care.json`です。どちらも現在は空の未公開状態です。
+2026-10-15のユーザー許可により、CodexでAdultsとSelf-Careを各64組（メイン＋固有の深掘り）作成しました。Lite / Deep × Level 1〜4の8区分に各8組です。作成元は`codex` / `GPT-6`で、Grok生成とは記録しません。既存3シリーズにもCouples477・Family166・Friends177の計820文の個別深掘りを追加しています。全件がAI初期案・`pending`です。今後Grokに依頼するためのプロンプトは[`prompts/grok-adults-questions.md`](prompts/grok-adults-questions.md)と[`prompts/grok-self-care-questions.md`](prompts/grok-self-care-questions.md)にあります。出力先のJSON枠は`shared/questions/adults.json`と`shared/questions/self-care.json`です。どちらも質問データを収録した未公開状態です。
 
-### Grok出力のJSON形式
+### AI出力のJSON形式（Grok / Codex）
 
 ファイルのルートはシリーズ情報と質問配列を持つオブジェクトです。`questions`の各要素には、質問の分類・通常質問・深掘り質問・センシティブ度・内容タグ・生成元・人のレビュー状態を入れます。
 
@@ -100,7 +102,7 @@ Self-Careの場合はルートと質問の`series`を`self-care`にし、IDを`s
 
 ### 検証と取り込み
 
-Grok出力のJSONファイルを検証し、問題がなければ未公開状態で対象シリーズへ取り込みます。
+既存コマンド名はGrok用との互換性を保っていますが、Codexの正しい出典メタデータにも対応します。取り込みは空の対象に限定し、既存データを上書きしません。
 
 ```sh
 node tools/validate-grok-questions.mjs --series adults --input /path/to/grok-adults.json
@@ -111,9 +113,13 @@ node tools/validate-grok-questions.mjs --series adults --release-ready
 
 検証はJSONスキーマ、質問ID、必須項目、Lite/Deep・Level、重複・類似表現、圧力や露骨な性的表現を検査します。`--import`は対象JSONが空の未公開状態の場合だけ動き、すべての質問を`pending`のまま保ちます。公開準備確認は、全質問のレビュー承認と全Lite/Deep・Level組み合わせに最低3問があることを要求します。
 
-AI初期案を検証しただけでは公開されません。人が質問を審査し、レビュー状態を`approved`にし、データと[`shared/series-manifest.json`](shared/series-manifest.json)の公開状態を明示的に変更するまでAdultsとSelf-Careは本番で未公開です。Grokの初期案を自動承認する処理はありません。生成・取り込み・検証・レビューの各段階を分けて管理します。
+AI初期案を検証しただけでは公開されません。人が質問を審査し、レビュー状態を`approved`にし、データと[`shared/series-manifest.json`](shared/series-manifest.json)の公開状態を明示的に変更するまでAdultsとSelf-Careは本番で未公開です。Grok/Codexの初期案を自動承認する処理はありません。生成・取り込み・検証・レビューの各段階を分けて管理します。
 
-ローカルホストでは開発プレビュー画面を確認できます。未承認または空の質問は表示せず、画面だけを確認できます。
+`draftPreview: true`のシリーズはlocalhost / 127.0.0.1でのみレビュー前の実際のカードを試せます。画面に生成元・レビュー前のラベルは表示せず、レビュー状態はデータ側で管理します。本番では未承認の追加質問を採用しません。新2シリーズの公開状態は`unpublished`のままです。空の質問は表示しません。
+
+既存シリーズの深掘りは、内容を人が確認した後に`shared/followups/<series>.json`の`reviewStatus`を`approved`へ変更すると本番でも利用できます。新2シリーズは各質問の承認と、データ・マニフェスト両方の公開状態変更が必要です。
+
+追加の検証: `node tools/verify-followups.mjs` / `node --test tools/*.test.mjs`。生成元は`grok` / `Grok`または`codex` / `GPT-6`の正しい組み合わせだけを受け付けます。AIによる内容チェックと人のレビュー承認は別に管理します。
 
 ## Family / Friendsの既存データ
 
