@@ -1,7 +1,5 @@
-# Omoi for
+# Omoi for Series
 
-このリポジトリは、既存のOmoiとは別の会話プロダクト群を提供します。
-リポジトリ名とURLパスは互換性のため`Take-for`のままですが、画面上のブランドはOmoi forです。
 
 - `/couples/` — Omoi for Couples
 - `/family/` — Omoi for Family
