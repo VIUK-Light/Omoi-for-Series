@@ -12,6 +12,8 @@ body {
 }
 body[data-audience="family"] { --accent: #769269; --accent-soft: #f3f7f1; }
 body[data-audience="friends"] { --accent: #6687a2; --accent-soft: #f1f6fa; }
+body[data-audience="adults"] { --accent: #795b79; --accent-soft: #f6f0f6; }
+body[data-audience="self-care"] { --accent: #df775a; --accent-soft: #fff2ed; }
 button, a { font: inherit; }
 button { color: inherit; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
@@ -130,6 +132,116 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .howto-note p { color: #6f5b50; font-size: 13px; line-height: 1.7; margin: 7px 0 0; }
 .howto-start { align-items: center; display: inline-flex; justify-content: center; margin-top: 36px; text-decoration: none; }
 
+/* 5シリーズ共通の設定UIとカード。質問データや公開可否とは独立しています。 */
+.choice-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.choice-card.is-selected {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: #171717;
+}
+.choice-card.is-selected .choice-copy small { color: #5f5955; }
+.choice-card:disabled { cursor: not-allowed; opacity: .46; }
+.choice-card .choice-mark { transition: background-color 140ms ease, border-color 140ms ease; }
+.choice-card.is-selected .choice-mark {
+  background: var(--accent);
+  border: 4px solid #fff;
+  outline: 1px solid var(--accent);
+}
+.choice-card.is-compact { min-height: 48px; }
+.setup-copy { color: var(--muted); font-size: 13px; line-height: 1.75; margin: 18px 0 0; }
+.count-section { margin-top: 44px; }
+.legacy-mode-note { margin-top: 18px; }
+.selection-note { color: var(--muted); }
+.preview-banner { background: var(--accent-soft); color: var(--accent); font-size: 11px; letter-spacing: .03em; margin: 0 0 18px; padding: 7px 10px; width: fit-content; }
+.skip-note { margin: 13px auto 0; max-width: 520px; text-align: center; }
+
+.age-gate .age-notice, .howto-age-notice {
+  background: var(--accent-soft);
+  color: #49434a;
+  line-height: 1.75;
+  margin-top: 32px;
+  padding: 18px 20px;
+}
+.age-notice p { font-size: 13px; margin: 0 0 10px; }
+.age-notice p:last-child { margin-bottom: 0; }
+.age-notice strong { color: #312a32; }
+.check-row {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  gap: 11px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+.check-row + .check-row { margin-top: 12px; }
+.check-row input { accent-color: var(--accent); flex: 0 0 18px; height: 18px; margin: 1px 0 0; width: 18px; }
+.age-gate .selection-actions { justify-content: flex-start; }
+.age-gate .selection-actions .primary-button { min-width: 200px; }
+.exit-adults { color: var(--muted); display: inline-block; font-size: 13px; margin-top: 20px; }
+.unpublished-content .unpublished-note { background: var(--accent-soft); color: #57534d; font-size: 14px; line-height: 1.75; margin-top: 30px; padding: 17px 18px; }
+.back-to-series { align-items: center; display: inline-flex; justify-content: center; margin-top: 28px; text-decoration: none; }
+.preview-note { background: var(--accent-soft); padding: 13px 15px; }
+
+.question-screen { min-height: auto; }
+.question-screen .question-header { padding: 28px 0 14px; }
+.question-card {
+  margin: auto;
+  perspective: 1100px;
+  width: min(100%, 650px);
+}
+.question-card-inner {
+  display: grid;
+  min-height: 390px;
+  transform-style: preserve-3d;
+  transition: transform 260ms cubic-bezier(.2,.72,.25,1);
+}
+.question-card.is-revealed .question-card-inner { transform: rotateY(180deg); }
+.question-card-face {
+  align-items: center;
+  backface-visibility: hidden;
+  background: #fff;
+  border: 1px solid #e6e1df;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(37, 29, 25, .08), 0 2px 7px rgba(37, 29, 25, .05);
+  display: flex;
+  grid-area: 1 / 1;
+  justify-content: center;
+  min-height: 390px;
+  overflow-wrap: anywhere;
+  padding: 32px clamp(23px, 6vw, 58px);
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+}
+.question-card-back { transform: rotateY(180deg); }
+.question-card-back .card-face-content { background: var(--accent-soft); border-radius: 16px; padding: 20px 22px; }
+.card-face-content { margin: auto; max-width: 540px; width: 100%; }
+.card-series-name { color: var(--muted); font-size: 12px; margin: 0 0 24px; }
+.card-series-name .brand-prefix, .card-series-name .brand-target { color: inherit; }
+.question-category { color: var(--accent); font-size: 12px; letter-spacing: .07em; margin: 0 0 16px; }
+.question-text, .follow-up-text {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: clamp(28px, 5vw, 43px);
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.follow-up-text { font-size: clamp(26px, 4.5vw, 38px); }
+.content-notes { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 20px 0 0; }
+.question-actions { margin: 24px auto 0; }
+.question-actions .primary-button, .question-actions .secondary-button { min-height: 50px; }
+.question-screen > .question-card { flex: 1; }
+.question-screen > .skip-note { flex: none; }
+.howto-page .age-notice { margin-bottom: 36px; }
+.howto-content .age-notice p + p { margin-top: 9px; }
+
+.hub-links a.series-adults { --series-accent: #795b79; }
+.hub-links a.series-self-care { --series-accent: #df775a; }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
 @media (max-width: 640px) {
   .site-shell, .hub-shell { padding: 24px 22px 20px; }
@@ -148,4 +260,17 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .header-actions { gap: 12px; }
   .howto-content { padding: 68px 0 80px; }
   .level-guide > div { gap: 8px; grid-template-columns: 1fr; }
+  .choice-pair { grid-template-columns: 1fr; }
+  .count-section { margin-top: 38px; }
+  .age-gate .selection-actions .primary-button { width: 100%; }
+  .question-screen { min-height: calc(100svh - 100px); }
+  .question-screen .question-header { padding-top: 24px; }
+  .question-card { display: flex; flex: 1; min-height: 330px; }
+  .question-card-inner { flex: 1; min-height: 330px; }
+  .question-card-face { min-height: 330px; padding: 26px 23px; }
+  .card-series-name { margin-bottom: 18px; }
+  .question-text { font-size: clamp(26px, 8vw, 35px); line-height: 1.6; }
+  .follow-up-text { font-size: clamp(24px, 7.2vw, 32px); line-height: 1.6; }
+  .question-actions { grid-template-columns: 1fr 1fr; }
+  .question-actions .primary-button, .question-actions .secondary-button { padding: 11px 10px; }
 }
