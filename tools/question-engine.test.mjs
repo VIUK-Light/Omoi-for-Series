@@ -17,10 +17,17 @@ const fixedRandom = () => 0.42;
 
 test("legacy series keeps question records unchanged and maps Lite/Deep from its existing levels", () => {
   const before = JSON.stringify(couples);
+  const levelCounts = Object.fromEntries([1, 2, 3, 4].map((level) => [
+    level,
+    filterQuestions(couples, { level }).length,
+  ]));
   const liteLevelOne = filterQuestions(couples, { intensity: "lite", level: 1 });
   const deepLevelFour = filterQuestions(couples, { intensity: "deep", level: 4 });
-  assert.equal(liteLevelOne.length, 167);
-  assert.equal(deepLevelFour.length, 198);
+  assert.deepEqual(levelCounts, { 1: 115, 2: 109, 3: 111, 4: 142 });
+  assert.equal(filterQuestions(couples, { intensity: "lite" }).length, 224);
+  assert.equal(filterQuestions(couples, { intensity: "deep" }).length, 253);
+  assert.equal(liteLevelOne.length, 115);
+  assert.equal(deepLevelFour.length, 142);
   assert.ok(liteLevelOne.every((question) => question.level === 1));
   assert.ok(deepLevelFour.every((question) => question.level === 4));
   assert.equal(JSON.stringify(couples), before);

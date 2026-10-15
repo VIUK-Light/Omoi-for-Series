@@ -87,8 +87,8 @@ let cardNeedsEntrance = false;
 let loadState = "loading";
 let loadError = "";
 let developmentPreviewActive = false;
-let adultConfirmedThisPage = false;
-let adultGateChecks = { age: false, notice: false };
+let cardTransitionActive = false;
+let finishCardFlip = null;
 let usedByPool = new Map();
 
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
@@ -98,18 +98,8 @@ const brandMarkup = () => `<span class="brand-prefix">Omoi for</span> <span clas
 const selectedPool = () => filterQuestions(questions, { intensity: selectedIntensity });
 const categoryLabel = (category) => categoryLabels[category] || category;
 
-function adultConfirmed() {
-  if (!series.adultOnly) return true;
-  if (adultConfirmedThisPage) return true;
-  try {
-    adultConfirmedThisPage = sessionStorage.getItem("omoi-for-adults-confirmed") === "yes";
-  } catch {
-    adultConfirmedThisPage = false;
-  }
-  return adultConfirmedThisPage;
-}
-
 function resetSession(clearHistory = false) {
+  finishCardFlip?.(false);
   currentQuestion = null;
   questionsAsked = 0;
   sessionActive = false;
@@ -167,11 +157,6 @@ function choiceButton({ group, value, label, description, selected }) {
   return `<button class="choice-card${selected ? " is-selected" : ""}" ${dataAttribute} type="button" aria-pressed="${selected}"><span class="choice-copy"><strong>${escapeHtml(label)}</strong>${description ? `<small>${escapeHtml(description)}</small>` : ""}</span><span class="choice-mark" aria-hidden="true"></span></button>`;
 }
 
-function renderAdultsGate() {
-  const canContinue = adultGateChecks.age && adultGateChecks.notice;
-  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column age-gate"><p class="section-label">Omoi for Adults</p><h1 class="page-title">利用前にご確認ください</h1><p class="page-intro">このシリーズは18歳以上の方向けです。身体、性、親密さ、同意など、センシティブな話題を含むことがあります。</p><div class="age-notice"><p><strong>答えない、飛ばす、途中でやめる自由があります。</strong></p><p>相手の答えを急かしたり、希望しない回答を求めたりしないでください。同意や境界線を尊重し、お互いが安心できる範囲で利用してください。</p><p>年齢の確認だけで、すべての状況における安全性が保証されるわけではありません。不安を感じた場合は利用を中断してください。</p></div><label class="check-row"><input data-adult-check="age" type="checkbox" ${adultGateChecks.age ? "checked" : ""}><span>私は18歳以上です</span></label><label class="check-row"><input data-adult-check="notice" type="checkbox" ${adultGateChecks.notice ? "checked" : ""}><span>内容と、回答しない自由について確認しました</span></label><div class="selection-actions"><button class="primary-button" data-action="accept-adults" type="button" ${canContinue ? "" : "disabled"}>確認して進む</button></div><a class="exit-adults" href="../">利用せず戻る</a></main>${footer()}</div>`;
-}
-
 function renderUnpublished() {
   const devPreview = isDevelopmentHost(window.location) && loadState === "preview-empty";
   const title = devPreview ? "開発プレビュー" : "公開準備中です";
@@ -186,7 +171,7 @@ function renderEmptyPreview() {
 }
 
 function modeControls() {
-  return `<section class="selection-section" aria-labelledby="intensity-heading"><h2 id="intensity-heading"><span class="mode-index">01</span>質問の踏み込み度</h2><div class="choice-list choice-pair" role="group" aria-label="質問内容の踏み込み度">${intensities.map((mode) => choiceButton({ group: "intensity", value: mode.value, label: mode.name, description: mode.description, selected: selectedIntensity === mode.value })).join("")}</div></section><section class="selection-section" aria-labelledby="style-heading"><h2 id="style-heading"><span class="mode-index">02</span>会話のスタイル</h2><div class="choice-list choice-pair" role="group" aria-label="会話方式">${conversationStyles.map((mode) => choiceButton({ group: "style", value: mode.value, label: mode.name, description: mode.description, selected: selectedStyle === mode.value })).join("")}</div></section>`;
+  return `<section class="selection-section" aria-labelledby="intensity-heading"><h2 id="intensity-heading">質問の踏み込み度</h2><div class="choice-list choice-pair" role="group" aria-label="質問内容の踏み込み度">${intensities.map((mode) => choiceButton({ group: "intensity", value: mode.value, label: mode.name, description: mode.description, selected: selectedIntensity === mode.value })).join("")}</div></section><section class="selection-section" aria-labelledby="style-heading"><h2 id="style-heading">会話のスタイル</h2><div class="choice-list choice-pair" role="group" aria-label="会話方式">${conversationStyles.map((mode) => choiceButton({ group: "style", value: mode.value, label: mode.name, description: mode.description, selected: selectedStyle === mode.value })).join("")}</div></section>`;
 }
 
 function renderSelection() {
@@ -201,10 +186,23 @@ function renderSelection() {
       : loadState === "ready" && pool.length === 0
         ? '<p class="selection-note" role="status">質問を準備しています。</p>'
           : "";
-  const adultNote = series.adultOnly
-    ? '<aside class="safety-note" role="note">18歳以上向けです。答えたくない質問は飛ばせます。お互いの同意と境界を尊重してください。</aside>'
-    : "";
-  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content">${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}<h1 class="page-title">${escapeHtml(series.setupHeading)}</h1><p class="page-intro">${escapeHtml(series.setupCopy)}</p>${modeControls()}<div class="selection-actions"><button class="primary-button" data-action="start" type="button" ${canStart ? "" : "disabled"}>質問カードをはじめる <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg></button></div>${adultNote}${loadingNotice}</main>${footer()}</div>`;
+  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content">${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}<h1 class="page-title">${escapeHtml(series.setupHeading)}</h1><p class="page-intro">${escapeHtml(series.setupCopy)}</p>${modeControls()}<div class="selection-actions"><button class="primary-button" data-action="start" type="button" ${canStart ? "" : "disabled"}>質問カードをはじめる <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg></button></div>${loadingNotice}</main>${footer()}</div>`;
+}
+
+function questionLength(text) {
+  const length = Array.from(text).length;
+  return length > 75 ? "long" : length > 42 ? "medium" : "short";
+}
+
+function focusQuestion(showFollowUp = false) {
+  app.querySelector(showFollowUp ? ".follow-up-text" : ".question-text")?.focus({ preventScroll: true });
+}
+
+function updateCardOverflow() {
+  app.querySelectorAll(".card-copy").forEach((copy) => {
+    if (copy.scrollHeight > copy.clientHeight + 1) copy.setAttribute("tabindex", "0");
+    else copy.removeAttribute("tabindex");
+  });
 }
 
 function renderQuestion() {
@@ -221,28 +219,94 @@ function renderQuestion() {
   const noteTags = Array.isArray(question.contentNotes) && question.contentNotes.length
     ? `<p class="content-notes">内容の話題: ${question.contentNotes.map(categoryLabel).map(escapeHtml).join("・")}</p>`
     : "";
-  const cardLabel = `${question.text}${revealed ? `。深掘り質問: ${followUp}` : ""}`;
-  const revealAction = selectedStyle === "deep-dive" && !revealed;
-  const mainAction = revealAction ? "reveal" : "next";
+  const mainAction = selectedStyle === "deep-dive" && !revealed ? "reveal" : "next";
   const enterClass = cardNeedsEntrance ? " is-entering" : "";
   cardNeedsEntrance = false;
-  const skipLabel = series.solo ? "今回は飛ばす" : "今回は話さない";
-  app.innerHTML = `<div class="site-shell"><div class="question-screen">${header({ canFinish: true })}${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}<div class="question-header"><p class="progress" aria-label="質問 ${questionsAsked}問目">質問 ${questionsAsked}</p></div><article class="question-card${enterClass}" aria-live="polite" aria-label="${escapeHtml(cardLabel)}"><div class="question-card-inner"><section class="question-card-face question-card-front" aria-label="メインの質問" aria-hidden="false"><div class="card-face-content"><p class="card-series-name">${brandMarkup()}</p>${questionCategory}<h1 class="question-text">${escapeHtml(question.text)}</h1>${noteTags}</div></section><section class="question-card-face question-card-back" aria-label="深掘り質問" aria-hidden="true"><div class="card-face-content"><p class="section-label">もう少し話してみる</p><h2 class="follow-up-text">${escapeHtml(followUp)}</h2>${noteTags}</div></section></div></article><div class="question-actions"><button class="secondary-button" data-action="skip" type="button">${skipLabel}</button><button class="primary-button" data-action="${mainAction}" type="button">次へ</button></div></div>${footer()}</div>`;
+  const backLabel = series.solo ? "もう少し考えてみる" : "もう少し話してみる";
+  app.innerHTML = `<div class="site-shell session-shell">
+    ${header({ canFinish: true })}
+    <main class="session-content">
+      ${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}
+      <p class="progress" aria-label="質問 ${questionsAsked}問目">質問 ${questionsAsked}</p>
+      <div class="card-stage${enterClass}">
+        <article id="question-card" class="question-card${revealed ? " is-revealed" : ""}" aria-labelledby="${revealed ? "follow-up-question" : "main-question"}">
+          <div class="question-card-inner">
+            <section class="question-card-face question-card-front" aria-label="メインの質問" aria-hidden="${revealed}" ${revealed ? "inert" : ""}>
+              <p class="card-series-name">${brandMarkup()}</p>
+              <div class="card-copy">
+                <div class="card-copy-content">
+                  ${questionCategory}
+                  <h1 id="main-question" class="question-text" data-length="${questionLength(question.text)}" tabindex="-1">${escapeHtml(question.text)}</h1>
+                  ${noteTags}
+                </div>
+              </div>
+              <span class="card-rule" aria-hidden="true"></span>
+            </section>
+            <section class="question-card-face question-card-back" aria-label="深掘り質問" aria-hidden="${!revealed}" ${revealed ? "" : "inert"}>
+              <p class="card-series-name">${brandMarkup()}</p>
+              <div class="card-copy">
+                <div class="card-copy-content">
+                  <p class="question-category">${backLabel}</p>
+                  <h2 id="follow-up-question" class="follow-up-text" data-length="${questionLength(followUp)}" tabindex="-1">${escapeHtml(followUp)}</h2>
+                  ${noteTags}
+                </div>
+              </div>
+              <span class="card-rule" aria-hidden="true"></span>
+            </section>
+          </div>
+        </article>
+      </div>
+      <div class="question-actions">
+        <button class="primary-button" data-action="${mainAction}" aria-controls="question-card" type="button">次へ <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></button>
+      </div>
+    </main>
+    ${footer()}
+  </div>`;
+  requestAnimationFrame(updateCardOverflow);
 }
 
 function setQuestionSide(showFollowUp) {
+  if (cardTransitionActive) return;
   const card = app.querySelector(".question-card");
+  const inner = app.querySelector(".question-card-inner");
   const front = app.querySelector(".question-card-front");
   const back = app.querySelector(".question-card-back");
-  if (!card || !front || !back) return;
-  card.classList.toggle("is-revealed", showFollowUp);
+  const nextButton = app.querySelector(".question-actions .primary-button");
+  if (!card || !inner || !front || !back || !nextButton) return;
+
+  revealed = showFollowUp;
   front.setAttribute("aria-hidden", String(showFollowUp));
   back.setAttribute("aria-hidden", String(!showFollowUp));
-  const nextButton = app.querySelector(".question-actions .primary-button");
-  if (nextButton) nextButton.dataset.action = showFollowUp ? "next" : selectedStyle === "deep-dive" ? "reveal" : "next";
-  const question = currentQuestion;
-  const followUp = followUpForQuestion(question, audience);
-  card.setAttribute("aria-label", `${question.text}${showFollowUp ? `。深掘り質問: ${followUp}` : ""}`);
+  front.inert = showFollowUp;
+  back.inert = !showFollowUp;
+  card.setAttribute("aria-labelledby", showFollowUp ? "follow-up-question" : "main-question");
+  nextButton.dataset.action = showFollowUp || selectedStyle === "normal" ? "next" : "reveal";
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let timeout;
+  const complete = (moveFocus = true) => {
+    clearTimeout(timeout);
+    inner.removeEventListener("transitionend", onTransitionEnd);
+    cardTransitionActive = false;
+    finishCardFlip = null;
+    nextButton.disabled = false;
+    card.removeAttribute("aria-busy");
+    if (moveFocus) focusQuestion(showFollowUp);
+  };
+  const onTransitionEnd = (event) => {
+    if (event.target === inner && event.propertyName === "transform") complete();
+  };
+  finishCardFlip = complete;
+  if (!reducedMotion) {
+    cardTransitionActive = true;
+    nextButton.disabled = true;
+    card.setAttribute("aria-busy", "true");
+    inner.addEventListener("transitionend", onTransitionEnd);
+    // transitionend may not fire if the browser suspends motion or the tab.
+    timeout = setTimeout(complete, 800);
+  }
+  card.classList.toggle("is-revealed", showFollowUp);
+  if (reducedMotion) complete();
 }
 
 function renderFinish() {
@@ -252,10 +316,6 @@ function renderFinish() {
 }
 
 function render() {
-  if (series.adultOnly && !adultConfirmed()) {
-    renderAdultsGate();
-    return;
-  }
   if (loadState === "unpublished") {
     renderUnpublished();
     return;
@@ -315,17 +375,10 @@ async function loadQuestions() {
   }
 }
 
-app.addEventListener("change", (event) => {
-  const input = event.target.closest("input[data-adult-check]");
-  if (!input) return;
-  adultGateChecks[input.dataset.adultCheck] = input.checked;
-  renderAdultsGate();
-});
-
 app.addEventListener("click", (event) => {
   const button = event.target.closest("button");
   if (!button || button.disabled) return;
-  if (button.dataset.adultCheck) return;
+  if (cardTransitionActive && ["reveal", "next"].includes(button.dataset.action)) return;
 
   if (button.dataset.intensity) {
     selectedIntensity = button.dataset.intensity;
@@ -340,34 +393,24 @@ app.addEventListener("click", (event) => {
     return;
   }
   switch (button.dataset.action) {
-    case "accept-adults": {
-      if (!adultGateChecks.age || !adultGateChecks.notice) return;
-      adultConfirmedThisPage = true;
-      try {
-        sessionStorage.setItem("omoi-for-adults-confirmed", "yes");
-      } catch {
-        // Age confirmation remains in this page's memory for browsers with blocked storage.
-      }
-      render();
-      break;
-    }
     case "start":
     case "again":
-      if (startSession()) render();
+      if (startSession()) {
+        render();
+        focusQuestion();
+      }
       break;
     case "reveal":
-      revealed = true;
       setQuestionSide(true);
-      app.querySelector('[data-action="next"]')?.focus();
       break;
     case "next":
-    case "skip":
       if (drawNextQuestion()) {
         render();
-        app.querySelector('[data-action="skip"]')?.focus();
+        focusQuestion();
       }
       break;
     case "finish":
+      finishCardFlip?.(false);
       sessionActive = false;
       sessionFinished = true;
       revealed = false;
@@ -382,5 +425,6 @@ app.addEventListener("click", (event) => {
   }
 });
 
+window.addEventListener("resize", updateCardOverflow);
 render();
 loadQuestions();

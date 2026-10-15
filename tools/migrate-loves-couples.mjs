@@ -20,7 +20,7 @@
  *   node tools/migrate-loves-couples.mjs <cards.ts へのパス> --canonical
  *
  * 出力: shared/questions/couples.json
- *   - 既定: リリース用データ(個人的な1問と長大な2問を除外し、編集質問3問で置換)
+ *   - 既定: リリース用データ(対象限定・重複質問を除き、必要な設問を編集して置換)
  *   - --canonical: 元データ701問を抽出検証するが、公開JSONは変更しない
  *   - テンプレート生成カードは対象外
  */
@@ -29,39 +29,13 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { curateCouplesQuestions } from "./couples-release-policy.mjs";
 
 const CANONICAL_SHA256 = "8157d9f273edf58dd011db8627c16dd110a49d81e76577672502dc4cd47bfc57";
 const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
 const CANONICAL_PATH = "Loveds/web/src/data/cards.ts";
 const EXPECTED_TOTAL = 701;
 const EXPECTED_PER_LEVEL = { 1: 167, 2: 169, 3: 167, 4: 198 };
-const RELEASE_EXCLUDED_IDS = new Set(["love-1-3", "ethics-max-4-14", "ethics-max-4-15"]);
-const RELEASE_REPLACEMENTS = new Map([
-  ["love-1-3", {
-    id: "editorial-couples-1-1",
-    audience: "couples",
-    level: 1,
-    text: "好きな人には、言葉で気持ちを伝えたい？態度で伝われば十分？",
-    category: "romance",
-    source: "editorial",
-  }],
-  ["ethics-max-4-14", {
-    id: "editorial-couples-4-2",
-    audience: "couples",
-    level: 4,
-    text: "自分にしつこく関わってきたり、事実ではない噂を流したりする人がいる。\n相手にも事情があると分かっていても、自分が傷つけられていいわけではない。\nあなたなら、相手の背景を考えて我慢する？\nはっきりやめてと伝える？\n信頼できる人に相談する？",
-    category: "ethicsMax",
-    source: "editorial",
-  }],
-  ["ethics-max-4-15", {
-    id: "editorial-couples-4-3",
-    audience: "couples",
-    level: 4,
-    text: "仲のいい友達が、別の人を傷つけるような冗談や悪口を言っていた。\n注意すれば関係が悪くなるかもしれない。\n黙っていれば、傷ついている人を見捨てるかもしれない。\nあなたなら、まず何をする？",
-    category: "ethicsMax",
-    source: "editorial",
-  }],
-]);
 
 const toolsDir = dirname(fileURLToPath(import.meta.url));
 const outputPath = resolve(toolsDir, "../shared/questions/couples.json");
@@ -152,7 +126,7 @@ for (const level of [1, 2, 3, 4]) {
 
 // ---- 3. Omoi for Couples 形式へ正規化 --------------------------------------
 // 契約フィールド: id / audience / level / text (+category)
-// - id       : Loves 元 ID をそのまま採用(トレーサビリティ)
+// - id       : Loves 元 IDを維持するか、編集置換には新しい editorial IDを付ける
 // - level    : 元 Level を凍結(表示名のみ別途 ForSeriesLevel として定義)
 // - text     : --canonicalではデコード済みランタイム値を逐語出力(改変禁止)
 // - category : 元カテゴリキー(表示ラベルは app.js 側で復元)
@@ -166,15 +140,7 @@ const canonical = cards.map((card) => ({
   source: "loves",
 }));
 
-const release = canonical.filter((card) => !RELEASE_EXCLUDED_IDS.has(card.id));
-for (const [excludedId, replacement] of RELEASE_REPLACEMENTS) {
-  const insertionIndex = cards.findIndex((card) => card.id === excludedId);
-  if (insertionIndex === -1) {
-    console.error(`[中断] リリース置換対象が見つかりません: ${excludedId}`);
-    process.exit(1);
-  }
-  release.splice(insertionIndex, 0, replacement);
-}
+const release = curateCouplesQuestions(canonical);
 
 if (outputMode === "--canonical") {
   console.log(`\ncanonical抽出: ${canonical.length} 問。公開JSONは変更していません。`);
@@ -183,5 +149,9 @@ if (outputMode === "--canonical") {
 
 writeFileSync(outputPath, `${JSON.stringify(release, null, 2)}\n`, "utf8");
 console.log(`\n出力: ${outputPath} (${release.length} 問, --release)`);
-  console.log("リリース監査: Loves 698問 + 編集質問3問。個人的なカードと長大なシナリオ2問を置換しました。");
+const sourceCounts = release.reduce((counts, card) => {
+  counts[card.source] = (counts[card.source] || 0) + 1;
+  return counts;
+}, {});
+console.log(`リリース監査: Loves ${sourceCounts.loves || 0}問 + 編集 ${sourceCounts.editorial || 0}問。学校前提のカテゴリ、対象限定の質問、重複を除外または一般化しました。`);
 console.log("完了。次に tools/verify-couples-dataset.mjs で検証してください。");

@@ -2,7 +2,7 @@
 /**
  * Omoi for 5シリーズの公開用JSONと、新シリーズの未公開ゲートを検証する。
  * Couplesの正本一致は verify-couples-dataset.mjs が担当し、
- * 既存3シリーズの件数・スキーマ・ID・重複を維持し、新2シリーズのスキーマ、
+ * 公開3シリーズの件数・スキーマ・ID・重複を確認し、新2シリーズのスキーマ、
  * レビュー状態、公開マニフェストとの一致を確認する。
  */
 
@@ -13,9 +13,9 @@ import { textSimilarity } from "./validate-grok-questions.mjs";
 
 const root = resolve(fileURLToPath(import.meta.url), "../..");
 const expected = {
-  couples: { total: 701, sourceCounts: { loves: 698, editorial: 3 } },
-  family: { total: 200, sourceCounts: { editorial: 200 } },
-  friends: { total: 200, sourceCounts: { editorial: 200 } },
+  couples: { total: 477, sourceCounts: { loves: 443, editorial: 34 } },
+  family: { total: 166, sourceCounts: { editorial: 166 } },
+  friends: { total: 177, sourceCounts: { editorial: 177 } },
 };
 const newSeries = ["adults", "self-care"];
 const failures = [];
