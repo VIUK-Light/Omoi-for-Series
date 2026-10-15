@@ -56,6 +56,23 @@ test("a depleted pool rolls over without repeating the immediately previous card
   assert.notEqual(second.questions[0].id, [...first.usedIds].at(-1));
 });
 
+test("one-question draws continue without a session limit and avoid adjacent repeats", () => {
+  const pool = Array.from({ length: 4 }, (_, index) => ({ id: `q${index + 1}` }));
+  let usedIds = new Set();
+  let previousId = null;
+  const drawn = [];
+  for (let index = 0; index < 12; index += 1) {
+    const result = chooseSessionQuestions(pool, 1, usedIds, fixedRandom);
+    assert.equal(result.questions.length, 1);
+    const nextId = result.questions[0].id;
+    if (previousId) assert.notEqual(nextId, previousId);
+    drawn.push(nextId);
+    previousId = nextId;
+    usedIds = result.usedIds;
+  }
+  assert.equal(drawn.length, 12);
+});
+
 test("skip and next advance to the next card and stop at the session end", () => {
   assert.equal(nextQuestionIndex(0, 3), 1);
   assert.equal(nextQuestionIndex(2, 3), 3);

@@ -63,13 +63,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .choice-card.is-selected .choice-copy small { color: rgba(255, 255, 255, .82); }
 .choice-mark { border: 1.5px solid currentColor; border-radius: 50%; flex: 0 0 18px; height: 18px; margin-left: 16px; width: 18px; }
 .choice-card.is-selected .choice-mark { background: #fff; border: 5px solid var(--accent); outline: 1.5px solid #fff; }
-.count-list { display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr); }
-.count-list .choice-card { justify-content: center; min-height: 54px; padding: 12px 8px; text-align: center; }
-.count-list .choice-copy { display: block; }
-.count-list .choice-mark { display: none; }
 .selection-actions { display: flex; justify-content: flex-end; margin-top: 32px; }
 .selection-note { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 18px 0 0; }
-.level-warning { background: var(--accent-soft); color: #6f5b50; font-size: 12px; line-height: 1.65; margin: 22px 0 0; padding: 12px 14px; }
+.safety-note { background: var(--accent-soft); color: #6f5b50; font-size: 12px; line-height: 1.65; margin: 22px 0 0; padding: 12px 14px; }
 .error-message { color: #9a3e2c; font-size: 13px; line-height: 1.6; margin-top: 24px; }
 .error-message p { margin: 0 0 4px; }
 .error-message .text-button { color: inherit; text-decoration: underline; }
@@ -80,13 +76,14 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .question-screen { display: flex; flex-direction: column; min-height: 600px; }
 .question-header { align-items: flex-start; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 36px 0 16px; }
 .section-label { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .08em; margin: 0 0 5px; text-transform: uppercase; }
-.level-name, .progress { color: var(--muted); font-size: 13px; margin: 0; }
+.progress { color: var(--muted); font-size: 13px; margin: 0; }
 .progress { padding-top: 2px; }
 .question-content, .empty-question { align-items: center; display: flex; flex: 1; flex-direction: column; justify-content: center; min-height: 350px; text-align: center; }
 .question-text { font-size: clamp(29px, 5vw, 48px); font-weight: 600; letter-spacing: -.07em; line-height: 1.45; margin: 0; max-width: 620px; white-space: pre-line; }
 .question-category { color: var(--accent); font-size: 12px; letter-spacing: .08em; margin: 28px 0 0; }
 .question-actions { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; margin: 24px auto 0; width: min(100%, 520px); }
 .primary-button, .secondary-button { border-radius: 9px; cursor: pointer; font-size: 14px; min-height: 48px; padding: 12px 20px; }
+.secondary-button { align-items: center; display: inline-flex; justify-content: center; text-decoration: none; }
 .primary-button { background: var(--accent); border: 1px solid var(--accent); color: #fff; }
 .primary-button:hover:not(:disabled) { filter: brightness(.94); }
 .primary-button:disabled { background: #dedbd6; border-color: #dedbd6; cursor: not-allowed; }
@@ -120,13 +117,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .howto-steps { border-top: 1px solid var(--line); list-style: none; margin: 56px 0 0; padding: 0; }
 .howto-step { border-bottom: 1px solid var(--line); display: grid; gap: 18px; grid-template-columns: 42px 1fr; padding: 24px 0; }
 .step-index { color: var(--accent); font-size: 12px; letter-spacing: .06em; padding-top: 3px; }
-.howto-step h2, .howto-levels h2 { font-size: 16px; font-weight: 700; margin: 0; }
+.howto-step h2 { font-size: 16px; font-weight: 700; margin: 0; }
 .howto-step p { color: var(--muted); font-size: 13px; line-height: 1.75; margin: 8px 0 0; }
-.howto-levels { margin-top: 64px; }
-.level-guide { border-top: 1px solid var(--line); margin: 20px 0 0; }
-.level-guide > div { border-bottom: 1px solid var(--line); display: grid; gap: 18px; grid-template-columns: 190px 1fr; padding: 17px 0; }
-.level-guide dt { font-size: 13px; font-weight: 700; }
-.level-guide dd { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0; }
 .howto-note { background: var(--accent-soft); margin-top: 48px; padding: 16px 18px; }
 .howto-note strong { font-size: 14px; }
 .howto-note p { color: #6f5b50; font-size: 13px; line-height: 1.7; margin: 7px 0 0; }
@@ -147,13 +139,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   border: 4px solid #fff;
   outline: 1px solid var(--accent);
 }
-.choice-card.is-compact { min-height: 48px; }
-.setup-copy { color: var(--muted); font-size: 13px; line-height: 1.75; margin: 18px 0 0; }
-.count-section { margin-top: 44px; }
-.legacy-mode-note { margin-top: 18px; }
 .selection-note { color: var(--muted); }
 .preview-banner { background: var(--accent-soft); color: var(--accent); font-size: 11px; letter-spacing: .03em; margin: 0 0 18px; padding: 7px 10px; width: fit-content; }
-.skip-note { margin: 13px auto 0; max-width: 520px; text-align: center; }
 
 .age-gate .age-notice, .howto-age-notice {
   background: var(--accent-soft);
@@ -194,9 +181,14 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   display: grid;
   min-height: 390px;
   transform-style: preserve-3d;
-  transition: transform 260ms cubic-bezier(.2,.72,.25,1);
+  transition: transform 460ms cubic-bezier(.22,.72,.2,1);
 }
 .question-card.is-revealed .question-card-inner { transform: rotateY(180deg); }
+.question-card.is-entering { animation: card-enter 320ms cubic-bezier(.2,.72,.25,1) both; }
+@keyframes card-enter {
+  from { opacity: 0; transform: translateY(16px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
 .question-card-face {
   align-items: center;
   backface-visibility: hidden;
@@ -235,7 +227,6 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .question-actions { margin: 24px auto 0; }
 .question-actions .primary-button, .question-actions .secondary-button { min-height: 50px; }
 .question-screen > .question-card { flex: 1; }
-.question-screen > .skip-note { flex: none; }
 .howto-page .age-notice { margin-bottom: 36px; }
 .howto-content .age-notice p + p { margin-top: 9px; }
 
@@ -248,7 +239,6 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .content-column { padding: 68px 0 80px; }
   .page-intro, .hub-lead { font-size: 15px; }
   .selection-section { margin-top: 42px; }
-  .count-list { grid-template-columns: repeat(2, 1fr); }
   .selection-actions { margin-top: 26px; }
   .selection-actions .primary-button { width: 100%; }
   .question-screen { min-height: 520px; }
@@ -259,9 +249,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .finish-content { padding: 64px 0; }
   .header-actions { gap: 12px; }
   .howto-content { padding: 68px 0 80px; }
-  .level-guide > div { gap: 8px; grid-template-columns: 1fr; }
   .choice-pair { grid-template-columns: 1fr; }
-  .count-section { margin-top: 38px; }
   .age-gate .selection-actions .primary-button { width: 100%; }
   .question-screen { min-height: calc(100svh - 100px); }
   .question-screen .question-header { padding-top: 24px; }
@@ -273,4 +261,134 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .follow-up-text { font-size: clamp(24px, 7.2vw, 32px); line-height: 1.6; }
   .question-actions { grid-template-columns: 1fr 1fr; }
   .question-actions .primary-button, .question-actions .secondary-button { padding: 11px 10px; }
+}
+
+/* Cleaner two-choice setup shared across all five series. */
+.selection-content {
+  max-width: 680px;
+  padding: 58px 0 74px;
+}
+.selection-content .page-title {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: clamp(38px, 6vw, 54px);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.32;
+}
+.selection-content .page-intro {
+  color: #68615e;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-top: 12px;
+  max-width: 520px;
+}
+.selection-section { margin-top: 38px; }
+.selection-section h2 {
+  align-items: center;
+  display: flex;
+  gap: 11px;
+  margin-bottom: 14px;
+}
+.mode-index {
+  align-items: center;
+  background: #252026;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 25px;
+  font-size: 10px;
+  height: 25px;
+  justify-content: center;
+  letter-spacing: 0;
+}
+.choice-pair { gap: 12px; }
+.choice-pair .choice-card {
+  align-items: flex-start;
+  border-color: #d9d4d1;
+  border-radius: 9px;
+  justify-content: center;
+  min-height: 124px;
+  padding: 24px;
+  position: relative;
+  text-align: left;
+  transform: translateY(0);
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
+}
+.choice-pair .choice-card:hover:not(:disabled) { transform: translateY(-2px); }
+.choice-pair .choice-copy { gap: 8px; padding-right: 18px; }
+.choice-pair .choice-copy strong { font-size: 20px; letter-spacing: -.02em; }
+.choice-pair .choice-copy small { font-size: 13px; line-height: 1.55; }
+.choice-pair .choice-mark { margin: 0; position: absolute; right: 20px; top: 20px; }
+.choice-pair .choice-card.is-selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 5px 16px rgba(37,29,25,.12);
+  color: #fff;
+}
+.choice-pair .choice-card.is-selected .choice-copy small { color: rgba(255,255,255,.86); }
+.choice-pair .choice-card.is-selected .choice-mark {
+  background: #fff;
+  border: 5px solid var(--accent);
+  outline: 1px solid rgba(255,255,255,.9);
+}
+.choice-pair .choice-card[data-style].is-selected { background: #62525f; border-color: #62525f; }
+.choice-pair .choice-card[data-style].is-selected .choice-mark { border-color: #62525f; }
+.selection-actions { justify-content: flex-start; margin-top: 34px; }
+.selection-actions > .primary-button {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 650;
+  gap: 12px;
+  justify-content: center;
+  letter-spacing: .02em;
+  min-height: 60px;
+  width: 100%;
+}
+.selection-actions > .primary-button svg { height: 20px; width: 20px; }
+.question-header { align-items: center; border-bottom: 0; padding: 24px 0 12px; }
+.header-actions { flex-wrap: wrap; gap: 5px 14px; justify-content: flex-end; }
+.header-actions .text-button { white-space: nowrap; }
+.header-actions [data-action="finish"] { color: var(--accent); font-weight: 650; }
+.question-card { isolation: isolate; margin: 12px auto 18px; position: relative; }
+.question-card::before {
+  background: #fff;
+  border: 1px solid #ebe6e3;
+  border-radius: 22px;
+  content: "";
+  inset: 8px 13px -8px;
+  position: absolute;
+  z-index: -1;
+}
+.question-card-face { border-radius: 16px; }
+.question-card-face::after {
+  border: 1px solid rgba(80,68,62,.08);
+  border-radius: 10px;
+  content: "";
+  inset: 12px;
+  pointer-events: none;
+  position: absolute;
+}
+.question-card-back .card-face-content { border-radius: 10px; max-width: 490px; padding: 25px clamp(20px, 5vw, 38px); }
+.card-series-name { font-size: 13px; letter-spacing: .01em; }
+.question-actions { align-items: center; display: flex; gap: 20px; justify-content: center; }
+.question-actions .secondary-button { background: transparent; border: 0; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.question-actions .primary-button { border-radius: 999px; min-width: 178px; }
+@media (prefers-reduced-motion: reduce) { .question-card.is-entering { animation: none !important; } }
+
+@media (max-width: 640px) {
+  .selection-content { padding: 48px 0 64px; }
+  .selection-content .page-title { font-size: clamp(33px, 8vw, 42px); }
+  .selection-section { margin-top: 33px; }
+  .choice-pair .choice-card { min-height: 86px; padding: 18px 20px; }
+  .choice-pair .choice-mark { right: 17px; top: 17px; }
+  .selection-actions { margin-top: 29px; }
+  .selection-actions > .primary-button { min-height: 56px; }
+  .question-card { margin-top: 10px; }
+  .question-card::before { inset: 7px 9px -7px; }
+  .question-card-face { border-radius: 14px; }
+  .question-card-face::after { inset: 9px; }
+  .question-actions { gap: 8px; }
+  .header-actions { gap: 4px 10px; max-width: 220px; }
 }

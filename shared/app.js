@@ -3,10 +3,9 @@ import {
   filterQuestions,
   followUpForQuestion,
   isDevelopmentHost,
-  nextQuestionIndex,
 } from "./question-engine.mjs";
 
-// Omoi for Series 専用の共通UI。既存「Omoi」のデータやLevel定義は読み込みません。
+// Omoi for Series専用の共通UI。既存「Omoi」のデータや質問定義は読み込みません。
 const audience = document.body.dataset.audience;
 const app = document.querySelector("#take-for-app");
 if (!audience || !app) throw new Error("Omoi for Series のシリーズIDまたは画面要素がありません。");
@@ -15,57 +14,50 @@ const series = {
   couples: {
     target: "Couples",
     title: "Omoi for Couples",
-    subtitle: "ふたりの距離を、少しずつ近づける",
-    setupCopy: "ふたりで話すテーマと、話し方を選びます。",
+    setupHeading: "ふたりを、もう少し知る",
+    setupCopy: "ふたりで、話したいテーマを選びます。",
     solo: false,
   },
   family: {
     target: "Family",
     title: "Omoi for Family",
-    subtitle: "家族のことを、あらためて知る",
-    setupCopy: "家族で話すテーマと、話し方を選びます。",
+    setupHeading: "家族のことを、少し知る",
+    setupCopy: "家族で、話したいテーマを選びます。",
     solo: false,
   },
   friends: {
     target: "Friends",
     title: "Omoi for Friends",
-    subtitle: "友だちと、まだ知らない話をする",
-    setupCopy: "友だちと話すテーマと、話し方を選びます。",
+    setupHeading: "友だちのことを、少し知る",
+    setupCopy: "友だちと、話したいテーマを選びます。",
     solo: false,
   },
   adults: {
     target: "Adults",
     title: "Omoi for Adults",
-    subtitle: "親密さや関係について、自分たちのペースで話す",
-    setupCopy: "18歳以上の方が、同意とお互いの境界を尊重して使う質問カードです。",
+    setupHeading: "親密さについて、話す",
+    setupCopy: "18歳以上の方が、互いの同意を尊重して使うカードです。",
     solo: false,
     adultOnly: true,
   },
   "self-care": {
     target: "Self-Care",
     title: "Omoi for Self-Care",
-    subtitle: "自分の気持ちを、自分のペースで見つめる",
-    setupCopy: "ひとりで静かに振り返る時間をつくります。答えは入力・保存せず、頭の中で考えるだけでも使えます。",
+    setupHeading: "自分の声に、耳を傾ける",
+    setupCopy: "ひとりで使います。答えは書かずに、心の中で考えるだけで大丈夫です。",
     solo: true,
   },
 }[audience];
 if (!series) throw new Error(`未対応のOmoi for Seriesです: ${audience}`);
 
-const levels = [
-  { value: 1, name: "軽い話", description: "気軽に答えられる日常の話題" },
-  { value: 2, name: "本音", description: "考えや気持ちを知る" },
-  { value: 3, name: "少し深い話", description: "気持ちや関係、価値観の話" },
-  { value: 4, name: "デリケートな話", description: "ふだんは言いにくい本音" },
-];
 const intensities = [
-  { value: "lite", name: "Lite", description: "やさしく、気軽に考えられる内容" },
-  { value: "deep", name: "Deep", description: "より個人的なテーマに向き合う内容" },
+  { value: "lite", name: "Lite", description: "気軽に話せる、やさしい問い" },
+  { value: "deep", name: "Deep", description: "気持ちや価値観に触れる問い" },
 ];
 const conversationStyles = [
-  { value: "normal", name: "通常", description: "メインの質問を表示します" },
-  { value: "deep-dive", name: "深掘り", description: "質問カードをめくって追加の問いを見ます" },
+  { value: "normal", name: "通常", description: "メインの問いを表示" },
+  { value: "deep-dive", name: "深掘り", description: "カードをめくって、もう一つの問いへ" },
 ];
-const questionCounts = [3, 5, 10, 15];
 const categoryLabels = {
   values: "価値観", romance: "恋愛", spicy: "いろいろ", daily: "日常", date: "デート",
   schoolLife: "学校", schoolSelf: "自分", studyFuture: "努力・将来", friendship: "友達",
@@ -86,11 +78,12 @@ const categoryLabels = {
 let questions = [];
 let selectedIntensity = "lite";
 let selectedStyle = "normal";
-let selectedLevel = null;
-let selectedCount = 3;
-let sessionQuestions = [];
-let currentIndex = 0;
+let currentQuestion = null;
+let questionsAsked = 0;
+let sessionActive = false;
+let sessionFinished = false;
 let revealed = false;
+let cardNeedsEntrance = false;
 let loadState = "loading";
 let loadError = "";
 let developmentPreviewActive = false;
@@ -102,9 +95,7 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => (
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
 }[character]));
 const brandMarkup = () => `<span class="brand-prefix">Omoi for</span> <span class="brand-target">${escapeHtml(series.target)}</span>`;
-const selectedLevelMeta = () => levels.find((level) => level.value === selectedLevel);
-const selectedPool = () => filterQuestions(questions, { intensity: selectedIntensity, level: selectedLevel });
-const poolForLevel = (level) => filterQuestions(questions, { intensity: selectedIntensity, level });
+const selectedPool = () => filterQuestions(questions, { intensity: selectedIntensity });
 const categoryLabel = (category) => categoryLabels[category] || category;
 
 function adultConfirmed() {
@@ -119,43 +110,61 @@ function adultConfirmed() {
 }
 
 function resetSession(clearHistory = false) {
-  sessionQuestions = [];
-  currentIndex = 0;
+  currentQuestion = null;
+  questionsAsked = 0;
+  sessionActive = false;
+  sessionFinished = false;
   revealed = false;
+  cardNeedsEntrance = false;
   if (clearHistory) usedByPool.clear();
 }
 
 function startSession() {
   const pool = selectedPool();
-  if (!pool.length || !selectedCount) return false;
-  const historyKey = `${selectedIntensity}:${selectedLevel}`;
+  if (!pool.length) return false;
+  const historyKey = selectedIntensity;
   const previousIds = usedByPool.get(historyKey) || new Set();
-  const selection = chooseSessionQuestions(pool, selectedCount, previousIds);
+  const selection = chooseSessionQuestions(pool, 1, previousIds);
   if (!selection.questions.length) return false;
-  sessionQuestions = selection.questions;
+  currentQuestion = selection.questions[0];
+  questionsAsked = 1;
+  sessionActive = true;
+  sessionFinished = false;
   usedByPool.set(historyKey, selection.usedIds);
-  currentIndex = 0;
   revealed = false;
+  cardNeedsEntrance = true;
   return true;
 }
 
-function header({ backToSetup = false } = {}) {
-  const backButton = backToSetup
-    ? '<button class="text-button" data-action="setup" type="button">設定を変える</button>'
+function drawNextQuestion() {
+  const pool = selectedPool();
+  if (!pool.length) return false;
+  const historyKey = selectedIntensity;
+  const previousIds = usedByPool.get(historyKey) || new Set();
+  const selection = chooseSessionQuestions(pool, 1, previousIds);
+  if (!selection.questions.length) return false;
+  currentQuestion = selection.questions[0];
+  questionsAsked += 1;
+  usedByPool.set(historyKey, selection.usedIds);
+  revealed = false;
+  cardNeedsEntrance = true;
+  return true;
+}
+
+function header({ canFinish = false } = {}) {
+  const finishButton = canFinish
+    ? '<button class="text-button" data-action="finish" type="button">今日はここまで</button>'
     : "";
-  return `<header class="site-header"><a class="wordmark" href="../">${brandMarkup()}</a><span class="header-actions"><a class="text-button text-link" href="howto.html">使い方</a>${backButton}</span></header>`;
+  return `<header class="site-header"><a class="wordmark" href="../">${brandMarkup()}</a><span class="header-actions"><a class="text-button text-link" href="howto.html">使い方</a>${finishButton}</span></header>`;
 }
 
 function footer() {
   return '<footer class="site-footer"><a class="footer-official" href="https://viuk-light.org/" target="_blank" rel="noopener noreferrer">VIUK-Light</a></footer>';
 }
 
-function choiceButton({ group, value, label, description, selected, disabled = false, compact = false }) {
-  const dataAttribute = group === "level" ? `data-level="${value}"`
-    : group === "count" ? `data-count="${value}"`
-      : group === "intensity" ? `data-intensity="${value}"`
-        : `data-style="${value}"`;
-  return `<button class="choice-card${compact ? " is-compact" : ""}${selected ? " is-selected" : ""}" ${dataAttribute} type="button" aria-pressed="${selected}" ${disabled ? "disabled" : ""}><span class="choice-copy"><strong>${escapeHtml(label)}</strong>${description ? `<small>${escapeHtml(description)}</small>` : ""}</span><span class="choice-mark" aria-hidden="true"></span></button>`;
+function choiceButton({ group, value, label, description, selected }) {
+  const dataAttribute = group === "intensity" ? `data-intensity="${value}"` : `data-style="${value}"`;
+  return `<button class="choice-card${selected ? " is-selected" : ""}" ${dataAttribute} type="button" aria-pressed="${selected}"><span class="choice-copy"><strong>${escapeHtml(label)}</strong>${description ? `<small>${escapeHtml(description)}</small>` : ""}</span><span class="choice-mark" aria-hidden="true"></span></button>`;
 }
 
 function renderAdultsGate() {
@@ -173,69 +182,39 @@ function renderUnpublished() {
 }
 
 function renderEmptyPreview() {
-  const levelButtons = levels.map((level) => choiceButton({
-    group: "level",
-    value: level.value,
-    label: `Level ${level.value}　${level.name}`,
-    description: level.description,
-    selected: selectedLevel === level.value,
-  })).join("");
-  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content"><h1 class="page-title">${series.solo ? "今の自分に向き合う" : "どんな話をする？"}</h1><p class="page-intro">${escapeHtml(series.setupCopy)}</p>${modeControls()}<section class="selection-section" aria-labelledby="level-heading"><h2 id="level-heading">Level</h2><div class="choice-list" role="group" aria-label="Levelを選択">${levelButtons}</div></section>${countControls()}<p class="selection-note preview-note" role="status">開発プレビューです。質問データはまだありません。質問を表示せず、未公開状態で画面を確認できます。</p></main>${footer()}</div>`;
+  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content"><h1 class="page-title">${escapeHtml(series.setupHeading)}</h1><p class="page-intro">${escapeHtml(series.setupCopy)}</p>${modeControls()}<p class="selection-note preview-note" role="status">開発プレビューです。質問データはまだありません。質問カードは表示しません。</p></main>${footer()}</div>`;
 }
 
 function modeControls() {
-  return `<section class="selection-section" aria-labelledby="intensity-heading"><h2 id="intensity-heading">質問の内容</h2><div class="choice-list choice-pair" role="group" aria-label="質問内容の踏み込み度">${intensities.map((mode) => choiceButton({ group: "intensity", value: mode.value, label: mode.name, description: mode.description, selected: selectedIntensity === mode.value })).join("")}</div></section><section class="selection-section" aria-labelledby="style-heading"><h2 id="style-heading">対話のスタイル</h2><div class="choice-list choice-pair" role="group" aria-label="会話方式">${conversationStyles.map((mode) => choiceButton({ group: "style", value: mode.value, label: mode.name, description: mode.description, selected: selectedStyle === mode.value })).join("")}</div></section>`;
-}
-
-function countControls() {
-  const available = selectedLevel ? selectedPool().length : 0;
-  return `<section class="selection-section count-section" aria-labelledby="count-heading"><h2 id="count-heading">今回は何問？</h2><div class="count-list" role="group" aria-label="質問数">${questionCounts.map((count) => choiceButton({ group: "count", value: count, label: `${count}問`, selected: selectedCount === count, compact: true, disabled: loadState === "ready" && Boolean(selectedLevel) && count > available })).join("")}</div></section>`;
+  return `<section class="selection-section" aria-labelledby="intensity-heading"><h2 id="intensity-heading"><span class="mode-index">01</span>質問の踏み込み度</h2><div class="choice-list choice-pair" role="group" aria-label="質問内容の踏み込み度">${intensities.map((mode) => choiceButton({ group: "intensity", value: mode.value, label: mode.name, description: mode.description, selected: selectedIntensity === mode.value })).join("")}</div></section><section class="selection-section" aria-labelledby="style-heading"><h2 id="style-heading"><span class="mode-index">02</span>会話のスタイル</h2><div class="choice-list choice-pair" role="group" aria-label="会話方式">${conversationStyles.map((mode) => choiceButton({ group: "style", value: mode.value, label: mode.name, description: mode.description, selected: selectedStyle === mode.value })).join("")}</div></section>`;
 }
 
 function renderSelection() {
-  const pool = selectedLevel ? selectedPool() : [];
-  const canStart = loadState === "ready" && Boolean(selectedLevel) && pool.length > 0 && selectedCount <= pool.length;
+  const pool = selectedPool();
+  const canStart = loadState === "ready" && pool.length > 0;
   const loadingNotice = loadState === "loading"
     ? '<p class="selection-note" role="status">質問を読み込んでいます…</p>'
     : loadState === "error"
       ? `<div class="error-message" role="alert"><p>${escapeHtml(loadError)}</p><button class="text-button" data-action="retry" type="button">もう一度読み込む</button></div>`
       : loadState === "empty"
         ? '<p class="selection-note" role="status">このシリーズは質問データがないため、現在利用できません。</p>'
-      : selectedLevel && !pool.length
-        ? '<p class="selection-note" role="status">この内容とLevelの質問は準備中です。</p>'
-        : selectedLevel && selectedCount > pool.length
-          ? `<p class="selection-note" role="status">選択したLevelには${pool.length}問あります。質問数を減らしてください。</p>`
+      : loadState === "ready" && pool.length === 0
+        ? '<p class="selection-note" role="status">質問を準備しています。</p>'
           : "";
-  const legacyModeNote = ["couples", "family", "friends"].includes(audience)
-    ? '<p class="selection-note legacy-mode-note">既存の質問は、Level 1〜2をLite、Level 3〜4をDeepとして選びます。</p>'
-    : "";
   const adultNote = series.adultOnly
-    ? '<aside class="level-warning" role="note">18歳以上向けの質問です。答えたくない質問は飛ばせます。お互いの同意と境界を尊重してください。</aside>'
+    ? '<aside class="safety-note" role="note">18歳以上向けです。答えたくない質問は飛ばせます。お互いの同意と境界を尊重してください。</aside>'
     : "";
-  const levelButtons = levels.map((level) => {
-    const levelPool = poolForLevel(level.value);
-    return choiceButton({
-      group: "level",
-      value: level.value,
-      label: `Level ${level.value}　${level.name}`,
-      description: `${level.description} · ${levelPool.length}問`,
-      selected: selectedLevel === level.value,
-      disabled: loadState === "ready" && levelPool.length === 0,
-    });
-  }).join("");
-  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content">${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}<h1 class="page-title">${series.solo ? "今の自分に向き合う" : "どんな話をする？"}</h1><p class="page-intro">${escapeHtml(series.subtitle)}</p><p class="setup-copy">${escapeHtml(series.setupCopy)}</p>${modeControls()}${legacyModeNote}<section class="selection-section" aria-labelledby="level-heading"><h2 id="level-heading">Level</h2><div class="choice-list" role="group" aria-label="Levelを選択">${levelButtons}</div></section>${countControls()}<div class="selection-actions"><button class="primary-button" data-action="start" type="button" ${canStart ? "" : "disabled"}>はじめる</button></div>${adultNote}${loadingNotice}</main>${footer()}</div>`;
+  app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content">${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}<h1 class="page-title">${escapeHtml(series.setupHeading)}</h1><p class="page-intro">${escapeHtml(series.setupCopy)}</p>${modeControls()}<div class="selection-actions"><button class="primary-button" data-action="start" type="button" ${canStart ? "" : "disabled"}>質問カードをはじめる <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg></button></div>${adultNote}${loadingNotice}</main>${footer()}</div>`;
 }
 
 function renderQuestion() {
-  const question = sessionQuestions[currentIndex];
+  const question = currentQuestion;
   if (!question) {
     resetSession();
     renderSelection();
     return;
   }
-  const levelMeta = selectedLevelMeta();
   const followUp = followUpForQuestion(question, audience);
-  const lastQuestion = currentIndex === sessionQuestions.length - 1;
   const questionCategory = question.category
     ? `<p class="question-category">${escapeHtml(categoryLabel(question.category))}</p>`
     : "";
@@ -245,13 +224,31 @@ function renderQuestion() {
   const cardLabel = `${question.text}${revealed ? `。深掘り質問: ${followUp}` : ""}`;
   const revealAction = selectedStyle === "deep-dive" && !revealed;
   const mainAction = revealAction ? "reveal" : "next";
-  const mainLabel = revealAction ? "深掘りを見る" : lastQuestion ? "終わる" : "次の質問";
-  app.innerHTML = `<div class="site-shell"><div class="question-screen">${header({ backToSetup: true })}${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}<div class="question-header"><div><p class="section-label">${selectedIntensity === "lite" ? "Lite" : "Deep"} · ${selectedStyle === "normal" ? "通常" : "深掘り"}</p><p class="level-name">Level ${selectedLevel}　${escapeHtml(levelMeta?.name || "")}</p></div><p class="progress" aria-label="質問 ${currentIndex + 1} / ${sessionQuestions.length}">質問 ${currentIndex + 1} / ${sessionQuestions.length}</p></div><article class="question-card${revealed ? " is-revealed" : ""}" aria-live="polite" aria-label="${escapeHtml(cardLabel)}"><div class="question-card-inner"><section class="question-card-face question-card-front" aria-label="メインの質問" aria-hidden="${revealed}"><div class="card-face-content"><p class="card-series-name">${brandMarkup()}</p>${questionCategory}<h1 class="question-text">${escapeHtml(question.text)}</h1>${noteTags}</div></section><section class="question-card-face question-card-back" aria-label="深掘り質問" aria-hidden="${!revealed}"><div class="card-face-content"><p class="section-label">もう少し話してみる</p><h2 class="follow-up-text">${escapeHtml(followUp)}</h2>${noteTags}</div></section></div></article><div class="question-actions"><button class="secondary-button" data-action="skip" type="button">今回は話さない</button><button class="primary-button" data-action="${mainAction}" type="button">${mainLabel}</button></div><p class="selection-note skip-note">答えを入力・保存する必要はありません。いつでも飛ばしたり、終わったりできます。</p></div>${footer()}</div>`;
+  const enterClass = cardNeedsEntrance ? " is-entering" : "";
+  cardNeedsEntrance = false;
+  const skipLabel = series.solo ? "今回は飛ばす" : "今回は話さない";
+  app.innerHTML = `<div class="site-shell"><div class="question-screen">${header({ canFinish: true })}${developmentPreviewActive ? '<p class="preview-banner">開発プレビュー · 未公開</p>' : ""}<div class="question-header"><p class="progress" aria-label="質問 ${questionsAsked}問目">質問 ${questionsAsked}</p></div><article class="question-card${enterClass}" aria-live="polite" aria-label="${escapeHtml(cardLabel)}"><div class="question-card-inner"><section class="question-card-face question-card-front" aria-label="メインの質問" aria-hidden="false"><div class="card-face-content"><p class="card-series-name">${brandMarkup()}</p>${questionCategory}<h1 class="question-text">${escapeHtml(question.text)}</h1>${noteTags}</div></section><section class="question-card-face question-card-back" aria-label="深掘り質問" aria-hidden="true"><div class="card-face-content"><p class="section-label">もう少し話してみる</p><h2 class="follow-up-text">${escapeHtml(followUp)}</h2>${noteTags}</div></section></div></article><div class="question-actions"><button class="secondary-button" data-action="skip" type="button">${skipLabel}</button><button class="primary-button" data-action="${mainAction}" type="button">次へ</button></div></div>${footer()}</div>`;
+}
+
+function setQuestionSide(showFollowUp) {
+  const card = app.querySelector(".question-card");
+  const front = app.querySelector(".question-card-front");
+  const back = app.querySelector(".question-card-back");
+  if (!card || !front || !back) return;
+  card.classList.toggle("is-revealed", showFollowUp);
+  front.setAttribute("aria-hidden", String(showFollowUp));
+  back.setAttribute("aria-hidden", String(!showFollowUp));
+  const nextButton = app.querySelector(".question-actions .primary-button");
+  if (nextButton) nextButton.dataset.action = showFollowUp ? "next" : selectedStyle === "deep-dive" ? "reveal" : "next";
+  const question = currentQuestion;
+  const followUp = followUpForQuestion(question, audience);
+  card.setAttribute("aria-label", `${question.text}${showFollowUp ? `。深掘り質問: ${followUp}` : ""}`);
 }
 
 function renderFinish() {
-  const levelMeta = selectedLevelMeta();
-  app.innerHTML = `<div class="site-shell"><div class="finish-screen">${header()}<main class="finish-content"><p class="section-label">${escapeHtml(series.title)}</p><h1 class="page-title">おつかれさま</h1><p class="page-intro">${sessionQuestions.length}問、向き合いました。</p><p class="supporting-copy">${escapeHtml(levelMeta?.name || "")}の時間を、ありがとうございました。</p><div class="finish-actions"><button class="primary-button" data-action="again" type="button">もう一度</button><button class="secondary-button" data-action="setup" type="button">設定を選び直す</button></div></main></div>${footer()}</div>`;
+  const finishCopy = series.solo ? `${questionsAsked}問を振り返りました。` : `${questionsAsked}問、話しました。`;
+  const supportingCopy = series.solo ? "自分のペースで、いつでもまた始められます。" : "お互いのペースを大切にしてください。";
+  app.innerHTML = `<div class="site-shell"><div class="finish-screen">${header()}<main class="finish-content"><p class="section-label">${escapeHtml(series.title)}</p><h1 class="page-title">おつかれさま</h1><p class="page-intro">${finishCopy}</p><p class="supporting-copy">${supportingCopy}</p><div class="finish-actions"><button class="primary-button" data-action="again" type="button">もう一度</button><a class="secondary-button" href="../">シリーズ一覧へ</a></div></main></div>${footer()}</div>`;
 }
 
 function render() {
@@ -267,12 +264,12 @@ function render() {
     renderEmptyPreview();
     return;
   }
-  if (sessionQuestions.length && currentIndex < sessionQuestions.length) {
-    renderQuestion();
+  if (sessionFinished) {
+    renderFinish();
     return;
   }
-  if (sessionQuestions.length && currentIndex >= sessionQuestions.length) {
-    renderFinish();
+  if (sessionActive) {
+    renderQuestion();
     return;
   }
   renderSelection();
@@ -332,7 +329,6 @@ app.addEventListener("click", (event) => {
 
   if (button.dataset.intensity) {
     selectedIntensity = button.dataset.intensity;
-    selectedLevel = null;
     resetSession(true);
     render();
     return;
@@ -343,18 +339,6 @@ app.addEventListener("click", (event) => {
     render();
     return;
   }
-  if (button.dataset.level) {
-    selectedLevel = Number(button.dataset.level);
-    resetSession(true);
-    render();
-    return;
-  }
-  if (button.dataset.count) {
-    selectedCount = Number(button.dataset.count);
-    render();
-    return;
-  }
-
   switch (button.dataset.action) {
     case "accept-adults": {
       if (!adultGateChecks.age || !adultGateChecks.notice) return;
@@ -373,20 +357,22 @@ app.addEventListener("click", (event) => {
       break;
     case "reveal":
       revealed = true;
-      renderQuestion();
+      setQuestionSide(true);
       app.querySelector('[data-action="next"]')?.focus();
       break;
     case "next":
     case "skip":
-      currentIndex = nextQuestionIndex(currentIndex, sessionQuestions.length);
+      if (drawNextQuestion()) {
+        render();
+        app.querySelector('[data-action="skip"]')?.focus();
+      }
+      break;
+    case "finish":
+      sessionActive = false;
+      sessionFinished = true;
       revealed = false;
       render();
-      app.querySelector(currentIndex >= sessionQuestions.length ? '[data-action="again"]' : '[data-action="skip"]')?.focus();
-      break;
-    case "setup":
-      resetSession();
-      selectedLevel = null;
-      render();
+      app.querySelector('[data-action="again"]')?.focus();
       break;
     case "retry":
       loadQuestions();
