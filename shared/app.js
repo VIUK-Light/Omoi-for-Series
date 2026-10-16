@@ -36,8 +36,8 @@ const series = {
   adults: {
     target: "Adults",
     title: "Omoi for Adults",
-    setupHeading: "親密さについて、話す",
-    setupCopy: "18歳以上の方が、互いの同意を尊重して使うカードです。",
+    setupHeading: "大人向けの話題",
+    setupCopy: "互いの同意を尊重して使うカードです。",
     solo: false,
     adultOnly: true,
   },
@@ -83,6 +83,7 @@ let currentQuestion = null;
 let questionsAsked = 0;
 let sessionActive = false;
 let sessionFinished = false;
+let deepWarningVisible = false;
 let revealed = false;
 let cardNeedsEntrance = false;
 let loadState = "loading";
@@ -109,6 +110,7 @@ const selectedPool = () => filterQuestions(questions, { intensity: selectedInten
 const categoryLabel = (category) => categoryLabels[category] || category;
 
 function resetSession(clearHistory = false) {
+  deepWarningVisible = false;
   finishCardFlip?.(false);
   currentQuestion = null;
   questionsAsked = 0;
@@ -197,6 +199,25 @@ function renderSelection() {
         ? '<p class="selection-note" role="status">質問を準備しています。</p>'
           : "";
   app.innerHTML = `<div class="site-shell">${header()}<main class="content-column selection-content"><h1 class="page-title">${escapeHtml(series.setupHeading)}</h1><p class="page-intro">${escapeHtml(series.setupCopy)}</p>${modeControls()}<div class="selection-actions"><button class="primary-button" data-action="start" type="button" ${canStart ? "" : "disabled"}>質問カードをはじめる <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg></button></div>${loadingNotice}</main>${footer()}</div>`;
+}
+
+function renderDeepWarning() {
+  app.innerHTML = `<div class="site-shell session-shell">${header()}
+    <main class="deep-warning-content">
+      <section class="deep-warning-card" aria-labelledby="deep-warning-title" aria-describedby="deep-warning-copy">
+        <p class="card-series-name">${brandMarkup()}</p>
+        <div class="deep-warning-copy">
+          <h1 id="deep-warning-title" tabindex="-1">刺激的な<br>内容があります。</h1>
+          <p id="deep-warning-copy">性や身体など、<br>踏み込んだ話題を含みます。</p>
+          <p>お互いが話したい範囲で、<br>無理なく進めてください。</p>
+        </div>
+        <span class="card-rule" aria-hidden="true"></span>
+      </section>
+      <div class="deep-warning-actions">
+        <button class="primary-button" data-action="confirm-deep" type="button">続ける <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></svg></button>
+        <button class="text-button" data-action="cancel-deep" type="button">戻る</button>
+      </div>
+    </main>${footer()}</div>`;
 }
 
 function questionLength(text) {
@@ -330,6 +351,10 @@ function render() {
     renderEmptyPreview();
     return;
   }
+  if (deepWarningVisible) {
+    renderDeepWarning();
+    return;
+  }
   if (sessionFinished) {
     renderFinish();
     return;
@@ -408,6 +433,25 @@ app.addEventListener("click", (event) => {
   switch (button.dataset.action) {
     case "start":
     case "again":
+      if (series.adultOnly && selectedIntensity === "deep") {
+        deepWarningVisible = true;
+        render();
+        app.querySelector("#deep-warning-title")?.focus({ preventScroll: true });
+        break;
+      }
+      if (startSession()) {
+        render();
+        focusQuestion();
+      }
+      break;
+    case "cancel-deep":
+      resetSession();
+      render();
+      app.querySelector('[data-action="start"]')?.focus();
+      break;
+    case "confirm-deep":
+      if (!deepWarningVisible || !series.adultOnly || selectedIntensity !== "deep") break;
+      deepWarningVisible = false;
       if (startSession()) {
         render();
         focusQuestion();
@@ -435,6 +479,14 @@ app.addEventListener("click", (event) => {
       break;
     default:
       break;
+  }
+});
+
+app.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && deepWarningVisible) {
+    resetSession();
+    render();
+    app.querySelector('[data-action="start"]')?.focus();
   }
 });
 
