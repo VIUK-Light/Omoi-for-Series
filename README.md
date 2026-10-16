@@ -7,8 +7,8 @@ Omoi for Series は既存の「Omoi」とは別のプロダクトです。既存
 - `/couples/` — Omoi for Couples
 - `/family/` — Omoi for Family
 - `/friends/` — Omoi for Friends
-- `/adults/` — Omoi for Adults（18歳以上向け・質問未公開）
-- `/self-care/` — Omoi for Self-Care（ひとりで使う・質問未公開）
+- `/adults/` — Omoi for Adults（18歳以上向け）
+- `/self-care/` — Omoi for Self-Care（ひとりで使う）
 - `/howto.html` — 全シリーズの使い方
 - 各シリーズの `/howto.html` — シリーズ専用の使い方
 
@@ -64,7 +64,7 @@ node tools/verify-series-datasets.mjs
 
 ## AdultsとSelf-Careのデータ
 
-2026-10-15のユーザー許可により、CodexでAdultsとSelf-Careを各64組（メイン＋固有の深掘り）作成しました。Lite / Deep × Level 1〜4の8区分に各8組です。作成元は`codex` / `GPT-6`で、Grok生成とは記録しません。既存3シリーズにもCouples222・Family166・Friends150の計538文の個別深掘りを追加しています。全件がAI初期案・`pending`です。今後Grokに依頼するためのプロンプトは[`prompts/grok-adults-questions.md`](prompts/grok-adults-questions.md)と[`prompts/grok-self-care-questions.md`](prompts/grok-self-care-questions.md)にあります。出力先のJSON枠は`shared/questions/adults.json`と`shared/questions/self-care.json`です。どちらも質問データを収録した未公開状態です。
+2026-10-15のユーザー許可により、CodexでAdultsとSelf-Careを各64組（メイン＋固有の深掘り）作成しました。Lite / Deep × Level 1〜4の8区分に各8組です。作成元は`codex` / `GPT-6`で、Grok生成とは記録しません。既存3シリーズにもCouples222・Family166・Friends150の計538文の個別深掘りを追加しています。作成元はAI初期案として識別可能なまま保持しています。AdultsとSelf-Careは2026-10-16のユーザーの明示的な公開指示により承認済みです。既存3シリーズの深掘りは`pending`です。今後Grokに依頼するためのプロンプトは[`prompts/grok-adults-questions.md`](prompts/grok-adults-questions.md)と[`prompts/grok-self-care-questions.md`](prompts/grok-self-care-questions.md)にあります。出力先のJSON枠は`shared/questions/adults.json`と`shared/questions/self-care.json`です。現在はAdults94組・Self-Care64組を公開しています。
 
 ### AI出力のJSON形式（Grok / Codex）
 
@@ -113,9 +113,9 @@ node tools/validate-grok-questions.mjs --series adults --release-ready
 
 検証はJSONスキーマ、質問ID、必須項目、Lite/Deep・Level、重複・類似表現、圧力や露骨な性的表現を検査します。`--import`は対象JSONが空の未公開状態の場合だけ動き、すべての質問を`pending`のまま保ちます。公開準備確認は、全質問のレビュー承認と全Lite/Deep・Level組み合わせに最低3問があることを要求します。
 
-AI初期案を検証しただけでは公開されません。人が質問を審査し、レビュー状態を`approved`にし、データと[`shared/series-manifest.json`](shared/series-manifest.json)の公開状態を明示的に変更するまでAdultsとSelf-Careは本番で未公開です。Grok/Codexの初期案を自動承認する処理はありません。生成・取り込み・検証・レビューの各段階を分けて管理します。
+AI初期案を検証しただけでは公開されません。公開にはレビュー状態を`approved`にし、データと[`shared/series-manifest.json`](shared/series-manifest.json)の公開状態を明示的に変更する必要があります。現在のAdultsとSelf-Careは、2026-10-16のユーザーによる公開指示を`releaseApproval`に記録して公開しました。外部の専門審査を受けたという記録ではありません。Grok/Codexの初期案を自動承認する処理はありません。生成・取り込み・検証・レビューの各段階を分けて管理します。
 
-`draftPreview: true`のシリーズはlocalhost / 127.0.0.1でのみレビュー前の実際のカードを試せます。画面に生成元・レビュー前のラベルは表示せず、レビュー状態はデータ側で管理します。本番では未承認の追加質問を採用しません。新2シリーズの公開状態は`unpublished`のままです。空の質問は表示しません。
+`draftPreview: true`のシリーズはlocalhost / 127.0.0.1でのみレビュー前の実際のカードを試せます。画面に生成元・レビュー前のラベルは表示せず、レビュー状態はデータ側で管理します。本番では未承認の追加質問を採用しません。新2シリーズは`published`で、レビュー前データのプレビューは無効です。空の質問は表示しません。
 
 既存シリーズの深掘りは、内容を人が確認した後に`shared/followups/<series>.json`の`reviewStatus`を`approved`へ変更すると本番でも利用できます。新2シリーズは各質問の承認と、データ・マニフェスト両方の公開状態変更が必要です。
 
@@ -142,6 +142,6 @@ GitHub Pagesでビルド工程なしに配信する静的サイトです。ブ�
 
 ## シリーズへの適合性確認（2026-10-16）
 
-5シリーズの質問・深掘りを確認し、Couplesは恋人同士、Familyは家族、Friendsは一緒に使う友人同士に内容を限定しました。関係の不安・嫉妬・境界線・衝突などの話題は、具体的で中立的な問いとして残します。Adultsの既存AI案4組も親密な関係の問いへ改稿し、Self-Care64組は一人で振り返る内容として維持しました。提供されたAdults30組は原文・出典・ハッシュを維持しています。これは人による公開承認を意味しません。
+5シリーズの質問・深掘りを確認し、Couplesは恋人同士、Familyは家族、Friendsは一緒に使う友人同士に内容を限定しました。関係の不安・嫉妬・境界線・衝突などの話題は、具体的で中立的な問いとして残します。Adultsの既存AI案4組も親密な関係の問いへ改稿し、Self-Care64組は一人で振り返る内容として維持しました。提供されたAdults30組は原文・出典・ハッシュを維持しています。この内容確認とは別に、2026-10-16のユーザー指示に基づくAdultsとSelf-Careの公開承認を記録しています。
 
 `tools/series-contracts.mjs`で現在の件数を固定し、`tools/series-fit-rules.mjs`と`tools/series-fit.test.mjs`で一般倫理・炎上事例・削除済みIDの再混入を検出します。自動判定は補助であり、文意の確認を代替しません。Couplesの再生成にも同じ除外・改稿方針を適用します。

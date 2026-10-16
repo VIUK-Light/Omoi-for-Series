@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "series": "adults",
-  "publicationStatus": "unpublished",
+  "publicationStatus": "published",
   "questions": [
     {
       "id": "adults-closeness-lite-l1-001",
@@ -21,7 +21,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-communication-lite-l1-002",
@@ -41,7 +41,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-body-lite-l1-003",
@@ -61,7 +61,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-affection-lite-l1-004",
@@ -81,7 +81,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-boundaries-lite-l1-005",
@@ -101,7 +101,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-privacy-lite-l1-006",
@@ -121,7 +121,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-consent-lite-l1-007",
@@ -141,7 +141,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-pace-lite-l1-008",
@@ -161,7 +161,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-affection-lite-l2-001",
@@ -181,7 +181,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-communication-lite-l2-002",
@@ -201,7 +201,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-body-lite-l2-003",
@@ -221,7 +221,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-boundaries-lite-l2-004",
@@ -241,7 +241,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-privacy-lite-l2-005",
@@ -261,7 +261,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-pace-lite-l2-006",
@@ -281,7 +281,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-consent-lite-l2-007",
@@ -301,7 +301,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-expectations-lite-l2-008",
@@ -321,7 +321,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-communication-lite-l3-001",
@@ -341,7 +341,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-body-lite-l3-002",
@@ -361,7 +361,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-boundaries-lite-l3-003",
@@ -381,7 +381,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-privacy-lite-l3-004",
@@ -401,7 +401,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-pace-lite-l3-005",
@@ -421,7 +421,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-affection-lite-l3-006",
@@ -441,7 +441,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-expectations-lite-l3-007",
@@ -461,7 +461,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-consent-lite-l3-008",
@@ -481,7 +481,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-closeness-lite-l4-001",
@@ -501,7 +501,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-communication-lite-l4-002",
@@ -521,7 +521,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-body-lite-l4-003",
@@ -541,7 +541,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-boundaries-lite-l4-004",
@@ -561,7 +561,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-expectations-lite-l4-005",
@@ -581,7 +581,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-privacy-lite-l4-006",
@@ -601,7 +601,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-pace-lite-l4-007",
@@ -621,7 +621,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-affection-lite-l4-008",
@@ -641,7 +641,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-sexual-values-deep-l1-001",
@@ -661,7 +661,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-body-image-deep-l1-002",
@@ -681,7 +681,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-consent-deep-l1-003",
@@ -701,7 +701,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-boundaries-deep-l1-004",
@@ -721,7 +721,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-sexual-values-deep-l1-005",
@@ -741,7 +741,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-desire-deep-l1-006",
@@ -761,7 +761,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-communication-deep-l1-007",
@@ -781,7 +781,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-privacy-deep-l1-008",
@@ -801,7 +801,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-desire-deep-l2-001",
@@ -821,7 +821,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-body-image-deep-l2-002",
@@ -841,7 +841,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-consent-deep-l2-003",
@@ -861,7 +861,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-boundaries-deep-l2-004",
@@ -881,7 +881,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-sexual-values-deep-l2-005",
@@ -901,7 +901,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-communication-deep-l2-006",
@@ -921,7 +921,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-privacy-deep-l2-007",
@@ -941,7 +941,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-sexual-health-deep-l2-008",
@@ -961,7 +961,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-desire-deep-l3-001",
@@ -981,7 +981,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-consent-deep-l3-002",
@@ -1001,7 +1001,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-sexual-values-deep-l3-003",
@@ -1021,7 +1021,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-body-image-deep-l3-004",
@@ -1041,7 +1041,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-communication-deep-l3-005",
@@ -1061,7 +1061,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-boundaries-deep-l3-006",
@@ -1081,7 +1081,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-sexual-health-deep-l3-007",
@@ -1101,7 +1101,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-expectations-deep-l3-008",
@@ -1121,7 +1121,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-sexual-values-deep-l4-001",
@@ -1141,7 +1141,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-consent-deep-l4-002",
@@ -1161,7 +1161,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-desire-deep-l4-003",
@@ -1181,7 +1181,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-body-image-deep-l4-004",
@@ -1201,7 +1201,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-boundaries-deep-l4-005",
@@ -1221,7 +1221,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-communication-deep-l4-006",
@@ -1241,7 +1241,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-expectations-deep-l4-007",
@@ -1261,7 +1261,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-sexual-health-deep-l4-008",
@@ -1281,7 +1281,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "adults-desire-lite-l2-009",
@@ -1296,7 +1296,7 @@
         "intimacy",
         "desire"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1323,7 +1323,7 @@
         "body",
         "intimacy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1350,7 +1350,7 @@
         "communication",
         "intimacy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1377,7 +1377,7 @@
         "boundaries",
         "consent"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1404,7 +1404,7 @@
         "desire",
         "sexual-acts"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1431,7 +1431,7 @@
         "body",
         "desire"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1458,7 +1458,7 @@
         "communication",
         "desire"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1485,7 +1485,7 @@
         "desire",
         "fantasy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1512,7 +1512,7 @@
         "body-image",
         "intimacy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1539,7 +1539,7 @@
         "boundaries",
         "consent"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1566,7 +1566,7 @@
         "desire",
         "sexual-acts"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1593,7 +1593,7 @@
         "communication",
         "intimacy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1620,7 +1620,7 @@
         "sexual-values",
         "jealousy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1647,7 +1647,7 @@
         "body",
         "desire"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1674,7 +1674,7 @@
         "desire",
         "fantasy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1701,7 +1701,7 @@
         "boundaries",
         "consent"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1728,7 +1728,7 @@
         "communication",
         "intimacy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1755,7 +1755,7 @@
         "body-image",
         "intimacy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1782,7 +1782,7 @@
         "desire",
         "communication"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1809,7 +1809,7 @@
         "pace",
         "intimacy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1836,7 +1836,7 @@
         "desire",
         "sexual-acts"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1863,7 +1863,7 @@
         "desire",
         "sexual-acts"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1890,7 +1890,7 @@
         "sexual-values",
         "jealousy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1917,7 +1917,7 @@
         "communication",
         "desire"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1944,7 +1944,7 @@
         "body",
         "desire"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1971,7 +1971,7 @@
         "desire",
         "sexual-acts"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -1998,7 +1998,7 @@
         "sexual-values",
         "jealousy"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -2025,7 +2025,7 @@
         "boundaries",
         "consent"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -2052,7 +2052,7 @@
         "body-image",
         "desire"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -2079,7 +2079,7 @@
         "desire",
         "communication"
       ],
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "source": {
         "kind": "user-provided",
         "stage": "provided-draft",
@@ -2093,5 +2093,10 @@
         }
       }
     }
-  ]
+  ],
+  "releaseApproval": {
+    "approvedAt": "2026-10-16",
+    "basis": "user-release-instruction",
+    "note": "ユーザーからAdultsとSelf-Careの公開およびmainへのマージを明示的に指示。外部の専門審査を受けたことは意味しない。"
+  }
 }

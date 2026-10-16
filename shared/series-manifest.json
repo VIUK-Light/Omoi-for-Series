@@ -20,16 +20,14 @@
       "followUpFile": "friends.json"
     },
     "adults": {
-      "status": "unpublished",
-      "developmentPreview": true,
+      "status": "published",
       "questionFile": "adults.json",
-      "draftPreview": true
+      "draftPreview": false
     },
     "self-care": {
-      "status": "unpublished",
-      "developmentPreview": true,
+      "status": "published",
       "questionFile": "self-care.json",
-      "draftPreview": true
+      "draftPreview": false
     }
   }
 }
