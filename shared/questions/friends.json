@@ -1,179 +1,1202 @@
 [
-  {"id":"friends-daily-1-1","audience":"friends","level":1,"text":"最近、友達に話したくなった小さな出来事は？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-2","audience":"friends","level":1,"text":"友達と会うなら、昼と夜どっちが好き？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-3","audience":"friends","level":1,"text":"友達と食べに行くなら、何を選びたい？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-4","audience":"friends","level":1,"text":"友達と一緒にいる時、話す方？聞く方？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-5","audience":"friends","level":1,"text":"友達と行きたい場所はある？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-6","audience":"friends","level":1,"text":"友達にすすめたい作品は？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-7","audience":"friends","level":1,"text":"友達と過ごすなら、にぎやかな場所と静かな場所どっちがいい？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-8","audience":"friends","level":1,"text":"友達の前だと、普段よりどんな感じになる？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-9","audience":"friends","level":1,"text":"友達と話す時、つい出てしまう自分の癖は？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-daily-1-10","audience":"friends","level":1,"text":"友達と写真を撮るなら、自然な瞬間とポーズどっちがいい？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-11","audience":"friends","level":1,"text":"友達と一緒に始めてみたいことは？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-12","audience":"friends","level":1,"text":"友達から届いたら、何度でも読み返したくなる言葉は？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-daily-1-13","audience":"friends","level":1,"text":"友達との時間は、予定を決める方が好き？その場で決める方が好き？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-14","audience":"friends","level":1,"text":"友達と季節を感じるなら、何をしたい？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-memories-1-15","audience":"friends","level":1,"text":"友達との今だから笑える思い出は？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-daily-1-16","audience":"friends","level":1,"text":"友達と無言で過ごす時間も平気？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-17","audience":"friends","level":1,"text":"友達に教えてほしいことはある？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-values-1-18","audience":"friends","level":1,"text":"友達に求めることを一つ挙げるなら？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-care-1-19","audience":"friends","level":1,"text":"友達と過ごしたあと、どんな気持ちになれると嬉しい？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-boundaries-1-20","audience":"friends","level":1,"text":"友達にされたら少し困ることは？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-daily-1-21","audience":"friends","level":1,"text":"友達と遊ぶなら、屋内と屋外どっちが多い？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-22","audience":"friends","level":1,"text":"友達との会話で、最近よく出る話題は？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-23","audience":"friends","level":1,"text":"友達とシェアしたい趣味はある？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-24","audience":"friends","level":1,"text":"友達との待ち合わせ、早く着く方？ギリギリの方？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-25","audience":"friends","level":1,"text":"友達と行きたいお店の条件はある？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-26","audience":"friends","level":1,"text":"友達と対決系のゲームをしたら、勝ちたい方？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-28","audience":"friends","level":1,"text":"友達と過ごす時、予定を決める方？その場で決める方？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-daily-1-31","audience":"friends","level":1,"text":"友達との共通の話題で、いつまでも飽きないものはある？","category":"friendsDaily","source":"editorial"},
-  {"id":"friends-values-1-32","audience":"friends","level":1,"text":"友達を選ぶなら、価値観の近さと相性の良さどっちが大事？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-1-33","audience":"friends","level":1,"text":"友達に「らしい」と言われたら、どんな自分を想像する？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-1-34","audience":"friends","level":1,"text":"友達といる時の自分は、一人の時の自分と同じ？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-1-35","audience":"friends","level":1,"text":"友達に尊敬できるところはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-1-36","audience":"friends","level":1,"text":"友達との付き合いで、自分なりに大事にしているルールはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-care-1-37","audience":"friends","level":1,"text":"友達が落ち込んでいる時にかける、定番の言葉はある？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-1-38","audience":"friends","level":1,"text":"友達に喜んでもらえそうな言葉や行動はある？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-1-39","audience":"friends","level":1,"text":"友達の話を最後まで聞けていないと、感じることはある？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-1-40","audience":"friends","level":1,"text":"友達にありがとうと言うのは、どんな時が多い？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-1-41","audience":"friends","level":1,"text":"友達が悩んでいそうな時、気づける自信はある？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-memories-1-42","audience":"friends","level":1,"text":"友達と初めて会った時のことを、覚えている？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-1-43","audience":"friends","level":1,"text":"友達と泣いて笑った出来事はある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-1-45","audience":"friends","level":1,"text":"友達との失敗談で、今は笑って話せるものはある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-1-46","audience":"friends","level":1,"text":"友達と撮った写真で、お気に入りの一枚はある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-boundaries-1-47","audience":"friends","level":1,"text":"友達への返信のタイミングで、迷ったことはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-1-48","audience":"friends","level":1,"text":"友達に踏み込まれたくない話題はある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-1-49","audience":"friends","level":1,"text":"友達との予定を断る時、気が引ける？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-1-50","audience":"friends","level":1,"text":"友達とお金の貸し借りは、しない方がいいと思う？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-communication-2-1","audience":"friends","level":2,"text":"友達とは毎日連絡したい？会う時だけでいい？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-2-2","audience":"friends","level":2,"text":"言葉を選ばず話せる友達って、どんな存在？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-2-3","audience":"friends","level":2,"text":"友達の相談を聞く時、まず大切にしたいことは？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-values-2-4","audience":"friends","level":2,"text":"友達との約束を守るために、大切なことは？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-boundaries-2-5","audience":"friends","level":2,"text":"友達に合わせすぎてしまうことはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-communication-2-6","audience":"friends","level":2,"text":"友達と意見が違った時、すぐ話したい？少し置きたい？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-values-2-7","audience":"friends","level":2,"text":"新しい友達をつくる時、最初に気になるところは？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-care-2-8","audience":"friends","level":2,"text":"友達の気分に合わせて、自分も静かに過ごせる？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-boundaries-2-9","audience":"friends","level":2,"text":"友達と一人の時間は、どちらも大事にできる？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-communication-2-10","audience":"friends","level":2,"text":"友達と気まずくなった翌日、どうやって話し始める？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-values-2-11","audience":"friends","level":2,"text":"友達のためなら、どこまで予定を変えられる？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-communication-2-12","audience":"friends","level":2,"text":"友達に注意してほしいことはある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-care-2-13","audience":"friends","level":2,"text":"友達の挑戦に、どんな応援の仕方をしたい？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-memories-2-14","audience":"friends","level":2,"text":"友達との関係が変わったきっかけは何だった？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-values-2-15","audience":"friends","level":2,"text":"友達に対して、うらやましいと思うことはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-boundaries-2-16","audience":"friends","level":2,"text":"友達と共有しないでおきたい、自分だけの領域は？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-care-2-18","audience":"friends","level":2,"text":"友達からどんな時に頼られると嬉しい？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-values-2-19","audience":"friends","level":2,"text":"友達関係で、無理をしないために必要なことは？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-communication-2-20","audience":"friends","level":2,"text":"友達との約束を変えたい時、どう伝える？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-2-21","audience":"friends","level":2,"text":"友達ともめた後、先に声をかける方？時間が解決するのを待つ方？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-2-22","audience":"friends","level":2,"text":"友達からのメッセージに返信がない時、どう受け止める？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-2-23","audience":"friends","level":2,"text":"友達に話していないことを伝える時、何を大切にしたい？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-2-24","audience":"friends","level":2,"text":"友達との会話で、一方的に話していないか気にする？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-2-26","audience":"friends","level":2,"text":"友達との会話を楽しく続けるコツはある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-values-2-27","audience":"friends","level":2,"text":"友達と金銭感覚が違うと感じたことはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-2-28","audience":"friends","level":2,"text":"友達の生き方を見て、自分の選択を見直したことはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-2-29","audience":"friends","level":2,"text":"友達との付き合いに損得は入っていいと思う？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-2-30","audience":"friends","level":2,"text":"友達に合わせて、興味のないふりをしたことはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-2-31","audience":"friends","level":2,"text":"友達と支え合えていると感じるのは、どんな時？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-care-2-34","audience":"friends","level":2,"text":"友達の成功を、素直に祝えている？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-2-35","audience":"friends","level":2,"text":"心配をかけたくなくて、友達に弱音を隠すことはある？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-2-36","audience":"friends","level":2,"text":"友達のちょっとした変化に、気づける方だと思う？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-2-37","audience":"friends","level":2,"text":"友達を励ました後、自分の気持ちや疲れにも目を向けられている？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-2-38","audience":"friends","level":2,"text":"友達と助け合えていると、実感できている？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-boundaries-2-39","audience":"friends","level":2,"text":"友達にNOと言えず、後悔したことはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-2-40","audience":"friends","level":2,"text":"友達の近況と自分を比べて、気持ちが揺れることはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-2-41","audience":"friends","level":2,"text":"友達との距離感の基準は、自分の中で決まっている？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-2-42","audience":"friends","level":2,"text":"友達に構ってほしい時と、放っておいてほしい時の揺れはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-2-43","audience":"friends","level":2,"text":"友達との秘密の共有は、関係を深めると思う？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-memories-2-45","audience":"friends","level":2,"text":"友達との関係が深まった瞬間は、いつだった？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-2-46","audience":"friends","level":2,"text":"友達と思い出の場所に、今も行きたいところはある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-2-47","audience":"friends","level":2,"text":"友達から言われて救われた言葉はある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-2-48","audience":"friends","level":2,"text":"友達との古い思い出を、今の友達に話すことはある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-2-49","audience":"friends","level":2,"text":"友達との距離が変わって、関係が変化した経験はある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-2-50","audience":"friends","level":2,"text":"友達との思い出で「あの時こうしていれば」と思うものはある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-values-3-1","audience":"friends","level":3,"text":"友達の選んだ生き方を、自分と違っても尊重できる？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-care-3-2","audience":"friends","level":3,"text":"友達が困っている時、どこまで踏み込んで助けたい？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-boundaries-3-3","audience":"friends","level":3,"text":"友達にとって大事な秘密を、どこまで守るべきだと思う？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-communication-3-4","audience":"friends","level":3,"text":"友達に本当の自分を見せるのが難しいのは、どんな時？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-future-3-5","audience":"friends","level":3,"text":"環境が変わっても続く友達関係には、何が必要？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-values-3-6","audience":"friends","level":3,"text":"友達の成功を心から喜べない時、自分に何が起きていると思う？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-care-3-7","audience":"friends","level":3,"text":"友達を励ます時、言葉と一緒に何をしてあげたい？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-communication-3-8","audience":"friends","level":3,"text":"友達と気まずくなった時、関係を戻すために何ができる？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-values-3-9","audience":"friends","level":3,"text":"友達が自分の思い通りに動かない時、どう受け止める？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-boundaries-3-10","audience":"friends","level":3,"text":"友達に断ることは、関係を壊すことだと思う？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-memories-3-11","audience":"friends","level":3,"text":"友達から受けた影響で、自分が変わったことはある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-future-3-12","audience":"friends","level":3,"text":"これから友達とどんな思い出をつくりたい？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-care-3-13","audience":"friends","level":3,"text":"友達が自分を責めている時、どう支えたい？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-values-3-14","audience":"friends","level":3,"text":"友達の選択に納得できなくても、応援できる？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-communication-3-15","audience":"friends","level":3,"text":"友達と対等でいるために必要なことは何だと思う？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-boundaries-3-16","audience":"friends","level":3,"text":"友達に頼られ続けて疲れた時、どう伝えたい？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-memories-3-17","audience":"friends","level":3,"text":"友達との関係で、忘れたくない出来事は？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-future-3-18","audience":"friends","level":3,"text":"将来、友達とはどんな距離感でいたい？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-values-3-19","audience":"friends","level":3,"text":"友達関係で一番大切なのは、安心感と刺激のどちら？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-communication-3-20","audience":"friends","level":3,"text":"友達に分かってほしい自分の一面はある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-values-3-21","audience":"friends","level":3,"text":"友達との価値観の違いが、自分を成長させたと感じることはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-3-22","audience":"friends","level":3,"text":"友達に嫉妬してしまった時、その気持ちとどう付き合う？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-3-23","audience":"friends","level":3,"text":"友達関係の中で、自分は公平でいられている？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-3-24","audience":"friends","level":3,"text":"友達の変化や成長を、素直に受け止められる？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-3-25","audience":"friends","level":3,"text":"友達との信頼が揺らぐのは、どんな時だと思う？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-care-3-26","audience":"friends","level":3,"text":"友達の悩みが自分の手に余ると感じた時、どうする？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-3-27","audience":"friends","level":3,"text":"友達を支えることで、自分も支えられていると感じることはある？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-3-28","audience":"friends","level":3,"text":"友達が同じ失敗を繰り返す時、指摘する？見守る？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-3-29","audience":"friends","level":3,"text":"友達のためにつく嘘は、思いやりになり得ると思う？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-3-30","audience":"friends","level":3,"text":"友達との関係で、頑張りすぎていないと確認できる？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-communication-3-31","audience":"friends","level":3,"text":"友達との誤解を解くために、時間をかける価値はあると思う？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-3-32","audience":"friends","level":3,"text":"友達に伝えられないままの感謝はある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-3-33","audience":"friends","level":3,"text":"嫌われるのが怖くて、友達への本音を抑えたことはある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-3-34","audience":"friends","level":3,"text":"友達との会話の中で、一番見せない自分の面はある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-3-35","audience":"friends","level":3,"text":"友達との関係を壊したくないあまり、問題から目をそらしたことはある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-boundaries-3-36","audience":"friends","level":3,"text":"友達の期待が、プレッシャーに感じられる時はある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-3-37","audience":"friends","level":3,"text":"友達との比較で、自分の価値を下げてしまうことはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-3-38","audience":"friends","level":3,"text":"友達の問題に踏み込みすぎたと、感じたことはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-3-39","audience":"friends","level":3,"text":"友達との関係で、自分が犠牲になっていると感じる時はある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-3-40","audience":"friends","level":3,"text":"友達との関係を見極めるための、自分なりの判断材料はある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-future-3-42","audience":"friends","level":3,"text":"これからも連絡を取り合いたい友達はいる？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-future-3-43","audience":"friends","level":3,"text":"友達と過ごす時間と一人の時間を、どう両立したい？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-future-3-44","audience":"friends","level":3,"text":"年を重ねてからの友達関係を、どうイメージしている？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-memories-3-46","audience":"friends","level":3,"text":"友達との関係で、自分が成長できたと感じる出来事はある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-3-47","audience":"friends","level":3,"text":"友達との過去の誤解で、今も心に引っかかっているものはある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-3-48","audience":"friends","level":3,"text":"友達と共有した秘密を、今も大切に扱っている？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-3-49","audience":"friends","level":3,"text":"友達との古い写真を見返すと、どんな気持ちになる？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-3-50","audience":"friends","level":3,"text":"友達との思い出の中で、自分の変化が一番よく分かるものはある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-boundaries-4-1","audience":"friends","level":4,"text":"友達に傷つけられた時、関係を続けるか距離を置くかをどう決める？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-communication-4-2","audience":"friends","level":4,"text":"友達に本当は謝ってほしいことがある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-4-3","audience":"friends","level":4,"text":"離れてしまった友達に、今ならどんな一言を伝えたい？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-boundaries-4-4","audience":"friends","level":4,"text":"友達との間に、言葉にしておきたいルールはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-care-4-5","audience":"friends","level":4,"text":"友達の苦しさを受け止めきれない時、どうすれば自分を守れる？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-values-4-6","audience":"friends","level":4,"text":"友達だから許せることと、友達でも許せないことの違いは？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-future-4-7","audience":"friends","level":4,"text":"友達と別々の道へ進むことを、どう受け止めたい？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-communication-4-8","audience":"friends","level":4,"text":"友達に言えないまま抱えている寂しさはある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-boundaries-4-9","audience":"friends","level":4,"text":"友達関係を終わらせた方がいいと感じるのは、どんな時？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-care-4-10","audience":"friends","level":4,"text":"友達を助けたい気持ちと、自分の余裕がない時はどうする？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-values-4-11","audience":"friends","level":4,"text":"友達の秘密が誰かを傷つけていると知ったら、どうする？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-communication-4-12","audience":"friends","level":4,"text":"友達に理解されなくても、自分の選択を大事にできる？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-boundaries-4-13","audience":"friends","level":4,"text":"友達に頼られることと、利用されることの違いは何だと思う？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-memories-4-14","audience":"friends","level":4,"text":"友達との過去を思い出すと、今でも心に残っている言葉はある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-future-4-15","audience":"friends","level":4,"text":"これからも続けたい友達との約束はある？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-values-4-16","audience":"friends","level":4,"text":"友達のために自分を変えることと、自分らしくいることは両立できる？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-care-4-17","audience":"friends","level":4,"text":"友達に大丈夫と言われても、本当は大丈夫ではなさそうな時どうする？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-communication-4-18","audience":"friends","level":4,"text":"友達との関係で、今なら言葉にできる本音はある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-boundaries-4-19","audience":"friends","level":4,"text":"友達と距離を置いた後、もう一度話すなら何を伝えたい？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-future-4-20","audience":"friends","level":4,"text":"これからの友達関係で、自分が大切にしたいことは？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-communication-4-21","audience":"friends","level":4,"text":"友達を傷つけた側だったと認めるのは、難しい？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-4-22","audience":"friends","level":4,"text":"友達に嫉妬や羨望の気持ちを、打ち明けられる？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-communication-4-23","audience":"friends","level":4,"text":"友達との関係で、もう終わっていると感じながら続けているものはある？","category":"friendsCommunication","source":"editorial"},
-  {"id":"friends-boundaries-4-26","audience":"friends","level":4,"text":"友達との関係で、自分を守るための嘘が必要だったことはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-4-29","audience":"friends","level":4,"text":"友達との関係で、都合よく使われていると感じたことはある？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-boundaries-4-30","audience":"friends","level":4,"text":"友達と距離を置きたいと思った時、何を基準に考えたい？","category":"friendsBoundaries","source":"editorial"},
-  {"id":"friends-care-4-31","audience":"friends","level":4,"text":"友達の深刻な悩みに一人で対応できない時、誰に相談できる？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-care-4-33","audience":"friends","level":4,"text":"友達に弱さを見せた結果、後悔したことはある？","category":"friendsCare","source":"editorial"},
-  {"id":"friends-values-4-36","audience":"friends","level":4,"text":"友達の選択が自分の倫理観に反する時、関係は続けられる？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-4-37","audience":"friends","level":4,"text":"友達との関係の中で、自分が正当化できない行動をしたことはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-4-38","audience":"friends","level":4,"text":"友達の頼みが自分の大切にしたい基準に反する時、どう伝える？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-4-39","audience":"friends","level":4,"text":"友達との関係で、許せないまま終わったものはある？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-values-4-40","audience":"friends","level":4,"text":"友達に本当の自分を知られたら、関係は変わってしまうと思う？","category":"friendsValues","source":"editorial"},
-  {"id":"friends-future-4-41","audience":"friends","level":4,"text":"友達との関係が自然に途切れても仕方がない、と思える？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-future-4-44","audience":"friends","level":4,"text":"今の友達との関係が10年後どうなっているか、予想できる？","category":"friendsFuture","source":"editorial"},
-  {"id":"friends-memories-4-46","audience":"friends","level":4,"text":"友達との過去のつらい出来事を、今どう向き合っている？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-4-48","audience":"friends","level":4,"text":"友達との過去の約束を守れなかった悔しさは、今もある？","category":"friendsMemories","source":"editorial"},
-  {"id":"friends-memories-4-49","audience":"friends","level":4,"text":"友達との付き合いの中で、自分が変わってしまったと感じる瞬間はある？","category":"friendsMemories","source":"editorial"}
+  {
+    "id": "editorial-friends-fit-001",
+    "audience": "friends",
+    "level": 1,
+    "text": "最近、私たちで話していて楽しかったことは？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-002",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちが次に会うなら、どの時間帯が過ごしやすい？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-003",
+    "audience": "friends",
+    "level": 1,
+    "text": "次に一緒にご飯を食べるなら、何を選びたい？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-004",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちの会話では、話す時間と聞く時間のバランスはどう感じる？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-005",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちで出かけるなら、今いちばん行きたい場所は？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-006",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちで同じ作品を楽しむなら、何を選びたい？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-007",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちでゆっくり話すなら、どんな場所がよさそう？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-008",
+    "audience": "friends",
+    "level": 1,
+    "text": "私といる時、自分のどんな一面が出ていると思う？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-009",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちの会話に、いつの間にか定着した言葉や癖はある？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-010",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちで写真を撮るなら、どんな一枚を残したい？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-011",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちで気軽に始めてみたいことは何？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-012",
+    "audience": "friends",
+    "level": 1,
+    "text": "私からどんなメッセージが届くとうれしい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-013",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちのお出かけは、どこまで予定を決めておくと楽？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-014",
+    "audience": "friends",
+    "level": 1,
+    "text": "次の季節に、私たちで楽しんでみたいことは？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-015",
+    "audience": "friends",
+    "level": 1,
+    "text": "一緒に過ごした中で、今思い出して笑える場面はある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-016",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちが無言で過ごす時間を、どう感じている？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-017",
+    "audience": "friends",
+    "level": 1,
+    "text": "私に教えてもらって、一緒に試したいことはある？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-018",
+    "audience": "friends",
+    "level": 1,
+    "text": "今の私たちの付き合いで、気に入っているところを一つ挙げるなら？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-019",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちで過ごした後、どんな気持ちで帰れるとうれしい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-020",
+    "audience": "friends",
+    "level": 1,
+    "text": "私と過ごす時、先に知っておいてほしい苦手なことはある？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-021",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちがいつもと違う遊びを試すなら、何がよさそう？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-022",
+    "audience": "friends",
+    "level": 1,
+    "text": "最近の私たちの会話で、もう少し話したい話題は？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-023",
+    "audience": "friends",
+    "level": 1,
+    "text": "お互いの趣味を一緒に楽しむなら、どこから試したい？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-024",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちの待ち合わせで、変えると楽になりそうなことは？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-025",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちでお店を選ぶ時、大切にしたい条件は？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-026",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちでゲームをするなら、どんな遊び方が楽しそう？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-028",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちがつい長く話してしまう話題は何？",
+    "category": "friendsDaily",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-030",
+    "audience": "friends",
+    "level": 1,
+    "text": "私が「あなたらしい」と感じていそうなのは、どんなところ？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-031",
+    "audience": "friends",
+    "level": 1,
+    "text": "私といる時、気を張らずに過ごせていると感じる？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-032",
+    "audience": "friends",
+    "level": 1,
+    "text": "私の行動で、いいなと思ったことはある？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-033",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちの間で、自然に大切にしている約束はある？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-034",
+    "audience": "friends",
+    "level": 1,
+    "text": "私が落ち込んでいる時、どんな声のかけ方なら自分も無理がない？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-035",
+    "audience": "friends",
+    "level": 1,
+    "text": "私にしてもらってうれしかった、小さなことはある？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-036",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちの会話で、話し終えるまで待ってほしい時はある？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-037",
+    "audience": "friends",
+    "level": 1,
+    "text": "私に今、ありがとうと伝えたいことはある？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-038",
+    "audience": "friends",
+    "level": 1,
+    "text": "私の様子がいつもと違う時、どんなふうに聞いてみたい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-039",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちが初めて話した時、どんな印象だった？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-040",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちで一緒に喜んだ出来事はある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-041",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちでうまくいかなかったことから、今に生かせそうなものはある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-042",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちが一緒に写った写真で、気に入っているものはある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-043",
+    "audience": "friends",
+    "level": 1,
+    "text": "私たちのメッセージは、どんなペースだと無理がない？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-044",
+    "audience": "friends",
+    "level": 1,
+    "text": "私との会話で、今は触れずにおきたい話題はある？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-045",
+    "audience": "friends",
+    "level": 1,
+    "text": "私からの誘いを断る時、どんな反応だと気が楽？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-048",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちが気軽に話せるのは、どんな雰囲気の時？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-049",
+    "audience": "friends",
+    "level": 2,
+    "text": "私に相談するなら、どんな聞き方をしてほしい？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-050",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの約束で、事前にはっきりさせたいことは？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-051",
+    "audience": "friends",
+    "level": 2,
+    "text": "私に合わせて、自分の希望を言いそびれることはある？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-052",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの意見が違った時、どんな話し方なら落ち着ける？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-054",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの気分が違う日、どんな過ごし方なら楽？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-056",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの間が気まずい時、次の連絡はどうしてもらえると楽？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-057",
+    "audience": "friends",
+    "level": 2,
+    "text": "急な誘いをする時、私に気をつけてほしいことは？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-058",
+    "audience": "friends",
+    "level": 2,
+    "text": "私から何か伝えるなら、どんな言い方が受け止めやすい？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-059",
+    "audience": "friends",
+    "level": 2,
+    "text": "今挑戦していることがあれば、私にどんな関わり方を望む？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-060",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの関わり方が変わったと感じる時期はある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-061",
+    "audience": "friends",
+    "level": 2,
+    "text": "私をうらやましく感じることがあるなら、どんな距離で付き合うと楽？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-062",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちが親しくても、それぞれに残しておきたい領域は？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-063",
+    "audience": "friends",
+    "level": 2,
+    "text": "私を頼ってもよいと思えるのは、どんな時？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-064",
+    "audience": "friends",
+    "level": 2,
+    "text": "今の私たちの付き合いを、無理なく続けるために必要なことは？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-065",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの予定を変えたい時、どんな連絡だと助かる？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-066",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの間で行き違いがあったら、どう話すきっかけを作りたい？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-067",
+    "audience": "friends",
+    "level": 2,
+    "text": "私からの返信が遅い時、どんなふうに受け止めている？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-068",
+    "audience": "friends",
+    "level": 2,
+    "text": "私にまだ話していないことを話すなら、どんな場面がよさそう？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-069",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの会話で、もっと自分から話してみたいことはある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-070",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちが会話を楽しめるのは、どんなきっかけがある時？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-071",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちでお金を使う時、金額の決め方で相談したいことはある？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-072",
+    "audience": "friends",
+    "level": 2,
+    "text": "私の話を聞いて、自分の選択肢が広がったことはある？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-074",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの好みが違っても、気兼ねなく話せると感じる？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-075",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちで助け合えたと感じる場面はある？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-076",
+    "audience": "friends",
+    "level": 2,
+    "text": "私にうれしい出来事があった時、どんなふうに共有するのが二人に合う？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-077",
+    "audience": "friends",
+    "level": 2,
+    "text": "私に弱音を話す時、どんな安心があると話しやすい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-078",
+    "audience": "friends",
+    "level": 2,
+    "text": "最近、私の中で気づいた小さな変化はある？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-079",
+    "audience": "friends",
+    "level": 2,
+    "text": "私の話を聞く余裕がない日は、どう伝えたい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-081",
+    "audience": "friends",
+    "level": 2,
+    "text": "私の頼みを断るなら、どんな言葉が言いやすい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-082",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちがお互いを比べる時、どんな話題が気になりやすい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-083",
+    "audience": "friends",
+    "level": 2,
+    "text": "今の私たちの距離感を、どう感じている？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-084",
+    "audience": "friends",
+    "level": 2,
+    "text": "私と過ごしたい日と、一人でいたい日はどう知らせたい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-085",
+    "audience": "friends",
+    "level": 2,
+    "text": "私に話したことを、二人の間だけにしてほしい時はどう伝えたい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-086",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちが前より親しくなったと感じた場面はある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-087",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの思い出の場所で、また行ってみたいところはある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-088",
+    "audience": "friends",
+    "level": 2,
+    "text": "私からの言葉で、今も覚えているものはある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-090",
+    "audience": "friends",
+    "level": 2,
+    "text": "会う頻度が変わった時、私たちの連絡の仕方はどう変わった？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-091",
+    "audience": "friends",
+    "level": 2,
+    "text": "私たちの以前のやりとりで、今なら違う伝え方をしたいことはある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-092",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの大事な選択が違う時、どんな付き合い方を続けたい？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-095",
+    "audience": "friends",
+    "level": 3,
+    "text": "私と話す時、自分を少し作っていると感じる場面はある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-096",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの生活環境が変わっても、残したい付き合い方は？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-098",
+    "audience": "friends",
+    "level": 3,
+    "text": "私が落ち込んでいる時、言葉以外でできそうな関わり方は？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-099",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの間で話しづらくなったことがあれば、どう扱いたい？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-100",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの期待する過ごし方が合わない時、どんな調整ができそう？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-102",
+    "audience": "friends",
+    "level": 3,
+    "text": "私と知り合って、自分の考え方が変わったことはある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-103",
+    "audience": "friends",
+    "level": 3,
+    "text": "これから私たちで、どんな思い出を作りたい？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-104",
+    "audience": "friends",
+    "level": 3,
+    "text": "私が自分を責めている時、どんな聞き方が自分にはできそう？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-105",
+    "audience": "friends",
+    "level": 3,
+    "text": "私の選択に賛成できない時、どこまで関わりたい？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-106",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちが対等に付き合えていると感じるのは、どんな場面？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-107",
+    "audience": "friends",
+    "level": 3,
+    "text": "私から頼られることが負担になったら、どう知らせたい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-108",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの出来事で、大切に覚えていたいものは？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-109",
+    "audience": "friends",
+    "level": 3,
+    "text": "これから私たちは、どんな距離感で付き合っていきたい？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-110",
+    "audience": "friends",
+    "level": 3,
+    "text": "今の私たちの関係に、もう少しあるとうれしいものは？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-111",
+    "audience": "friends",
+    "level": 3,
+    "text": "私にもう少し知ってもらいたい、自分の一面はある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-112",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの考え方の違いで、面白いと感じたものはある？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-115",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちのどちらかが変わったと感じた時、何を聞いてみたい？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-116",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの間で信頼を感じるのは、どんなやりとり？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-117",
+    "audience": "friends",
+    "level": 3,
+    "text": "私の相談が重く感じられたら、どんなふうに伝えたい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-119",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの間で同じ行き違いが続いたら、どう話し合いたい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-121",
+    "audience": "friends",
+    "level": 3,
+    "text": "私との付き合いで、今より負担を減らせるところはある？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-122",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの間の誤解を話すなら、どんな場面だと落ち着ける？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-124",
+    "audience": "friends",
+    "level": 3,
+    "text": "私に本音を話す前に、どんな反応が気になる？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-125",
+    "audience": "friends",
+    "level": 3,
+    "text": "私にはまだ見せていないけれど、見せてもよいと思う一面はある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-126",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの間で、話す時期を見計らっていることはある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-127",
+    "audience": "friends",
+    "level": 3,
+    "text": "私からの期待が負担に感じられることはある？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-129",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちが互いのことに関わる時、どこから先は本人に任せたい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-130",
+    "audience": "friends",
+    "level": 3,
+    "text": "私との付き合いで、自分の都合が後回しになると感じることはある？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-131",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの今の付き合い方が合っているか、何を手がかりにしている？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-132",
+    "audience": "friends",
+    "level": 3,
+    "text": "これから私たちが連絡を取り合うなら、どんな方法が続けやすい？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-133",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちで会う時間と、それぞれの時間をどう両立したい？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-134",
+    "audience": "friends",
+    "level": 3,
+    "text": "年を重ねた私たちは、どんな時間を一緒に楽しめそう？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-136",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの間で、今も確かめておきたい誤解はある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-137",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちが以前話したことを、今も同じように扱ってよいと思う？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-138",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの昔の写真を見ると、何に目が向く？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-139",
+    "audience": "friends",
+    "level": 3,
+    "text": "私たちの出会った頃と今で、付き合い方にどんな変化がある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-140",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちのやりとりで傷ついた時、どんな距離が必要になると思う？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-141",
+    "audience": "friends",
+    "level": 4,
+    "text": "私に気持ちを分かってほしかった場面はある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-143",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの間で、改めて言葉にしておきたい約束は？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-144",
+    "audience": "friends",
+    "level": 4,
+    "text": "私のつらい話を聞く時、自分を守るために必要なことは？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-145",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの間で許せないことがあった時、すぐに結論を出さずに考えたい？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-146",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちが別々の道に進むとしたら、どんなつながりを残したい？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-147",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの付き合いで、寂しさを感じることはある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-148",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの距離を見直したい時、どんなふうに知らせたい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-149",
+    "audience": "friends",
+    "level": 4,
+    "text": "私から助けを求められても余裕がない時、どう伝えたい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-151",
+    "audience": "friends",
+    "level": 4,
+    "text": "私に理解されなくても、自分で決めておきたいことはある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-152",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの頼みごとで、負担が偏っていると感じる部分はある？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-153",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの会話の中で、今も心に残っている言葉は？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-154",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの約束で、これからも続けたいものはある？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-155",
+    "audience": "friends",
+    "level": 4,
+    "text": "私との関係で、変えてもよい部分と守りたい部分は何？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-156",
+    "audience": "friends",
+    "level": 4,
+    "text": "私が大丈夫と言った時、その言葉をどんなふうに受け止めたい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-157",
+    "audience": "friends",
+    "level": 4,
+    "text": "今の私たちだからこそ、話してもよいと思えることはある？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-158",
+    "audience": "friends",
+    "level": 4,
+    "text": "もし私たちが距離を置いた後に話すなら、何から確かめたい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-159",
+    "audience": "friends",
+    "level": 4,
+    "text": "これからの私たちの付き合いで、一番大切にしたいことは？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-160",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちのどちらかが相手を傷つけたと気づいた時、どう話を始めたい？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-161",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちが互いを比べてしまう時、どんな距離を取れると楽？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-162",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの関係を続けるか迷ったら、何を大切に考えたい？",
+    "category": "friendsCommunication",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-163",
+    "audience": "friends",
+    "level": 4,
+    "text": "私との会話で、説明せずに守っておきたいことはある？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-165",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちが少し距離を置くとしたら、連絡の仕方をどう決めたい？",
+    "category": "friendsBoundaries",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-166",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの相談が二人だけでは難しい時、誰の力を借りたい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-167",
+    "audience": "friends",
+    "level": 4,
+    "text": "私に弱いところを話すなら、どんな受け止め方をしてほしい？",
+    "category": "friendsCare",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-170",
+    "audience": "friends",
+    "level": 4,
+    "text": "私からの頼みが自分の考えと合わない時、どう伝えたい？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-172",
+    "audience": "friends",
+    "level": 4,
+    "text": "私に知られている自分と、自分が感じる自分に違いはある？",
+    "category": "friendsValues",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-173",
+    "audience": "friends",
+    "level": 4,
+    "text": "もし私たちの連絡が自然に減ったら、その変化をどう扱いたい？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-174",
+    "audience": "friends",
+    "level": 4,
+    "text": "10年後の私たちに、今から残しておきたいものは何？",
+    "category": "friendsFuture",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-175",
+    "audience": "friends",
+    "level": 4,
+    "text": "私たちの過去のやりとりで、今の距離感に影響していることはある？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-friends-fit-177",
+    "audience": "friends",
+    "level": 4,
+    "text": "私と知り合った頃に比べて、自分らしさの出し方は変わった？",
+    "category": "friendsMemories",
+    "source": "editorial"
+  }
 ]

@@ -1,11 +1,11 @@
 [
   {
-    "id": "values-1-1",
+    "id": "editorial-couples-fit-001",
     "audience": "couples",
     "level": 1,
-    "text": "休日は外に出たい派？家でゆっくりしたい派？",
+    "text": "二人の休日に、外出したい気持ちと家で休みたい気持ちが違ったらどう決めたい？",
     "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "values-1-2",
@@ -16,36 +16,28 @@
     "source": "loves"
   },
   {
-    "id": "values-1-3",
+    "id": "editorial-couples-fit-002",
     "audience": "couples",
     "level": 1,
-    "text": "ご飯は作る派？食べに行く派？",
+    "text": "恋人と食事をするなら、一緒に作るのと外食ではどちらが好き？",
     "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "values-1-4",
+    "id": "editorial-couples-fit-003",
     "audience": "couples",
     "level": 1,
-    "text": "予定はしっかり決めたい？その場で決めたい？",
+    "text": "二人で出かける予定は、前もって決めたい？当日の気分で決めたい？",
     "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "values-1-5",
+    "id": "editorial-couples-fit-004",
     "audience": "couples",
     "level": 1,
-    "text": "写真はたくさん撮りたい派？思い出に残れば十分派？",
+    "text": "恋人と過ごす時間を、写真にどのくらい残したい？",
     "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "values-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "朝と夜、どっちの時間が好き？",
-    "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "values-1-7",
@@ -56,26 +48,18 @@
     "source": "loves"
   },
   {
-    "id": "values-1-8",
+    "id": "editorial-couples-fit-005",
     "audience": "couples",
     "level": 1,
-    "text": "記念日はちゃんと祝いたい派？さりげなくでいい派？",
+    "text": "二人の記念日は、どんなふうに過ごしたい？",
     "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "values-2-1",
     "audience": "couples",
     "level": 2,
     "text": "恋人にされて嬉しい気づかいは？",
-    "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "values-2-2",
-    "audience": "couples",
-    "level": 2,
-    "text": "自分が大切にされてるなって感じる瞬間は？",
     "category": "values",
     "source": "loves"
   },
@@ -88,20 +72,12 @@
     "source": "loves"
   },
   {
-    "id": "editorial-couples-review-025",
+    "id": "editorial-couples-fit-006",
     "audience": "couples",
     "level": 2,
-    "text": "メッセージの返信は早い方が安心する？",
+    "text": "恋人と一緒にいて、落ち着いて過ごせるのはどんな時？",
     "category": "values",
     "source": "editorial"
-  },
-  {
-    "id": "values-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "一緒にいて落ち着く人ってどんな人？",
-    "category": "values",
-    "source": "loves"
   },
   {
     "id": "values-2-6",
@@ -112,28 +88,12 @@
     "source": "loves"
   },
   {
-    "id": "values-2-8",
+    "id": "editorial-couples-fit-007",
     "audience": "couples",
     "level": 2,
-    "text": "自分のことを理解してくれてるなって感じるのはどんなとき？",
+    "text": "恋人が自分を理解してくれていると感じるのは、どんな時？",
     "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "values-3-1",
-    "audience": "couples",
-    "level": 3,
-    "text": "長く続く関係に必要なことは何だと思う？",
-    "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "values-3-2",
-    "audience": "couples",
-    "level": 3,
-    "text": "「好き」と「安心する」はどっちが大事？",
-    "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "values-3-3",
@@ -144,20 +104,12 @@
     "source": "loves"
   },
   {
-    "id": "values-3-4",
+    "id": "editorial-couples-fit-008",
     "audience": "couples",
     "level": 3,
-    "text": "相手に合わせることと我慢の違いって何だと思う？",
+    "text": "デートの予定で、相手に合わせることが負担になるのはどんな時？",
     "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "values-3-5",
-    "audience": "couples",
-    "level": 3,
-    "text": "不安なとき、言葉で安心したい？行動で安心したい？",
-    "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "values-3-6",
@@ -184,50 +136,26 @@
     "source": "loves"
   },
   {
-    "id": "values-4-1",
+    "id": "editorial-couples-fit-009",
     "audience": "couples",
     "level": 4,
-    "text": "本当は言いたいけど、言えずに我慢していることはある？",
+    "text": "恋人に気をつかいすぎて、疲れることはある？",
     "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "values-4-2",
+    "id": "editorial-couples-fit-010",
     "audience": "couples",
     "level": 4,
-    "text": "相手に気をつかいすぎて、疲れることはある？",
+    "text": "恋人とのやりとりで、寂しく感じることはある？",
     "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "values-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "嫌われたくなくて、本音を隠すことはある？",
-    "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "values-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "「これはされたら寂しい」と思うことはある？",
-    "category": "values",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "values-4-5",
     "audience": "couples",
     "level": 4,
     "text": "自分ばかり好きなのかなって不安になることはある？",
-    "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "values-4-6",
-    "audience": "couples",
-    "level": 4,
-    "text": "相手に直してほしいけど、言えていないことはある？",
     "category": "values",
     "source": "loves"
   },
@@ -245,14 +173,6 @@
     "level": 4,
     "text": "2人の関係で、ちゃんと話し合っておきたいことはある？",
     "category": "values",
-    "source": "loves"
-  },
-  {
-    "id": "love-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "明るい人、大人しい人、中間の人なら、どのタイプが好き？",
-    "category": "romance",
     "source": "loves"
   },
   {
@@ -296,12 +216,12 @@
     "source": "loves"
   },
   {
-    "id": "love-1-7",
+    "id": "editorial-couples-fit-011",
     "audience": "couples",
     "level": 1,
-    "text": "呼ばれ方は何が一番嬉しい？",
+    "text": "恋人には、どんな呼び方をしてもらいたい？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "love-1-8",
@@ -328,12 +248,12 @@
     "source": "loves"
   },
   {
-    "id": "love-1-12",
+    "id": "editorial-couples-fit-012",
     "audience": "couples",
     "level": 1,
-    "text": "何気ない日常で幸せだなって思う瞬間は？",
+    "text": "恋人と過ごす日常で、幸せを感じる瞬間は？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "love-1-13",
@@ -352,36 +272,20 @@
     "source": "loves"
   },
   {
-    "id": "love-2-2",
+    "id": "editorial-couples-fit-013",
     "audience": "couples",
     "level": 2,
-    "text": "甘えるのと甘えられるの、どっちが好き？",
-    "category": "romance",
-    "source": "loves"
-  },
-  {
-    "id": "love-2-3",
-    "audience": "couples",
-    "level": 2,
-    "text": "会う頻度はどれくらいが理想？",
-    "category": "romance",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-027",
-    "audience": "couples",
-    "level": 2,
-    "text": "毎日メッセージしたい？それとも、できる時で十分？",
+    "text": "恋人に甘える時と甘えられる時、どちらが自分には心地いい？",
     "category": "romance",
     "source": "editorial"
   },
   {
-    "id": "love-2-5",
+    "id": "editorial-couples-fit-014",
     "audience": "couples",
     "level": 2,
-    "text": "告白されたり、告白したりしたことはある？",
+    "text": "恋人とは、どのくらいの頻度で会いたい？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "love-2-6",
@@ -408,26 +312,10 @@
     "source": "loves"
   },
   {
-    "id": "love-2-9",
-    "audience": "couples",
-    "level": 2,
-    "text": "記念日は何をしたい？",
-    "category": "romance",
-    "source": "loves"
-  },
-  {
     "id": "love-2-10",
     "audience": "couples",
     "level": 2,
     "text": "2人だけの約束を作るなら何がいい？",
-    "category": "romance",
-    "source": "loves"
-  },
-  {
-    "id": "love-2-11",
-    "audience": "couples",
-    "level": 2,
-    "text": "「大切にされてる」って感じる行動は？",
     "category": "romance",
     "source": "loves"
   },
@@ -448,20 +336,20 @@
     "source": "loves"
   },
   {
-    "id": "love-3-3",
+    "id": "editorial-couples-fit-015",
     "audience": "couples",
     "level": 3,
-    "text": "不安になったとき、どうやって安心したい？",
+    "text": "恋人とのことで不安になった時、どんなふうに気持ちを伝えたい？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "love-3-4",
+    "id": "editorial-couples-fit-016",
     "audience": "couples",
     "level": 3,
-    "text": "喧嘩したら、どんなふうに仲直りしたい？",
+    "text": "恋人とけんかをしたら、どんなふうに仲直りしたい？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "love-3-5",
@@ -472,28 +360,28 @@
     "source": "loves"
   },
   {
-    "id": "love-3-6",
+    "id": "editorial-couples-fit-017",
     "audience": "couples",
     "level": 3,
-    "text": "相手のために変わってもいいと思う部分はある？",
+    "text": "恋人と過ごしやすくするために、自分から変えてみたい習慣はある？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "love-3-7",
+    "id": "editorial-couples-fit-018",
     "audience": "couples",
     "level": 3,
-    "text": "逆に、自分らしさとして変えたくない部分は？",
+    "text": "恋人と付き合う中でも、変えずに大切にしたい自分らしさは？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "love-3-8",
+    "id": "editorial-couples-fit-019",
     "audience": "couples",
     "level": 3,
-    "text": "「重い」と「愛情深い」の違いって何だと思う？",
+    "text": "恋人への愛情表現が、お互いの負担にならないために大切なことは？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "love-3-9",
@@ -512,12 +400,12 @@
     "source": "loves"
   },
   {
-    "id": "love-4-1",
+    "id": "editorial-couples-fit-020",
     "audience": "couples",
     "level": 4,
-    "text": "嫉妬したとき、正直に言える？隠す？",
+    "text": "恋人に嫉妬した時、その気持ちを伝えられる？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "editorial-couples-review-008",
@@ -544,44 +432,36 @@
     "source": "loves"
   },
   {
-    "id": "love-4-5",
+    "id": "editorial-couples-fit-021",
     "audience": "couples",
     "level": 4,
-    "text": "隠し事とプライバシーの違いは何だと思う？",
-    "category": "romance",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-020",
-    "audience": "couples",
-    "level": 4,
-    "text": "スマホや個人アカウントのプライバシーで、大切にしたいことは？",
+    "text": "恋人に話すことと、自分だけにしておくことの境目は？",
     "category": "romance",
     "source": "editorial"
   },
   {
-    "id": "love-4-7",
+    "id": "editorial-couples-fit-022",
     "audience": "couples",
     "level": 4,
-    "text": "返信が遅いとき、不安になることはある？",
+    "text": "恋人同士でも、スマホや個人アカウントで守りたいプライバシーは？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "love-4-8",
+    "id": "editorial-couples-fit-023",
     "audience": "couples",
     "level": 4,
-    "text": "会えない日が続いたら、どんなふうに安心させてほしい？",
+    "text": "恋人と会えない日が続く時、どんなやりとりがあると安心する？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "love-4-9",
+    "id": "editorial-couples-fit-024",
     "audience": "couples",
     "level": 4,
-    "text": "愛情表現が足りないと感じたら言える？",
+    "text": "恋人からの愛情表現が物足りない時、どんなふうに希望を伝えたい？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "love-4-10",
@@ -600,14 +480,6 @@
     "source": "loves"
   },
   {
-    "id": "love-4-12",
-    "audience": "couples",
-    "level": 4,
-    "text": "これを言ったら重いかな、と思って言えないことはある？",
-    "category": "romance",
-    "source": "loves"
-  },
-  {
     "id": "love-4-13",
     "audience": "couples",
     "level": 4,
@@ -616,36 +488,20 @@
     "source": "loves"
   },
   {
-    "id": "love-4-14",
+    "id": "editorial-couples-fit-025",
     "audience": "couples",
     "level": 4,
-    "text": "嫌なときにちゃんと「嫌」と言える？",
+    "text": "恋人との触れ合いを断りたい時、言いやすくするには何が必要？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "love-4-15",
+    "id": "editorial-couples-fit-026",
     "audience": "couples",
     "level": 4,
-    "text": "断ったら嫌われるかもと思うことはある？",
+    "text": "恋人の誘いを断る時、関係への不安を感じることはある？",
     "category": "romance",
-    "source": "loves"
-  },
-  {
-    "id": "love-4-16",
-    "audience": "couples",
-    "level": 4,
-    "text": "相手に合わせて無理してしまうことはある？",
-    "category": "romance",
-    "source": "loves"
-  },
-  {
-    "id": "love-4-17",
-    "audience": "couples",
-    "level": 4,
-    "text": "好きだからこそ怖くなることはある？",
-    "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "love-4-18",
@@ -656,20 +512,20 @@
     "source": "loves"
   },
   {
-    "id": "love-4-19",
+    "id": "editorial-couples-fit-027",
     "audience": "couples",
     "level": 4,
-    "text": "もし気持ちが冷めたら、正直に言える？",
+    "text": "恋人への気持ちが変わった時、どんなふうに話し合いたい？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "love-4-20",
+    "id": "editorial-couples-fit-028",
     "audience": "couples",
     "level": 4,
-    "text": "すれ違いが増えたら、どうやって戻したい？",
+    "text": "恋人とすれ違いが増えたら、何から話し合いたい？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "love-4-21",
@@ -688,12 +544,12 @@
     "source": "loves"
   },
   {
-    "id": "love-4-23",
+    "id": "editorial-couples-fit-113",
     "audience": "couples",
     "level": 4,
-    "text": "付き合ってから好きになっていく恋愛はアリだと思う？",
+    "text": "私たちの気持ちが育つ速さが違う時、どんな付き合い方をしたい？",
     "category": "romance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "editorial-couples-review-019",
@@ -704,92 +560,12 @@
     "source": "editorial"
   },
   {
-    "id": "other-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "最近一番笑ったことは？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "最近おいしかったものは？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "今ハマってることは？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-1-4",
-    "audience": "couples",
-    "level": 1,
-    "text": "最近撮った写真でお気に入りは？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "今行きたい場所は？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "今日の気分を一言で言うと？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-2-1",
+    "id": "editorial-couples-fit-029",
     "audience": "couples",
     "level": 2,
-    "text": "最近がんばったことは？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-2-3",
-    "audience": "couples",
-    "level": 2,
-    "text": "今ちょっと楽しみにしてることは？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-2-4",
-    "audience": "couples",
-    "level": 2,
-    "text": "自分の好きなところは？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "相手の好きなところを3つ言うなら？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "最近「ありがとう」って思ったことは？",
-    "category": "spicy",
-    "source": "loves"
+    "text": "恋人の魅力で、今いちばん伝えたいことは？",
+    "category": "affection",
+    "source": "editorial"
   },
   {
     "id": "other-3-1",
@@ -800,84 +576,20 @@
     "source": "loves"
   },
   {
-    "id": "other-3-2",
+    "id": "editorial-couples-fit-030",
     "audience": "couples",
     "level": 3,
-    "text": "これから頑張りたいことは？",
-    "category": "spicy",
-    "source": "loves"
+    "text": "恋人に応援してほしい自分の目標はある？",
+    "category": "conflictSupport",
+    "source": "editorial"
   },
   {
-    "id": "other-3-3",
-    "audience": "couples",
-    "level": 3,
-    "text": "2人で作りたい思い出は？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-3-4",
-    "audience": "couples",
-    "level": 3,
-    "text": "もし1日だけ自由に遊べるなら何したい？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-3-5",
-    "audience": "couples",
-    "level": 3,
-    "text": "相手に応援してほしいことは？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-3-6",
-    "audience": "couples",
-    "level": 3,
-    "text": "将来、どんな自分になりたい？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-4-1",
+    "id": "editorial-couples-fit-031",
     "audience": "couples",
     "level": 4,
-    "text": "最近、誰にも言えてない不安はある？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "本当は甘えたいけど我慢していることはある？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "最近、無理して明るくしていることはある？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "自分に自信がなくなる瞬間はある？",
-    "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "other-4-5",
-    "audience": "couples",
-    "level": 4,
-    "text": "相手にもっと頼ってほしいと思うことはある？",
-    "category": "spicy",
-    "source": "loves"
+    "text": "恋人が一人で抱えているように感じた時、どんな声をかけたい？",
+    "category": "conflictSupport",
+    "source": "editorial"
   },
   {
     "id": "other-4-6",
@@ -885,214 +597,6 @@
     "level": 4,
     "text": "今、恋人に一番言ってほしい言葉は？",
     "category": "spicy",
-    "source": "loves"
-  },
-  {
-    "id": "daily-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "今日いちばん楽しかったことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "最近食べておいしかったものは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "好きな食べ物は？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-1-4",
-    "audience": "couples",
-    "level": 1,
-    "text": "好きな飲み物は？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "休日は家にいたい？外に出たい？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "最近笑ったことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-2-1",
-    "audience": "couples",
-    "level": 2,
-    "text": "最近ハマっていることは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-2-2",
-    "audience": "couples",
-    "level": 2,
-    "text": "今ほしいものは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-2-3",
-    "audience": "couples",
-    "level": 2,
-    "text": "最近ちょっと頑張ったことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-2-4",
-    "audience": "couples",
-    "level": 2,
-    "text": "落ち着く場所は？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "一日休みなら何したい？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "最近よく考えていることは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-3-1",
-    "audience": "couples",
-    "level": 3,
-    "text": "最近疲れたことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-3-2",
-    "audience": "couples",
-    "level": 3,
-    "text": "最近少し嬉しかったことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-3-3",
-    "audience": "couples",
-    "level": 3,
-    "text": "最近不安になったことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-3-4",
-    "audience": "couples",
-    "level": 3,
-    "text": "自分の中で大切にしている時間は？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-3-5",
-    "audience": "couples",
-    "level": 3,
-    "text": "最近「頑張ったな」と思ったことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-3-6",
-    "audience": "couples",
-    "level": 3,
-    "text": "最近誰かに褒められて嬉しかったことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-4-1",
-    "audience": "couples",
-    "level": 4,
-    "text": "最近ほんとは誰かに聞いてほしかったことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "ひとりで抱え込みがちなことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "最近無理して笑ったことはある？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "今の生活で変えたいことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-4-5",
-    "audience": "couples",
-    "level": 4,
-    "text": "誰にも言っていない小さな悩みはある？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "daily-4-6",
-    "audience": "couples",
-    "level": 4,
-    "text": "本当はもっと分かってほしいことは？",
-    "category": "daily",
-    "source": "loves"
-  },
-  {
-    "id": "date-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "一緒に食べたいものは？",
-    "category": "date",
-    "source": "loves"
-  },
-  {
-    "id": "date-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "一緒に行きたい場所は？",
-    "category": "date",
     "source": "loves"
   },
   {
@@ -1104,28 +608,28 @@
     "source": "loves"
   },
   {
-    "id": "date-1-4",
+    "id": "editorial-couples-fit-032",
     "audience": "couples",
     "level": 1,
-    "text": "映画を見るなら家と映画館どっち？",
+    "text": "恋人と映画を見る時、作品はどう選びたい？",
     "category": "date",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "date-1-5",
+    "id": "editorial-couples-fit-033",
     "audience": "couples",
     "level": 1,
-    "text": "写真を撮るのと撮られるの、どっちが好き？",
+    "text": "デート中に写真を撮る時、相手にどんな配慮をしてほしい？",
     "category": "date",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "date-1-6",
+    "id": "editorial-couples-fit-034",
     "audience": "couples",
     "level": 1,
-    "text": "静かな場所とにぎやかな場所、どっちが好き？",
+    "text": "デートの行き先で二人の好みが違ったら、どう決めたい？",
     "category": "date",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "date-2-1",
@@ -1148,14 +652,6 @@
     "audience": "couples",
     "level": 2,
     "text": "一緒に見たい景色は？",
-    "category": "date",
-    "source": "loves"
-  },
-  {
-    "id": "date-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "一緒にゲームするなら何したい？",
     "category": "date",
     "source": "loves"
   },
@@ -1240,14 +736,6 @@
     "source": "loves"
   },
   {
-    "id": "date-4-5",
-    "audience": "couples",
-    "level": 4,
-    "text": "大人になっても覚えていたいデートは？",
-    "category": "date",
-    "source": "loves"
-  },
-  {
     "id": "date-4-6",
     "audience": "couples",
     "level": 4,
@@ -1256,396 +744,20 @@
     "source": "loves"
   },
   {
-    "id": "friendship-1-1",
+    "id": "editorial-couples-fit-035",
     "audience": "couples",
     "level": 1,
-    "text": "友達は多い方がいい？少ない方がいい？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "広く浅くと狭く深く、どっちがいい？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "グループ行動は好き？苦手？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "一人でいる人に話しかけられる？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "親友は何人くらいほしい？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-2-1",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達に求めることは？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-2-2",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達にされたら嬉しいことは？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-2-3",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達にされたら嫌なことは？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-2-4",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達に本音を言える？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達に相談するのは得意？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "ネッ友とリア友って、どっちが話しやすいと思う？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-2-7",
-    "audience": "couples",
-    "level": 2,
-    "text": "信頼できる友達ってどんな人？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-3-1",
-    "audience": "couples",
-    "level": 3,
-    "text": "友達に合わせすぎることある？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-003",
-    "audience": "couples",
-    "level": 3,
-    "text": "その場のノリについていけないと感じる時はある？",
-    "category": "friendship",
-    "source": "editorial"
-  },
-  {
-    "id": "friendship-3-3",
-    "audience": "couples",
-    "level": 3,
-    "text": "いじりと悪口の違いは何だと思う？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-3-5",
-    "audience": "couples",
-    "level": 3,
-    "text": "友達関係で一番難しいと思うことは？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-3-6",
-    "audience": "couples",
-    "level": 3,
-    "text": "本当の友達って、どんな時に分かると思う？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-4-1",
-    "audience": "couples",
-    "level": 4,
-    "text": "友達の秘密はどこまで守るべき？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "守れない秘密ってあると思う？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "友達が悪いことをしても味方でいる？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "味方でいることと、何でも許すことは同じ？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-4-5",
-    "audience": "couples",
-    "level": 4,
-    "text": "友達をかばうために嘘をつくのはあり？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "friendship-4-6",
-    "audience": "couples",
-    "level": 4,
-    "text": "友達に注意するのは裏切りだと思う？",
-    "category": "friendship",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "いじりといじめの違いは？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "冗談でも言ってはいけないことはある？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "「ノリだから」は理由になると思う？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-1-4",
-    "audience": "couples",
-    "level": 1,
-    "text": "相手が笑っていたら、本当に平気だと思う？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "みんなが笑っていても、本人が嫌そうならどう思う？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "友達同士なら多少きついことを言ってもいいと思う？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-2-1",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達が誰かを悪く言っていたら、会話に入る？黙る？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-2-2",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達が誰かを仲間外れにしていたらどうする？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-2-3",
-    "audience": "couples",
-    "level": 2,
-    "text": "本当は嫌そうだけど笑っている人を見たらどうする？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-2-4",
-    "audience": "couples",
-    "level": 2,
-    "text": "自分に関係ないいじめでも関わる？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "グループで一人だけ無視されていたら声をかける？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達がSNSで誰かをバカにしていたら注意する？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-3-1",
-    "audience": "couples",
-    "level": 3,
-    "text": "仲のいい友達がいじめていたら注意できる？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-3-2",
-    "audience": "couples",
-    "level": 3,
-    "text": "注意したら自分も嫌われそうならどうする？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-3-3",
-    "audience": "couples",
-    "level": 3,
-    "text": "「それはやめた方がいいよ」と言える？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-3-4",
-    "audience": "couples",
-    "level": 3,
-    "text": "本当の友達なら、悪いことを止めるべきだと思う？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-3-5",
-    "audience": "couples",
-    "level": 3,
-    "text": "直接注意するのと、後で二人で言うのどっちがいい？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-3-6",
-    "audience": "couples",
-    "level": 3,
-    "text": "注意してもやめなかったらどうする？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-004",
-    "audience": "couples",
-    "level": 4,
-    "text": "友達が誰かを傷つけていると気づいたら、どんな対応ができると思う？",
-    "category": "bullying",
-    "source": "editorial"
-  },
-  {
-    "id": "editorial-couples-review-005",
-    "audience": "couples",
-    "level": 4,
-    "text": "本人の気持ちを尊重しながら安全を守るために、誰に相談できると思う？",
-    "category": "bullying",
-    "source": "editorial"
-  },
-  {
-    "id": "bullying-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "誰かを守るためなら、嫌われても動ける？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "見て見ぬふりをした人にも責任はあると思う？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-4-5",
-    "audience": "couples",
-    "level": 4,
-    "text": "自分が止めたことで標的にされたらどうする？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "bullying-4-6",
-    "audience": "couples",
-    "level": 4,
-    "text": "一人で抱え込まない方がいい場面はどんな時？",
-    "category": "bullying",
-    "source": "loves"
-  },
-  {
-    "id": "memories-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "初めて話した時の印象は？",
+    "text": "恋人と初めて話した時、どんな印象を持った？",
     "category": "memories",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "memories-1-2",
+    "id": "editorial-couples-fit-036",
     "audience": "couples",
     "level": 1,
-    "text": "今の印象は最初と変わった？",
+    "text": "恋人への印象は、出会った頃からどう変わった？",
     "category": "memories",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "memories-1-3",
@@ -1672,12 +784,12 @@
     "source": "loves"
   },
   {
-    "id": "memories-1-6",
+    "id": "editorial-couples-fit-037",
     "audience": "couples",
     "level": 1,
-    "text": "もう一回やりたいことは？",
+    "text": "二人でしたことの中で、もう一度やってみたいことはある？",
     "category": "memories",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "editorial-couples-review-016",
@@ -1702,14 +814,6 @@
     "text": "付き合う前に嬉しかったことは？",
     "category": "memories",
     "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-017",
-    "audience": "couples",
-    "level": 2,
-    "text": "付き合う前、相手が気づいていなさそうだったことは？",
-    "category": "memories",
-    "source": "editorial"
   },
   {
     "id": "memories-2-5",
@@ -1760,12 +864,12 @@
     "source": "loves"
   },
   {
-    "id": "memories-3-5",
+    "id": "editorial-couples-fit-038",
     "audience": "couples",
     "level": 3,
-    "text": "最初より仲良くなったと思うところは？",
+    "text": "付き合い始めた頃より、二人の距離が縮まったと感じるのはどんな時？",
     "category": "memories",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "memories-3-6",
@@ -1784,52 +888,20 @@
     "source": "loves"
   },
   {
-    "id": "memories-4-1",
+    "id": "editorial-couples-fit-039",
     "audience": "couples",
     "level": 4,
-    "text": "あの日の自分に言うなら何て言う？",
-    "category": "memories",
-    "source": "loves"
-  },
-  {
-    "id": "memories-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "まだ少し距離があると思うところは？",
-    "category": "memories",
-    "source": "loves"
-  },
-  {
-    "id": "memories-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "今までで一番印象に残っている言葉は？",
-    "category": "memories",
-    "source": "loves"
-  },
-  {
-    "id": "memories-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "これから作りたい思い出は？",
-    "category": "memories",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-018",
-    "audience": "couples",
-    "level": 4,
-    "text": "付き合う前の自分に一言伝えるなら？",
+    "text": "恋人との間で、これから少しずつ知っていきたいことは？",
     "category": "memories",
     "source": "editorial"
   },
   {
-    "id": "memories-4-6",
+    "id": "editorial-couples-fit-040",
     "audience": "couples",
     "level": 4,
-    "text": "これからもっと大切にしたいことは？",
+    "text": "恋人がかけてくれた言葉で、印象に残っているものは？",
     "category": "memories",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "affection-1-1",
@@ -1840,74 +912,34 @@
     "source": "loves"
   },
   {
-    "id": "affection-1-2",
+    "id": "editorial-couples-fit-041",
     "audience": "couples",
     "level": 1,
-    "text": "ハグは好き？",
+    "text": "恋人とハグする時、先に確かめてほしいことは？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "affection-1-3",
+    "id": "editorial-couples-fit-042",
     "audience": "couples",
     "level": 1,
-    "text": "手をつなぐのは好き？",
+    "text": "恋人に頭をなでられることを、どう感じる？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "affection-1-4",
+    "id": "editorial-couples-fit-043",
     "audience": "couples",
     "level": 1,
-    "text": "頭をなでられるのは好き？",
+    "text": "恋人に甘えたい時、自分から伝えるのは得意？苦手？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "affection-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "甘えるのは得意？苦手？",
-    "category": "affection",
-    "source": "loves"
-  },
-  {
-    "id": "affection-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "甘えられるのは好き？",
-    "category": "affection",
-    "source": "loves"
-  },
-  {
-    "id": "affection-2-1",
+    "id": "editorial-couples-fit-044",
     "audience": "couples",
     "level": 2,
-    "text": "言われて嬉しい言葉は？",
-    "category": "affection",
-    "source": "loves"
-  },
-  {
-    "id": "affection-2-2",
-    "audience": "couples",
-    "level": 2,
-    "text": "されて嬉しいことは？",
-    "category": "affection",
-    "source": "loves"
-  },
-  {
-    "id": "affection-2-3",
-    "audience": "couples",
-    "level": 2,
-    "text": "どんな褒め方が一番嬉しい？",
-    "category": "affection",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-014",
-    "audience": "couples",
-    "level": 2,
-    "text": "恋人に言われてうれしい言葉は？",
+    "text": "恋人に褒められるなら、どんな伝え方がうれしい？",
     "category": "affection",
     "source": "editorial"
   },
@@ -1920,20 +952,20 @@
     "source": "editorial"
   },
   {
-    "id": "affection-2-6",
+    "id": "editorial-couples-fit-045",
     "audience": "couples",
     "level": 2,
-    "text": "寂しい時はどうしてほしい？",
+    "text": "寂しい時、恋人にどんなふうに接してほしい？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "affection-3-1",
+    "id": "editorial-couples-fit-046",
     "audience": "couples",
     "level": 3,
-    "text": "人前で仲良くするのは平気？",
+    "text": "人前で恋人と仲良くする時、どんな距離感が心地いい？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "affection-3-2",
@@ -1944,44 +976,28 @@
     "source": "loves"
   },
   {
-    "id": "affection-3-3",
+    "id": "editorial-couples-fit-047",
     "audience": "couples",
     "level": 3,
-    "text": "くっついて歩くのは平気？",
+    "text": "恋人と並んで歩く時、どのくらいの距離が心地いい？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "affection-3-4",
+    "id": "editorial-couples-fit-048",
     "audience": "couples",
     "level": 3,
-    "text": "どんな時に愛されているなって感じる？",
+    "text": "泣きたい時、恋人にはそばにいてほしい？一人で過ごしたい？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "affection-3-5",
-    "audience": "couples",
-    "level": 3,
-    "text": "不安な時はどうしてほしい？",
-    "category": "affection",
-    "source": "loves"
-  },
-  {
-    "id": "affection-3-6",
-    "audience": "couples",
-    "level": 3,
-    "text": "泣きたい時はそばにいてほしい？",
-    "category": "affection",
-    "source": "loves"
-  },
-  {
-    "id": "affection-4-1",
+    "id": "editorial-couples-fit-049",
     "audience": "couples",
     "level": 4,
-    "text": "されると少し困る愛情表現は？",
+    "text": "恋人からの愛情表現で、少し困るものはある？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "affection-4-2",
@@ -2008,108 +1024,92 @@
     "source": "loves"
   },
   {
-    "id": "affection-4-5",
+    "id": "editorial-couples-fit-050",
     "audience": "couples",
     "level": 4,
-    "text": "愛情表現が足りないと感じる時はある？",
+    "text": "恋人との距離が近すぎると感じることはある？",
     "category": "affection",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "affection-4-6",
-    "audience": "couples",
-    "level": 4,
-    "text": "逆に距離が近すぎると感じる時はある？",
-    "category": "affection",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-028",
+    "id": "editorial-couples-fit-051",
     "audience": "couples",
     "level": 1,
-    "text": "電話とメッセージ、どちらで話すのが好き？",
+    "text": "恋人と話すなら、電話とメッセージのどちらが好き？",
     "category": "contactDistance",
     "source": "editorial"
   },
   {
-    "id": "contact-distance-1-2",
+    "id": "editorial-couples-fit-052",
     "audience": "couples",
     "level": 1,
-    "text": "毎日連絡したいタイプ？",
-    "category": "contactDistance",
-    "source": "loves"
-  },
-  {
-    "id": "contact-distance-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "電話はどれくらいしたい？",
-    "category": "contactDistance",
-    "source": "loves"
-  },
-  {
-    "id": "contact-distance-1-4",
-    "audience": "couples",
-    "level": 1,
-    "text": "寝落ち電話は好き？",
-    "category": "contactDistance",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-029",
-    "audience": "couples",
-    "level": 1,
-    "text": "メッセージで話すなら、どんな話題がいい？",
+    "text": "恋人とは毎日連絡したい？必要な時に連絡したい？",
     "category": "contactDistance",
     "source": "editorial"
   },
   {
-    "id": "contact-distance-1-6",
+    "id": "editorial-couples-fit-053",
     "audience": "couples",
     "level": 1,
-    "text": "電話で話すならどんな話題がいい？",
+    "text": "恋人と電話をするなら、どのくらいの長さが心地いい？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-2-1",
+    "id": "editorial-couples-fit-054",
     "audience": "couples",
-    "level": 2,
-    "text": "返信が遅いと不安になる？",
+    "level": 1,
+    "text": "恋人との電話は、眠る前に区切りをつけたい？つないでおきたい？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-2-2",
+    "id": "editorial-couples-fit-055",
     "audience": "couples",
-    "level": 2,
-    "text": "返信できない時、どんな一言があると安心？",
+    "level": 1,
+    "text": "恋人にメッセージを送るなら、どんな日常を伝えたい？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-2-3",
+    "id": "editorial-couples-fit-056",
     "audience": "couples",
-    "level": 2,
-    "text": "会えない日が続いたらどうしたい？",
+    "level": 1,
+    "text": "恋人と電話で話すなら、どんな話題が楽しい？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-2-4",
+    "id": "editorial-couples-fit-057",
     "audience": "couples",
     "level": 2,
-    "text": "毎日話すならどんな話がいい？",
+    "text": "恋人からの返信が遅い時、不安になることはある？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-2-5",
+    "id": "editorial-couples-fit-058",
     "audience": "couples",
     "level": 2,
-    "text": "忙しい時はどう伝えてほしい？",
+    "text": "恋人がすぐに返信できない時、どんな伝え方だと安心する？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-couples-fit-059",
+    "audience": "couples",
+    "level": 2,
+    "text": "恋人と毎日話すなら、どんな時間に話したい？",
+    "category": "contactDistance",
+    "source": "editorial"
+  },
+  {
+    "id": "editorial-couples-fit-060",
+    "audience": "couples",
+    "level": 2,
+    "text": "忙しくて連絡を減らしたい時、恋人にどう伝えたい？",
+    "category": "contactDistance",
+    "source": "editorial"
   },
   {
     "id": "contact-distance-2-6",
@@ -2120,36 +1120,20 @@
     "source": "loves"
   },
   {
-    "id": "contact-distance-3-1",
+    "id": "editorial-couples-fit-061",
     "audience": "couples",
     "level": 3,
-    "text": "一人の時間は必要？",
+    "text": "恋人と付き合う中で、一人の時間はどのくらい必要？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-3-2",
+    "id": "editorial-couples-fit-062",
     "audience": "couples",
     "level": 3,
-    "text": "距離が近すぎると疲れることある？",
+    "text": "恋人との距離が遠く感じる時、どう気持ちを確かめ合いたい？",
     "category": "contactDistance",
-    "source": "loves"
-  },
-  {
-    "id": "contact-distance-3-3",
-    "audience": "couples",
-    "level": 3,
-    "text": "逆に距離が遠いと不安になる？",
-    "category": "contactDistance",
-    "source": "loves"
-  },
-  {
-    "id": "contact-distance-3-4",
-    "audience": "couples",
-    "level": 3,
-    "text": "理想の連絡頻度は？",
-    "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "contact-distance-3-5",
@@ -2160,60 +1144,52 @@
     "source": "loves"
   },
   {
-    "id": "contact-distance-3-6",
+    "id": "editorial-couples-fit-063",
     "audience": "couples",
     "level": 3,
-    "text": "連絡が少ないと気持ちが冷めたように感じる？",
-    "category": "contactDistance",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-031",
-    "audience": "couples",
-    "level": 4,
-    "text": "連絡の頻度や方法に違いがある時、どうすり合わせたい？",
+    "text": "恋人との連絡が減ると、気持ちも離れたように感じる？",
     "category": "contactDistance",
     "source": "editorial"
   },
   {
-    "id": "contact-distance-4-3",
+    "id": "editorial-couples-fit-064",
     "audience": "couples",
     "level": 4,
-    "text": "寂しい時、自分から言える？",
+    "text": "恋人と連絡の頻度や方法が違う時、どうすり合わせたい？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-4-4",
+    "id": "editorial-couples-fit-065",
     "audience": "couples",
     "level": 4,
-    "text": "連絡が減った時、どう受け止めてほしい？",
+    "text": "恋人に寂しさを伝える時、どんな言葉なら話しやすい？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-4-5",
+    "id": "editorial-couples-fit-066",
     "audience": "couples",
     "level": 4,
-    "text": "返信できない時の約束を作るなら？",
+    "text": "自分からの連絡が減る時、恋人にどう受け止めてほしい？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "contact-distance-4-6",
+    "id": "editorial-couples-fit-067",
     "audience": "couples",
     "level": 4,
-    "text": "会えない時に安心するための工夫は？",
+    "text": "すぐに返信できない日のために、恋人とどんな約束をしておきたい？",
     "category": "contactDistance",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "jealousy-1-1",
+    "id": "editorial-couples-fit-068",
     "audience": "couples",
     "level": 1,
-    "text": "嫉妬しやすい方？",
+    "text": "恋人に嫉妬することはある？",
     "category": "jealousy",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "editorial-couples-review-021",
@@ -2224,98 +1200,50 @@
     "source": "editorial"
   },
   {
-    "id": "jealousy-1-3",
+    "id": "editorial-couples-fit-069",
     "audience": "couples",
     "level": 1,
-    "text": "好きだからこそ不安になることはある？",
-    "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-022",
-    "audience": "couples",
-    "level": 1,
-    "text": "気にかけてもらう時、どんな関わり方が心地よい？",
+    "text": "恋人に気にかけてもらう時、どんな関わり方が心地よい？",
     "category": "jealousy",
     "source": "editorial"
   },
   {
-    "id": "editorial-couples-review-010",
+    "id": "editorial-couples-fit-070",
     "audience": "couples",
-    "level": 1,
-    "text": "恋人が自分以外の人と親しく話している時、どんな気持ちになる？",
+    "level": 2,
+    "text": "恋人とのどんなやりとりで、嫉妬を感じることがある？",
     "category": "jealousy",
     "source": "editorial"
   },
   {
-    "id": "jealousy-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "嫉妬した時、態度に出る？",
-    "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "jealousy-2-1",
+    "id": "editorial-couples-fit-071",
     "audience": "couples",
     "level": 2,
-    "text": "どんな時に嫉妬する？",
+    "text": "恋人が自分のことに集中している時、自分はどう過ごしたい？",
     "category": "jealousy",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "jealousy-2-2",
+    "id": "editorial-couples-fit-072",
     "audience": "couples",
     "level": 2,
-    "text": "嫉妬した時、言える？",
+    "text": "恋人に心配してもらうことが、負担に感じることはある？",
     "category": "jealousy",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "jealousy-2-3",
+    "id": "editorial-couples-fit-073",
     "audience": "couples",
     "level": 2,
-    "text": "不安になった時、どうしてほしい？",
+    "text": "恋人への不安を、責めずに伝えるなら何と言いたい？",
     "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "jealousy-2-4",
-    "audience": "couples",
-    "level": 2,
-    "text": "放っておかれるのは平気？",
-    "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "jealousy-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "心配されすぎるのは平気？",
-    "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "jealousy-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "不安を言う時、どんな言い方がいい？",
-    "category": "jealousy",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "editorial-couples-review-011",
     "audience": "couples",
     "level": 3,
     "text": "友人との距離感について、恋人と話しておきたいことはある？",
-    "category": "jealousy",
-    "source": "editorial"
-  },
-  {
-    "id": "editorial-couples-review-012",
-    "audience": "couples",
-    "level": 3,
-    "text": "恋人が友人と二人で出かけることをどう考える？",
     "category": "jealousy",
     "source": "editorial"
   },
@@ -2328,20 +1256,12 @@
     "source": "loves"
   },
   {
-    "id": "jealousy-3-4",
+    "id": "editorial-couples-fit-074",
     "audience": "couples",
     "level": 3,
-    "text": "嘘をつかれたらどこまで許せる？",
+    "text": "恋人の嘘に気づいた時、話し合う前に確かめたいことは？",
     "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "jealousy-3-5",
-    "audience": "couples",
-    "level": 3,
-    "text": "隠し事はどこまであり？",
-    "category": "jealousy",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "editorial-couples-review-013",
@@ -2352,36 +1272,12 @@
     "source": "editorial"
   },
   {
-    "id": "jealousy-4-1",
+    "id": "editorial-couples-fit-075",
     "audience": "couples",
     "level": 4,
-    "text": "浮気のラインはどこから？",
+    "text": "恋人からのどんな関わり方を、束縛だと感じる？",
     "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "jealousy-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "束縛だと感じる行動は？",
-    "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "jealousy-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "「重い」と「大切にしている」の違いは？",
-    "category": "jealousy",
-    "source": "loves"
-  },
-  {
-    "id": "jealousy-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "お互い安心するために決めたいことは？",
-    "category": "jealousy",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "editorial-couples-review-023",
@@ -2400,132 +1296,84 @@
     "source": "loves"
   },
   {
-    "id": "conflict-support-1-1",
+    "id": "editorial-couples-fit-076",
     "audience": "couples",
     "level": 1,
-    "text": "喧嘩したらすぐ話したい？少し時間がほしい？",
+    "text": "恋人とけんかをした時、すぐ話したい？少し時間がほしい？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-1-2",
+    "id": "editorial-couples-fit-077",
     "audience": "couples",
     "level": 1,
-    "text": "怒った時、黙るタイプ？言うタイプ？",
+    "text": "恋人との話し合いで怒りが強い時、落ち着くために何をしたい？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-1-3",
+    "id": "editorial-couples-fit-078",
     "audience": "couples",
     "level": 1,
-    "text": "「ごめんね」はすぐ言える？",
+    "text": "恋人に謝る時、自分の気持ちをどう言葉にしたい？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-1-4",
+    "id": "editorial-couples-fit-079",
     "audience": "couples",
     "level": 1,
-    "text": "仲直りで大事にしたいことは？",
+    "text": "恋人に悲しい気持ちを知ってほしい時、どんな合図を出せそう？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-1-5",
+    "id": "editorial-couples-fit-080",
     "audience": "couples",
     "level": 1,
-    "text": "悲しい時、気づいてほしい？",
+    "text": "恋人から相談された時、どんな役割で聞きたい？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "相談されるのは好き？",
-    "category": "conflictSupport",
-    "source": "loves"
-  },
-  {
-    "id": "conflict-support-2-1",
+    "id": "editorial-couples-fit-081",
     "audience": "couples",
     "level": 2,
-    "text": "言われたら傷つく言葉は？",
+    "text": "恋人との会話で、避けてもらいたい言い方はある？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-2-2",
+    "id": "editorial-couples-fit-082",
     "audience": "couples",
     "level": 2,
-    "text": "冗談でも言われたくないことは？",
+    "text": "恋人との冗談で、触れてほしくない話題はある？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-2-3",
+    "id": "editorial-couples-fit-083",
     "audience": "couples",
     "level": 2,
-    "text": "落ち込んでいる時に言われたい言葉は？",
+    "text": "落ち込んでいる時、恋人にどんな言葉をかけてほしい？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-2-4",
+    "id": "editorial-couples-fit-084",
     "audience": "couples",
     "level": 2,
-    "text": "逆に言われたくない言葉は？",
+    "text": "恋人に相談した時、最初にどんな反応があると話しやすい？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "泣いている時にしてほしいことは？",
-    "category": "conflictSupport",
-    "source": "loves"
-  },
-  {
-    "id": "conflict-support-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "相談した時にまずしてほしいことは？",
-    "category": "conflictSupport",
-    "source": "loves"
-  },
-  {
-    "id": "conflict-support-3-1",
+    "id": "editorial-couples-fit-085",
     "audience": "couples",
     "level": 3,
-    "text": "我慢してしまうことはある？",
+    "text": "恋人に本音を言えない時、どんなふうに時間をもらいたい？",
     "category": "conflictSupport",
-    "source": "loves"
-  },
-  {
-    "id": "conflict-support-3-2",
-    "audience": "couples",
-    "level": 3,
-    "text": "本音を言うのは得意？",
-    "category": "conflictSupport",
-    "source": "loves"
-  },
-  {
-    "id": "conflict-support-3-3",
-    "audience": "couples",
-    "level": 3,
-    "text": "本音を言えない時はどうなる？",
-    "category": "conflictSupport",
-    "source": "loves"
-  },
-  {
-    "id": "conflict-support-3-4",
-    "audience": "couples",
-    "level": 3,
-    "text": "相談したい時、アドバイスがほしい？聞いてほしい？",
-    "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "editorial-couples-review-024",
@@ -2536,44 +1384,28 @@
     "source": "editorial"
   },
   {
-    "id": "conflict-support-3-6",
+    "id": "editorial-couples-fit-086",
     "audience": "couples",
     "level": 3,
-    "text": "でも察してほしくないことは？",
+    "text": "恋人に推測で決めつけず、直接聞いてほしいことはある？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-4-1",
+    "id": "editorial-couples-fit-087",
     "audience": "couples",
     "level": 4,
-    "text": "直してほしいところを言うのは平気？",
+    "text": "恋人に変えてほしいことを言われた時、どんな話し方だと受け止めやすい？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "conflict-support-4-2",
+    "id": "editorial-couples-fit-088",
     "audience": "couples",
     "level": 4,
-    "text": "直してほしいことを言われるのは平気？",
+    "text": "恋人とけんかをした時のために、二人で決めておきたいルールは？",
     "category": "conflictSupport",
-    "source": "loves"
-  },
-  {
-    "id": "conflict-support-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "これから喧嘩した時のルールを作るなら？",
-    "category": "conflictSupport",
-    "source": "loves"
-  },
-  {
-    "id": "conflict-support-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "長く続くために必要なことは？",
-    "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "conflict-support-4-5",
@@ -2584,12 +1416,12 @@
     "source": "loves"
   },
   {
-    "id": "conflict-support-4-6",
+    "id": "editorial-couples-fit-089",
     "audience": "couples",
     "level": 4,
-    "text": "本音を言っても嫌われない関係ってどんな関係？",
+    "text": "恋人と違う本音があっても、安心して話せる関係はどんな関係？",
     "category": "conflictSupport",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "future-values-1-1",
@@ -2608,36 +1440,12 @@
     "source": "loves"
   },
   {
-    "id": "future-values-1-3",
+    "id": "editorial-couples-fit-090",
     "audience": "couples",
     "level": 1,
-    "text": "家族みたいな安心感は好き？",
+    "text": "恋人との間に、どんな安心できる時間を作りたい？",
     "category": "futureValues",
-    "source": "loves"
-  },
-  {
-    "id": "future-values-1-4",
-    "audience": "couples",
-    "level": 1,
-    "text": "いつか一緒にやってみたいことは？",
-    "category": "futureValues",
-    "source": "loves"
-  },
-  {
-    "id": "future-values-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "大人になっても覚えていたい思い出は？",
-    "category": "futureValues",
-    "source": "loves"
-  },
-  {
-    "id": "future-values-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "これから作りたい二人の思い出は？",
-    "category": "futureValues",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "future-values-2-1",
@@ -2656,26 +1464,18 @@
     "source": "loves"
   },
   {
-    "id": "future-values-2-4",
+    "id": "editorial-couples-fit-091",
     "audience": "couples",
     "level": 2,
-    "text": "信頼ってどうやって作ると思う？",
+    "text": "恋人との信頼を育てるために、自分から続けたいことは？",
     "category": "futureValues",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "future-values-2-5",
     "audience": "couples",
     "level": 2,
     "text": "恋人に一番守ってほしいことは？",
-    "category": "futureValues",
-    "source": "loves"
-  },
-  {
-    "id": "future-values-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "好きな人にしか見せない自分はある？",
     "category": "futureValues",
     "source": "loves"
   },
@@ -2712,36 +1512,36 @@
     "source": "loves"
   },
   {
-    "id": "future-values-3-6",
+    "id": "editorial-couples-fit-092",
     "audience": "couples",
     "level": 3,
-    "text": "支え合う関係ってどんな関係？",
+    "text": "恋人と支え合えていると感じるのは、どんな時？",
     "category": "futureValues",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "future-values-4-1",
+    "id": "editorial-couples-fit-093",
     "audience": "couples",
     "level": 4,
-    "text": "依存と支え合いの違いは？",
+    "text": "恋人に頼る時も、自分で決めることを大切にするには？",
     "category": "futureValues",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "future-values-4-2",
+    "id": "editorial-couples-fit-094",
     "audience": "couples",
     "level": 4,
-    "text": "将来も大事にしたい約束は？",
+    "text": "二人の将来について、大切にしていきたい約束はある？",
     "category": "futureValues",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "future-values-4-3",
+    "id": "editorial-couples-fit-095",
     "audience": "couples",
     "level": 4,
-    "text": "これからもっと仲良くなるために必要なことは？",
+    "text": "恋人とこれからもっと知り合うために、どんな時間を持ちたい？",
     "category": "futureValues",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "future-values-4-4",
@@ -2768,30 +1568,6 @@
     "source": "loves"
   },
   {
-    "id": "boundaries-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "下ネタは話しても平気？苦手？",
-    "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "下ネタはどのくらいの軽さまでなら笑える？",
-    "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "大人っぽい話は苦手？",
-    "category": "boundaries",
-    "source": "loves"
-  },
-  {
     "id": "boundaries-1-4",
     "audience": "couples",
     "level": 1,
@@ -2800,60 +1576,28 @@
     "source": "loves"
   },
   {
-    "id": "boundaries-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "そういう話題は自分から話せる？",
-    "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "冗談でも苦手な話題はある？",
-    "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-2-1",
+    "id": "editorial-couples-fit-096",
     "audience": "couples",
     "level": 2,
-    "text": "体のことをからかわれるのは嫌？",
+    "text": "恋人と体について話す時、どんな配慮があると安心する？",
     "category": "boundaries",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "boundaries-2-2",
+    "id": "editorial-couples-fit-097",
     "audience": "couples",
     "level": 2,
-    "text": "外見で触れられたくない話題はある？",
+    "text": "恋人に外見のことを話される時、触れてほしくない話題はある？",
     "category": "boundaries",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "boundaries-2-3",
+    "id": "editorial-couples-fit-098",
     "audience": "couples",
     "level": 2,
-    "text": "逆に絶対に言われたくない下ネタは？",
+    "text": "恋人との会話で苦手な話題になった時、どう切り替えたい？",
     "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-2-4",
-    "audience": "couples",
-    "level": 2,
-    "text": "そういう話をする時に大事にしたいルールは？",
-    "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "嫌な話題になった時、どう止めたい？",
-    "category": "boundaries",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "boundaries-2-6",
@@ -2864,28 +1608,12 @@
     "source": "loves"
   },
   {
-    "id": "boundaries-3-1",
+    "id": "editorial-couples-fit-099",
     "audience": "couples",
     "level": 3,
-    "text": "ハグや手つなぎで大事にしてほしいことは？",
+    "text": "恋人とハグや手つなぎをする時、大事にしてほしいことは？",
     "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-3-2",
-    "audience": "couples",
-    "level": 3,
-    "text": "くっつく時に安心する距離感は？",
-    "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-3-3",
-    "audience": "couples",
-    "level": 3,
-    "text": "触れ合いで嫌なことはある？",
-    "category": "boundaries",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "boundaries-3-4",
@@ -2904,28 +1632,20 @@
     "source": "loves"
   },
   {
-    "id": "boundaries-3-6",
+    "id": "editorial-couples-fit-100",
     "audience": "couples",
     "level": 3,
-    "text": "大切にされていると感じる触れ合い方は？",
+    "text": "恋人との触れ合いで、大切にされていると感じるのはどんな時？",
     "category": "boundaries",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "boundaries-4-1",
+    "id": "editorial-couples-fit-101",
     "audience": "couples",
     "level": 4,
-    "text": "嫌な時はちゃんと嫌って言える？",
+    "text": "恋人に「嫌だ」と言われた時、どんな返事をしたい？",
     "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "boundaries-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "「嫌」って言われた時、どう受け止めてほしい？",
-    "category": "boundaries",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "boundaries-4-3",
@@ -2944,724 +1664,20 @@
     "source": "loves"
   },
   {
-    "id": "boundaries-4-5",
+    "id": "editorial-couples-fit-102",
     "audience": "couples",
     "level": 4,
-    "text": "相手のペースを大事にするってどういうことだと思う？",
+    "text": "恋人とペースが違う時、お互いの希望をどう確かめたい？",
     "category": "boundaries",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "boundaries-4-6",
+    "id": "editorial-couples-fit-103",
     "audience": "couples",
     "level": 4,
-    "text": "無理しない関係にするために必要なことは？",
+    "text": "二人が無理せず付き合えているか、どんなふうに確かめ合いたい？",
     "category": "boundaries",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "親しい友達と、あまり話したことがない人が同時に困っていたら、どちらを先に助ける？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "ルールを守ることで誰かが傷つくなら、それでもルールを守るべき？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "嘘をつくことで相手が救われるなら、その嘘は悪い？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-1-4",
-    "audience": "couples",
-    "level": 1,
-    "text": "本当のことを言うと相手が傷つく時、黙るのは優しさ？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "自分は悪くないけど、自分が謝れば場が丸く収まるなら謝る？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "努力した人と才能がある人、どちらが評価されるべき？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-1-7",
-    "audience": "couples",
-    "level": 1,
-    "text": "悪気がなかった行動で誰かを傷つけた時、どこまで責任を取るべき？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-1-8",
-    "audience": "couples",
-    "level": 1,
-    "text": "「みんなのため」と「一人のため」がぶつかったら、どちらを優先する？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-2-1",
-    "audience": "couples",
-    "level": 2,
-    "text": "大切な人を守るためなら、ルールを破ってもいい？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-2-2",
-    "audience": "couples",
-    "level": 2,
-    "text": "正しいことを言うと大切な友達を失う時、それでも言える？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-2-3",
-    "audience": "couples",
-    "level": 2,
-    "text": "いじめている友達にもつらい事情があったら、どこまで許せる？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-2-4",
-    "audience": "couples",
-    "level": 2,
-    "text": "誰かを助けるために、別の誰かを少し傷つけるのはあり？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "自分が黙っていれば平和だけど、誰かが苦しみ続けるならどうする？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "優しさで隠した秘密が、あとから相手をもっと傷つけるならどうする？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-2-7",
-    "audience": "couples",
-    "level": 2,
-    "text": "多数派が望むことと、少数派の権利がぶつかったらどちらを守る？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-2-8",
-    "audience": "couples",
-    "level": 2,
-    "text": "自分に関係ない問題でも、気づいた以上は責任があると思う？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-3-1",
-    "audience": "couples",
-    "level": 3,
-    "text": "友達が悪いことをしている証拠を持っている。言えば友達は処分される。黙れば被害者が苦しむ。どうする？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-3-2",
-    "audience": "couples",
-    "level": 3,
-    "text": "恋人が過去に誰かを深く傷つけていたと知ったら、今の恋人を信じ続けられる？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-006",
-    "audience": "couples",
-    "level": 3,
-    "text": "周りが間違いを黙認している時、自分は声を上げられると思う？",
-    "category": "ethics",
     "source": "editorial"
-  },
-  {
-    "id": "ethics-3-4",
-    "audience": "couples",
-    "level": 3,
-    "text": "正しいことをしたせいで、自分だけ孤立するなら、それでも正しいことを選ぶ？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-007",
-    "audience": "couples",
-    "level": 3,
-    "text": "親しい人が誰かを傷つけていたら、どう向き合う？",
-    "category": "ethics",
-    "source": "editorial"
-  },
-  {
-    "id": "ethics-3-6",
-    "audience": "couples",
-    "level": 3,
-    "text": "自分の一言で誰かが救われるかもしれない。でも自分も巻き込まれる。言う？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-3-7",
-    "audience": "couples",
-    "level": 3,
-    "text": "ある人を守るためには、別の人との約束を破らないといけない。どうする？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-3-8",
-    "audience": "couples",
-    "level": 3,
-    "text": "相手のためにしたことが、結果的に相手を傷つけたら、その行動は正しかったと言える？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-1",
-    "audience": "couples",
-    "level": 4,
-    "text": "正しさとは、結果で決まる？それとも行動そのもので決まる？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "人を救うためなら、誰かを裏切ってもいい？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "たった一人を守るために、多くの人に迷惑をかけるのは許される？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "みんなが幸せになるなら、一人だけが我慢するのは仕方ない？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-5",
-    "audience": "couples",
-    "level": 4,
-    "text": "自分の正義が相手を傷つけるなら、それは正義と言える？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-6",
-    "audience": "couples",
-    "level": 4,
-    "text": "悪いことをした人が本気で反省していたら、どこまで許すべき？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-7",
-    "audience": "couples",
-    "level": 4,
-    "text": "人は一度大きく間違えたら、もう信頼される資格を失う？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-8",
-    "audience": "couples",
-    "level": 4,
-    "text": "「知らなかった」は、責任を軽くする理由になる？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-9",
-    "audience": "couples",
-    "level": 4,
-    "text": "優しさで人を傷つけることと、正しさで人を傷つけること、どちらがまし？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-10",
-    "audience": "couples",
-    "level": 4,
-    "text": "好きな人が間違っている時、好きだから守る？好きだから止める？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-11",
-    "audience": "couples",
-    "level": 4,
-    "text": "誰かを守るための沈黙は、見て見ぬふりと何が違う？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-12",
-    "audience": "couples",
-    "level": 4,
-    "text": "自分の幸せと相手の幸せがぶつかった時、どちらを優先する？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-13",
-    "audience": "couples",
-    "level": 4,
-    "text": "何もしないことで誰かが傷つくなら、「何もしない」ことにも責任はある？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-14",
-    "audience": "couples",
-    "level": 4,
-    "text": "相手が望んでいない助けは、本当に助けと言える？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-15",
-    "audience": "couples",
-    "level": 4,
-    "text": "正しい選択をしても誰かが傷つくなら、それでも正しいと言える？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-16",
-    "audience": "couples",
-    "level": 4,
-    "text": "許すことと、なかったことにすることの違いは何？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-17",
-    "audience": "couples",
-    "level": 4,
-    "text": "本当に優しい人は、厳しいことも言える人だと思う？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-18",
-    "audience": "couples",
-    "level": 4,
-    "text": "正義感が強すぎる人は、人を苦しめることもあると思う？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-19",
-    "audience": "couples",
-    "level": 4,
-    "text": "誰かのために自分を犠牲にすることは美しい？危ない？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-4-20",
-    "audience": "couples",
-    "level": 4,
-    "text": "「大切な人だけを守る優しさ」は、本当に優しさと言える？",
-    "category": "ethics",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "正しいことでも、言い方がきつければ間違いになる？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "助けたい気持ちだけで動くのは危ない？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "約束と優しさ、迷ったらどちらを選ぶ？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-1-4",
-    "audience": "couples",
-    "level": 1,
-    "text": "悪口を止めない人にも責任はある？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "謝れば、傷つけた事実は軽くなる？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "自分のための嘘はどこから悪い？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-1-7",
-    "audience": "couples",
-    "level": 1,
-    "text": "みんなに合わせることは優しさ？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-1-8",
-    "audience": "couples",
-    "level": 1,
-    "text": "許すことは、相手を認めること？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-2-1",
-    "audience": "couples",
-    "level": 2,
-    "text": "好きな人の間違いを見逃すのは優しさ？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-2-2",
-    "audience": "couples",
-    "level": 2,
-    "text": "正論で相手を追い詰めたら正しい？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-2-3",
-    "audience": "couples",
-    "level": 2,
-    "text": "秘密を守ることで誰かが傷つくなら？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-2-4",
-    "audience": "couples",
-    "level": 2,
-    "text": "友達を守るために証言を濁せる？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-2-5",
-    "audience": "couples",
-    "level": 2,
-    "text": "弱い立場の人を優先するのは公平？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "相手のためでも、勝手に助けていい？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-2-7",
-    "audience": "couples",
-    "level": 2,
-    "text": "自分が傷ついても場を守るべき？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-2-8",
-    "audience": "couples",
-    "level": 2,
-    "text": "悪意のない差別は許される？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-3-1",
-    "audience": "couples",
-    "level": 3,
-    "text": "一人を救うために、別の一人を見捨てられる？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-3-2",
-    "audience": "couples",
-    "level": 3,
-    "text": "被害者が許しても、周りは許すべき？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-3-3",
-    "audience": "couples",
-    "level": 3,
-    "text": "本気の反省は、過去を変えられる？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-3-4",
-    "audience": "couples",
-    "level": 3,
-    "text": "何もしない選択にも罪はある？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-3-5",
-    "audience": "couples",
-    "level": 3,
-    "text": "正しさより関係を守る場面はある？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-3-6",
-    "audience": "couples",
-    "level": 3,
-    "text": "誰かの痛みで成り立つ幸せはあり？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-3-7",
-    "audience": "couples",
-    "level": 3,
-    "text": "過去の失敗をいつまで責めていい？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-3-8",
-    "audience": "couples",
-    "level": 3,
-    "text": "優しい嘘がばれた時、まだ優しさと言える？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-1",
-    "audience": "couples",
-    "level": 4,
-    "text": "正義のためなら、誰かを犠牲にしていい？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "救えない人を選ぶ責任を背負える？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "大切な人が加害者でも向き合える？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "自分の幸せが誰かを壊すなら選べる？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-5",
-    "audience": "couples",
-    "level": 4,
-    "text": "真実を話して関係が終わっても言う？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-6",
-    "audience": "couples",
-    "level": 4,
-    "text": "許されない人にも未来は必要？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-7",
-    "audience": "couples",
-    "level": 4,
-    "text": "優しさが相手を弱くすることはある？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-8",
-    "audience": "couples",
-    "level": 4,
-    "text": "正しい答えがない時、何を基準に選ぶ？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-9",
-    "audience": "couples",
-    "level": 4,
-    "text": "話題の限定ドーナツを買うために、君は長時間並んだ。\n残りは最後の1個。\n君が買おうとすると、後ろの子どもが泣きそうになる。\n親は君を見て言った。\n「大人なら子どもに譲るのが普通でしょ」\n質問\n君は買う？\n譲る？\n言い返す？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-10",
-    "audience": "couples",
-    "level": 4,
-    "text": "道で困っている人を助けた。\nすると近くの人が、その様子を勝手に撮影してSNSに投稿した。\n投稿にはこう書かれている。\n「こういう優しい人、増えてほしい」\n悪意はなさそう。\nでも君の顔が映っている。\n質問\n君は投稿を消してほしいと言う？\nいいことだから許す？\n何も言わない？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "ethics-max-4-11",
-    "audience": "couples",
-    "level": 4,
-    "text": "SNSで、イベント出店の店員が不衛生そうな試食対応をしている動画を見た。\nコメント欄は炎上している。\n友達が言う。\n「店名も顔も全部広めよう」\n質問\n君は拡散する？\n運営に通報する？\n何もしない？",
-    "category": "ethicsMax",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "自分にしつこく関わってきたり、事実ではない噂を流したりする人がいる。\n相手にも事情があると分かっていても、自分が傷つけられていいわけではない。\nあなたなら、相手の背景を考えて我慢する？\nはっきりやめてと伝える？\n信頼できる人に相談する？",
-    "category": "ethicsMax",
-    "source": "editorial"
-  },
-  {
-    "id": "editorial-couples-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "仲のいい友達が、別の人を傷つけるような冗談や悪口を言っていた。\n注意すれば関係が悪くなるかもしれない。\n黙っていれば、傷ついている人を見捨てるかもしれない。\nあなたなら、まず何をする？",
-    "category": "ethicsMax",
-    "source": "editorial"
-  },
-  {
-    "id": "predictions-1-1",
-    "audience": "couples",
-    "level": 1,
-    "text": "相手が今いちばん食べたいものは何だと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-1-2",
-    "audience": "couples",
-    "level": 1,
-    "text": "相手が休日にしたいことは何だと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-1-3",
-    "audience": "couples",
-    "level": 1,
-    "text": "相手が好きそうな飲み物は何だと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-1-4",
-    "audience": "couples",
-    "level": 1,
-    "text": "相手が好きそうな場所はどこだと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-1-5",
-    "audience": "couples",
-    "level": 1,
-    "text": "相手が今ハマっていそうなことは何だと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-1-6",
-    "audience": "couples",
-    "level": 1,
-    "text": "相手が好きそうな季節はいつだと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-1-7",
-    "audience": "couples",
-    "level": 1,
-    "text": "相手がコンビニで買いそうなものは何だと思う？",
-    "category": "predictions",
-    "source": "loves"
   },
   {
     "id": "predictions-1-8",
@@ -3672,82 +1688,58 @@
     "source": "loves"
   },
   {
-    "id": "predictions-2-2",
+    "id": "editorial-couples-fit-104",
     "audience": "couples",
     "level": 2,
-    "text": "相手は疲れた時、一人になりたいタイプだと思う？誰かと話したいタイプだと思う？",
-    "category": "predictions",
-    "source": "loves"
+    "text": "恋人が疲れた時、そばにいてほしいかをどう確かめたい？",
+    "category": "conflictSupport",
+    "source": "editorial"
   },
   {
-    "id": "predictions-2-3",
+    "id": "editorial-couples-fit-105",
     "audience": "couples",
     "level": 2,
-    "text": "相手は友達に相談するタイプだと思う？一人で抱えるタイプだと思う？",
-    "category": "predictions",
-    "source": "loves"
+    "text": "恋人が本音を話しやすいのは、どんな聞き方だと思う？",
+    "category": "conflictSupport",
+    "source": "editorial"
   },
   {
-    "id": "predictions-2-6",
-    "audience": "couples",
-    "level": 2,
-    "text": "相手は本音を言うのが得意だと思う？苦手だと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-2-7",
-    "audience": "couples",
-    "level": 2,
-    "text": "相手は褒められるなら何を褒められたいと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-3-1",
+    "id": "editorial-couples-fit-106",
     "audience": "couples",
     "level": 3,
-    "text": "相手はどんな愛情表現が一番嬉しいと思う？",
+    "text": "恋人がうれしいと感じる愛情表現は、どんなものだと思う？",
     "category": "predictions",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "predictions-3-2",
+    "id": "editorial-couples-fit-107",
     "audience": "couples",
     "level": 3,
-    "text": "相手は寂しい時、どうしてほしいと思う？",
+    "text": "恋人が寂しい時、どんな支え方を望んでいそう？",
     "category": "predictions",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "predictions-3-3",
+    "id": "editorial-couples-fit-108",
     "audience": "couples",
     "level": 3,
-    "text": "相手は不安な時、聞いてほしいタイプだと思う？励ましてほしいタイプだと思う？",
+    "text": "恋人が不安な時、聞くことと励ますことのどちらを望んでいそう？",
     "category": "predictions",
-    "source": "loves"
+    "source": "editorial"
   },
   {
-    "id": "predictions-3-4",
+    "id": "editorial-couples-fit-109",
     "audience": "couples",
     "level": 3,
-    "text": "相手は嫉妬した時、言えるタイプだと思う？隠すタイプだと思う？",
-    "category": "predictions",
-    "source": "loves"
+    "text": "恋人が嫉妬や不安を感じた時、話しやすくするには？",
+    "category": "jealousy",
+    "source": "editorial"
   },
   {
-    "id": "predictions-3-5",
+    "id": "editorial-couples-fit-110",
     "audience": "couples",
     "level": 3,
-    "text": "相手は会えない日が続いたらどう感じると思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "editorial-couples-review-030",
-    "audience": "couples",
-    "level": 3,
-    "text": "相手は、連絡にすぐ返事をするタイプだと思う？",
+    "text": "恋人は、会えない日が続く時にどんな連絡を望んでいそう？",
     "category": "predictions",
     "source": "editorial"
   },
@@ -3760,44 +1752,12 @@
     "source": "loves"
   },
   {
-    "id": "predictions-4-1",
+    "id": "editorial-couples-fit-111",
     "audience": "couples",
     "level": 4,
-    "text": "相手が本当は言いにくいと思っていることは何だと思う？",
+    "text": "恋人が二人の時間に安心できるのは、どんな時だと思う？",
     "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-4-2",
-    "audience": "couples",
-    "level": 4,
-    "text": "相手が無理して笑っている時は、どんな時だと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-4-3",
-    "audience": "couples",
-    "level": 4,
-    "text": "相手が本当に安心できる瞬間はいつだと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-4-4",
-    "audience": "couples",
-    "level": 4,
-    "text": "相手が一番傷つきやすい言葉は何だと思う？",
-    "category": "predictions",
-    "source": "loves"
-  },
-  {
-    "id": "predictions-4-5",
-    "audience": "couples",
-    "level": 4,
-    "text": "相手が「分かってほしい」と思っていることは何だと思う？",
-    "category": "predictions",
-    "source": "loves"
+    "source": "editorial"
   },
   {
     "id": "predictions-4-6",
@@ -3808,11 +1768,11 @@
     "source": "loves"
   },
   {
-    "id": "predictions-4-8",
+    "id": "editorial-couples-fit-112",
     "audience": "couples",
     "level": 4,
-    "text": "相手が大切にされていると感じる瞬間はいつだと思う？",
+    "text": "恋人が自分に大切にされていると感じるのは、どんな時だと思う？",
     "category": "predictions",
-    "source": "loves"
+    "source": "editorial"
   }
 ]

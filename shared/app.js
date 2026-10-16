@@ -4,7 +4,7 @@ import {
   followUpForQuestion,
   isDevelopmentHost,
 } from "./question-engine.mjs";
-import { hasValidAiSource, canShowReviewedContent, canPreviewDrafts, mergeLegacyFollowUps } from "./content-policy.mjs";
+import { QuestionDataError, assertQuestionDataset, questionLoadErrorMessage, canShowReviewedContent, canPreviewDrafts, mergeLegacyFollowUps } from "./content-policy.mjs?v=adults-import-1";
 
 // Omoi for Series専用の共通UI。既存「Omoi」のデータや質問定義は読み込みません。
 const audience = document.body.dataset.audience;
@@ -236,7 +236,7 @@ function renderQuestion() {
 
       <p class="progress" aria-label="質問 ${questionsAsked}問目">質問 ${questionsAsked}</p>
       <div class="card-stage${enterClass}">
-        <article id="question-card" class="question-card${revealed ? " is-revealed" : ""}" aria-labelledby="${revealed ? "follow-up-question" : "main-question"}">
+        <article id="question-card" data-question-id="${escapeHtml(question.id)}" class="question-card${revealed ? " is-revealed" : ""}" aria-labelledby="${revealed ? "follow-up-question" : "main-question"}">
           <div class="question-card-inner">
             <section class="question-card-face question-card-front" aria-label="メインの質問" aria-hidden="${revealed}" ${revealed ? "inert" : ""}>
               <p class="card-series-name">${brandMarkup()}</p>
@@ -346,11 +346,11 @@ async function loadQuestions() {
   loadError = "";
   render();
   try {
-    const manifestResponse = await fetch("../shared/series-manifest.json");
+    const manifestResponse = await fetch("../shared/series-manifest.json", { cache: "no-cache" });
     if (!manifestResponse.ok) throw new Error(`manifest HTTP ${manifestResponse.status}`);
     const manifest = await manifestResponse.json();
     const release = manifest?.series?.[audience];
-    if (!release || !["published", "unpublished"].includes(release.status)) throw new Error("シリーズ公開設定がありません。");
+    if (!release || !["published", "unpublished"].includes(release.status)) throw new QuestionDataError("シリーズ公開設定がありません。");
 
     const developmentPreview = release.status === "unpublished" && release.developmentPreview === true && isDevelopmentHost(window.location);
     const allowDrafts = canPreviewDrafts(release, window.location);
@@ -360,33 +360,30 @@ async function loadQuestions() {
       return;
     }
 
-    const response = await fetch(`../shared/questions/${encodeURIComponent(release.questionFile)}`);
+    const response = await fetch(`../shared/questions/${encodeURIComponent(release.questionFile)}`, { cache: "no-cache" });
     if (!response.ok) throw new Error(`questions HTTP ${response.status}`);
     const data = await response.json();
     if (Array.isArray(data)) {
       // 既存3シリーズの配列JSONをそのまま読める互換レイヤーです。
       questions = data.filter((question) => question && question.id && typeof question.text === "string" && Number.isInteger(question.level));
       if (release.followUpFile) {
-        const followUpResponse = await fetch(`../shared/followups/${encodeURIComponent(release.followUpFile)}`);
+        const followUpResponse = await fetch(`../shared/followups/${encodeURIComponent(release.followUpFile)}`, { cache: "no-cache" });
         if (!followUpResponse.ok) throw new Error(`follow-ups HTTP ${followUpResponse.status}`);
         const followUpData = await followUpResponse.json();
         questions = mergeLegacyFollowUps(questions, followUpData, audience, { allowDrafts });
       }
 
     } else {
-      if (data?.series !== audience || !Array.isArray(data?.questions)) throw new Error("シリーズの質問JSON形式が不正です。");
-      if (release.status === "published" && data.publicationStatus !== "published") throw new Error("質問データが公開状態ではありません。");
-      if (data.questions.some((question) => !question || question.series !== audience || !hasValidAiSource(question.source) || !["approved", "pending"].includes(question.reviewStatus) || typeof question.text !== "string" || !question.text.trim() || typeof question.followUp !== "string" || !question.followUp.trim())) {
-        throw new Error("質問データの作成元・レビュー情報または質問文が不正です。");
-      }
+      assertQuestionDataset(data, audience, { published: release.status === "published" });
       questions = data.questions.filter((question) => canShowReviewedContent(question.reviewStatus, { allowDrafts }));
     }
+    app.setAttribute("data-question-count", String(questions.length));
     loadState = questions.length ? "ready" : developmentPreview ? "preview-empty" : "empty";
     render();
   } catch (error) {
     console.error(`質問データの読み込みに失敗しました: ${audience}`, error);
     loadState = "error";
-    loadError = "質問データを読み込めませんでした。通信状態を確認してください。";
+    loadError = questionLoadErrorMessage(error);
     render();
   }
 }

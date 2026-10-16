@@ -1,0 +1,1697 @@
+{
+  "series": "friends",
+  "curatedAt": "2026-10-16",
+  "reviewStatus": "ai-curated-pending-human-review",
+  "scope": "今カードを使う二人の友情、共有体験、会話、境界線、今後の付き合い方。嫉妬・衝突・後悔・傷つき等も関係に即した中立的な問いへ改稿。抽象的な倫理問題、人格を採点する問い、第三者の関係、重複は除外。",
+  "before": {
+    "total": 177,
+    "levels": {
+      "1": 46,
+      "2": 45,
+      "3": 48,
+      "4": 38
+    },
+    "sources": {
+      "editorial": 177
+    }
+  },
+  "after": {
+    "total": 150,
+    "levels": {
+      "1": 43,
+      "2": 39,
+      "3": 37,
+      "4": 31
+    },
+    "sources": {
+      "editorial": 150
+    }
+  },
+  "removed": [
+    {
+      "id": "friends-daily-1-28",
+      "text": "友達と過ごす時、予定を決める方？その場で決める方？",
+      "followUp": "当日の気分が変わった時、予定をどう調整したい？",
+      "reason": "予定の決め方が同じ内容の質問と重複するため"
+    },
+    {
+      "id": "friends-values-1-32",
+      "text": "友達を選ぶなら、価値観の近さと相性の良さどっちが大事？",
+      "followUp": "意見が違っても相性がいいと感じるのは、どんな相手？",
+      "reason": "抽象的な友達選びの二択で、目の前の友人との関係を扱わないため"
+    },
+    {
+      "id": "friends-boundaries-1-50",
+      "text": "友達とお金の貸し借りは、しない方がいいと思う？",
+      "followUp": "お金の相談を受けたら、まず何を確認したい？",
+      "reason": "金銭貸借の是非を問う一般的な道徳判断のため"
+    },
+    {
+      "id": "friends-communication-2-1",
+      "text": "友達とは毎日連絡したい？会う時だけでいい？",
+      "followUp": "連絡の多さより、内容で大切にしたいことは何？",
+      "reason": "連絡ペースの質問と重複するため"
+    },
+    {
+      "id": "friends-values-2-7",
+      "text": "新しい友達をつくる時、最初に気になるところは？",
+      "followUp": "最初に気になった印象を、何を通して確かめたい？",
+      "reason": "新しい友人を選ぶ基準で、二人の関係から外れるため"
+    },
+    {
+      "id": "friends-boundaries-2-9",
+      "text": "友達と一人の時間は、どちらも大事にできる？",
+      "followUp": "一人の時間が足りない時、何を調整したい？",
+      "reason": "一人の時間との両立を問う質問と重複するため"
+    },
+    {
+      "id": "friends-values-2-29",
+      "text": "友達との付き合いに損得は入っていいと思う？",
+      "followUp": "お互いの負担が偏っているか、何から判断したい？",
+      "reason": "損得の是非を裁く抽象的な倫理質問のため"
+    },
+    {
+      "id": "friends-care-2-38",
+      "text": "友達と助け合えていると、実感できている？",
+      "followUp": "助け合いの中で、自分が受け取りやすい助けは何？",
+      "reason": "支え合いの実感を問う質問と重複するため"
+    },
+    {
+      "id": "friends-memories-2-48",
+      "text": "友達との古い思い出を、今の友達に話すことはある？",
+      "followUp": "古い思い出を話す時、今の相手にも楽しんでもらえそうな部分はどこ？",
+      "reason": "別の友人との過去を今の友人に話す問いで、二人の関係から外れるため"
+    },
+    {
+      "id": "friends-care-3-2",
+      "text": "友達が困っている時、どこまで踏み込んで助けたい？",
+      "followUp": "助けが必要か、本人にはどう確かめたい？",
+      "reason": "困っている友人への介入の一般論で、具体的な関係の問いと重複するため"
+    },
+    {
+      "id": "friends-boundaries-3-3",
+      "text": "友達にとって大事な秘密を、どこまで守るべきだと思う？",
+      "followUp": "秘密を抱えるのが難しい時、誰にどう相談したい？",
+      "reason": "秘密をどこまで守るべきかという道徳判断のため"
+    },
+    {
+      "id": "friends-values-3-6",
+      "text": "友達の成功を心から喜べない時、自分に何が起きていると思う？",
+      "followUp": "喜べない自分を責めずに過ごすために、何が必要？",
+      "reason": "成功を喜べない原因の自己分析から外し、二人の喜びの共有や羨望を扱う改稿質問に統合するため"
+    },
+    {
+      "id": "friends-boundaries-3-10",
+      "text": "友達に断ることは、関係を壊すことだと思う？",
+      "followUp": "断っても安心していられる関係には、どんな反応がある？",
+      "reason": "断ると関係が壊れるかという不安を誘う二択で、断り方の問いと重複するため"
+    },
+    {
+      "id": "friends-values-3-22",
+      "text": "友達に嫉妬してしまった時、その気持ちとどう付き合う？",
+      "followUp": "嫉妬を感じた時、自分のペースを保つために何があると助かる？",
+      "reason": "嫉妬は残したうえで、二人の比較や羨望を具体的に扱う改稿質問に統合するため"
+    },
+    {
+      "id": "friends-values-3-23",
+      "text": "友達関係の中で、自分は公平でいられている？",
+      "followUp": "公平でいることと、全員に同じ対応をすることは違うと思う？",
+      "reason": "公平でいられるかという人格評価のため"
+    },
+    {
+      "id": "friends-care-3-27",
+      "text": "友達を支えることで、自分も支えられていると感じることはある？",
+      "followUp": "支える中で受け取っているものを、どう表現したい？",
+      "reason": "支えることで支えられるという肯定的な結果を前提にするため"
+    },
+    {
+      "id": "friends-care-3-29",
+      "text": "友達のためにつく嘘は、思いやりになり得ると思う？",
+      "followUp": "本当のことを言わない場合、相手の選択にどんな影響がありそう？",
+      "reason": "嘘が思いやりになるかという倫理的な思考実験のため"
+    },
+    {
+      "id": "friends-communication-3-32",
+      "text": "友達に伝えられないままの感謝はある？",
+      "followUp": "その感謝を今伝えるなら、どんな一文になる？",
+      "reason": "感謝を伝える既存の質問と重複するため"
+    },
+    {
+      "id": "friends-boundaries-3-37",
+      "text": "友達との比較で、自分の価値を下げてしまうことはある？",
+      "followUp": "友達との比較とは別に、自分で認めておきたいことは何？",
+      "reason": "比較に伴う自分の価値の低下を前提にせず、二人の比較にどう距離を取るかという改稿質問に統合するため"
+    },
+    {
+      "id": "friends-memories-3-46",
+      "text": "友達との関係で、自分が成長できたと感じる出来事はある？",
+      "followUp": "その出来事で知った自分の強みはある？",
+      "reason": "友人を通じた変化を扱う改稿質問と重複するため"
+    },
+    {
+      "id": "friends-communication-4-3",
+      "text": "離れてしまった友達に、今ならどんな一言を伝えたい？",
+      "followUp": "その一言は、相手に届けたい？自分の中に置いておきたい？",
+      "reason": "現在目の前にいない別の友人との関係を扱うため"
+    },
+    {
+      "id": "friends-values-4-11",
+      "text": "友達の秘密が誰かを傷つけていると知ったら、どうする？",
+      "followUp": "誰かの安全を守るために、秘密をどう扱う必要がありそう？",
+      "reason": "秘密が他人を傷つけるという倫理的ジレンマのため"
+    },
+    {
+      "id": "friends-boundaries-4-29",
+      "text": "友達との関係で、都合よく使われていると感じたことはある？",
+      "followUp": "自分の都合も大切にされているか、どんな場面で確かめたい？",
+      "reason": "利用されているという否定的なラベルを誘うため"
+    },
+    {
+      "id": "friends-values-4-36",
+      "text": "友達の選択が自分の倫理観に反する時、関係は続けられる？",
+      "followUp": "関係を続けるとしても、関わらずにおきたいことは何？",
+      "reason": "友人の倫理観との不一致という抽象的な倫理問題のため"
+    },
+    {
+      "id": "friends-values-4-37",
+      "text": "友達との関係の中で、自分が正当化できない行動をしたことはある？",
+      "followUp": "その行動を振り返る時、自分の責任として考えたい範囲はどこ？",
+      "reason": "正当化できない行為の告白を求めるため"
+    },
+    {
+      "id": "friends-values-4-39",
+      "text": "友達との関係で、許せないまま終わったものはある？",
+      "followUp": "許すことを急がずに、今の生活で大切にしたいものは何？",
+      "reason": "許せないまま終わった関係という過去の痛みを求めるため"
+    },
+    {
+      "id": "friends-memories-4-48",
+      "text": "友達との過去の約束を守れなかった悔しさは、今もある？",
+      "followUp": "今からできる対応があるか、何を基準に考えたい？",
+      "reason": "後悔は残したうえで、以前のやりとりを今ならどう伝えるかという改稿質問と約束の見直しの質問に統合するため"
+    }
+  ],
+  "changed": [
+    {
+      "oldId": "friends-daily-1-1",
+      "newId": "editorial-friends-fit-001",
+      "level": 1,
+      "originalText": "最近、友達に話したくなった小さな出来事は？",
+      "revisedText": "最近、私たちで話していて楽しかったことは？",
+      "originalFollowUp": "その出来事について、友達にどんなふうに聞いてもらいたい？",
+      "revisedFollowUp": "その話の続きをするとしたら、何を話してみたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-2",
+      "newId": "editorial-friends-fit-002",
+      "level": 1,
+      "originalText": "友達と会うなら、昼と夜どっちが好き？",
+      "revisedText": "私たちが次に会うなら、どの時間帯が過ごしやすい？",
+      "originalFollowUp": "その時間帯ならではの楽しみ方は何？",
+      "revisedFollowUp": "その時間なら、どんなことを一緒に楽しめそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-3",
+      "newId": "editorial-friends-fit-003",
+      "level": 1,
+      "originalText": "友達と食べに行くなら、何を選びたい？",
+      "revisedText": "次に一緒にご飯を食べるなら、何を選びたい？",
+      "originalFollowUp": "食べるものを一緒に選ぶ時、どんな決め方が楽しい？",
+      "revisedFollowUp": "お互いの好みが違ったら、どんな決め方がよさそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-4",
+      "newId": "editorial-friends-fit-004",
+      "level": 1,
+      "originalText": "友達と一緒にいる時、話す方？聞く方？",
+      "revisedText": "私たちの会話では、話す時間と聞く時間のバランスはどう感じる？",
+      "originalFollowUp": "話す役と聞く役が入れ替わるのは、どんな話題の時？",
+      "revisedFollowUp": "もう少し聞いてみたい相手の話はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-5",
+      "newId": "editorial-friends-fit-005",
+      "level": 1,
+      "originalText": "友達と行きたい場所はある？",
+      "revisedText": "私たちで出かけるなら、今いちばん行きたい場所は？",
+      "originalFollowUp": "その場所で、どんな時間を過ごしてみたい？",
+      "revisedFollowUp": "そこでは、何を一緒に見たり試したりしたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-6",
+      "newId": "editorial-friends-fit-006",
+      "level": 1,
+      "originalText": "友達にすすめたい作品は？",
+      "revisedText": "私たちで同じ作品を楽しむなら、何を選びたい？",
+      "originalFollowUp": "その作品の魅力を一言で伝えるなら？",
+      "revisedFollowUp": "見終わった後は、どんなふうに感想を話したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-7",
+      "newId": "editorial-friends-fit-007",
+      "level": 1,
+      "originalText": "友達と過ごすなら、にぎやかな場所と静かな場所どっちがいい？",
+      "revisedText": "私たちでゆっくり話すなら、どんな場所がよさそう？",
+      "originalFollowUp": "選んだ場所では、どんな会話ができそう？",
+      "revisedFollowUp": "その場所なら、普段より話しやすくなりそうなことはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-8",
+      "newId": "editorial-friends-fit-008",
+      "level": 1,
+      "originalText": "友達の前だと、普段よりどんな感じになる？",
+      "revisedText": "私といる時、自分のどんな一面が出ていると思う？",
+      "originalFollowUp": "その変化を、自分では心地よく感じる？",
+      "revisedFollowUp": "その一面が出るのは、私のどんな接し方がある時？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-9",
+      "newId": "editorial-friends-fit-009",
+      "level": 1,
+      "originalText": "友達と話す時、つい出てしまう自分の癖は？",
+      "revisedText": "私たちの会話に、いつの間にか定着した言葉や癖はある？",
+      "originalFollowUp": "その癖が出る時、自分はどんな気分でいる？",
+      "revisedFollowUp": "そのやりとりの、どんなところを気に入っている？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-10",
+      "newId": "editorial-friends-fit-010",
+      "level": 1,
+      "originalText": "友達と写真を撮るなら、自然な瞬間とポーズどっちがいい？",
+      "revisedText": "私たちで写真を撮るなら、どんな一枚を残したい？",
+      "originalFollowUp": "撮った写真は、どんな形で残しておきたい？",
+      "revisedFollowUp": "撮った写真を誰かに見せる時、先に確かめてほしいことは？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-11",
+      "newId": "editorial-friends-fit-011",
+      "level": 1,
+      "originalText": "友達と一緒に始めてみたいことは？",
+      "revisedText": "私たちで気軽に始めてみたいことは何？",
+      "originalFollowUp": "最初の一回は、どのくらい気軽に始めたい？",
+      "revisedFollowUp": "最初はどのくらい小さく試してみたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-12",
+      "newId": "editorial-friends-fit-012",
+      "level": 1,
+      "originalText": "友達から届いたら、何度でも読み返したくなる言葉は？",
+      "revisedText": "私からどんなメッセージが届くとうれしい？",
+      "originalFollowUp": "その言葉を、どんな時に読み返したくなりそう？",
+      "revisedFollowUp": "送るタイミングに、好みはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-13",
+      "newId": "editorial-friends-fit-013",
+      "level": 1,
+      "originalText": "友達との時間は、予定を決める方が好き？その場で決める方が好き？",
+      "revisedText": "私たちのお出かけは、どこまで予定を決めておくと楽？",
+      "originalFollowUp": "行き当たりばったりでも、先に決めておきたいことはある？",
+      "revisedFollowUp": "当日の気分で変えられる部分も残したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-14",
+      "newId": "editorial-friends-fit-014",
+      "level": 1,
+      "originalText": "友達と季節を感じるなら、何をしたい？",
+      "revisedText": "次の季節に、私たちで楽しんでみたいことは？",
+      "originalFollowUp": "その季節の何を一緒に味わいたい？",
+      "revisedFollowUp": "その楽しみを予定に入れるなら、いつ頃相談したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-1-15",
+      "newId": "editorial-friends-fit-015",
+      "level": 1,
+      "originalText": "友達との今だから笑える思い出は？",
+      "revisedText": "一緒に過ごした中で、今思い出して笑える場面はある？",
+      "originalFollowUp": "今その話をするなら、どこから話し始めたい？",
+      "revisedFollowUp": "その時の二人らしさは、どんなところに出ていた？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-16",
+      "newId": "editorial-friends-fit-016",
+      "level": 1,
+      "originalText": "友達と無言で過ごす時間も平気？",
+      "revisedText": "私たちが無言で過ごす時間を、どう感じている？",
+      "originalFollowUp": "無言の時には、それぞれ何をして過ごすのがよさそう？",
+      "revisedFollowUp": "話さない時間には、何をしていられると心地よい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-17",
+      "newId": "editorial-friends-fit-017",
+      "level": 1,
+      "originalText": "友達に教えてほしいことはある？",
+      "revisedText": "私に教えてもらって、一緒に試したいことはある？",
+      "originalFollowUp": "教えてもらうなら、見せてもらうのと一緒に試すのはどちらがいい？",
+      "revisedFollowUp": "教えてもらうなら、どんな進め方だと楽しめそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-1-18",
+      "newId": "editorial-friends-fit-018",
+      "level": 1,
+      "originalText": "友達に求めることを一つ挙げるなら？",
+      "revisedText": "今の私たちの付き合いで、気に入っているところを一つ挙げるなら？",
+      "originalFollowUp": "その一つが大切にされていると、どう分かる？",
+      "revisedFollowUp": "その良さを、普段のどんな場面で感じる？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-1-19",
+      "newId": "editorial-friends-fit-019",
+      "level": 1,
+      "originalText": "友達と過ごしたあと、どんな気持ちになれると嬉しい？",
+      "revisedText": "私たちで過ごした後、どんな気持ちで帰れるとうれしい？",
+      "originalFollowUp": "その気持ちになれる時間には、どんなやりとりがありそう？",
+      "revisedFollowUp": "その気持ちにつながる過ごし方は何だろう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-1-20",
+      "newId": "editorial-friends-fit-020",
+      "level": 1,
+      "originalText": "友達にされたら少し困ることは？",
+      "revisedText": "私と過ごす時、先に知っておいてほしい苦手なことはある？",
+      "originalFollowUp": "困ったことを知らせるなら、どんな言い方が使いやすい？",
+      "revisedFollowUp": "それを知らせたい時、どんな言い方が使いやすい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-21",
+      "newId": "editorial-friends-fit-021",
+      "level": 1,
+      "originalText": "友達と遊ぶなら、屋内と屋外どっちが多い？",
+      "revisedText": "私たちがいつもと違う遊びを試すなら、何がよさそう？",
+      "originalFollowUp": "普段と逆の場所で遊ぶなら、何をしてみたい？",
+      "revisedFollowUp": "二人とも初めてでも楽しめる工夫はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-22",
+      "newId": "editorial-friends-fit-022",
+      "level": 1,
+      "originalText": "友達との会話で、最近よく出る話題は？",
+      "revisedText": "最近の私たちの会話で、もう少し話したい話題は？",
+      "originalFollowUp": "その話題では、どんな話をもう少し聞いてみたい？",
+      "revisedFollowUp": "次に会う時、その話の何を聞いてみたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-23",
+      "newId": "editorial-friends-fit-023",
+      "level": 1,
+      "originalText": "友達とシェアしたい趣味はある？",
+      "revisedText": "お互いの趣味を一緒に楽しむなら、どこから試したい？",
+      "originalFollowUp": "趣味を紹介するなら、最初に何を見せたい？",
+      "revisedFollowUp": "相手が詳しくなくても楽しめる入り口は何だろう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-24",
+      "newId": "editorial-friends-fit-024",
+      "level": 1,
+      "originalText": "友達との待ち合わせ、早く着く方？ギリギリの方？",
+      "revisedText": "私たちの待ち合わせで、変えると楽になりそうなことは？",
+      "originalFollowUp": "待ち合わせに遅れそうな時、どんな連絡があると助かる？",
+      "revisedFollowUp": "遅れそうな時の連絡は、どのくらい前だと助かる？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-25",
+      "newId": "editorial-friends-fit-025",
+      "level": 1,
+      "originalText": "友達と行きたいお店の条件はある？",
+      "revisedText": "私たちでお店を選ぶ時、大切にしたい条件は？",
+      "originalFollowUp": "その条件の中で、一番優先したいのは何？",
+      "revisedFollowUp": "予算や好みは、どんなふうに相談したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-26",
+      "newId": "editorial-friends-fit-026",
+      "level": 1,
+      "originalText": "友達と対決系のゲームをしたら、勝ちたい方？",
+      "revisedText": "私たちでゲームをするなら、どんな遊び方が楽しそう？",
+      "originalFollowUp": "勝ち負け以外で、ゲームを楽しめるのはどんな時？",
+      "revisedFollowUp": "勝負への熱の入り方が違ったら、どう調整したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-daily-1-31",
+      "newId": "editorial-friends-fit-028",
+      "level": 1,
+      "originalText": "友達との共通の話題で、いつまでも飽きないものはある？",
+      "revisedText": "私たちがつい長く話してしまう話題は何？",
+      "originalFollowUp": "その話題に、新しく加えてみたい切り口はある？",
+      "revisedFollowUp": "その話題で、まだ知らない相手の一面はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-1-33",
+      "newId": "editorial-friends-fit-030",
+      "level": 1,
+      "originalText": "友達に「らしい」と言われたら、どんな自分を想像する？",
+      "revisedText": "私が「あなたらしい」と感じていそうなのは、どんなところ？",
+      "originalFollowUp": "そう言われた自分の一面を、気に入っている？",
+      "revisedFollowUp": "その印象は、自分が感じている自分と近い？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-1-34",
+      "newId": "editorial-friends-fit-031",
+      "level": 1,
+      "originalText": "友達といる時の自分は、一人の時の自分と同じ？",
+      "revisedText": "私といる時、気を張らずに過ごせていると感じる？",
+      "originalFollowUp": "一人の時の過ごし方で、友達にも見せてみたいものはある？",
+      "revisedFollowUp": "もっと楽に過ごすために、変えたいことはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-1-35",
+      "newId": "editorial-friends-fit-032",
+      "level": 1,
+      "originalText": "友達に尊敬できるところはある？",
+      "revisedText": "私の行動で、いいなと思ったことはある？",
+      "originalFollowUp": "その人のどんな行動に、尊敬するところが表れている？",
+      "revisedFollowUp": "その行動の、どんなところが印象に残った？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-1-36",
+      "newId": "editorial-friends-fit-033",
+      "level": 1,
+      "originalText": "友達との付き合いで、自分なりに大事にしているルールはある？",
+      "revisedText": "私たちの間で、自然に大切にしている約束はある？",
+      "originalFollowUp": "そのルールが守れない日には、どう考えたい？",
+      "revisedFollowUp": "その約束を変えたい日には、どう相談したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-1-37",
+      "newId": "editorial-friends-fit-034",
+      "level": 1,
+      "originalText": "友達が落ち込んでいる時にかける、定番の言葉はある？",
+      "revisedText": "私が落ち込んでいる時、どんな声のかけ方なら自分も無理がない？",
+      "originalFollowUp": "その言葉をかける前に、聞いておきたいことはある？",
+      "revisedFollowUp": "声をかける前に、私に確かめたいことはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-1-38",
+      "newId": "editorial-friends-fit-035",
+      "level": 1,
+      "originalText": "友達に喜んでもらえそうな言葉や行動はある？",
+      "revisedText": "私にしてもらってうれしかった、小さなことはある？",
+      "originalFollowUp": "喜んでもらえたか、どんな反応から確かめたい？",
+      "revisedFollowUp": "それがうれしかったことを、どんなふうに伝えたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-1-39",
+      "newId": "editorial-friends-fit-036",
+      "level": 1,
+      "originalText": "友達の話を最後まで聞けていないと、感じることはある？",
+      "revisedText": "私たちの会話で、話し終えるまで待ってほしい時はある？",
+      "originalFollowUp": "聞きそびれたと気づいた時、どう話を戻したい？",
+      "revisedFollowUp": "途中で話が変わった時は、どう戻せるとよい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-1-40",
+      "newId": "editorial-friends-fit-037",
+      "level": 1,
+      "originalText": "友達にありがとうと言うのは、どんな時が多い？",
+      "revisedText": "私に今、ありがとうと伝えたいことはある？",
+      "originalFollowUp": "日頃の小さな感謝を伝えるなら、どんな方法が合う？",
+      "revisedFollowUp": "その気持ちを短い言葉にすると、どんな一言になる？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-1-41",
+      "newId": "editorial-friends-fit-038",
+      "level": 1,
+      "originalText": "友達が悩んでいそうな時、気づける自信はある？",
+      "revisedText": "私の様子がいつもと違う時、どんなふうに聞いてみたい？",
+      "originalFollowUp": "様子が気になっても理由が分からない時、どう声をかけたい？",
+      "revisedFollowUp": "話したくなさそうな時には、どのくらい距離を取りたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-1-42",
+      "newId": "editorial-friends-fit-039",
+      "level": 1,
+      "originalText": "友達と初めて会った時のことを、覚えている？",
+      "revisedText": "私たちが初めて話した時、どんな印象だった？",
+      "originalFollowUp": "初めて会った頃の自分を、今どう感じる？",
+      "revisedFollowUp": "今の印象と比べて、変わったところはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-1-43",
+      "newId": "editorial-friends-fit-040",
+      "level": 1,
+      "originalText": "友達と泣いて笑った出来事はある？",
+      "revisedText": "私たちで一緒に喜んだ出来事はある？",
+      "originalFollowUp": "思い出の中で、今も温かく感じる場面はある？",
+      "revisedFollowUp": "その時、相手のどんな様子が印象に残っている？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-1-45",
+      "newId": "editorial-friends-fit-041",
+      "level": 1,
+      "originalText": "友達との失敗談で、今は笑って話せるものはある？",
+      "revisedText": "私たちでうまくいかなかったことから、今に生かせそうなものはある？",
+      "originalFollowUp": "その失敗を今話せるのは、どんな気持ちの変化があったから？",
+      "revisedFollowUp": "同じような場面があれば、次はどう進めてみたい？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-memories-1-46",
+      "newId": "editorial-friends-fit-042",
+      "level": 1,
+      "originalText": "友達と撮った写真で、お気に入りの一枚はある？",
+      "revisedText": "私たちが一緒に写った写真で、気に入っているものはある？",
+      "originalFollowUp": "その写真には写っていないけれど、覚えていることはある？",
+      "revisedFollowUp": "その写真には写っていないけれど、覚えていることは？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-1-47",
+      "newId": "editorial-friends-fit-043",
+      "level": 1,
+      "originalText": "友達への返信のタイミングで、迷ったことはある？",
+      "revisedText": "私たちのメッセージは、どんなペースだと無理がない？",
+      "originalFollowUp": "返信を急げない日は、どんなふうに知らせられると楽？",
+      "revisedFollowUp": "返事に時間がかかる日は、ひと言知らせたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-1-48",
+      "newId": "editorial-friends-fit-044",
+      "level": 1,
+      "originalText": "友達に踏み込まれたくない話題はある？",
+      "revisedText": "私との会話で、今は触れずにおきたい話題はある？",
+      "originalFollowUp": "その話題を避けたいと、どこまで説明したい？",
+      "revisedFollowUp": "詳しく説明せずに話題を変えるなら、どんな言葉が使えそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-1-49",
+      "newId": "editorial-friends-fit-045",
+      "level": 1,
+      "originalText": "友達との予定を断る時、気が引ける？",
+      "revisedText": "私からの誘いを断る時、どんな反応だと気が楽？",
+      "originalFollowUp": "断る時に、理由はどのくらい伝えたい？",
+      "revisedFollowUp": "断った後の連絡は、どんなふうに続けたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-2",
+      "newId": "editorial-friends-fit-048",
+      "level": 2,
+      "originalText": "言葉を選ばず話せる友達って、どんな存在？",
+      "revisedText": "私たちが気軽に話せるのは、どんな雰囲気の時？",
+      "originalFollowUp": "気を使わず話せる関係にも、残しておきたい配慮はある？",
+      "revisedFollowUp": "冗談でも、気をつけてほしい言い方はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-3",
+      "newId": "editorial-friends-fit-049",
+      "level": 2,
+      "originalText": "友達の相談を聞く時、まず大切にしたいことは？",
+      "revisedText": "私に相談するなら、どんな聞き方をしてほしい？",
+      "originalFollowUp": "助言がほしいのか聞いてほしいのか、どう確かめたい？",
+      "revisedFollowUp": "助言がほしい時は、どう知らせたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-2-4",
+      "newId": "editorial-friends-fit-050",
+      "level": 2,
+      "originalText": "友達との約束を守るために、大切なことは？",
+      "revisedText": "私たちの約束で、事前にはっきりさせたいことは？",
+      "originalFollowUp": "守るのが難しくなった約束は、どんな段階で知らせたい？",
+      "revisedFollowUp": "守るのが難しくなった時、いつ頃知らせてほしい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-2-5",
+      "newId": "editorial-friends-fit-051",
+      "level": 2,
+      "originalText": "友達に合わせすぎてしまうことはある？",
+      "revisedText": "私に合わせて、自分の希望を言いそびれることはある？",
+      "originalFollowUp": "合わせている最中に、自分の希望を思い出す手がかりはある？",
+      "revisedFollowUp": "二人の希望を出しやすくするには、どんな聞き方がいい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-6",
+      "newId": "editorial-friends-fit-052",
+      "level": 2,
+      "originalText": "友達と意見が違った時、すぐ話したい？少し置きたい？",
+      "revisedText": "私たちの意見が違った時、どんな話し方なら落ち着ける？",
+      "originalFollowUp": "話し合うまでの間、どんな連絡なら負担が少ない？",
+      "revisedFollowUp": "いったん話を止めたい時は、どう知らせたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-2-8",
+      "newId": "editorial-friends-fit-054",
+      "level": 2,
+      "originalText": "友達の気分に合わせて、自分も静かに過ごせる？",
+      "revisedText": "私たちの気分が違う日、どんな過ごし方なら楽？",
+      "originalFollowUp": "相手と気分が違う日は、どんな過ごし方ができそう？",
+      "revisedFollowUp": "一緒にいながら別のことをしても、心地よく過ごせそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-10",
+      "newId": "editorial-friends-fit-056",
+      "level": 2,
+      "originalText": "友達と気まずくなった翌日、どうやって話し始める？",
+      "revisedText": "私たちの間が気まずい時、次の連絡はどうしてもらえると楽？",
+      "originalFollowUp": "まだ話す準備ができていない日は、どう伝えたい？",
+      "revisedFollowUp": "まだ話せない時に使える、短い返事はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-2-11",
+      "newId": "editorial-friends-fit-057",
+      "level": 2,
+      "originalText": "友達のためなら、どこまで予定を変えられる？",
+      "revisedText": "急な誘いをする時、私に気をつけてほしいことは？",
+      "originalFollowUp": "変更できない予定は、どんなふうに説明したい？",
+      "revisedFollowUp": "予定が合わない場合、別の日を提案してもらいたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-12",
+      "newId": "editorial-friends-fit-058",
+      "level": 2,
+      "originalText": "友達に注意してほしいことはある？",
+      "revisedText": "私から何か伝えるなら、どんな言い方が受け止めやすい？",
+      "originalFollowUp": "注意を受けるなら、人前と二人きりのどちらが話しやすい？",
+      "revisedFollowUp": "その場で返事ができない時は、どう待っていてほしい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-2-13",
+      "newId": "editorial-friends-fit-059",
+      "level": 2,
+      "originalText": "友達の挑戦に、どんな応援の仕方をしたい？",
+      "revisedText": "今挑戦していることがあれば、私にどんな関わり方を望む？",
+      "originalFollowUp": "応援が相手の負担にならないか、どう確かめたい？",
+      "revisedFollowUp": "進み具合を聞くなら、どんなタイミングがいい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-2-14",
+      "newId": "editorial-friends-fit-060",
+      "level": 2,
+      "originalText": "友達との関係が変わったきっかけは何だった？",
+      "revisedText": "私たちの関わり方が変わったと感じる時期はある？",
+      "originalFollowUp": "その変化で、付き合い方にどんな違いが生まれた？",
+      "revisedFollowUp": "その変化の中で、今も残っているやりとりは何？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-2-15",
+      "newId": "editorial-friends-fit-061",
+      "level": 2,
+      "originalText": "友達に対して、うらやましいと思うことはある？",
+      "revisedText": "私をうらやましく感じることがあるなら、どんな距離で付き合うと楽？",
+      "originalFollowUp": "そのうらやましさに、自分の望みが表れている部分はある？",
+      "revisedFollowUp": "その気持ちを私に話すかどうかは、どう選びたい？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-boundaries-2-16",
+      "newId": "editorial-friends-fit-062",
+      "level": 2,
+      "originalText": "友達と共有しないでおきたい、自分だけの領域は？",
+      "revisedText": "私たちが親しくても、それぞれに残しておきたい領域は？",
+      "originalFollowUp": "その領域を守るために、決めておきたいことはある？",
+      "revisedFollowUp": "その領域には触れないでほしいと、どう伝えたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-2-18",
+      "newId": "editorial-friends-fit-063",
+      "level": 2,
+      "originalText": "友達からどんな時に頼られると嬉しい？",
+      "revisedText": "私を頼ってもよいと思えるのは、どんな時？",
+      "originalFollowUp": "頼みごとを引き受ける前に、自分の何を確かめたい？",
+      "revisedFollowUp": "頼めるか迷う時、何を先に確かめたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-2-19",
+      "newId": "editorial-friends-fit-064",
+      "level": 2,
+      "originalText": "友達関係で、無理をしないために必要なことは？",
+      "revisedText": "今の私たちの付き合いを、無理なく続けるために必要なことは？",
+      "originalFollowUp": "無理をしているか判断する時、生活のどこに目を向けたい？",
+      "revisedFollowUp": "一つだけ変えられるなら、何を調整したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-20",
+      "newId": "editorial-friends-fit-065",
+      "level": 2,
+      "originalText": "友達との約束を変えたい時、どう伝える？",
+      "revisedText": "私たちの予定を変えたい時、どんな連絡だと助かる？",
+      "originalFollowUp": "変更の相談をする時、代案はどのくらい用意したい？",
+      "revisedFollowUp": "代わりの日程は、いつ相談するのがよさそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-21",
+      "newId": "editorial-friends-fit-066",
+      "level": 2,
+      "originalText": "友達ともめた後、先に声をかける方？時間が解決するのを待つ方？",
+      "revisedText": "私たちの間で行き違いがあったら、どう話すきっかけを作りたい？",
+      "originalFollowUp": "連絡を再開するかどうか、今の自分の何を基準にしたい？",
+      "revisedFollowUp": "話すかどうかを考える時間は、どのくらいほしい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-22",
+      "newId": "editorial-friends-fit-067",
+      "level": 2,
+      "originalText": "友達からのメッセージに返信がない時、どう受け止める？",
+      "revisedText": "私からの返信が遅い時、どんなふうに受け止めている？",
+      "originalFollowUp": "返事を待つ間、自分の時間をどう過ごしたい？",
+      "revisedFollowUp": "返信について、二人で決めておくと楽なことはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-23",
+      "newId": "editorial-friends-fit-068",
+      "level": 2,
+      "originalText": "友達に話していないことを伝える時、何を大切にしたい？",
+      "revisedText": "私にまだ話していないことを話すなら、どんな場面がよさそう？",
+      "originalFollowUp": "伝えた後、その話をどう扱ってほしい？",
+      "revisedFollowUp": "話した内容を外で共有しないでほしい時、どう知らせたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-24",
+      "newId": "editorial-friends-fit-069",
+      "level": 2,
+      "originalText": "友達との会話で、一方的に話していないか気にする？",
+      "revisedText": "私たちの会話で、もっと自分から話してみたいことはある？",
+      "originalFollowUp": "話す時間の偏りに気づいたら、どんな言葉を挟みたい？",
+      "revisedFollowUp": "話し始める時、私にどう聞いてもらえるとうれしい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-2-26",
+      "newId": "editorial-friends-fit-070",
+      "level": 2,
+      "originalText": "友達との会話を楽しく続けるコツはある？",
+      "revisedText": "私たちが会話を楽しめるのは、どんなきっかけがある時？",
+      "originalFollowUp": "会話が途切れた時には、どう過ごすと気楽？",
+      "revisedFollowUp": "話題が途切れた時は、どう過ごせると楽？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-2-27",
+      "newId": "editorial-friends-fit-071",
+      "level": 2,
+      "originalText": "友達と金銭感覚が違うと感じたことはある？",
+      "revisedText": "私たちでお金を使う時、金額の決め方で相談したいことはある？",
+      "originalFollowUp": "お金のかかる誘いでは、予算をどう相談したい？",
+      "revisedFollowUp": "予算を抑えたい日は、どんなふうに伝えたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-2-28",
+      "newId": "editorial-friends-fit-072",
+      "level": 2,
+      "originalText": "友達の生き方を見て、自分の選択を見直したことはある？",
+      "revisedText": "私の話を聞いて、自分の選択肢が広がったことはある？",
+      "originalFollowUp": "その選択を見直した時、自分にとって何がはっきりした？",
+      "revisedFollowUp": "その話のどんな部分が、自分の参考になった？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-2-30",
+      "newId": "editorial-friends-fit-074",
+      "level": 2,
+      "originalText": "友達に合わせて、興味のないふりをしたことはある？",
+      "revisedText": "私たちの好みが違っても、気兼ねなく話せると感じる？",
+      "originalFollowUp": "自分の興味をそのまま話せるなら、何を話したい？",
+      "revisedFollowUp": "好みが合わない時、どんな反応をしてもらいたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-2-31",
+      "newId": "editorial-friends-fit-075",
+      "level": 2,
+      "originalText": "友達と支え合えていると感じるのは、どんな時？",
+      "revisedText": "私たちで助け合えたと感じる場面はある？",
+      "originalFollowUp": "支え合いを感じた時、相手にどう伝えたい？",
+      "revisedFollowUp": "その助けの、どんなところが自分に合っていた？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-2-34",
+      "newId": "editorial-friends-fit-076",
+      "level": 2,
+      "originalText": "友達の成功を、素直に祝えている？",
+      "revisedText": "私にうれしい出来事があった時、どんなふうに共有するのが二人に合う？",
+      "originalFollowUp": "祝う気持ちが湧かない日、自分の感情をどう扱いたい？",
+      "revisedFollowUp": "自分の気分に余裕がない日は、どんな受け止め方なら無理がない？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-care-2-35",
+      "newId": "editorial-friends-fit-077",
+      "level": 2,
+      "originalText": "心配をかけたくなくて、友達に弱音を隠すことはある？",
+      "revisedText": "私に弱音を話す時、どんな安心があると話しやすい？",
+      "originalFollowUp": "弱音を話すか決める時、どんな安心が必要？",
+      "revisedFollowUp": "その日は話したくないと、どう知らせられると楽？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-2-36",
+      "newId": "editorial-friends-fit-078",
+      "level": 2,
+      "originalText": "友達のちょっとした変化に、気づける方だと思う？",
+      "revisedText": "最近、私の中で気づいた小さな変化はある？",
+      "originalFollowUp": "変化に気づいた時、本人に聞く前に気をつけたいことは何？",
+      "revisedFollowUp": "その変化について、本人に聞いてみたいことはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-2-37",
+      "newId": "editorial-friends-fit-079",
+      "level": 2,
+      "originalText": "友達を励ました後、自分の気持ちや疲れにも目を向けられている？",
+      "revisedText": "私の話を聞く余裕がない日は、どう伝えたい？",
+      "originalFollowUp": "励ました後に疲れを感じたら、どんな休み方を選びたい？",
+      "revisedFollowUp": "話す時を改めるなら、どんな決め方が負担にならない？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-2-39",
+      "newId": "editorial-friends-fit-081",
+      "level": 2,
+      "originalText": "友達にNOと言えず、後悔したことはある？",
+      "revisedText": "私の頼みを断るなら、どんな言葉が言いやすい？",
+      "originalFollowUp": "次に似た頼みを受けたら、どんな返事を用意しておきたい？",
+      "revisedFollowUp": "断った理由を話すかどうかは、自分で選べていると感じる？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-2-40",
+      "newId": "editorial-friends-fit-082",
+      "level": 2,
+      "originalText": "友達の近況と自分を比べて、気持ちが揺れることはある？",
+      "revisedText": "私たちがお互いを比べる時、どんな話題が気になりやすい？",
+      "originalFollowUp": "比べる時間を減らしたい時、どんな行動が役立ちそう？",
+      "revisedFollowUp": "比較する話を休みたい時、どんな言葉で伝えられそう？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-boundaries-2-41",
+      "newId": "editorial-friends-fit-083",
+      "level": 2,
+      "originalText": "友達との距離感の基準は、自分の中で決まっている？",
+      "revisedText": "今の私たちの距離感を、どう感じている？",
+      "originalFollowUp": "相手ごとに距離を変える時、大切にしている違いは何？",
+      "revisedFollowUp": "もう少し近づけたい部分と、そのままでよい部分はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-2-42",
+      "newId": "editorial-friends-fit-084",
+      "level": 2,
+      "originalText": "友達に構ってほしい時と、放っておいてほしい時の揺れはある？",
+      "revisedText": "私と過ごしたい日と、一人でいたい日はどう知らせたい？",
+      "originalFollowUp": "今の気分に合う距離を、どんなふうに伝えられそう？",
+      "revisedFollowUp": "気分が変わった時も、予定を調整しやすくできそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-2-43",
+      "newId": "editorial-friends-fit-085",
+      "level": 2,
+      "originalText": "友達との秘密の共有は、関係を深めると思う？",
+      "revisedText": "私に話したことを、二人の間だけにしてほしい時はどう伝えたい？",
+      "originalFollowUp": "秘密を話さなくても、関係を深める方法はあると思う？",
+      "revisedFollowUp": "誰かに相談する必要がある時、先にどう確かめ合いたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-2-45",
+      "newId": "editorial-friends-fit-086",
+      "level": 2,
+      "originalText": "友達との関係が深まった瞬間は、いつだった？",
+      "revisedText": "私たちが前より親しくなったと感じた場面はある？",
+      "originalFollowUp": "その瞬間に、相手のどんな一面を知った？",
+      "revisedFollowUp": "その時の関わり方で、これからも続けたいことは？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-2-46",
+      "newId": "editorial-friends-fit-087",
+      "level": 2,
+      "originalText": "友達と思い出の場所に、今も行きたいところはある？",
+      "revisedText": "私たちの思い出の場所で、また行ってみたいところはある？",
+      "originalFollowUp": "もう一度行くなら、当時と同じことをしたい？",
+      "revisedFollowUp": "今行くなら、当時と違う楽しみ方もしてみたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-2-47",
+      "newId": "editorial-friends-fit-088",
+      "level": 2,
+      "originalText": "友達から言われて救われた言葉はある？",
+      "revisedText": "私からの言葉で、今も覚えているものはある？",
+      "originalFollowUp": "その言葉のどこが、自分の気持ちに合っていた？",
+      "revisedFollowUp": "その言葉を、今はどんな気持ちで思い出す？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-2-49",
+      "newId": "editorial-friends-fit-090",
+      "level": 2,
+      "originalText": "友達との距離が変わって、関係が変化した経験はある？",
+      "revisedText": "会う頻度が変わった時、私たちの連絡の仕方はどう変わった？",
+      "originalFollowUp": "距離が変わった後に、心地よく続いたやりとりはある？",
+      "revisedFollowUp": "今の生活に合わせるなら、どんな連絡が続けやすい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-2-50",
+      "newId": "editorial-friends-fit-091",
+      "level": 2,
+      "originalText": "友達との思い出で「あの時こうしていれば」と思うものはある？",
+      "revisedText": "私たちの以前のやりとりで、今なら違う伝え方をしたいことはある？",
+      "originalFollowUp": "今の自分なら、その場面で何を大切にしたい？",
+      "revisedFollowUp": "今言葉を選ぶなら、何を一番大切にしたい？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-values-3-1",
+      "newId": "editorial-friends-fit-092",
+      "level": 3,
+      "originalText": "友達の選んだ生き方を、自分と違っても尊重できる？",
+      "revisedText": "私たちの大事な選択が違う時、どんな付き合い方を続けたい？",
+      "originalFollowUp": "理解できない選択でも、相手に任せておきたい範囲はどこ？",
+      "revisedFollowUp": "相手の選択に意見を言う前に、何を確かめたい？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-communication-3-4",
+      "newId": "editorial-friends-fit-095",
+      "level": 3,
+      "originalText": "友達に本当の自分を見せるのが難しいのは、どんな時？",
+      "revisedText": "私と話す時、自分を少し作っていると感じる場面はある？",
+      "originalFollowUp": "見せる範囲を自分で選べるとしたら、どこまでなら話せそう？",
+      "revisedFollowUp": "その場面で、どんな接し方なら自分のままでいられそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-3-5",
+      "newId": "editorial-friends-fit-096",
+      "level": 3,
+      "originalText": "環境が変わっても続く友達関係には、何が必要？",
+      "revisedText": "私たちの生活環境が変わっても、残したい付き合い方は？",
+      "originalFollowUp": "環境が変わった時、続けやすそうな連絡の形は何？",
+      "revisedFollowUp": "忙しい時期には、どんなつながり方ができそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-3-7",
+      "newId": "editorial-friends-fit-098",
+      "level": 3,
+      "originalText": "友達を励ます時、言葉と一緒に何をしてあげたい？",
+      "revisedText": "私が落ち込んでいる時、言葉以外でできそうな関わり方は？",
+      "originalFollowUp": "何かをする前に、相手の希望をどう聞きたい？",
+      "revisedFollowUp": "何を望んでいるか、どう確かめてから関わりたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-3-8",
+      "newId": "editorial-friends-fit-099",
+      "level": 3,
+      "originalText": "友達と気まずくなった時、関係を戻すために何ができる？",
+      "revisedText": "私たちの間で話しづらくなったことがあれば、どう扱いたい？",
+      "originalFollowUp": "話すか距離を保つか、自分の気持ちをどう確かめたい？",
+      "revisedFollowUp": "すぐには話さない選択もできると感じる？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-3-9",
+      "newId": "editorial-friends-fit-100",
+      "level": 3,
+      "originalText": "友達が自分の思い通りに動かない時、どう受け止める？",
+      "revisedText": "私たちの期待する過ごし方が合わない時、どんな調整ができそう？",
+      "originalFollowUp": "期待と違った時、相手に任せられるのはどんな部分？",
+      "revisedFollowUp": "譲らずに大切にしておきたい希望はある？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-memories-3-11",
+      "newId": "editorial-friends-fit-102",
+      "level": 3,
+      "originalText": "友達から受けた影響で、自分が変わったことはある？",
+      "revisedText": "私と知り合って、自分の考え方が変わったことはある？",
+      "originalFollowUp": "その変化のうち、これからも続けていきたいものは何？",
+      "revisedFollowUp": "今後も大切にしたい変化はどれ？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-3-12",
+      "newId": "editorial-friends-fit-103",
+      "level": 3,
+      "originalText": "これから友達とどんな思い出をつくりたい？",
+      "revisedText": "これから私たちで、どんな思い出を作りたい？",
+      "originalFollowUp": "その思い出作りを、どんな規模から始めたい？",
+      "revisedFollowUp": "そのために、次に会う時できそうなことは？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-3-13",
+      "newId": "editorial-friends-fit-104",
+      "level": 3,
+      "originalText": "友達が自分を責めている時、どう支えたい？",
+      "revisedText": "私が自分を責めている時、どんな聞き方が自分にはできそう？",
+      "originalFollowUp": "話を聞く自分に余裕がない日は、どう接したい？",
+      "revisedFollowUp": "話を聞き続けるのが難しい時、どう知らせたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-3-14",
+      "newId": "editorial-friends-fit-105",
+      "level": 3,
+      "originalText": "友達の選択に納得できなくても、応援できる？",
+      "revisedText": "私の選択に賛成できない時、どこまで関わりたい？",
+      "originalFollowUp": "応援できる部分だけ伝えるなら、どんな言葉になりそう？",
+      "revisedFollowUp": "賛成と応援を分けて考えると、伝えられることはある？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-communication-3-15",
+      "newId": "editorial-friends-fit-106",
+      "level": 3,
+      "originalText": "友達と対等でいるために必要なことは何だと思う？",
+      "revisedText": "私たちが対等に付き合えていると感じるのは、どんな場面？",
+      "originalFollowUp": "対等さが崩れたと感じたら、何を話し合いたい？",
+      "revisedFollowUp": "決める役割や負担で、見直したいことはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-3-16",
+      "newId": "editorial-friends-fit-107",
+      "level": 3,
+      "originalText": "友達に頼られ続けて疲れた時、どう伝えたい？",
+      "revisedText": "私から頼られることが負担になったら、どう知らせたい？",
+      "originalFollowUp": "今引き受けられる範囲を、どんな言葉で示したい？",
+      "revisedFollowUp": "その時に引き受けられる範囲は、どう伝えられそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-3-17",
+      "newId": "editorial-friends-fit-108",
+      "level": 3,
+      "originalText": "友達との関係で、忘れたくない出来事は？",
+      "revisedText": "私たちの出来事で、大切に覚えていたいものは？",
+      "originalFollowUp": "その出来事を、どんな形で残しておきたい？",
+      "revisedFollowUp": "思い出を残すなら、どんな形が自分に合う？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-3-18",
+      "newId": "editorial-friends-fit-109",
+      "level": 3,
+      "originalText": "将来、友達とはどんな距離感でいたい？",
+      "revisedText": "これから私たちは、どんな距離感で付き合っていきたい？",
+      "originalFollowUp": "その距離感を保つために、連絡の頻度はどうしたい？",
+      "revisedFollowUp": "その距離感を、連絡や会う頻度に表すならどうなる？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-3-19",
+      "newId": "editorial-friends-fit-110",
+      "level": 3,
+      "originalText": "友達関係で一番大切なのは、安心感と刺激のどちら？",
+      "revisedText": "今の私たちの関係に、もう少しあるとうれしいものは？",
+      "originalFollowUp": "安心感や刺激が足りない時、自分から何を変えたい？",
+      "revisedFollowUp": "それを無理なく増やす方法はありそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-3-20",
+      "newId": "editorial-friends-fit-111",
+      "level": 3,
+      "originalText": "友達に分かってほしい自分の一面はある？",
+      "revisedText": "私にもう少し知ってもらいたい、自分の一面はある？",
+      "originalFollowUp": "その一面を、まずどんな小さな場面で伝えられそう？",
+      "revisedFollowUp": "その一面を話すなら、どんなきっかけがよさそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-3-21",
+      "newId": "editorial-friends-fit-112",
+      "level": 3,
+      "originalText": "友達との価値観の違いが、自分を成長させたと感じることはある？",
+      "revisedText": "私たちの考え方の違いで、面白いと感じたものはある？",
+      "originalFollowUp": "違う価値観に出会っても、変えずに持ちたい考えはある？",
+      "revisedFollowUp": "違いを知っても、変えずに大切にしたい自分の考えは？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-3-24",
+      "newId": "editorial-friends-fit-115",
+      "level": 3,
+      "originalText": "友達の変化や成長を、素直に受け止められる？",
+      "revisedText": "私たちのどちらかが変わったと感じた時、何を聞いてみたい？",
+      "originalFollowUp": "以前の相手像にとらわれていると気づいたら、どう見直したい？",
+      "revisedFollowUp": "以前と同じ接し方でよいか、どう確かめたい？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-values-3-25",
+      "newId": "editorial-friends-fit-116",
+      "level": 3,
+      "originalText": "友達との信頼が揺らぐのは、どんな時だと思う？",
+      "revisedText": "私たちの間で信頼を感じるのは、どんなやりとり？",
+      "originalFollowUp": "信頼が揺らいだ時、確かめずに決めつけないために何ができる？",
+      "revisedFollowUp": "信頼について気になることができたら、どう確かめたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-3-26",
+      "newId": "editorial-friends-fit-117",
+      "level": 3,
+      "originalText": "友達の悩みが自分の手に余ると感じた時、どうする？",
+      "revisedText": "私の相談が重く感じられたら、どんなふうに伝えたい？",
+      "originalFollowUp": "自分だけで引き受けないために、どんな言葉を使いたい？",
+      "revisedFollowUp": "自分だけで抱えないために、相談先を一緒に探す選択はできそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-3-28",
+      "newId": "editorial-friends-fit-119",
+      "level": 3,
+      "originalText": "友達が同じ失敗を繰り返す時、指摘する？見守る？",
+      "revisedText": "私たちの間で同じ行き違いが続いたら、どう話し合いたい？",
+      "originalFollowUp": "指摘するか決める前に、相手のどんな希望を聞きたい？",
+      "revisedFollowUp": "起こるたびに責め合わずに済む工夫はある？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-care-3-30",
+      "newId": "editorial-friends-fit-121",
+      "level": 3,
+      "originalText": "友達との関係で、頑張りすぎていないと確認できる？",
+      "revisedText": "私との付き合いで、今より負担を減らせるところはある？",
+      "originalFollowUp": "頑張りすぎだと気づいたら、最初に減らしたいことは何？",
+      "revisedFollowUp": "その調整をお願いするなら、どう切り出したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-3-31",
+      "newId": "editorial-friends-fit-122",
+      "level": 3,
+      "originalText": "友達との誤解を解くために、時間をかける価値はあると思う？",
+      "revisedText": "私たちの間の誤解を話すなら、どんな場面だと落ち着ける？",
+      "originalFollowUp": "誤解を解くための時間を、どこまで使えると感じる？",
+      "revisedFollowUp": "お互いの説明が違う時、何から確かめたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-3-33",
+      "newId": "editorial-friends-fit-124",
+      "level": 3,
+      "originalText": "嫌われるのが怖くて、友達への本音を抑えたことはある？",
+      "revisedText": "私に本音を話す前に、どんな反応が気になる？",
+      "originalFollowUp": "本音を全部話さずに、自分の希望を守る方法はある？",
+      "revisedFollowUp": "違う意見でも、どう受け止めてもらえると安心する？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-3-34",
+      "newId": "editorial-friends-fit-125",
+      "level": 3,
+      "originalText": "友達との会話の中で、一番見せない自分の面はある？",
+      "revisedText": "私にはまだ見せていないけれど、見せてもよいと思う一面はある？",
+      "originalFollowUp": "見せないでおくことに、自分では納得している？",
+      "revisedFollowUp": "今は見せずにおく自由もあると感じる？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-3-35",
+      "newId": "editorial-friends-fit-126",
+      "level": 3,
+      "originalText": "友達との関係を壊したくないあまり、問題から目をそらしたことはある？",
+      "revisedText": "私たちの間で、話す時期を見計らっていることはある？",
+      "originalFollowUp": "問題を見る余裕ができるまで、どんな距離を保ちたい？",
+      "revisedFollowUp": "内容ではなく、話しやすい条件だけ伝えるなら何？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-3-36",
+      "newId": "editorial-friends-fit-127",
+      "level": 3,
+      "originalText": "友達の期待が、プレッシャーに感じられる時はある？",
+      "revisedText": "私からの期待が負担に感じられることはある？",
+      "originalFollowUp": "期待に応えられない時、何を先に知らせたい？",
+      "revisedFollowUp": "期待に応えられない時、どんな返事なら言いやすい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-3-38",
+      "newId": "editorial-friends-fit-129",
+      "level": 3,
+      "originalText": "友達の問題に踏み込みすぎたと、感じたことはある？",
+      "revisedText": "私たちが互いのことに関わる時、どこから先は本人に任せたい？",
+      "originalFollowUp": "相手の領域に戻しておきたい判断は何？",
+      "revisedFollowUp": "任せてほしいと伝える合図を決めるなら？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-3-39",
+      "newId": "editorial-friends-fit-130",
+      "level": 3,
+      "originalText": "友達との関係で、自分が犠牲になっていると感じる時はある？",
+      "revisedText": "私との付き合いで、自分の都合が後回しになると感じることはある？",
+      "originalFollowUp": "自分の負担を減らすなら、どのやりとりから見直したい？",
+      "revisedFollowUp": "自分の都合も出しやすくするには、何を変えたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-3-40",
+      "newId": "editorial-friends-fit-131",
+      "level": 3,
+      "originalText": "友達との関係を見極めるための、自分なりの判断材料はある？",
+      "revisedText": "私たちの今の付き合い方が合っているか、何を手がかりにしている？",
+      "originalFollowUp": "判断材料の中で、相手の言葉と行動をどう見ている？",
+      "revisedFollowUp": "合わないと感じた時、どの部分から調整したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-3-42",
+      "newId": "editorial-friends-fit-132",
+      "level": 3,
+      "originalText": "これからも連絡を取り合いたい友達はいる？",
+      "revisedText": "これから私たちが連絡を取り合うなら、どんな方法が続けやすい？",
+      "originalFollowUp": "連絡を続けるなら、どんな方法が今の生活に合う？",
+      "revisedFollowUp": "連絡が空いた後も、どんな話題なら送りやすい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-3-43",
+      "newId": "editorial-friends-fit-133",
+      "level": 3,
+      "originalText": "友達と過ごす時間と一人の時間を、どう両立したい？",
+      "revisedText": "私たちで会う時間と、それぞれの時間をどう両立したい？",
+      "originalFollowUp": "一人の時間を確保するために、予定の入れ方をどうしたい？",
+      "revisedFollowUp": "誘いを受ける前に考える時間は、どのくらいほしい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-3-44",
+      "newId": "editorial-friends-fit-134",
+      "level": 3,
+      "originalText": "年を重ねてからの友達関係を、どうイメージしている？",
+      "revisedText": "年を重ねた私たちは、どんな時間を一緒に楽しめそう？",
+      "originalFollowUp": "その頃にも一緒に楽しめそうなことは何？",
+      "revisedFollowUp": "今のうちから残しておきたい習慣はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-3-47",
+      "newId": "editorial-friends-fit-136",
+      "level": 3,
+      "originalText": "友達との過去の誤解で、今も心に引っかかっているものはある？",
+      "revisedText": "私たちの間で、今も確かめておきたい誤解はある？",
+      "originalFollowUp": "今その誤解を解く必要があるか、何を基準に考えたい？",
+      "revisedFollowUp": "過去の詳しい話をせずに、今後望む接し方だけ伝えるなら？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-memories-3-48",
+      "newId": "editorial-friends-fit-137",
+      "level": 3,
+      "originalText": "友達と共有した秘密を、今も大切に扱っている？",
+      "revisedText": "私たちが以前話したことを、今も同じように扱ってよいと思う？",
+      "originalFollowUp": "秘密を守るために、普段の会話で気をつけていることは何？",
+      "revisedFollowUp": "話題によって、もう一度確かめてほしいものはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-3-49",
+      "newId": "editorial-friends-fit-138",
+      "level": 3,
+      "originalText": "友達との古い写真を見返すと、どんな気持ちになる？",
+      "revisedText": "私たちの昔の写真を見ると、何に目が向く？",
+      "originalFollowUp": "写真を見て浮かぶ気持ちを、どんなふうに受け止めたい？",
+      "revisedFollowUp": "写真を一緒に見返すなら、どんな時がよさそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-3-50",
+      "newId": "editorial-friends-fit-139",
+      "level": 3,
+      "originalText": "友達との思い出の中で、自分の変化が一番よく分かるものはある？",
+      "revisedText": "私たちの出会った頃と今で、付き合い方にどんな変化がある？",
+      "originalFollowUp": "当時の自分と今の自分で、変わらず残っているものは何？",
+      "revisedFollowUp": "変わっていても、今の二人に合っていると感じる部分は？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-4-1",
+      "newId": "editorial-friends-fit-140",
+      "level": 4,
+      "originalText": "友達に傷つけられた時、関係を続けるか距離を置くかをどう決める？",
+      "revisedText": "私たちのやりとりで傷ついた時、どんな距離が必要になると思う？",
+      "originalFollowUp": "関係を考える間、安心して過ごすためにどんな距離が必要？",
+      "revisedFollowUp": "話し合うか決める前に、どんな時間を取りたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-4-2",
+      "newId": "editorial-friends-fit-141",
+      "level": 4,
+      "originalText": "友達に本当は謝ってほしいことがある？",
+      "revisedText": "私に気持ちを分かってほしかった場面はある？",
+      "originalFollowUp": "謝ってほしい気持ちを伝えるなら、どんな場が話しやすい？",
+      "revisedFollowUp": "その時の気持ちを今伝えるなら、何を一番聞いてほしい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-4-4",
+      "newId": "editorial-friends-fit-143",
+      "level": 4,
+      "originalText": "友達との間に、言葉にしておきたいルールはある？",
+      "revisedText": "私たちの間で、改めて言葉にしておきたい約束は？",
+      "originalFollowUp": "そのルールは、どんな場面で確認できると役立ちそう？",
+      "revisedFollowUp": "どちらかが変えたくなった時も、相談できる形にするなら？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-4-5",
+      "newId": "editorial-friends-fit-144",
+      "level": 4,
+      "originalText": "友達の苦しさを受け止めきれない時、どうすれば自分を守れる？",
+      "revisedText": "私のつらい話を聞く時、自分を守るために必要なことは？",
+      "originalFollowUp": "受け止められる範囲を、誰かに相談できるとしたら誰を選びたい？",
+      "revisedFollowUp": "話を止めたい時は、どんな言葉を使いたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-4-6",
+      "newId": "editorial-friends-fit-145",
+      "level": 4,
+      "originalText": "友達だから許せることと、友達でも許せないことの違いは？",
+      "revisedText": "私たちの間で許せないことがあった時、すぐに結論を出さずに考えたい？",
+      "originalFollowUp": "許せないことが起きた場合、自分を守るために何をしたい？",
+      "revisedFollowUp": "考える間の連絡は、どのくらいが自分に合う？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-future-4-7",
+      "newId": "editorial-friends-fit-146",
+      "level": 4,
+      "originalText": "友達と別々の道へ進むことを、どう受け止めたい？",
+      "revisedText": "私たちが別々の道に進むとしたら、どんなつながりを残したい？",
+      "originalFollowUp": "別々の道でも、残しておきたい思い出はある？",
+      "revisedFollowUp": "そのつながりを続けるかは、どう確かめ合いたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-4-8",
+      "newId": "editorial-friends-fit-147",
+      "level": 4,
+      "originalText": "友達に言えないまま抱えている寂しさはある？",
+      "revisedText": "私たちの付き合いで、寂しさを感じることはある？",
+      "originalFollowUp": "その寂しさを今すぐ相手に伝える必要があると感じる？",
+      "revisedFollowUp": "寂しさを感じた時、どんな関わり方を望む？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-4-9",
+      "newId": "editorial-friends-fit-148",
+      "level": 4,
+      "originalText": "友達関係を終わらせた方がいいと感じるのは、どんな時？",
+      "revisedText": "私たちの距離を見直したい時、どんなふうに知らせたい？",
+      "originalFollowUp": "関係を終えるか考える時、急いで決めずに済む支えはある？",
+      "revisedFollowUp": "相手の返事を待つ間、どのくらい連絡を控えたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-4-10",
+      "newId": "editorial-friends-fit-149",
+      "level": 4,
+      "originalText": "友達を助けたい気持ちと、自分の余裕がない時はどうする？",
+      "revisedText": "私から助けを求められても余裕がない時、どう伝えたい？",
+      "originalFollowUp": "余裕が戻るまで、引き受けずにおきたいことは何？",
+      "revisedFollowUp": "別の形ならできることがあるか、考える時間はほしい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-4-12",
+      "newId": "editorial-friends-fit-151",
+      "level": 4,
+      "originalText": "友達に理解されなくても、自分の選択を大事にできる？",
+      "revisedText": "私に理解されなくても、自分で決めておきたいことはある？",
+      "originalFollowUp": "理解を得られない時も、その選択を続ける支えは何？",
+      "revisedFollowUp": "その選択に私がどう接すると、お互いに無理がない？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-4-13",
+      "newId": "editorial-friends-fit-152",
+      "level": 4,
+      "originalText": "友達に頼られることと、利用されることの違いは何だと思う？",
+      "revisedText": "私たちの頼みごとで、負担が偏っていると感じる部分はある？",
+      "originalFollowUp": "頼みを断った時の相手の反応は、判断材料になると思う？",
+      "revisedFollowUp": "頼む前に確認しておくとよさそうなことは？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-4-14",
+      "newId": "editorial-friends-fit-153",
+      "level": 4,
+      "originalText": "友達との過去を思い出すと、今でも心に残っている言葉はある？",
+      "revisedText": "私たちの会話の中で、今も心に残っている言葉は？",
+      "originalFollowUp": "その言葉を今の自分は、どんな意味で受け止めている？",
+      "revisedFollowUp": "その言葉の意味は、時間がたって変わった？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-4-15",
+      "newId": "editorial-friends-fit-154",
+      "level": 4,
+      "originalText": "これからも続けたい友達との約束はある？",
+      "revisedText": "私たちの約束で、これからも続けたいものはある？",
+      "originalFollowUp": "その約束を無理なく続けるために、変えられる部分はある？",
+      "revisedFollowUp": "今の生活に合わせて変えるなら、どんな形がよさそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-4-16",
+      "newId": "editorial-friends-fit-155",
+      "level": 4,
+      "originalText": "友達のために自分を変えることと、自分らしくいることは両立できる？",
+      "revisedText": "私との関係で、変えてもよい部分と守りたい部分は何？",
+      "originalFollowUp": "変えてもよい部分と、守りたい部分をどう分けたい？",
+      "revisedFollowUp": "その違いを、どう説明すると伝わりそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-4-17",
+      "newId": "editorial-friends-fit-156",
+      "level": 4,
+      "originalText": "友達に大丈夫と言われても、本当は大丈夫ではなさそうな時どうする？",
+      "revisedText": "私が大丈夫と言った時、その言葉をどんなふうに受け止めたい？",
+      "originalFollowUp": "話すかどうかを本人に任せるために、どんな聞き方ができる？",
+      "revisedFollowUp": "それ以上は聞かずにいてほしい時、どう知らせ合いたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-4-18",
+      "newId": "editorial-friends-fit-157",
+      "level": 4,
+      "originalText": "友達との関係で、今なら言葉にできる本音はある？",
+      "revisedText": "今の私たちだからこそ、話してもよいと思えることはある？",
+      "originalFollowUp": "その本音は、今どこまでなら話してもよいと思える？",
+      "revisedFollowUp": "どこまで話すか、自分で決めるために何が必要？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-4-19",
+      "newId": "editorial-friends-fit-158",
+      "level": 4,
+      "originalText": "友達と距離を置いた後、もう一度話すなら何を伝えたい？",
+      "revisedText": "もし私たちが距離を置いた後に話すなら、何から確かめたい？",
+      "originalFollowUp": "話した後も、維持しておきたい境界線は何？",
+      "revisedFollowUp": "また話した後も、変えずにおきたい距離はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-4-20",
+      "newId": "editorial-friends-fit-159",
+      "level": 4,
+      "originalText": "これからの友達関係で、自分が大切にしたいことは？",
+      "revisedText": "これからの私たちの付き合いで、一番大切にしたいことは？",
+      "originalFollowUp": "その大切にしたいことが、普段の付き合いに表れるとしたらどんな形？",
+      "revisedFollowUp": "普段の行動でそれを表すなら、何ができそう？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-4-21",
+      "newId": "editorial-friends-fit-160",
+      "level": 4,
+      "originalText": "友達を傷つけた側だったと認めるのは、難しい？",
+      "revisedText": "私たちのどちらかが相手を傷つけたと気づいた時、どう話を始めたい？",
+      "originalFollowUp": "自分の行動を認めた後、相手の希望をどう確かめたい？",
+      "revisedFollowUp": "謝る言葉に加えて、どんな対応を確かめたい？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-communication-4-22",
+      "newId": "editorial-friends-fit-161",
+      "level": 4,
+      "originalText": "友達に嫉妬や羨望の気持ちを、打ち明けられる？",
+      "revisedText": "私たちが互いを比べてしまう時、どんな距離を取れると楽？",
+      "originalFollowUp": "伝える場合、相手に何をしてほしいかはっきりしている？",
+      "revisedFollowUp": "比べる話題を避けたい日は、どう知らせたい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-communication-4-23",
+      "newId": "editorial-friends-fit-162",
+      "level": 4,
+      "originalText": "友達との関係で、もう終わっていると感じながら続けているものはある？",
+      "revisedText": "私たちの関係を続けるか迷ったら、何を大切に考えたい？",
+      "originalFollowUp": "続ける理由の中に、今の自分が望んでいるものはある？",
+      "revisedFollowUp": "すぐに結論を出さずに考えられる環境はある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-boundaries-4-26",
+      "newId": "editorial-friends-fit-163",
+      "level": 4,
+      "originalText": "友達との関係で、自分を守るための嘘が必要だったことはある？",
+      "revisedText": "私との会話で、説明せずに守っておきたいことはある？",
+      "originalFollowUp": "本当のことを話す以外で、自分を守れる方法はありそう？",
+      "revisedFollowUp": "答えたくないと伝えた時、どんな反応をしてほしい？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-boundaries-4-30",
+      "newId": "editorial-friends-fit-165",
+      "level": 4,
+      "originalText": "友達と距離を置きたいと思った時、何を基準に考えたい？",
+      "revisedText": "私たちが少し距離を置くとしたら、連絡の仕方をどう決めたい？",
+      "originalFollowUp": "距離を置く間、相手からの連絡をどう扱いたい？",
+      "revisedFollowUp": "その距離が合っているか、どんな時に見直したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-care-4-31",
+      "newId": "editorial-friends-fit-166",
+      "level": 4,
+      "originalText": "友達の深刻な悩みに一人で対応できない時、誰に相談できる？",
+      "revisedText": "私たちの相談が二人だけでは難しい時、誰の力を借りたい？",
+      "originalFollowUp": "相談相手に話す時、友達の情報をどこまで伝える必要がある？",
+      "revisedFollowUp": "相談する前に、共有する情報をどう確かめ合いたい？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-care-4-33",
+      "newId": "editorial-friends-fit-167",
+      "level": 4,
+      "originalText": "友達に弱さを見せた結果、後悔したことはある？",
+      "revisedText": "私に弱いところを話すなら、どんな受け止め方をしてほしい？",
+      "originalFollowUp": "次に弱音を話すなら、どんな相手を選びたい？",
+      "revisedFollowUp": "話した後、一人で過ごす時間もほしい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-4-38",
+      "newId": "editorial-friends-fit-170",
+      "level": 4,
+      "originalText": "友達の頼みが自分の大切にしたい基準に反する時、どう伝える？",
+      "revisedText": "私からの頼みが自分の考えと合わない時、どう伝えたい？",
+      "originalFollowUp": "断る言葉に、自分の基準をどのくらい説明したい？",
+      "revisedFollowUp": "理由を全部説明せずに断るなら、どんな言葉が使える？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-values-4-40",
+      "newId": "editorial-friends-fit-172",
+      "level": 4,
+      "originalText": "友達に本当の自分を知られたら、関係は変わってしまうと思う？",
+      "revisedText": "私に知られている自分と、自分が感じる自分に違いはある？",
+      "originalFollowUp": "知られたくない部分を持つことも、関係の中で認められると思う？",
+      "revisedFollowUp": "その違いについて、今どこまでなら説明したい？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-future-4-41",
+      "newId": "editorial-friends-fit-173",
+      "level": 4,
+      "originalText": "友達との関係が自然に途切れても仕方がない、と思える？",
+      "revisedText": "もし私たちの連絡が自然に減ったら、その変化をどう扱いたい？",
+      "originalFollowUp": "連絡が途切れた関係でも、大切だった時間をどう残したい？",
+      "revisedFollowUp": "また連絡したくなった時、どんな始め方なら気楽？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-future-4-44",
+      "newId": "editorial-friends-fit-174",
+      "level": 4,
+      "originalText": "今の友達との関係が10年後どうなっているか、予想できる？",
+      "revisedText": "10年後の私たちに、今から残しておきたいものは何？",
+      "originalFollowUp": "10年後のために、今から無理なく続けられそうなことはある？",
+      "revisedFollowUp": "そのために、今できる小さなことはある？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    },
+    {
+      "oldId": "friends-memories-4-46",
+      "newId": "editorial-friends-fit-175",
+      "level": 4,
+      "originalText": "友達との過去のつらい出来事を、今どう向き合っている？",
+      "revisedText": "私たちの過去のやりとりで、今の距離感に影響していることはある？",
+      "originalFollowUp": "過去の詳しい話をせずに、今の自分に必要な支えを挙げるなら？",
+      "revisedFollowUp": "詳しい出来事より、これから望む関わり方を話すなら？",
+      "reason": "感情の深さは残し、採点や原因の決めつけ、過去の詳しい開示要求を避けて、今カードを使う二人の具体的な関係を尋ねる表現に変更。"
+    },
+    {
+      "oldId": "friends-memories-4-49",
+      "newId": "editorial-friends-fit-177",
+      "level": 4,
+      "originalText": "友達との付き合いの中で、自分が変わってしまったと感じる瞬間はある？",
+      "revisedText": "私と知り合った頃に比べて、自分らしさの出し方は変わった？",
+      "originalFollowUp": "変わった自分の中で、これからも大切にしたい部分はどこ？",
+      "revisedFollowUp": "その変化の中で、今の自分が心地よいと感じる部分は？",
+      "reason": "一般的な友達像や第三者への態度ではなく、今カードを使う二人の具体的な関わりを尋ねる表現へ変更。深掘りも固有の内容に合わせて改稿。"
+    }
+  ],
+  "unchangedIds": []
+}

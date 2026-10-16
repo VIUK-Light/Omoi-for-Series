@@ -8,7 +8,7 @@
  * 検証項目:
  *   0. 入力 cards.ts の SHA-256 がカノニカル blob と一致(tools/PROVENANCE.md)
  *   1. 正本抽出件数 = 701 / レベル別件数(L1=167, L2=169, L3=167, L4=198)
- *   2. 公開デッキ477問の順序・キュレーション内容を照合
+ *   2. Couples専用の公開デッキの順序・キュレーション内容を照合
  *   3. 個人的な固定文言が残っていないこと
  *   4. ID の一意性
  *   5. スキーマ準拠(キー集合・audience・level 範囲・source)・テキスト非空
@@ -21,6 +21,8 @@ import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { SERIES_CONTRACTS } from "./series-contracts.mjs";
+import { seriesFitIssues } from "./series-fit-rules.mjs";
 import { curateCouplesQuestions } from "./couples-release-policy.mjs";
 
 const CANONICAL_SHA256 = "8157d9f273edf58dd011db8627c16dd110a49d81e76577672502dc4cd47bfc57";
@@ -28,9 +30,9 @@ const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
 const CANONICAL_PATH = "Loveds/web/src/data/cards.ts";
 const EXPECTED_CANONICAL_TOTAL = 701;
 const EXPECTED_CANONICAL_PER_LEVEL = { 1: 167, 2: 169, 3: 167, 4: 198 };
-const EXPECTED_RELEASE_TOTAL = 477;
-const EXPECTED_RELEASE_PER_LEVEL = { 1: 115, 2: 109, 3: 111, 4: 142 };
-const EXPECTED_RELEASE_SOURCES = { loves: 443, editorial: 34 };
+const EXPECTED_RELEASE_TOTAL = SERIES_CONTRACTS.couples.total;
+const EXPECTED_RELEASE_PER_LEVEL = SERIES_CONTRACTS.couples.levels;
+const EXPECTED_RELEASE_SOURCES = SERIES_CONTRACTS.couples.sourceCounts;
 const FORBIDDEN_TEXTS = ["なぎささん大好きだよ！"];
 const ALLOWED_KEYS = new Set(["id", "audience", "level", "text", "category", "source"]);
 const ALLOWED_SOURCES = new Set(["loves", "editorial"]);
@@ -228,6 +230,7 @@ console.log("\n[5] スキーマ準拠");
       schemaErrors += 1;
       if (schemaErrors <= 5) fail(`index ${index} (${card.id}): キー不正 unknown=[${unknownKeys}] missing=[${missingKeys}]`);
     }
+    for (const issue of seriesFitIssues(card, "couples")) { schemaErrors += 1; fail(`${card.id}: ${issue}`); }
     if (card.audience !== "couples") {
       schemaErrors += 1;
       if (schemaErrors <= 5) fail(`index ${index} (${card.id}): audience=${JSON.stringify(card.audience)}`);

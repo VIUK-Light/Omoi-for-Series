@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
-import { hasValidAiSource } from "../shared/content-policy.mjs";
+import { hasValidQuestionSource } from "../shared/content-policy.mjs";
 
 const root = resolve(fileURLToPath(import.meta.url), "../..");
 const seriesFiles = {
@@ -123,14 +124,22 @@ export function validateDataset(data, { series, legacyQuestions = [], requireRel
     if (!Number.isInteger(question.sensitivity) || question.sensitivity < 0 || question.sensitivity > 3) addIssue(issues, "error", `${where}: sensitivity は0〜3の整数にしてください。`);
     if (!Array.isArray(question.contentNotes) || question.contentNotes.some((tag) => typeof tag !== "string" || !validCategories.test(tag))) addIssue(issues, "error", `${where}: contentNotes は英小文字スラッグの配列にしてください。`);
     if (question.reviewStatus !== "pending" && question.reviewStatus !== "approved") addIssue(issues, "error", `${where}: reviewStatus は pending または approved にしてください。`);
-    if (!hasValidAiSource(question.source)) {
-      addIssue(issues, "error", `${where}: AI初期案のsourceメタデータが不正です（Grok/Codexの実際の作成元を指定）。`);
+    if (!hasValidQuestionSource(question.source, series)) {
+      addIssue(issues, "error", `${where}: 質問のsourceメタデータが不正です（AI作成元または提供データの記録を確認）。`);
+    }
+
+    if (question.source?.kind === "user-provided" && typeof question.text === "string" && typeof question.followUp === "string") {
+      const hash = createHash("sha256").update(JSON.stringify([question.text, question.followUp])).digest("hex");
+      if (hash !== question.source.contentSha256) addIssue(issues, "error", `${where}: 提供された原文のハッシュが一致しません。`);
     }
 
     const texts = [question.text, question.followUp].filter((text) => typeof text === "string");
     for (const text of texts) {
-      for (const pattern of forbiddenPatterns) {
-        if (pattern.test(text)) addIssue(issues, "error", `${where}: 圧力・露骨な性表現・未成年に関する禁止表現を検出しました。人が確認してください。`);
+      for (const [patternIndex, pattern] of forbiddenPatterns.entries()) {
+        if (!pattern.test(text)) continue;
+        const suppliedAdultText = series === "adults" && question.source?.kind === "user-provided" && hasValidQuestionSource(question.source, series);
+        const severity = suppliedAdultText && patternIndex === 1 ? "warning" : "error";
+        addIssue(issues, severity, `${where}: ${severity === "warning" ? "内容の確認対象" : "禁止表現"}を検出しました。${severity === "warning" ? "提供された成人向け原文として保持し、レビュー状態は変更しません。" : "人が確認してください。"}`);
       }
     }
 

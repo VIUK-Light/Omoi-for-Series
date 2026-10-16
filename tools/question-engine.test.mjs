@@ -11,6 +11,8 @@ import {
   nextQuestionIndex,
 } from "../shared/question-engine.mjs";
 
+import { SERIES_CONTRACTS } from "./series-contracts.mjs";
+
 const root = resolve(new URL("..", import.meta.url).pathname);
 const couples = JSON.parse(readFileSync(resolve(root, "shared/questions/couples.json"), "utf8"));
 const fixedRandom = () => 0.42;
@@ -23,11 +25,11 @@ test("legacy series keeps question records unchanged and maps Lite/Deep from its
   ]));
   const liteLevelOne = filterQuestions(couples, { intensity: "lite", level: 1 });
   const deepLevelFour = filterQuestions(couples, { intensity: "deep", level: 4 });
-  assert.deepEqual(levelCounts, { 1: 115, 2: 109, 3: 111, 4: 142 });
-  assert.equal(filterQuestions(couples, { intensity: "lite" }).length, 224);
-  assert.equal(filterQuestions(couples, { intensity: "deep" }).length, 253);
-  assert.equal(liteLevelOne.length, 115);
-  assert.equal(deepLevelFour.length, 142);
+  assert.deepEqual(levelCounts, SERIES_CONTRACTS.couples.levels);
+  assert.equal(filterQuestions(couples, { intensity: "lite" }).length, SERIES_CONTRACTS.couples.levels[1] + SERIES_CONTRACTS.couples.levels[2]);
+  assert.equal(filterQuestions(couples, { intensity: "deep" }).length, SERIES_CONTRACTS.couples.levels[3] + SERIES_CONTRACTS.couples.levels[4]);
+  assert.equal(liteLevelOne.length, SERIES_CONTRACTS.couples.levels[1]);
+  assert.equal(deepLevelFour.length, SERIES_CONTRACTS.couples.levels[4]);
   assert.ok(liteLevelOne.every((question) => question.level === 1));
   assert.ok(deepLevelFour.every((question) => question.level === 4));
   assert.equal(JSON.stringify(couples), before);

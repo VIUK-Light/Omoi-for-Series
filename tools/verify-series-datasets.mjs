@@ -10,16 +10,15 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { validateFollowUpDataset } from "./verify-followups.mjs";
-import { hasValidAiSource } from "../shared/content-policy.mjs";
+import { hasValidQuestionSource } from "../shared/content-policy.mjs";
 import { validateDataset } from "./validate-grok-questions.mjs";
 import { textSimilarity } from "./validate-grok-questions.mjs";
 
+import { SERIES_CONTRACTS } from "./series-contracts.mjs";
+import { seriesFitIssues } from "./series-fit-rules.mjs";
+
 const root = resolve(fileURLToPath(import.meta.url), "../..");
-const expected = {
-  couples: { total: 477, sourceCounts: { loves: 443, editorial: 34 } },
-  family: { total: 166, sourceCounts: { editorial: 166 } },
-  friends: { total: 177, sourceCounts: { editorial: 177 } },
-};
+const expected = Object.fromEntries(["couples", "family", "friends"].map(series => [series, SERIES_CONTRACTS[series]]));
 const newSeries = ["adults", "self-care"];
 const failures = [];
 const forbiddenTexts = ["なぎささん大好きだよ！"];
@@ -60,6 +59,7 @@ for (const [audience, contract] of Object.entries(expected)) {
   const sources = {};
   data.forEach((card) => records.push({ ...card, audience }));
   data.forEach((card, index) => {
+    for (const issue of seriesFitIssues(card, audience)) fail(`${audience}/${card.id}: ${issue}`);
     if (ids.has(card.id)) fail(`${audience}[${index}]: ID重複 ${card.id}`);
     ids.add(card.id);
     const normalizedText = typeof card.text === "string" ? card.text.trim() : "";
@@ -85,7 +85,7 @@ for (const [audience, contract] of Object.entries(expected)) {
   });
 
   for (const level of [1, 2, 3, 4]) {
-    if (levels[level] < 15) fail(`${audience}: Level ${level} が ${levels[level]} 問しかなく、15問セッションを満たせません`);
+    if (levels[level] !== contract.levels[level]) fail(`${audience}: Level ${level} が ${levels[level]} 問 (期待 ${contract.levels[level]})`);
   }
   for (const [source, count] of Object.entries(contract.sourceCounts)) {
     if (sources[source] !== count) fail(`${audience}: source=${source} が ${sources[source] || 0} 件 (期待 ${count})`);
@@ -176,7 +176,7 @@ for (const audience of newSeries) {
     if (!Number.isInteger(question.sensitivity) || question.sensitivity < 0 || question.sensitivity > 3) fail(`${where}: sensitivity が不正です`);
     if (!Array.isArray(question.contentNotes) || question.contentNotes.some((tag) => typeof tag !== "string" || !/^[a-z][a-z0-9-]{1,39}$/.test(tag))) fail(`${where}: contentNotes が不正です`);
     if (question.reviewStatus !== "pending" && question.reviewStatus !== "approved") fail(`${where}: reviewStatus が不正です`);
-    if (!hasValidAiSource(question.source)) fail(`${where}: AI初期案の出典メタデータが不正です`);
+    if (!hasValidQuestionSource(question.source, audience)) fail(`${where}: AI初期案の出典メタデータが不正です`);
     if (release?.status === "published" && question.reviewStatus !== "approved") fail(`${where}: レビュー待ちの質問は公開できません`);
     if (typeof question.id === "string" && typeof question.category === "string" && Number.isInteger(question.level) && ["lite", "deep"].includes(question.intensity)) {
       const idPattern = new RegExp(`^${audience}-${question.category}-${question.intensity}-l${question.level}-\\d{3}$`);

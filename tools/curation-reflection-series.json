@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-16",
+  "reviewer": "Codex GPT-6",
+  "series": {
+    "adults": {
+      "beforeCount": 94,
+      "afterCount": 94,
+      "removed": [],
+      "rewritten": [
+        {
+          "before": {
+            "id": "adults-body-lite-l1-003",
+            "series": "adults",
+            "category": "body",
+            "level": 1,
+            "intensity": "lite",
+            "text": "自分の身体がほっとするのは、どんな時ですか？",
+            "followUp": "その心地よさを普段の生活に取り入れるなら、何ができそうですか？",
+            "sensitivity": 1,
+            "contentNotes": [
+              "intimacy"
+            ],
+            "source": {
+              "kind": "codex",
+              "model": "GPT-6",
+              "stage": "ai-initial-draft",
+              "generatedAt": "2026-10-15"
+            },
+            "reviewStatus": "pending"
+          },
+          "after": {
+            "id": "adults-body-lite-l1-003",
+            "series": "adults",
+            "category": "body",
+            "level": 1,
+            "intensity": "lite",
+            "text": "親しい相手と過ごす時、身体がくつろげるのはどんな環境ですか？",
+            "followUp": "その環境を整えるために、相手にお願いしたいことはありますか？",
+            "sensitivity": 1,
+            "contentNotes": [
+              "intimacy"
+            ],
+            "source": {
+              "kind": "codex",
+              "model": "GPT-6",
+              "stage": "ai-initial-draft",
+              "generatedAt": "2026-10-15"
+            },
+            "reviewStatus": "pending"
+          },
+          "reason": "一般的な身体の休息を、親密な相手と身体を楽にして過ごす条件へ具体化"
+        },
+        {
+          "before": {
+            "id": "adults-boundaries-lite-l1-005",
+            "series": "adults",
+            "category": "boundaries",
+            "level": 1,
+            "intensity": "lite",
+            "text": "初対面の人からどんな呼び方をされると心地よいですか？",
+            "followUp": "呼び方を変えてほしい時、どう伝えたいですか？",
+            "sensitivity": 1,
+            "contentNotes": [
+              "intimacy"
+            ],
+            "source": {
+              "kind": "codex",
+              "model": "GPT-6",
+              "stage": "ai-initial-draft",
+              "generatedAt": "2026-10-15"
+            },
+            "reviewStatus": "pending"
+          },
+          "after": {
+            "id": "adults-boundaries-lite-l1-005",
+            "series": "adults",
+            "category": "boundaries",
+            "level": 1,
+            "intensity": "lite",
+            "text": "親しい相手からの呼ばれ方で、心地よいものは何ですか？",
+            "followUp": "二人きりの時と人前で、呼ばれ方を変えたいことはありますか？",
+            "sensitivity": 1,
+            "contentNotes": [
+              "intimacy"
+            ],
+            "source": {
+              "kind": "codex",
+              "model": "GPT-6",
+              "stage": "ai-initial-draft",
+              "generatedAt": "2026-10-15"
+            },
+            "reviewStatus": "pending"
+          },
+          "reason": "初対面での一般的な呼び方を、親密な相手との呼ばれ方と境界線へ変更"
+        },
+        {
+          "before": {
+            "id": "adults-consent-lite-l3-008",
+            "series": "adults",
+            "category": "consent",
+            "level": 3,
+            "intensity": "lite",
+            "text": "返事を急がず考えたい時、どんな言葉を使いたいですか？",
+            "followUp": "返事を待つ間、相手にはどう接してほしいですか？",
+            "sensitivity": 1,
+            "contentNotes": [
+              "consent"
+            ],
+            "source": {
+              "kind": "codex",
+              "model": "GPT-6",
+              "stage": "ai-initial-draft",
+              "generatedAt": "2026-10-15"
+            },
+            "reviewStatus": "pending"
+          },
+          "after": {
+            "id": "adults-consent-lite-l3-008",
+            "series": "adults",
+            "category": "consent",
+            "level": 3,
+            "intensity": "lite",
+            "text": "親密な誘いへの返事を急がず考えたい時、どんな言葉を使いたいですか？",
+            "followUp": "返事を待つ間、相手にはどう接してほしいですか？",
+            "sensitivity": 1,
+            "contentNotes": [
+              "consent"
+            ],
+            "source": {
+              "kind": "codex",
+              "model": "GPT-6",
+              "stage": "ai-initial-draft",
+              "generatedAt": "2026-10-15"
+            },
+            "reviewStatus": "pending"
+          },
+          "reason": "返事全般の表現を、親密な誘いについて考える時間の尊重へ具体化"
+        },
+        {
+          "before": {
+            "id": "adults-boundaries-lite-l4-004",
+            "series": "adults",
+            "category": "boundaries",
+            "level": 4,
+            "intensity": "lite",
+            "text": "親しいからこそ毎回確かめてほしいことは何ですか？",
+            "followUp": "その確認が自然にできるように、どんな工夫をしたいですか？",
+            "sensitivity": 1,
+            "contentNotes": [
+              "intimacy"
+            ],
+            "source": {
+              "kind": "codex",
+              "model": "GPT-6",
+              "stage": "ai-initial-draft",
+              "generatedAt": "2026-10-15"
+            },
+            "reviewStatus": "pending"
+          },
+          "after": {
+            "id": "adults-boundaries-lite-l4-004",
+            "series": "adults",
+            "category": "boundaries",
+            "level": 4,
+            "intensity": "lite",
+            "text": "親しい相手との触れ合いで、その都度確かめてほしいことは何ですか？",
+            "followUp": "その確認が自然にできるように、どんな工夫をしたいですか？",
+            "sensitivity": 1,
+            "contentNotes": [
+              "intimacy"
+            ],
+            "source": {
+              "kind": "codex",
+              "model": "GPT-6",
+              "stage": "ai-initial-draft",
+              "generatedAt": "2026-10-15"
+            },
+            "reviewStatus": "pending"
+          },
+          "reason": "親しさ全般の確認から、触れ合いの都度の確認へ具体化"
+        }
+      ],
+      "unchangedCodexCount": 60,
+      "userProvidedCount": 30,
+      "userProvidedUnchanged": true,
+      "userProvidedCanonicalSha256": "0581f272e6f6a6ce2b619a586bf5f2c7d67889f6686d76ef370ba3273e63750f",
+      "notes": [
+        "Codex生成64組を成人の親密さ・身体・同意・関係の境界線として点検。一般的すぎる4組のみ具体化。",
+        "ユーザー提供30組はAdultsの話題範囲内で、原文・深掘り・作成元・レビュー情報をすべて維持。",
+        "ユーザー提供データには露骨な描写と過去の望まない経験や境界線の理由を聞く設問がある。原文保存の指示に従い変更せず、公開適性の判断はシリーズ適合性の確認と分ける。",
+        "Codex生成データはpendingを維持。"
+      ]
+    },
+    "self-care": {
+      "beforeCount": 64,
+      "afterCount": 64,
+      "removed": [],
+      "rewritten": [],
+      "unchangedCount": 64,
+      "notes": [
+        "64組すべてが一人で行う気持ち・日常・休息・価値観・人間関係の振り返り。",
+        "診断、心理状態の採点、一般倫理の正誤の二択、過去のつらい経験の開示要求はなし。",
+        "シリーズ適合性の理由で変更が必要な項目なし。"
+      ]
+    }
+  }
+}
