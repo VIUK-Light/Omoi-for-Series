@@ -40,24 +40,26 @@ test('original AI datasets retain 64 pairs each and provided Adults additions re
     assert.equal(generated.length,64);
     assert.equal(data.questions.length,series==='adults'?94:64);
     assert.equal(new Set(data.questions.map(q=>q.followUp)).size,data.questions.length);
-    assert.ok(data.questions.every(q=>q.reviewStatus==='pending'));
-    const report=validateDataset(data,{series});
+    assert.ok(data.questions.every(q=>q.reviewStatus==='approved'));
+    assert.equal(data.releaseApproval.basis,'user-release-instruction');
+    const report=validateDataset(data,{series,requireReleaseReady:true});
     assert.deepEqual(report.issues.filter(issue=>issue.severity==='error'),[]);
-    assert.equal(report.readyForRelease,false);
+    assert.equal(report.readyForRelease,true);
     for(const intensity of ['lite','deep']) for(const level of [1,2,3,4]) assert.equal(filterQuestions(generated,{intensity,level}).length,8);
   }
 });
-test('generated records are playable on localhost, but never become published by generation', () => {
+test('explicitly released records are playable in production while pending additions remain blocked', () => {
   for(const series of ['adults','self-care']) {
     const data=read(`shared/questions/${series}.json`);
     const release=manifest.series[series];
-    assert.equal(release.status,'unpublished');
-    assert.equal(data.publicationStatus,'unpublished');
+    assert.equal(release.status,'published');
+    assert.equal(data.publicationStatus,'published');
     const local=canPreviewDrafts(release,{protocol:'http:',hostname:'127.0.0.1'});
     const production=canPreviewDrafts(release,{protocol:'https:',hostname:'omoi-for.viuk-light.org'});
-    assert.equal(local,true);assert.equal(production,false);
+    assert.equal(local,false);assert.equal(production,false);
+    assert.equal(canShowReviewedContent('pending',{allowDrafts:production}),false);
     assert.equal(data.questions.filter(q=>canShowReviewedContent(q.reviewStatus,{allowDrafts:local})).length,series==='adults'?94:64);
-    assert.equal(data.questions.filter(q=>canShowReviewedContent(q.reviewStatus,{allowDrafts:production})).length,0);
+    assert.equal(data.questions.filter(q=>canShowReviewedContent(q.reviewStatus,{allowDrafts:production})).length,series==='adults'?94:64);
   }
 });
 
@@ -84,6 +86,6 @@ test('provided Adults records retain import provenance and an unchanged text fin
     assert.equal(q.source.stage,'provided-draft');
     assert.ok(q.source.original.kind && q.source.original.model);
     assert.equal(q.source.contentSha256,createHash('sha256').update(JSON.stringify([q.text,q.followUp])).digest('hex'));
-    assert.equal(q.reviewStatus,'pending');
+    assert.equal(q.reviewStatus,'approved');
   }
 });

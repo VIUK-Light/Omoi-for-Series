@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "series": "self-care",
-  "publicationStatus": "unpublished",
+  "publicationStatus": "published",
   "questions": [
     {
       "id": "self-care-joy-lite-l1-001",
@@ -19,7 +19,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-comfort-lite-l1-001",
@@ -37,7 +37,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-rest-lite-l1-001",
@@ -55,7 +55,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-interests-lite-l1-001",
@@ -73,7 +73,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-routines-lite-l1-001",
@@ -91,7 +91,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-achievement-lite-l1-001",
@@ -109,7 +109,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-senses-lite-l1-001",
@@ -127,7 +127,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-feelings-lite-l1-001",
@@ -145,7 +145,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-joy-lite-l2-001",
@@ -163,7 +163,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-comfort-lite-l2-001",
@@ -181,7 +181,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-rest-lite-l2-001",
@@ -199,7 +199,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-interests-lite-l2-001",
@@ -217,7 +217,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-routines-lite-l2-001",
@@ -235,7 +235,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-achievement-lite-l2-001",
@@ -253,7 +253,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-relationships-lite-l2-001",
@@ -271,7 +271,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-feelings-lite-l2-001",
@@ -289,7 +289,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-joy-lite-l3-001",
@@ -307,7 +307,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-comfort-lite-l3-001",
@@ -325,7 +325,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-rest-lite-l3-001",
@@ -343,7 +343,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-interests-lite-l3-001",
@@ -361,7 +361,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-routines-lite-l3-001",
@@ -379,7 +379,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-achievement-lite-l3-001",
@@ -397,7 +397,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-relationships-lite-l3-001",
@@ -415,7 +415,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-feelings-lite-l3-001",
@@ -433,7 +433,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-joy-lite-l4-001",
@@ -451,7 +451,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-comfort-lite-l4-001",
@@ -469,7 +469,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-rest-lite-l4-001",
@@ -487,7 +487,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-interests-lite-l4-001",
@@ -505,7 +505,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-routines-lite-l4-001",
@@ -523,7 +523,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-achievement-lite-l4-001",
@@ -541,7 +541,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-relationships-lite-l4-001",
@@ -559,7 +559,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-feelings-lite-l4-001",
@@ -577,7 +577,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-needs-deep-l1-001",
@@ -595,7 +595,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-stress-deep-l1-001",
@@ -613,7 +613,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-boundaries-deep-l1-001",
@@ -631,7 +631,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-values-deep-l1-001",
@@ -649,7 +649,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-selfunderstanding-deep-l1-001",
@@ -667,7 +667,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-choices-deep-l1-001",
@@ -685,7 +685,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-expectations-deep-l1-001",
@@ -703,7 +703,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-future-deep-l1-001",
@@ -721,7 +721,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-needs-deep-l2-001",
@@ -739,7 +739,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-stress-deep-l2-001",
@@ -757,7 +757,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-boundaries-deep-l2-001",
@@ -775,7 +775,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-values-deep-l2-001",
@@ -793,7 +793,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-selfunderstanding-deep-l2-001",
@@ -811,7 +811,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-choices-deep-l2-001",
@@ -829,7 +829,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-expectations-deep-l2-001",
@@ -847,7 +847,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-future-deep-l2-001",
@@ -865,7 +865,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-needs-deep-l3-001",
@@ -883,7 +883,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-stress-deep-l3-001",
@@ -901,7 +901,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-boundaries-deep-l3-001",
@@ -919,7 +919,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-values-deep-l3-001",
@@ -937,7 +937,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-selfunderstanding-deep-l3-001",
@@ -955,7 +955,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-choices-deep-l3-001",
@@ -973,7 +973,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-expectations-deep-l3-001",
@@ -991,7 +991,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-future-deep-l3-001",
@@ -1009,7 +1009,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-needs-deep-l4-001",
@@ -1027,7 +1027,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-stress-deep-l4-001",
@@ -1045,7 +1045,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-boundaries-deep-l4-001",
@@ -1063,7 +1063,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-values-deep-l4-001",
@@ -1081,7 +1081,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-selfunderstanding-deep-l4-001",
@@ -1099,7 +1099,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-choices-deep-l4-001",
@@ -1117,7 +1117,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-expectations-deep-l4-001",
@@ -1135,7 +1135,7 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "id": "self-care-future-deep-l4-001",
@@ -1153,7 +1153,12 @@
         "stage": "ai-initial-draft",
         "generatedAt": "2026-10-15"
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     }
-  ]
+  ],
+  "releaseApproval": {
+    "approvedAt": "2026-10-16",
+    "basis": "user-release-instruction",
+    "note": "ユーザーからAdultsとSelf-Careの公開およびmainへのマージを明示的に指示。外部の専門審査を受けたことは意味しない。"
+  }
 }
