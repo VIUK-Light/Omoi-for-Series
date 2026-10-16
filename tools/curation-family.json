@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "series": "family",
+  "reviewedAt": "2026-10-16",
+  "reviewer": "Codex GPT-6",
+  "scope": "Familyの主質問と深掘り質問全166組のシリーズ適合性",
+  "beforeCount": 166,
+  "afterCount": 166,
+  "removed": [],
+  "rewritten": [
+    {
+      "before": {
+        "id": "family-daily-1-3",
+        "audience": "family",
+        "level": 1,
+        "text": "家族で食べるなら、今何を食べたい？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "その料理を、どんなふうに楽しみたいですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-001",
+        "audience": "family",
+        "level": 1,
+        "text": "家族との食事で、落ち着いて話せるのはどんな雰囲気？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "食事中に話す時、気にかけたい相手の過ごし方はありますか？"
+      },
+      "reason": "食べ物の好みだけの質問を、家族と話しやすい食事の場へ具体化"
+    },
+    {
+      "before": {
+        "id": "family-daily-1-6",
+        "audience": "family",
+        "level": 1,
+        "text": "家族と一緒に見るなら、映画とドラマどっちがいい？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "一緒に見る作品には、どんな雰囲気を求めますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-002",
+        "audience": "family",
+        "level": 1,
+        "text": "家族と作品を見るなら、感想はいつ話し合いたい？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "見方の好みが違う時、どう楽しみ方を合わせたいですか？"
+      },
+      "reason": "映画とドラマの一般的な二択を、一緒に鑑賞する時の会話へ変更"
+    },
+    {
+      "before": {
+        "id": "family-daily-1-7",
+        "audience": "family",
+        "level": 1,
+        "text": "家族の中で一番早起きなのは誰？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "自分の起きる時間は、その人と比べてどうですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-003",
+        "audience": "family",
+        "level": 1,
+        "text": "家族と生活の時間帯が違う時、どんな気づかいがあるとうれしい？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "自分からできそうな気づかいは、どんなことですか？"
+      },
+      "reason": "早起きの人物当てを、生活リズムが異なる家族への配慮へ変更"
+    },
+    {
+      "before": {
+        "id": "family-daily-1-9",
+        "audience": "family",
+        "level": 1,
+        "text": "家にあると安心するものは？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "それが手元にあると、どんな場面で助かりますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-004",
+        "audience": "family",
+        "level": 1,
+        "text": "家族と過ごす場所で、居心地のよさにつながるものは何？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "その場所で、家族とどんな過ごし方ができるとうれしいですか？"
+      },
+      "reason": "家にある物の一般的な好みを、家族で過ごす空間の心地よさへ変更"
+    },
+    {
+      "before": {
+        "id": "family-daily-1-10",
+        "audience": "family",
+        "level": 1,
+        "text": "家族で旅行するなら、海と山どっちに行きたい？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "行き先で、家族と何をしてみたいですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-005",
+        "audience": "family",
+        "level": 1,
+        "text": "家族と旅行するなら、どんな時間を一緒に楽しみたい？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "それぞれの希望を聞く時、どんなことを確かめたいですか？"
+      },
+      "reason": "海と山の一般的な二択を、家族で共有したい時間へ変更"
+    },
+    {
+      "before": {
+        "id": "family-daily-1-24",
+        "audience": "family",
+        "level": 1,
+        "text": "家族の得意なこと、思いつくものは？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "その得意なことを、どんな時に見かけますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-006",
+        "audience": "family",
+        "level": 1,
+        "text": "家族の得意なことで、教わってみたいことはある？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "教えてもらうなら、どんなやり方が自分に合いそうですか？"
+      },
+      "reason": "得意なことの列挙を、家族から教わる関わりへ具体化"
+    },
+    {
+      "before": {
+        "id": "family-daily-1-26",
+        "audience": "family",
+        "level": 1,
+        "text": "家族の好きな飲み物、思い浮かぶものは？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "その飲み物は、どんな時によく選ばれていますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-007",
+        "audience": "family",
+        "level": 1,
+        "text": "家族とお茶をするなら、どんな話をしてみたい？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "その話をゆっくりできるのは、どんな場所ですか？"
+      },
+      "reason": "飲み物の人物当てを、家族と話してみたい日常の話題へ変更"
+    },
+    {
+      "before": {
+        "id": "family-daily-1-31",
+        "audience": "family",
+        "level": 1,
+        "text": "家族で遊びに行くなら、動物園と水族館どっち？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "選んだ場所で、いちばん見てみたいものは何ですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-008",
+        "audience": "family",
+        "level": 1,
+        "text": "家族で出かける行き先は、どんな決め方だと楽しみになる？",
+        "category": "familyDaily",
+        "source": "editorial",
+        "followUp": "行きたい場所が分かれたら、どう相談したいですか？"
+      },
+      "reason": "動物園と水族館の一般的な二択を、家族で相談する体験へ変更"
+    },
+    {
+      "before": {
+        "id": "family-values-4-33",
+        "audience": "family",
+        "level": 4,
+        "text": "家族のために夢を諦めることを、正しいと感じられる？",
+        "category": "familyValues",
+        "source": "editorial",
+        "followUp": "夢の形を変えて残すとしたら、どんな可能性がありますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-009",
+        "audience": "family",
+        "level": 4,
+        "text": "家族への配慮で自分の目標を変える前に、話し合いたいことは？",
+        "category": "familyValues",
+        "source": "editorial",
+        "followUp": "目標を続けるために、どんな協力を相談できそうですか？"
+      },
+      "reason": "夢を諦めることの正誤を問う形を、家族との具体的な相談へ変更"
+    },
+    {
+      "before": {
+        "id": "family-values-2-17",
+        "audience": "family",
+        "level": 2,
+        "text": "家族の中で自分が担いがちな役割はある？それをどう感じている？",
+        "category": "familyValues",
+        "source": "editorial",
+        "followUp": "その役割の中で、見直したい部分はありますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-010",
+        "audience": "family",
+        "level": 2,
+        "text": "家族の中で自分が担いがちな役割を、どう感じている？",
+        "category": "familyValues",
+        "source": "editorial",
+        "followUp": "その役割で、続けたい部分と変えたい部分はありますか？"
+      },
+      "reason": "役割の有無と感情を同時に聞く形を、家族内の役割への気持ち一つに整理"
+    },
+    {
+      "before": {
+        "id": "family-care-2-37",
+        "audience": "family",
+        "level": 2,
+        "text": "家族にお礼を言われた時、自分はどんな顔をすると思う？",
+        "category": "familyCare",
+        "source": "editorial",
+        "followUp": "お礼を受け取った時、どんな返事をしたいですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-011",
+        "audience": "family",
+        "level": 2,
+        "text": "家族からの感謝は、どんな言葉だと心に残る？",
+        "category": "familyCare",
+        "source": "editorial",
+        "followUp": "自分が感謝を伝える時にも、取り入れたい言い方はありますか？"
+      },
+      "reason": "お礼を言われた自分の表情当てを、家族の感謝の伝わり方へ変更"
+    },
+    {
+      "before": {
+        "id": "family-values-3-5",
+        "audience": "family",
+        "level": 3,
+        "text": "家族の期待に応えたい気持ちと、自分の気持ちはどちらを優先したい？",
+        "category": "familyValues",
+        "source": "editorial",
+        "followUp": "優先順位を決める前に、自分に確かめたいことは何ですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-012",
+        "audience": "family",
+        "level": 3,
+        "text": "家族の期待と自分の希望が違う時、どんなふうに話したい？",
+        "category": "familyValues",
+        "source": "editorial",
+        "followUp": "話し合う前に、自分の希望について整理しておきたいことは何ですか？"
+      },
+      "reason": "家族の期待と自分の気持ちの優先二択を、違いを話し合う方法へ変更"
+    },
+    {
+      "before": {
+        "id": "family-communication-3-29",
+        "audience": "family",
+        "level": 3,
+        "text": "言い方を変えれば分かり合えたかもしれない、という経験はある？",
+        "category": "familyCommunication",
+        "source": "editorial",
+        "followUp": "今なら、同じ内容をどんな言葉で伝えたいですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-013",
+        "audience": "family",
+        "level": 3,
+        "text": "家族との言い合いで、言い方を変えてみたい場面はある？",
+        "category": "familyCommunication",
+        "source": "editorial",
+        "followUp": "同じ気持ちを伝えるなら、どんな言葉を選び直したいですか？"
+      },
+      "reason": "家族の文脈が曖昧な後悔の問いを、家族との言い合いで試す伝え方へ具体化"
+    },
+    {
+      "before": {
+        "id": "family-care-3-33",
+        "audience": "family",
+        "level": 3,
+        "text": "家族が自分に弱みを見せないのは、強がりだと思う時がある？",
+        "category": "familyCare",
+        "source": "editorial",
+        "followUp": "理由を決めつけずに、相手の望みをどう確かめたいですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-014",
+        "audience": "family",
+        "level": 3,
+        "text": "家族が弱音を話さない時、どんな関わり方をしたい？",
+        "category": "familyCare",
+        "source": "editorial",
+        "followUp": "話すかどうかを相手が選べるように、どう声をかけたいですか？"
+      },
+      "reason": "家族が弱みを見せない理由を強がりと推測する形を、本人の選択を尊重した関わりへ変更"
+    },
+    {
+      "before": {
+        "id": "family-boundaries-4-9",
+        "audience": "family",
+        "level": 4,
+        "text": "家族を守るために黙ることと、正直に話すことはどちらが大切？",
+        "category": "familyBoundaries",
+        "source": "editorial",
+        "followUp": "話すかどうかを選ぶ際、自分の安全や負担をどう確かめたいですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-015",
+        "audience": "family",
+        "level": 4,
+        "text": "家族に伝えにくいことを相談するなら、どんな場が必要？",
+        "category": "familyBoundaries",
+        "source": "editorial",
+        "followUp": "その場で共有する範囲を、自分でどう決めておきたいですか？"
+      },
+      "reason": "黙ることと正直さの正誤二択を、家族へ相談する場と共有範囲へ変更"
+    },
+    {
+      "before": {
+        "id": "family-boundaries-4-28",
+        "audience": "family",
+        "level": 4,
+        "text": "家族との関わりを減らすとしたら、何を失うことになると思う？",
+        "category": "familyBoundaries",
+        "source": "editorial",
+        "followUp": "関わりを減らすことで得られそうな余裕も、考えてみられますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-016",
+        "audience": "family",
+        "level": 4,
+        "text": "家族との関わりを減らすなら、残しておきたいつながりはある？",
+        "category": "familyBoundaries",
+        "source": "editorial",
+        "followUp": "そのつながりを、自分に負担の少ない形で保つには何が必要ですか？"
+      },
+      "reason": "関わりを減らすと失うものがあると誘導する形を、本人が望むつながりの選択へ変更"
+    },
+    {
+      "before": {
+        "id": "family-future-4-37",
+        "audience": "family",
+        "level": 4,
+        "text": "家族との縁を薄くする選択を、自分は許せると思う？",
+        "category": "familyFuture",
+        "source": "editorial",
+        "followUp": "その選択を考えるとき、自分に認めておきたい気持ちはありますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-017",
+        "audience": "family",
+        "level": 4,
+        "text": "家族との関わり方を変えるなら、どんなペースで進めたい？",
+        "category": "familyFuture",
+        "source": "editorial",
+        "followUp": "試した関わり方が自分に合うか、いつ振り返りたいですか？"
+      },
+      "reason": "関係を薄くする選択への自己許可を問う形を、関わりを調整するペースへ変更"
+    },
+    {
+      "before": {
+        "id": "family-care-4-41",
+        "audience": "family",
+        "level": 4,
+        "text": "家族の弱さを目にした時、支えたい気持ちと目をそらしたい気持ち、どちらが勝る？",
+        "category": "familyCare",
+        "source": "editorial",
+        "followUp": "自分の余力を超えずにできる関わりは、どんなものですか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-018",
+        "audience": "family",
+        "level": 4,
+        "text": "家族が困っている時、自分にできる範囲をどう伝えたい？",
+        "category": "familyCare",
+        "source": "editorial",
+        "followUp": "引き受けられないことがある時、どんな言葉で知らせたいですか？"
+      },
+      "reason": "支えたい気持ちと目をそらしたい気持ちの優劣を問う形を、支援できる範囲の伝え方へ変更"
+    },
+    {
+      "before": {
+        "id": "family-memories-4-46",
+        "audience": "family",
+        "level": 4,
+        "text": "家族との過去に戻れるなら、やり直したい出来事はある？",
+        "category": "familyMemories",
+        "source": "editorial",
+        "followUp": "出来事の詳しい話をせずに、今なら大切にしたい対応を挙げられますか？"
+      },
+      "after": {
+        "id": "editorial-family-fit-019",
+        "audience": "family",
+        "level": 4,
+        "text": "家族との思い出から、これからの関わりに生かしたいことはある？",
+        "category": "familyMemories",
+        "source": "editorial",
+        "followUp": "その思い出のどんな点が、今の関わり方の参考になりますか？"
+      },
+      "reason": "過去をやり直したい後悔の想起を求める形を、話せる思い出から今後へ生かす振り返りへ変更"
+    }
+  ],
+  "unchangedCount": 147,
+  "notes": [
+    "家族関係の理解と日常の会話を目的とし、一般的な好みの二択や人物当てを関わり方の質問へ変更。",
+    "家族構成・同居・親子関係・家族円満を前提としない。",
+    "既存の家族との境界線や気持ちに関する質問は、家族の関係に直接関わるため維持。",
+    "深掘り質問のAI初期案とpending状態は維持。",
+    "追加点検では、家族内の役割や感謝の伝わり方を明確にし、強がりの推測・罪悪感や喪失の誘導・道徳の二択・過去のやり直し要求を具体的な家族との関わりへ改稿。"
+  ]
+}

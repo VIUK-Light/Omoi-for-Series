@@ -1,0 +1,1159 @@
+{
+  "schemaVersion": 1,
+  "series": "self-care",
+  "publicationStatus": "unpublished",
+  "questions": [
+    {
+      "id": "self-care-joy-lite-l1-001",
+      "series": "self-care",
+      "category": "joy",
+      "level": 1,
+      "intensity": "lite",
+      "text": "今日、少し気分が明るくなったのはどんなとき？",
+      "followUp": "そのとき、何がうれしさにつながったと思いますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-comfort-lite-l1-001",
+      "series": "self-care",
+      "category": "comfort",
+      "level": 1,
+      "intensity": "lite",
+      "text": "家の中で、いちばん落ち着く場所はどこ？",
+      "followUp": "その場所の何が心地よいですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-rest-lite-l1-001",
+      "series": "self-care",
+      "category": "rest",
+      "level": 1,
+      "intensity": "lite",
+      "text": "短い休憩に、何をして過ごしたい？",
+      "followUp": "今、その休憩を取るなら何から始めますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-interests-lite-l1-001",
+      "series": "self-care",
+      "category": "interests",
+      "level": 1,
+      "intensity": "lite",
+      "text": "最近、時間を忘れて楽しんだことはある？",
+      "followUp": "その中で、特に楽しかったのはどの部分ですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-routines-lite-l1-001",
+      "series": "self-care",
+      "category": "routines",
+      "level": 1,
+      "intensity": "lite",
+      "text": "朝の時間に、ひとつ楽しみを足すなら何？",
+      "followUp": "どのくらい小さな形なら取り入れられそうですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-achievement-lite-l1-001",
+      "series": "self-care",
+      "category": "achievement",
+      "level": 1,
+      "intensity": "lite",
+      "text": "今日できたことで、自分に丸をつけたいことは何？",
+      "followUp": "それができた自分に、どんな言葉をかけたいですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-senses-lite-l1-001",
+      "series": "self-care",
+      "category": "senses",
+      "level": 1,
+      "intensity": "lite",
+      "text": "今、聞きたい音は何？",
+      "followUp": "その音があると、どんな時間を過ごせそうですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-feelings-lite-l1-001",
+      "series": "self-care",
+      "category": "feelings",
+      "level": 1,
+      "intensity": "lite",
+      "text": "今の気持ちを天気にたとえると、どんな空？",
+      "followUp": "その空の下で、自分はどう過ごしたいですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-joy-lite-l2-001",
+      "series": "self-care",
+      "category": "joy",
+      "level": 2,
+      "intensity": "lite",
+      "text": "最近、思わず笑顔になったものは何？",
+      "followUp": "それをまた楽しむなら、どんな機会がありそうですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-comfort-lite-l2-001",
+      "series": "self-care",
+      "category": "comfort",
+      "level": 2,
+      "intensity": "lite",
+      "text": "一日の中で、ほっと息をつけるのはいつ？",
+      "followUp": "その時間を少し長くする工夫はありますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-rest-lite-l2-001",
+      "series": "self-care",
+      "category": "rest",
+      "level": 2,
+      "intensity": "lite",
+      "text": "何もしない時間を過ごすなら、どこがよさそう？",
+      "followUp": "そこで手元に置いておきたいものは何ですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-interests-lite-l2-001",
+      "series": "self-care",
+      "category": "interests",
+      "level": 2,
+      "intensity": "lite",
+      "text": "今、気軽に試してみたいことは何？",
+      "followUp": "準備をひとつだけするなら、何がよさそうですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-routines-lite-l2-001",
+      "series": "self-care",
+      "category": "routines",
+      "level": 2,
+      "intensity": "lite",
+      "text": "最近、自分に合っていると感じる習慣は何？",
+      "followUp": "続けやすさにつながっているのは、どんな点ですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-achievement-lite-l2-001",
+      "series": "self-care",
+      "category": "achievement",
+      "level": 2,
+      "intensity": "lite",
+      "text": "面倒でも済ませてよかったことは何？",
+      "followUp": "終わったあと、どんな変化がありましたか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-relationships-lite-l2-001",
+      "series": "self-care",
+      "category": "relationships",
+      "level": 2,
+      "intensity": "lite",
+      "text": "最近、気持ちが和らいだやりとりはあった？",
+      "followUp": "相手のどんな言葉や態度が心に残っていますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-feelings-lite-l2-001",
+      "series": "self-care",
+      "category": "feelings",
+      "level": 2,
+      "intensity": "lite",
+      "text": "今日は、どんな速さで過ごしたい？",
+      "followUp": "その速さに合わせて、ひとつ調整できることは何ですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-joy-lite-l3-001",
+      "series": "self-care",
+      "category": "joy",
+      "level": 3,
+      "intensity": "lite",
+      "text": "人に勧めるほどではなくても、自分は好きなものは何？",
+      "followUp": "それを好きだと感じるのは、どんなところですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-comfort-lite-l3-001",
+      "series": "self-care",
+      "category": "comfort",
+      "level": 3,
+      "intensity": "lite",
+      "text": "外出先で、安心しやすいのはどんな場所？",
+      "followUp": "その場所に共通する特徴はありますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-rest-lite-l3-001",
+      "series": "self-care",
+      "category": "rest",
+      "level": 3,
+      "intensity": "lite",
+      "text": "休みの日に予定をひとつ減らすなら、何を減らしたい？",
+      "followUp": "空いた時間は、どんなふうに使いたいですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-interests-lite-l3-001",
+      "series": "self-care",
+      "category": "interests",
+      "level": 3,
+      "intensity": "lite",
+      "text": "以前好きだったことで、今も少し気になるものはある？",
+      "followUp": "今の暮らしで楽しむなら、どんな形が合いそうですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-routines-lite-l3-001",
+      "series": "self-care",
+      "category": "routines",
+      "level": 3,
+      "intensity": "lite",
+      "text": "一日の終わりに、自分のためにできる小さなことは何？",
+      "followUp": "どんな合図があると、思い出せそうですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-achievement-lite-l3-001",
+      "series": "self-care",
+      "category": "achievement",
+      "level": 3,
+      "intensity": "lite",
+      "text": "最近、少し慣れてきたと感じることは何？",
+      "followUp": "慣れる前と比べて、楽になった点はありますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-relationships-lite-l3-001",
+      "series": "self-care",
+      "category": "relationships",
+      "level": 3,
+      "intensity": "lite",
+      "text": "一緒にいると自然に過ごせるのは、どんな相手？",
+      "followUp": "その相手の前では、何を気にせずにいられますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-feelings-lite-l3-001",
+      "series": "self-care",
+      "category": "feelings",
+      "level": 3,
+      "intensity": "lite",
+      "text": "最近の自分に、足りていると感じるものは何？",
+      "followUp": "それを支えている日常の要素はありますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-joy-lite-l4-001",
+      "series": "self-care",
+      "category": "joy",
+      "level": 4,
+      "intensity": "lite",
+      "text": "日常の中で、これからも残したい楽しみは何？",
+      "followUp": "忙しい時期にも残すなら、どんな形にできますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-comfort-lite-l4-001",
+      "series": "self-care",
+      "category": "comfort",
+      "level": 4,
+      "intensity": "lite",
+      "text": "自分の部屋では、どんなふうに過ごすのが心地よい？",
+      "followUp": "今の部屋で、それに近づけられる点はありますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-rest-lite-l4-001",
+      "series": "self-care",
+      "category": "rest",
+      "level": 4,
+      "intensity": "lite",
+      "text": "予定のない半日ができたら、どう過ごしたい？",
+      "followUp": "その過ごし方の中で、いちばん楽しみなのは何ですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-interests-lite-l4-001",
+      "series": "self-care",
+      "category": "interests",
+      "level": 4,
+      "intensity": "lite",
+      "text": "上手になることを目指さずに楽しみたいものは何？",
+      "followUp": "出来ばえを気にせず楽しめるのは、どんな場面ですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-routines-lite-l4-001",
+      "series": "self-care",
+      "category": "routines",
+      "level": 4,
+      "intensity": "lite",
+      "text": "自分のペースを取り戻しやすい行動は何？",
+      "followUp": "その行動を取り入れたいのは、一日のどの場面ですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-achievement-lite-l4-001",
+      "series": "self-care",
+      "category": "achievement",
+      "level": 4,
+      "intensity": "lite",
+      "text": "最近の自分が、意外とできていることは何？",
+      "followUp": "それに気づいた場面をひとつ挙げるなら、いつですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-relationships-lite-l4-001",
+      "series": "self-care",
+      "category": "relationships",
+      "level": 4,
+      "intensity": "lite",
+      "text": "人と会ったあとの時間を、どう過ごすと心地よい？",
+      "followUp": "次に会う予定のあと、その時間を用意できそうですか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-feelings-lite-l4-001",
+      "series": "self-care",
+      "category": "feelings",
+      "level": 4,
+      "intensity": "lite",
+      "text": "今週の自分に、どんな余白があるとうれしい？",
+      "followUp": "その余白を作るために、後回しにできることはありますか？",
+      "sensitivity": 0,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-needs-deep-l1-001",
+      "series": "self-care",
+      "category": "needs",
+      "level": 1,
+      "intensity": "deep",
+      "text": "今、自分がいちばん求めているのはどんなこと？",
+      "followUp": "その望みに少し近づくには、何が必要そうですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-stress-deep-l1-001",
+      "series": "self-care",
+      "category": "stress",
+      "level": 1,
+      "intensity": "deep",
+      "text": "最近、気を張っていると感じる場面はある？",
+      "followUp": "その場面で、少し力を抜ける条件は何ですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-boundaries-deep-l1-001",
+      "series": "self-care",
+      "category": "boundaries",
+      "level": 1,
+      "intensity": "deep",
+      "text": "人からの頼みごとを引き受けるとき、何を基準にしたい？",
+      "followUp": "今の自分にとって、引き受けられる範囲はどのくらいですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-values-deep-l1-001",
+      "series": "self-care",
+      "category": "values",
+      "level": 1,
+      "intensity": "deep",
+      "text": "今の暮らしで、大切にできていると感じることは何？",
+      "followUp": "それを大切にできているのは、どんな選択のおかげですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-selfunderstanding-deep-l1-001",
+      "series": "self-care",
+      "category": "selfunderstanding",
+      "level": 1,
+      "intensity": "deep",
+      "text": "ひとりの時間がほしくなるのは、どんなとき？",
+      "followUp": "その時間には、何を持ち込まずにいたいですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-choices-deep-l1-001",
+      "series": "self-care",
+      "category": "choices",
+      "level": 1,
+      "intensity": "deep",
+      "text": "今、すぐに結論を出さずに考えていたいことはある？",
+      "followUp": "考えるために、どんな余裕があるとよさそうですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-expectations-deep-l1-001",
+      "series": "self-care",
+      "category": "expectations",
+      "level": 1,
+      "intensity": "deep",
+      "text": "最近、自分に厳しく求めていることは何？",
+      "followUp": "その求め方を、自分でどう感じていますか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-future-deep-l1-001",
+      "series": "self-care",
+      "category": "future",
+      "level": 1,
+      "intensity": "deep",
+      "text": "これからの生活で、少し増やしたい時間は何？",
+      "followUp": "今ある時間の使い方を、どこから見直せそうですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-needs-deep-l2-001",
+      "series": "self-care",
+      "category": "needs",
+      "level": 2,
+      "intensity": "deep",
+      "text": "本当は気が進まないのに、続けていることはある？",
+      "followUp": "続けるかどうか考えるうえで、確かめたいことは何ですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-stress-deep-l2-001",
+      "series": "self-care",
+      "category": "stress",
+      "level": 2,
+      "intensity": "deep",
+      "text": "人に合わせることで、疲れるのはどんな場面？",
+      "followUp": "その場面で、自分の希望を伝えるなら何と言いたいですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-boundaries-deep-l2-001",
+      "series": "self-care",
+      "category": "boundaries",
+      "level": 2,
+      "intensity": "deep",
+      "text": "今、誰かとの間に少し距離がほしいと感じることはある？",
+      "followUp": "自分が心地よく過ごせる距離は、どんなものですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-values-deep-l2-001",
+      "series": "self-care",
+      "category": "values",
+      "level": 2,
+      "intensity": "deep",
+      "text": "時間とお金の使い方に、自分の大切なものは表れている？",
+      "followUp": "これからの使い方で、近づけたい点はどこですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-selfunderstanding-deep-l2-001",
+      "series": "self-care",
+      "category": "selfunderstanding",
+      "level": 2,
+      "intensity": "deep",
+      "text": "周りから見られている自分と、違うと感じる部分はある？",
+      "followUp": "その部分を知ってほしいと思う相手はいますか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-choices-deep-l2-001",
+      "series": "self-care",
+      "category": "choices",
+      "level": 2,
+      "intensity": "deep",
+      "text": "「こうするべき」と思っていることで、見直したいものはある？",
+      "followUp": "その考えを持ち続ける理由は、今も自分に合っていますか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-expectations-deep-l2-001",
+      "series": "self-care",
+      "category": "expectations",
+      "level": 2,
+      "intensity": "deep",
+      "text": "頼ることにためらいを感じるのは、どんなとき？",
+      "followUp": "どんな頼み方なら、自分にはしやすそうですか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-future-deep-l2-001",
+      "series": "self-care",
+      "category": "future",
+      "level": 2,
+      "intensity": "deep",
+      "text": "この先の生活で、守りたい自分のペースはどんなもの？",
+      "followUp": "そのペースを守るうえで、伝えておきたいことはありますか？",
+      "sensitivity": 1,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-needs-deep-l3-001",
+      "series": "self-care",
+      "category": "needs",
+      "level": 3,
+      "intensity": "deep",
+      "text": "口に出す前に、引っ込めてしまう希望はある？",
+      "followUp": "その希望を大切に扱うなら、まず何ができそうですか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-stress-deep-l3-001",
+      "series": "self-care",
+      "category": "stress",
+      "level": 3,
+      "intensity": "deep",
+      "text": "自分の役割が重いと感じるのは、どんなとき？",
+      "followUp": "その役割の中で、分け合えそうな部分はありますか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-boundaries-deep-l3-001",
+      "series": "self-care",
+      "category": "boundaries",
+      "level": 3,
+      "intensity": "deep",
+      "text": "身近な人と相談しても、最後は自分で決めたいことは何？",
+      "followUp": "そのことを尊重してもらうために、どう伝えたいですか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-values-deep-l3-001",
+      "series": "self-care",
+      "category": "values",
+      "level": 3,
+      "intensity": "deep",
+      "text": "以前よりも大切になった考え方は何？",
+      "followUp": "その変化は、今の日常のどこに表れていますか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-selfunderstanding-deep-l3-001",
+      "series": "self-care",
+      "category": "selfunderstanding",
+      "level": 3,
+      "intensity": "deep",
+      "text": "自分の気持ちより、相手の反応を優先しやすいのはどんな場面？",
+      "followUp": "その場面で、自分の気持ちを確かめる時間は取れそうですか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-choices-deep-l3-001",
+      "series": "self-care",
+      "category": "choices",
+      "level": 3,
+      "intensity": "deep",
+      "text": "周りの評価が気にならないとしたら、選びたいことは何？",
+      "followUp": "その選択のどんな点に、心が向いていますか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-expectations-deep-l3-001",
+      "series": "self-care",
+      "category": "expectations",
+      "level": 3,
+      "intensity": "deep",
+      "text": "「十分にできた」と認める基準は、自分に合っている？",
+      "followUp": "今の状況に合わせるなら、どこを変えたいですか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-future-deep-l3-001",
+      "series": "self-care",
+      "category": "future",
+      "level": 3,
+      "intensity": "deep",
+      "text": "今後の暮らしで、減らしていきたい負担は何？",
+      "followUp": "その負担を減らすために、相談できそうな相手はいますか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-needs-deep-l4-001",
+      "series": "self-care",
+      "category": "needs",
+      "level": 4,
+      "intensity": "deep",
+      "text": "自分の希望と、今の暮らしが離れていると感じる点はある？",
+      "followUp": "その距離を少し縮めるなら、どこから動かしたいですか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-stress-deep-l4-001",
+      "series": "self-care",
+      "category": "stress",
+      "level": 4,
+      "intensity": "deep",
+      "text": "関係を保つために、無理をしていると感じることはある？",
+      "followUp": "その無理を減らした関わり方は、どんな形でしょうか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-boundaries-deep-l4-001",
+      "series": "self-care",
+      "category": "boundaries",
+      "level": 4,
+      "intensity": "deep",
+      "text": "誰かを大切にするとき、自分のためにも守りたいことは何？",
+      "followUp": "それを守れていると感じられる目安はありますか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-values-deep-l4-001",
+      "series": "self-care",
+      "category": "values",
+      "level": 4,
+      "intensity": "deep",
+      "text": "今までの経験から、自分が選び直した価値観はある？",
+      "followUp": "今の自分は、その価値観をどう暮らしに取り入れていますか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-selfunderstanding-deep-l4-001",
+      "series": "self-care",
+      "category": "selfunderstanding",
+      "level": 4,
+      "intensity": "deep",
+      "text": "自分にとって、納得して生きるとはどんなこと？",
+      "followUp": "最近、その感覚に近かった選択はありますか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-choices-deep-l4-001",
+      "series": "self-care",
+      "category": "choices",
+      "level": 4,
+      "intensity": "deep",
+      "text": "手放すか続けるか、迷っているものはある？",
+      "followUp": "その判断で、いちばん大切にしたい基準は何ですか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-expectations-deep-l4-001",
+      "series": "self-care",
+      "category": "expectations",
+      "level": 4,
+      "intensity": "deep",
+      "text": "誰かの期待から離れて考えたいことは何？",
+      "followUp": "自分の考えを整理するために、どんな環境が必要ですか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "self-care-future-deep-l4-001",
+      "series": "self-care",
+      "category": "future",
+      "level": 4,
+      "intensity": "deep",
+      "text": "これからの一年で、暮らしの何を優先したい？",
+      "followUp": "その優先順位を守るために、選ばないことは何ですか？",
+      "sensitivity": 2,
+      "contentNotes": [],
+      "source": {
+        "kind": "codex",
+        "model": "GPT-6",
+        "stage": "ai-initial-draft",
+        "generatedAt": "2026-10-15"
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

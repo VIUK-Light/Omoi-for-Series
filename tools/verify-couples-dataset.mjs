@@ -7,8 +7,8 @@
  *
  * 検証項目:
  *   0. 入力 cards.ts の SHA-256 がカノニカル blob と一致(tools/PROVENANCE.md)
- *   1. 抽出件数 = 701 / レベル別件数(L1=167, L2=169, L3=167, L4=198)
- *   2. Loves 698問の順序を含めたデコード済み値一致 + 編集置換3問の一致
+ *   1. 正本抽出件数 = 701 / レベル別件数(L1=167, L2=169, L3=167, L4=198)
+ *   2. Couples専用の公開デッキの順序・キュレーション内容を照合
  *   3. 個人的な固定文言が残っていないこと
  *   4. ID の一意性
  *   5. スキーマ準拠(キー集合・audience・level 範囲・source)・テキスト非空
@@ -21,39 +21,18 @@ import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { SERIES_CONTRACTS } from "./series-contracts.mjs";
+import { seriesFitIssues } from "./series-fit-rules.mjs";
+import { curateCouplesQuestions } from "./couples-release-policy.mjs";
 
 const CANONICAL_SHA256 = "8157d9f273edf58dd011db8627c16dd110a49d81e76577672502dc4cd47bfc57";
 const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
 const CANONICAL_PATH = "Loveds/web/src/data/cards.ts";
-const EXPECTED_TOTAL = 701;
-const EXPECTED_PER_LEVEL = { 1: 167, 2: 169, 3: 167, 4: 198 };
-const RELEASE_EXCLUDED_IDS = new Set(["love-1-3", "ethics-max-4-14", "ethics-max-4-15"]);
-const RELEASE_REPLACEMENTS = new Map([
-  ["love-1-3", {
-    id: "editorial-couples-1-1",
-    audience: "couples",
-    level: 1,
-    text: "好きな人には、言葉で気持ちを伝えたい？態度で伝われば十分？",
-    category: "romance",
-    source: "editorial",
-  }],
-  ["ethics-max-4-14", {
-    id: "editorial-couples-4-2",
-    audience: "couples",
-    level: 4,
-    text: "自分にしつこく関わってきたり、事実ではない噂を流したりする人がいる。\n相手にも事情があると分かっていても、自分が傷つけられていいわけではない。\nあなたなら、相手の背景を考えて我慢する？\nはっきりやめてと伝える？\n信頼できる人に相談する？",
-    category: "ethicsMax",
-    source: "editorial",
-  }],
-  ["ethics-max-4-15", {
-    id: "editorial-couples-4-3",
-    audience: "couples",
-    level: 4,
-    text: "仲のいい友達が、別の人を傷つけるような冗談や悪口を言っていた。\n注意すれば関係が悪くなるかもしれない。\n黙っていれば、傷ついている人を見捨てるかもしれない。\nあなたなら、まず何をする？",
-    category: "ethicsMax",
-    source: "editorial",
-  }],
-]);
+const EXPECTED_CANONICAL_TOTAL = 701;
+const EXPECTED_CANONICAL_PER_LEVEL = { 1: 167, 2: 169, 3: 167, 4: 198 };
+const EXPECTED_RELEASE_TOTAL = SERIES_CONTRACTS.couples.total;
+const EXPECTED_RELEASE_PER_LEVEL = SERIES_CONTRACTS.couples.levels;
+const EXPECTED_RELEASE_SOURCES = SERIES_CONTRACTS.couples.sourceCounts;
 const FORBIDDEN_TEXTS = ["なぎささん大好きだよ！"];
 const ALLOWED_KEYS = new Set(["id", "audience", "level", "text", "category", "source"]);
 const ALLOWED_SOURCES = new Set(["loves", "editorial"]);
@@ -121,15 +100,15 @@ if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
   fail("静的カードブロックの境界マーカーが見つかりません");
 }
 
-console.log("\n[1] 件数");
-if (sourceCards.length === EXPECTED_TOTAL) pass(`ソース抽出 ${sourceCards.length} 問`);
-else fail(`ソース抽出 ${sourceCards.length} 問 (期待 ${EXPECTED_TOTAL})`);
+console.log("\n[1] 正本件数");
+if (sourceCards.length === EXPECTED_CANONICAL_TOTAL) pass(`正本ソース抽出 ${sourceCards.length} 問`);
+else fail(`正本ソース抽出 ${sourceCards.length} 問 (期待 ${EXPECTED_CANONICAL_TOTAL})`);
 
 const perLevel = { 1: 0, 2: 0, 3: 0, 4: 0 };
 for (const card of sourceCards) perLevel[card.level] += 1;
 for (const level of [1, 2, 3, 4]) {
-  if (perLevel[level] === EXPECTED_PER_LEVEL[String(level)]) pass(`Level ${level}: ${perLevel[level]} 問`);
-  else fail(`Level ${level}: ${perLevel[level]} 問 (期待 ${EXPECTED_PER_LEVEL[String(level)]})`);
+  if (perLevel[level] === EXPECTED_CANONICAL_PER_LEVEL[String(level)]) pass(`正本 Level ${level}: ${perLevel[level]} 問`);
+  else fail(`正本 Level ${level}: ${perLevel[level]} 問 (期待 ${EXPECTED_CANONICAL_PER_LEVEL[String(level)]})`);
 }
 
 // ---- JSON 側の検証 ----------------------------------------------------------
@@ -140,12 +119,10 @@ console.log("\n[2] リリースデータ一致(順序含む・デコード済み
 if (!Array.isArray(migrated)) {
   fail("couples.json が配列ではありません");
 } else {
-  if (migrated.length === EXPECTED_TOTAL) pass(`リリース件数一致: ${migrated.length}`);
-  else fail(`リリース件数不一致: JSON ${migrated.length} / 期待 ${EXPECTED_TOTAL}`);
+  if (migrated.length === EXPECTED_RELEASE_TOTAL) pass(`リリース件数一致: ${migrated.length}`);
+  else fail(`リリース件数不一致: JSON ${migrated.length} / 期待 ${EXPECTED_RELEASE_TOTAL}`);
 
-  const expectedRelease = sourceCards
-    .filter((card) => !RELEASE_EXCLUDED_IDS.has(card.id))
-    .map((card) => ({
+  const canonical = sourceCards.map((card) => ({
       id: card.id,
       audience: "couples",
       level: card.level,
@@ -153,13 +130,12 @@ if (!Array.isArray(migrated)) {
       category: card.category,
       source: "loves",
     }));
-  for (const [excludedId, replacement] of RELEASE_REPLACEMENTS) {
-    const insertionIndex = sourceCards.findIndex((card) => card.id === excludedId);
-    if (insertionIndex === -1) {
-      fail(`置換対象が正本ソースにありません: ${excludedId}`);
-    } else {
-      expectedRelease.splice(insertionIndex, 0, replacement);
-    }
+  let expectedRelease = [];
+  try {
+    expectedRelease = curateCouplesQuestions(canonical);
+    if (expectedRelease.length !== EXPECTED_RELEASE_TOTAL) fail(`キュレーション後の件数 ${expectedRelease.length} (期待 ${EXPECTED_RELEASE_TOTAL})`);
+  } catch (error) {
+    fail(`リリースキュレーションに不整合があります: ${error.message}`);
   }
 
   let mismatchCount = 0;
@@ -181,8 +157,41 @@ if (!Array.isArray(migrated)) {
       }
     }
   }
-  if (mismatchCount === 0) pass("Loves 698問 + 編集置換3問が順序含め一致");
+  if (mismatchCount === 0) pass("正本由来の保持分・除外・編集置換が順序含め一致");
   else fail(`不一致項目数: ${mismatchCount}(表示は先頭 ${maxReports} 件)`);
+}
+
+console.log("\n[2b] 公開デッキ構成");
+{
+  const releaseLevels = { 1: 0, 2: 0, 3: 0, 4: 0 };
+  const releaseSources = {};
+  for (const card of migrated) {
+    if (Number.isInteger(card.level) && releaseLevels[card.level] !== undefined) releaseLevels[card.level] += 1;
+    releaseSources[card.source] = (releaseSources[card.source] || 0) + 1;
+  }
+  for (const level of [1, 2, 3, 4]) {
+    if (releaseLevels[level] === EXPECTED_RELEASE_PER_LEVEL[level]) pass(`公開 Level ${level}: ${releaseLevels[level]} 問`);
+    else fail(`公開 Level ${level}: ${releaseLevels[level]} 問 (期待 ${EXPECTED_RELEASE_PER_LEVEL[level]})`);
+  }
+  for (const [source, count] of Object.entries(EXPECTED_RELEASE_SOURCES)) {
+    if (releaseSources[source] === count) pass(`source=${source}: ${count} 問`);
+    else fail(`source=${source}: ${releaseSources[source] || 0} 問 (期待 ${count})`);
+  }
+  const schoolCategories = ["schoolLife", "schoolSelf", "studyFuture", "schoolPredictions", "teacherReport", "elementaryPredictions"];
+  for (const category of schoolCategories) {
+    if (migrated.some((card) => card.category === category)) fail(`学校前提カテゴリが残っています: ${category}`);
+  }
+  const narrowContext = /学校|授業|先生|クラス|学生|高校|中学|小学校|テスト|勉強|教科|放課後|給食|進路|LINE|異性|彼氏|彼女|僕|俺/u;
+  for (const card of migrated) {
+    if (narrowContext.test(card.text)) fail(`学校・特定アプリ・性別前提の文面が残っています: ${card.id}`);
+  }
+  const normalizedTexts = new Map();
+  for (const card of migrated) {
+    if (typeof card.text !== "string") continue;
+    const normalized = card.text.normalize("NFKC").toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, "");
+    if (normalizedTexts.has(normalized)) fail(`完全重複の質問文: ${normalizedTexts.get(normalized)} / ${card.id}`);
+    else normalizedTexts.set(normalized, card.id);
+  }
 }
 
 console.log("\n[3] 個人的な固定文言の除去");
@@ -221,6 +230,7 @@ console.log("\n[5] スキーマ準拠");
       schemaErrors += 1;
       if (schemaErrors <= 5) fail(`index ${index} (${card.id}): キー不正 unknown=[${unknownKeys}] missing=[${missingKeys}]`);
     }
+    for (const issue of seriesFitIssues(card, "couples")) { schemaErrors += 1; fail(`${card.id}: ${issue}`); }
     if (card.audience !== "couples") {
       schemaErrors += 1;
       if (schemaErrors <= 5) fail(`index ${index} (${card.id}): audience=${JSON.stringify(card.audience)}`);
@@ -246,7 +256,7 @@ console.log("\n[5] スキーマ準拠");
 
 console.log("");
 if (failures === 0) {
-  console.log("結果: PASS — couples.json は正本698問 + 編集置換3問のリリース契約に適合しています。");
+  console.log("結果: PASS — couples.json は選別済みの公開キュレーション契約に適合しています。");
   process.exit(0);
 } else {
   console.log(`結果: FAIL — ${failures} 件の問題を検出しました。`);
