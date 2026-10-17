@@ -2,7 +2,7 @@
 
 Omoi for Couples(`shared/questions/couples.json`)のLoves由来質問は、
 以下の **Loves リポジトリのコミット済み Git blob** から抽出しています。
-公開用JSONは正本701問を維持し、Couples向けに整理した222問です（Loves由来95・編集127）。2026-10-16に旧477問を全件確認し、255問を削除、113問を改稿、2組の深掘りのみ改稿、107組を維持しました。正本は変更せず、追加の除外・改稿をリリースポリシーに適用します。全件の理由と変更前後は`tools/curation-couples.json`に記録しています。
+公開用JSONは正本701問を維持し、Couples向けに整理した222問に、ユーザー指示のDeep10問を追加した232問です（Loves由来95・編集137）。2026-10-16に旧477問を全件確認し、255問を削除、113問を改稿、2組の深掘りのみ改稿、107組を維持しました。正本は変更せず、追加の除外・改稿をリリースポリシーに適用します。全件の理由と変更前後は`tools/curation-couples.json`に記録しています。
 
 ## カノニカルソース
 
@@ -74,7 +74,7 @@ node tools/verify-couples-dataset.mjs <cards.ts へのパス> shared/questions/c
 
 ## 追加したAI生成案（2026-10-15）
 
-ユーザーの許可によりCodex / GPT-6が生成しました。Grok生成とは扱いません。Adults64組とSelf-Care64組はメイン質問と各組固有の深掘りを持ちます。現在はシリーズ適合性を確認したCouples222・Family166・Friends150の主質問に対応する538文を`shared/followups/`に分離しています。
+ユーザーの許可によりCodex / GPT-6が生成しました。Grok生成とは扱いません。Adults64組とSelf-Care64組はメイン質問と各組固有の深掘りを持ちます。現在はシリーズ適合性を確認したCouples232・Family166・Friends150の主質問に対応する548文を`shared/followups/`に分離しています。
 
 全件`stage: ai-initial-draft`、`reviewStatus: pending`です。AIの相互チェックで誘導・経験の決めつけ・不自然な文章を修正しましたが、人が承認したとは記録しません。ローカル用の明示フラグとホスト判定が成立した場合のみ、レビュー前のカードを試せます。生成元・レビュー前のラベルはユーザー指示により画面に表示せず、状態はデータ側で保持します。2026-10-16のユーザーによる明示的な公開指示を受け、新2シリーズは`published`、各質問は`approved`に変更し、根拠を`releaseApproval`に記録しました。元のAI生成メタデータと提供原文ハッシュは維持します。
 
@@ -84,3 +84,7 @@ node tools/verify-couples-dataset.mjs <cards.ts へのパス> shared/questions/c
 ## ユーザー提供のAdults追加30組（2026-10-16）
 
 ユーザーの取り込み許可を受け、提供された30組の本文・深掘り文を一字も変更せずに追加しました。Adultsは94組です。追加分は`user-provided` / `provided-draft`としてAIが新規生成した64組と分離し、原文中の作成元表記は`source.original`に申告値として保持します。本文と深掘り文のSHA-256を検証し、取り込み前後の一致を確認しています。公開設定とレビュー状態は自動承認しません。
+
+### 2026-10-17 Couples Deepの追加
+
+ユーザーの依頼でCodex / GPT-6が10組を作成しました。`tools/couples-deep-additions.mjs`の`editorial-couples-deep-001`〜`010`が追加元で、正本701問と従来の公開222問は変更していません。深掘りsidecarの`questionSources`に個別のAI初期案メタデータを保持します。作成元をGrokとは扱いません。

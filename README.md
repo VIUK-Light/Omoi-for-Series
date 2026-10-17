@@ -32,7 +32,7 @@ Omoi for Series は既存の「Omoi」とは別のプロダクトです。既存
 
 ## Couplesの既存データ
 
-正本Loves701問を保護したまま、Couples向けの公開デッキを**222問**に整理しました。旧477問を全件確認し、一般倫理・SNS炎上・いじめ対応・単独の友情・一般の自己紹介など255問を削除、113問を恋人との具体的な関係を話せる質問へ改稿しました。2組は深掘りのみを改稿、107組は主質問・深掘りとも維持しています。出典は正本文面を維持したLoves由来95問と編集質問127問です。変更前後と理由は[`tools/curation-couples.json`](tools/curation-couples.json)に記録しています。
+正本Loves701問を保護したまま、Couples向けの公開デッキは現在**232問**です。2026-10-16に222問へ整理した後、2026-10-17のユーザー指示でDeep向けの主質問・深掘り10組を追加しました。旧477問を全件確認し、一般倫理・SNS炎上・いじめ対応・単独の友情・一般の自己紹介など255問を削除、113問を恋人との具体的な関係を話せる質問へ改稿しました。2組は深掘りのみを改稿、107組は主質問・深掘りとも維持しています。出典は正本文面を維持したLoves由来95問と編集質問137問です。変更前後と理由は[`tools/curation-couples.json`](tools/curation-couples.json)に記録しています。
 
 Loves由来カードは`source: "loves"`、編集質問は`source: "editorial"`です。除外と編集のID単位の契約は[`tools/couples-release-policy.mjs`](tools/couples-release-policy.mjs)で管理します。テンプレートから生成されるsupplementalカードは正本701問に含めていません。
 
@@ -52,7 +52,7 @@ node tools/verify-couples-dataset.mjs /path/to/Loveds_publish/Loveds/web/src/dat
 node tools/verify-series-datasets.mjs
 ```
 
-`--canonical`を指定すると、正本701問を抽出して確認し、公開用JSONは変更しません。通常の`--release`では、上記のキュレーション方針を適用した222問を出力します。検証では正本のハッシュと701問の抽出内容を確認したうえで、公開デッキの順序・編集内容・件数・出典を照合します。公開デッキのLevel別件数は51・49・59・63です。
+`--canonical`を指定すると、正本701問を抽出して確認し、公開用JSONは変更しません。通常の`--release`では、上記のキュレーション方針と追加質問を適用した232問を出力します。検証では正本のハッシュと701問の抽出内容を確認したうえで、公開デッキの順序・編集内容・件数・出典を照合します。公開デッキのLevel別件数は51・49・63・69です。
 
 ## 質問の選択
 
@@ -64,7 +64,7 @@ node tools/verify-series-datasets.mjs
 
 ## AdultsとSelf-Careのデータ
 
-2026-10-15のユーザー許可により、CodexでAdultsとSelf-Careを各64組（メイン＋固有の深掘り）作成しました。Lite / Deep × Level 1〜4の8区分に各8組です。作成元は`codex` / `GPT-6`で、Grok生成とは記録しません。既存3シリーズにもCouples222・Family166・Friends150の計538文の個別深掘りを追加しています。作成元はAI初期案として識別可能なまま保持しています。AdultsとSelf-Careは2026-10-16のユーザーの明示的な公開指示により承認済みです。既存3シリーズの深掘りは`pending`です。今後Grokに依頼するためのプロンプトは[`prompts/grok-adults-questions.md`](prompts/grok-adults-questions.md)と[`prompts/grok-self-care-questions.md`](prompts/grok-self-care-questions.md)にあります。出力先のJSON枠は`shared/questions/adults.json`と`shared/questions/self-care.json`です。現在はAdults94組・Self-Care64組を公開しています。
+2026-10-15のユーザー許可により、CodexでAdultsとSelf-Careを各64組（メイン＋固有の深掘り）作成しました。Lite / Deep × Level 1〜4の8区分に各8組です。作成元は`codex` / `GPT-6`で、Grok生成とは記録しません。既存3シリーズにもCouples232・Family166・Friends150の計548文の個別深掘りを追加しています。作成元はAI初期案として識別可能なまま保持しています。AdultsとSelf-Careは2026-10-16のユーザーの明示的な公開指示により承認済みです。既存3シリーズの深掘りは`pending`です。今後Grokに依頼するためのプロンプトは[`prompts/grok-adults-questions.md`](prompts/grok-adults-questions.md)と[`prompts/grok-self-care-questions.md`](prompts/grok-self-care-questions.md)にあります。出力先のJSON枠は`shared/questions/adults.json`と`shared/questions/self-care.json`です。現在はAdults94組・Self-Care64組を公開しています。
 
 ### AI出力のJSON形式（Grok / Codex）
 
@@ -145,3 +145,7 @@ GitHub Pagesでビルド工程なしに配信する静的サイトです。ブ�
 5シリーズの質問・深掘りを確認し、Couplesは恋人同士、Familyは家族、Friendsは一緒に使う友人同士に内容を限定しました。関係の不安・嫉妬・境界線・衝突などの話題は、具体的で中立的な問いとして残します。Adultsの既存AI案4組も親密な関係の問いへ改稿し、Self-Care64組は一人で振り返る内容として維持しました。提供されたAdults30組は原文・出典・ハッシュを維持しています。この内容確認とは別に、2026-10-16のユーザー指示に基づくAdultsとSelf-Careの公開承認を記録しています。
 
 `tools/series-contracts.mjs`で現在の件数を固定し、`tools/series-fit-rules.mjs`と`tools/series-fit.test.mjs`で一般倫理・炎上事例・削除済みIDの再混入を検出します。自動判定は補助であり、文意の確認を代替しません。Couplesの再生成にも同じ除外・改稿方針を適用します。
+
+## CouplesのDeep質問追加（2026-10-17）
+
+ユーザーの依頼により、別れを考えた経験、相手の気になるところ、我慢、寂しさ、気持ちの変化、将来への迷い、心に残る言動、自分らしさ、負担、関係を変える希望の10組を追加しました。追加データと深掘りは`tools/couples-deep-additions.mjs`で管理し、再生成にも適用します。元の222問は変更しません。Level 3に4組、Level 4に6組を追加し、Liteには出しません。深掘りの個別生成元はsidecarの`questionSources`に記録し、既存のレビュー状態を維持します。
