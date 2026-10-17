@@ -1,3 +1,5 @@
+import { COUPLES_DEEP_ADDITIONS } from "./couples-deep-additions.mjs";
+
 // Couples公開データの選別方針。移行・検証スクリプトで同じルールを使う。
 export const RELEASE_EXCLUDED_IDS = new Set([
   "love-1-3", "ethics-max-4-14", "ethics-max-4-15",
@@ -558,7 +560,7 @@ export function curateCouplesQuestions(canonical) {
     if (COUPLES_FIT_EXCLUDED_IDS.has(id)) throw new Error(`Couples適合性レビューの除外と編集が重複: ${id}`);
   }
 
-  return initialRelease.flatMap((card) => {
+  const curated = initialRelease.flatMap((card) => {
     if (COUPLES_FIT_EXCLUDED_IDS.has(card.id)) return [];
     const rewrite = COUPLES_FIT_REWRITES.get(card.id);
     if (!rewrite) return [card];
@@ -570,4 +572,5 @@ export function curateCouplesQuestions(canonical) {
       source: "editorial",
     }];
   });
+  return [...curated, ...COUPLES_DEEP_ADDITIONS.map(({followUp, ...card}) => card)];
 }

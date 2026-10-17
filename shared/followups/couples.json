@@ -230,6 +230,78 @@
     "predictions-3-7": "人前での距離感を、その場でも気軽に確かめるには？",
     "editorial-couples-fit-111": "予想を本人に確かめて、新しく気づいたことはある？",
     "predictions-4-6": "相手が求めることと、自分が無理なくできることをどう話したい？",
-    "editorial-couples-fit-112": "本人の答えを聞いて、これからも続けたい行動は？"
+    "editorial-couples-fit-112": "本人の答えを聞いて、これからも続けたい行動は？",
+    "editorial-couples-deep-001": "相手も、別れたいと思ったことがあると思う？",
+    "editorial-couples-deep-002": "その中で、変えてほしい行動を一つ挙げるなら？",
+    "editorial-couples-deep-003": "今話すなら、どんな言葉で伝えたい？",
+    "editorial-couples-deep-004": "その時、相手にどう関わってほしい？",
+    "editorial-couples-deep-005": "その変化について、二人で確かめたいことは？",
+    "editorial-couples-deep-006": "その迷いを話す時、相手にどんなふうに聞いてほしい？",
+    "editorial-couples-deep-007": "その時の気持ちを、今ならどう伝えたい？",
+    "editorial-couples-deep-008": "自分のために取り戻したい時間や選択は？",
+    "editorial-couples-deep-009": "その負担を分け直すなら、何から話したい？",
+    "editorial-couples-deep-010": "そのために、自分からできそうなことは？"
+  },
+  "questionSources": {
+    "editorial-couples-deep-001": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-002": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-003": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-004": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-005": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-006": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-007": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-008": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-009": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    },
+    "editorial-couples-deep-010": {
+      "kind": "codex",
+      "model": "GPT-6",
+      "stage": "ai-initial-draft",
+      "generatedAt": "2026-10-17"
+    }
   }
 }
