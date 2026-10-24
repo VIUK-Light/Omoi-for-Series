@@ -1,0 +1,16 @@
+.review-header { align-items: center; display: flex; gap: 16px; justify-content: space-between; }
+.review-header h1 { font-size: 18px; line-height: 1.5; margin: 0; }
+#review-layout { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.review-controls { display: grid; gap: 10px; margin: 24px 0 0; }
+.review-controls label { color: var(--muted); font-size: 12px; }
+.review-controls select { background: white; border: 1px solid var(--line); border-radius: 8px; color: inherit; font: inherit; font-size: 13px; max-width: 100%; min-height: 44px; padding: 10px; width: 100%; }
+.review-navigation { display: flex; gap: 10px; }
+.review-navigation button { flex: 1; font-size: 12px; min-height: 40px; padding: 8px 12px; }
+#review-status { font-size: 13px; line-height: 1.6; margin: 12px 0 0; }
+#review-status:empty { display: none; }
+#review-status[role="alert"] { color: #9a3e2c; }
+#review-content[hidden], #review-original[hidden] { display: none; }
+#review-original { border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.8; padding: 16px 0; }
+#review-original summary { cursor: pointer; }
+#review-source-text { white-space: pre-line; }
+#review-source-id { font-size: 11px; overflow-wrap: anywhere; }

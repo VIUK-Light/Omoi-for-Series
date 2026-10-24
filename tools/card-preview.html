@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>カード表示の確認 — Omoi for Series</title>
+  <link rel="icon" href="/shared/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="/shared/styles.css?v=card-reform-1">
+  <link rel="stylesheet" href="/preview/styles.css">
+</head>
+<body data-audience="couples">
+  <div class="site-shell session-shell">
+    <header class="review-header"><h1>カード表示の確認</h1><span id="review-layout"></span></header>
+    <nav class="review-controls" aria-label="代表例を選ぶ">
+      <label for="review-case">確認する例</label>
+      <select id="review-case" disabled><option>読み込み中…</option></select>
+      <div class="review-navigation"><button id="review-previous" class="secondary-button" type="button" disabled>前の例</button><button id="review-next" class="secondary-button" type="button" disabled>次の例</button></div>
+    </nav>
+    <p id="review-status" role="status"></p>
+    <main class="session-content" id="review-content" hidden>
+      <p class="progress" id="review-position"></p>
+      <div class="card-stage" id="review-card-slot"></div>
+      <div class="question-actions"><button id="review-flip" class="primary-button" type="button">裏を見る</button></div>
+    </main>
+    <details id="review-original" hidden><summary>元の文章を見る</summary><p id="review-source-text"></p><code id="review-source-id"></code></details>
+  </div>
+  <script type="module" src="/preview/app.mjs"></script>
+</body>
+</html>

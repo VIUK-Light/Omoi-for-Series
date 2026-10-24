@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "series": "couples",
+  "questions": {
+    "editorial-couples-fit-001": {
+      "sourceSha256": "bc318979ac7fda7e5223286475adc5206d8603ebaab90695193486a550cfcc2f",
+      "text": {
+        "mobile": "休日に出かけるか、\n家で休むか。\n二人の希望が違ったら、\nどう決めたい？",
+        "desktop": "休日に出かけるか、\n家で休むか。\n二人の希望が違ったら、\nどう決めたい？"
+      }
+    },
+    "values-1-2": {
+      "sourceSha256": "c5b676cc579e2164ffb62109a2dcb1c32471ddbd0486dea928b07b7f64b9a982",
+      "text": {
+        "mobile": "一緒に行くなら、\n海・山・街のどれがいい？",
+        "desktop": "一緒に行くなら、\n海・山・街のどれがいい？"
+      }
+    },
+    "editorial-couples-deep-008": {
+      "sourceSha256": "b9130078806e33b13a131e200cebdcb348944e277aef6c17beb98dbee44eb13e",
+      "followUp": {
+        "mobile": "自分のために\n取り戻したい\n時間や選択は？",
+        "desktop": "自分のために取り戻したい\n時間や選択は？"
+      }
+    }
+  }
+}
