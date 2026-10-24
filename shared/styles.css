@@ -88,24 +88,23 @@ button:focus-visible, a:focus-visible, .card-copy:focus-visible { outline: 2px s
 .secondary-button { background: transparent; border: 1px solid #ccc6bd; color: #625c54; }
 .secondary-button:hover { border-color: var(--accent); color: var(--accent); }
 
-/* A compact 63:88 deck. The stage owns layout; only the inner card rotates. */
+/* Both faces share natural height; the invisible grid item keeps short cards 63:88. */
 .session-shell { max-width: 1000px; }
-.session-content { align-items: center; display: flex; flex: 1; flex-direction: column; justify-content: center; padding: 32px 0 40px; }
+.session-content { align-items: center; display: flex; flex: 1; flex-direction: column; justify-content: flex-start; padding: 32px 0 40px; }
 .progress { color: #8c857d; font-family: var(--font-sans); font-size: 12px; line-height: 18px; margin: 0; }
 .card-stage {
-  --card-space: 308px;
-  aspect-ratio: 63 / 88;
   flex: none;
   isolation: isolate;
   margin: 20px 0 32px;
   position: relative;
-  width: min(100%, max(224px, min(304px, calc((100svh - var(--card-space)) * .715909))));
+  width: min(100%, 340px);
 }
 .card-stage::before, .card-stage::after { background: #fdfcfb; border: 1px solid #e2ddd6; border-radius: 16px; content: ""; inset: 0; pointer-events: none; position: absolute; }
 .card-stage::before { box-shadow: 0 6px 10px #30291e08; transform: translateY(6px) rotate(-1.5deg); z-index: -1; }
 .card-stage::after { transform: translateY(10px) rotate(1deg); z-index: -2; }
-.question-card { height: 100%; perspective: 1400px; position: relative; width: 100%; }
-.question-card-inner { height: 100%; position: relative; transform-style: preserve-3d; transition: transform 640ms cubic-bezier(.4, 0, .2, 1); width: 100%; }
+.question-card { perspective: 1400px; position: relative; width: 100%; }
+.question-card-inner { display: grid; grid-template-columns: minmax(0, 1fr); position: relative; transform-style: preserve-3d; transition: transform 640ms cubic-bezier(.4, 0, .2, 1); width: 100%; }
+.question-card-inner::before { align-self: start; aspect-ratio: 63 / 88; content: ""; grid-area: 1 / 1; pointer-events: none; width: 100%; }
 .question-card.is-revealed .question-card-inner { transform: rotateY(-180deg); }
 .question-card-face {
   -webkit-backface-visibility: hidden;
@@ -116,23 +115,21 @@ button:focus-visible, a:focus-visible, .card-copy:focus-visible { outline: 2px s
   box-shadow: 0 14px 34px #3d302411, 0 2px 5px #3d302408;
   display: grid;
   gap: 20px;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  inset: 0;
-  padding: 28px 26px;
-  position: absolute;
+  grid-area: 1 / 1;
+  grid-template-rows: auto 1fr auto;
+  min-width: 0;
+  padding: 28px 22px;
+  position: relative;
   text-align: center;
 }
 .question-card-front { transform: rotateY(0deg); }
 .question-card-back { background: var(--accent-soft); transform: rotateY(180deg); }
 .card-series-name { font-family: var(--font-sans); font-size: 12px; font-weight: 700; letter-spacing: 0; line-height: 1.5; margin: 0; }
-.card-copy { display: flex; flex-direction: column; min-height: 0; overflow-wrap: anywhere; overflow-y: auto; overscroll-behavior: contain; scrollbar-color: #c8beb2 transparent; scrollbar-width: thin; }
+.card-copy { display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
 .card-copy-content { margin: auto 0; padding: 2px 0; width: 100%; }
 .question-category { color: var(--accent); font-family: var(--font-sans); font-size: 12px; font-weight: 400; letter-spacing: .04em; line-height: 1.65; margin: 0 0 18px; }
-.question-text, .follow-up-text { font-family: var(--font-sans); font-size: 24px; font-weight: 700; letter-spacing: .015em; line-break: strict; line-height: 1.75; margin: 0; overflow-wrap: anywhere; text-wrap: balance; white-space: pre-line; }
+.question-text, .follow-up-text { font-family: var(--font-sans); font-size: 1.5rem; font-weight: 700; letter-spacing: .015em; line-break: strict; line-height: 1.65; margin: 0; overflow-wrap: anywhere; word-break: normal; white-space: pre-line; }
 .question-text:focus, .follow-up-text:focus { outline: none; }
-.question-word { white-space: nowrap; }
-.question-text[data-length="medium"], .follow-up-text[data-length="medium"] { font-size: 23px; }
-.question-text[data-length="long"], .follow-up-text[data-length="long"] { font-size: 20px; line-height: 1.85; text-align: left; text-wrap: pretty; }
 .content-notes { color: #77716b; font-size: 10px; line-height: 1.7; margin: 18px 0 0; }
 .card-rule { background: var(--accent); height: 1px; justify-self: center; margin: 0 0 9px; width: 38px; }
 .question-actions { width: 200px; }
@@ -197,7 +194,6 @@ button:focus-visible, a:focus-visible, .card-copy:focus-visible { outline: 2px s
   .choice-copy small { font-size: 11px; }
   .choice-mark { height: 10px; right: 13px; top: 23px; width: 10px; }
   .session-content { padding: 28px 0 32px; }
-  .card-stage { --card-space: 284px; }
   .finish-content { padding: 64px 0; }
 }
 @media (max-width: 380px) {
@@ -206,16 +202,15 @@ button:focus-visible, a:focus-visible, .card-copy:focus-visible { outline: 2px s
   .header-actions { gap: 9px; }
   .header-actions [data-action="finish"] { padding-left: 9px; }
   .question-card-face { padding: 24px 22px; }
-  .question-text, .follow-up-text { font-size: 24px; }
+}
+@media (max-width: 359px) {
+  .question-card-face { padding-left: 18px; padding-right: 18px; }
+  .question-text, .follow-up-text { font-size: 1.375rem; }
 }
 @media (max-height: 660px) {
   .session-shell { padding-top: 16px; padding-bottom: 16px; }
   .session-content { padding-top: 16px; padding-bottom: 20px; }
-  .card-stage { --card-space: 238px; margin-top: 12px; margin-bottom: 24px; }
-  .question-card-face { gap: 12px; padding: 23px 21px; }
-  .question-text, .follow-up-text { font-size: 23px; }
-  .question-text[data-length="medium"], .follow-up-text[data-length="medium"] { font-size: 21px; }
-  .question-text[data-length="long"], .follow-up-text[data-length="long"] { font-size: 18px; }
+  .card-stage { margin-top: 12px; margin-bottom: 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; }

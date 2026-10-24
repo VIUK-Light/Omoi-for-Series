@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "series": "friends",
+  "questions": {
+    "editorial-friends-fit-076": {
+      "sourceSha256": "4007eeefe2bb0b98ae1268b1e5c7f5e0a303d79eef60077a9751c77cb5deef4f",
+      "text": {
+        "mobile": "私のうれしい出来事を、\nどう共有するのが\n二人に合う？",
+        "desktop": "私のうれしい出来事を、\nどう共有するのが\n二人に合う？"
+      }
+    },
+    "editorial-friends-fit-012": {
+      "sourceSha256": "1c9b6eb6b953707eed05ce6af16936625373bdbef73497bbbf1b1528f90325df",
+      "followUp": {
+        "mobile": "送るタイミングに、\n好みはある？",
+        "desktop": "送るタイミングに、\n好みはある？"
+      }
+    }
+  }
+}

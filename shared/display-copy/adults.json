@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "series": "adults",
+  "questions": {
+    "adults-boundaries-lite-l1-005": {
+      "sourceSha256": "f5c87075a730a1b77aedb598eadf84caf37e0e11b2c132d6b26f142947c457a7",
+      "followUp": {
+        "mobile": "二人きりの時と人前で、\n呼ばれ方を変えたい？",
+        "desktop": "二人きりの時と人前で、\n呼ばれ方を変えたい？"
+      }
+    },
+    "adults-body-image-deep-l3-009": {
+      "sourceSha256": "f84b3cc3bbd3bf6d97b44dd7d13d98d6fc2cfe48735fbca158bf358836cb243b",
+      "text": {
+        "mobile": "自分の性器の\n見た目や匂いが気になり\n相手に見られたくないと\n感じたことはある？",
+        "desktop": "自分の性器の\n見た目や匂いが気になり\n相手に見られたくないと\n感じたことはある？"
+      }
+    }
+  }
+}
