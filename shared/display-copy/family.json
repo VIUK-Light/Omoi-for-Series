@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "series": "family",
+  "questions": {
+    "family-communication-3-26": {
+      "sourceSha256": "54a74e85cc841125e6622529b96ee739fa0755b3d905d12eaef8f1011bb25c58",
+      "text": {
+        "mobile": "家族との深い話は、\n自然に始まる方がいい？\n話す機会を決めたい？",
+        "desktop": "家族との深い話は、\n自然に始まる方がいい？\n話す機会を決めたい？"
+      }
+    },
+    "family-boundaries-4-26": {
+      "sourceSha256": "d30bf4675b67c56255895a1bf9070a1cc9d0a4414ebbe5c5437e43ae2be962be",
+      "followUp": {
+        "mobile": "期待に応じられる範囲を\nどう伝えておきたい？",
+        "desktop": "期待に応じられる範囲を\nどう伝えておきたい？"
+      }
+    }
+  }
+}

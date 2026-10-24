@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "series": "self-care",
+  "questions": {
+    "self-care-senses-lite-l1-001": {
+      "sourceSha256": "b06385cc287be3b2aa703dd5465be8b2c70fe2b46c7828f2f192ee86fd5fcd61",
+      "text": {
+        "mobile": "今、聞きたい音は何？",
+        "desktop": "今、聞きたい音は何？"
+      }
+    },
+    "self-care-choices-deep-l2-001": {
+      "sourceSha256": "dceb2fa6b1c0999876c902af57cc6403399d658319934e76ce65044b5baced36",
+      "followUp": {
+        "mobile": "その考えを持つ理由は、\n今も自分に合っている？",
+        "desktop": "その考えを持つ理由は、\n今も自分に合っている？"
+      }
+    },
+    "self-care-selfunderstanding-deep-l3-001": {
+      "sourceSha256": "250162421b341fdae40758befaba74d03cf31ba490e0fea31032dac00371b705",
+      "followUp": {
+        "mobile": "その場面で、\n自分の気持ちを確かめる\n時間は取れそう？",
+        "desktop": "その場面で、\n自分の気持ちを確かめる\n時間は取れそう？"
+      }
+    }
+  }
+}
