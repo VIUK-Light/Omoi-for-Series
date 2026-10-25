@@ -17,8 +17,31 @@ const categoryLabels = {
   stress: "負担やストレス", memory: "思い出", memories: "思い出", "self-understanding": "自己理解", future: "これから",
 };
 
+const isEpisode = (id, target) => target === "Couples" && id.startsWith("editorial-couples-episode-");
+// These two authored character names stay intact even on narrow screens.
+const episodeMarkup = text => questionMarkup(text).replace(/アキさん|ユウさん/gu, name => `<span class="episode-name">${name}</span>`);
+
+function mainQuestionMarkup({ id, target, text, textFormat }) {
+  if (textFormat === "verbatim-consultation") return `<span class="episode-scenario verbatim-consultation">${questionMarkup(text)}</span>`;
+  // Episode authors put the question on the final line. Keep every character
+  // while giving the narrated event and the question separate visual weight.
+  const episode = isEpisode(id, target);
+  const paragraphBreak = episode ? text.lastIndexOf("\n\n") : -1;
+  const questionBreak = paragraphBreak >= 0 ? paragraphBreak : episode ? text.lastIndexOf("\n") : -1;
+  const separator = paragraphBreak >= 0 ? "\n\n" : "\n";
+  return questionBreak >= 0
+    ? `<span class="episode-scenario">${episodeMarkup(text.slice(0, questionBreak))}</span>${separator}<span class="episode-prompt">${episodeMarkup(text.slice(questionBreak + separator.length))}</span>`
+    : questionMarkup(text);
+}
+
+export function updateQuestionCardText(card, { id, target, text, followUp, followUpLabel, textFormat }) {
+  card.querySelector("#main-question").innerHTML = mainQuestionMarkup({ id, target, text, textFormat });
+  card.querySelector("#follow-up-question").innerHTML = isEpisode(id, target) ? episodeMarkup(followUp) : questionMarkup(followUp);
+  if (followUpLabel) card.querySelector(".question-category").textContent = followUpLabel;
+}
+
 // Shared by the product and the localhost review screen.
-export function questionCardMarkup({ id, target, text, followUp, solo = false, contentNotes = [], revealed = false }) {
+export function questionCardMarkup({ id, target, text, followUp, followUpLabel, textFormat, solo = false, contentNotes = [], revealed = false }) {
   const brand = `<span class="brand-prefix">Omoi for</span> <span class="brand-target">${questionMarkup(target)}</span>`;
   const noteLabels = contentNotes.map((category) => categoryLabels[category] || category);
   const notes = noteLabels.length
@@ -27,16 +50,27 @@ export function questionCardMarkup({ id, target, text, followUp, solo = false, c
     <div class="question-card-inner">
       <section class="question-card-face question-card-front" aria-label="メインの質問" aria-hidden="${revealed}" ${revealed ? "inert" : ""}>
         <p class="card-series-name">${brand}</p>
-        <div class="card-copy"><div class="card-copy-content"><h1 id="main-question" class="question-text" tabindex="-1">${questionMarkup(text)}</h1>${notes}</div></div>
+        <div class="card-copy"><div class="card-copy-content"><h1 id="main-question" class="question-text" tabindex="-1">${mainQuestionMarkup({ id, target, text, textFormat })}</h1>${notes}</div></div>
         <span class="card-rule" aria-hidden="true"></span>
       </section>
       <section class="question-card-face question-card-back" aria-label="深掘り質問" aria-hidden="${!revealed}" ${revealed ? "" : "inert"}>
         <p class="card-series-name">${brand}</p>
-        <div class="card-copy"><div class="card-copy-content"><p class="question-category">${solo ? "もう少し考えてみる" : "もう少し話してみる"}</p><h2 id="follow-up-question" class="follow-up-text" tabindex="-1">${questionMarkup(followUp)}</h2>${notes}</div></div>
+        <div class="card-copy"><div class="card-copy-content"><p id="follow-up-progress" class="question-category">${questionMarkup(followUpLabel || (solo ? "もう少し考えてみる" : "もう少し話してみる"))}</p><h2 id="follow-up-question" class="follow-up-text" aria-describedby="follow-up-progress" tabindex="-1">${isEpisode(id, target) ? episodeMarkup(followUp) : questionMarkup(followUp)}</h2>${notes}</div></div>
         <span class="card-rule" aria-hidden="true"></span>
       </section>
     </div>
   </article>`;
+}
+
+export function focusQuestionCard(card, showFollowUp = false) {
+  const target = card?.querySelector(showFollowUp ? ".follow-up-text" : ".question-text");
+  if (!target) return;
+  target.focus({ preventScroll: true });
+  const bounds = target.getBoundingClientRect();
+  const tall = bounds.height > window.innerHeight - 32;
+  if (bounds.top < 16 || (!tall && bounds.bottom > window.innerHeight - 16)) {
+    target.scrollIntoView({ block: tall ? "start" : "center", behavior: "auto" });
+  }
 }
 
 export function updateQuestionCardSide(card, showFollowUp) {

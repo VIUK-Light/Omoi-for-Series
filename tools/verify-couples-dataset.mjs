@@ -24,6 +24,7 @@ import { fileURLToPath } from "node:url";
 import { SERIES_CONTRACTS } from "./series-contracts.mjs";
 import { seriesFitIssues } from "./series-fit-rules.mjs";
 import { curateCouplesQuestions } from "./couples-release-policy.mjs";
+import { hasVerifiedProvidedCouplesText } from "./couples-provided-content.mjs";
 
 const CANONICAL_SHA256 = "8157d9f273edf58dd011db8627c16dd110a49d81e76577672502dc4cd47bfc57";
 const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
@@ -35,7 +36,8 @@ const EXPECTED_RELEASE_PER_LEVEL = SERIES_CONTRACTS.couples.levels;
 const EXPECTED_RELEASE_SOURCES = SERIES_CONTRACTS.couples.sourceCounts;
 const FORBIDDEN_TEXTS = ["なぎささん大好きだよ！"];
 const ALLOWED_KEYS = new Set(["id", "audience", "level", "text", "category", "source"]);
-const ALLOWED_SOURCES = new Set(["loves", "editorial"]);
+const OPTIONAL_KEYS = new Set(["intensity", "textFormat", "contentSha256"]);
+const ALLOWED_SOURCES = new Set(["loves", "editorial", "user-provided"]);
 
 const toolsDir = dirname(fileURLToPath(import.meta.url));
 const sourceArg = process.argv[2];
@@ -148,7 +150,7 @@ if (!Array.isArray(migrated)) {
       if (mismatchCount <= maxReports) fail(`index ${index}: 片方のみ存在`);
       continue;
     }
-    for (const field of ["id", "audience", "level", "text", "category", "source"]) {
+    for (const field of ["id", "audience", "level", "text", "category", "source", "intensity", "textFormat", "contentSha256"]) {
       if (jsonCard[field] !== expectedCard[field]) {
         mismatchCount += 1;
         if (mismatchCount <= maxReports) {
@@ -183,7 +185,7 @@ console.log("\n[2b] 公開デッキ構成");
   }
   const narrowContext = /学校|授業|先生|クラス|学生|高校|中学|小学校|テスト|勉強|教科|放課後|給食|進路|LINE|異性|彼氏|彼女|僕|俺/u;
   for (const card of migrated) {
-    if (narrowContext.test(card.text)) fail(`学校・特定アプリ・性別前提の文面が残っています: ${card.id}`);
+    if (narrowContext.test(card.text) && !hasVerifiedProvidedCouplesText(card)) fail(`学校・特定アプリ・性別前提の文面が残っています: ${card.id}`);
   }
   const normalizedTexts = new Map();
   for (const card of migrated) {
@@ -224,7 +226,7 @@ console.log("\n[5] スキーマ準拠");
   let schemaErrors = 0;
   migrated.forEach((card, index) => {
     const keys = Object.keys(card);
-    const unknownKeys = keys.filter((key) => !ALLOWED_KEYS.has(key));
+    const unknownKeys = keys.filter((key) => !ALLOWED_KEYS.has(key) && !OPTIONAL_KEYS.has(key));
     const missingKeys = [...ALLOWED_KEYS].filter((key) => !(key in card));
     if (unknownKeys.length || missingKeys.length) {
       schemaErrors += 1;
@@ -242,6 +244,14 @@ console.log("\n[5] スキーマ準拠");
     if (!ALLOWED_SOURCES.has(card.source)) {
       schemaErrors += 1;
       if (schemaErrors <= 5) fail(`index ${index} (${card.id}): source=${JSON.stringify(card.source)}`);
+    }
+    if (card.intensity !== undefined && !["lite", "deep"].includes(card.intensity)) {
+      schemaErrors += 1;
+      fail(`${card.id}: intensity=${JSON.stringify(card.intensity)}`);
+    }
+    if ((card.source === "user-provided" || card.textFormat !== undefined || card.contentSha256 !== undefined) && !hasVerifiedProvidedCouplesText(card)) {
+      schemaErrors += 1;
+      fail(`${card.id}: 提供原文の照合情報が一致しません`);
     }
     if (typeof card.text !== "string" || card.text.trim() === "") {
       schemaErrors += 1;

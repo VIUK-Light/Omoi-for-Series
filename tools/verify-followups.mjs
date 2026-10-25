@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { mergeLegacyFollowUps } from '../shared/content-policy.mjs';
 import { normalizeQuestionText, textSimilarity, hasUnsafeQuestionText } from './validate-grok-questions.mjs';
+import { isSharedCouplesDiscussionOpening } from '../shared/question-engine.mjs';
 
 const root = resolve(fileURLToPath(import.meta.url), '../..');
 export function validateFollowUpDataset(data, legacyQuestions, series) {
@@ -11,13 +12,19 @@ export function validateFollowUpDataset(data, legacyQuestions, series) {
   try { mergeLegacyFollowUps(legacyQuestions, data, series, { allowDrafts: true }); }
   catch (error) { return { issues: [{ severity: 'error', message: error.message }], questionCount: 0 }; }
   const owners = new Map();
-  const entries = Object.entries(data.questions);
+  const entries = [
+    ...Object.entries(data.questions),
+    ...Object.entries(data.discussionQuestions || {}).flatMap(([id, prompts]) => prompts.slice(1).map((text, index) => [`${id}/discussion-${index + 2}`, text])),
+  ];
   const mains = new Map(legacyQuestions.map(question => [question.id, question.text]));
+  const questionsById = new Map(legacyQuestions.map(question => [question.id, question]));
   for (const [id, text] of entries) {
     const key = normalizeQuestionText(text);
-    if (owners.has(key)) issues.push({ severity: 'error', message: `${id}: 深掘り質問が ${owners.get(key)} と重複しています。` });
-    else owners.set(key, id);
-    if (key === normalizeQuestionText(mains.get(id))) issues.push({ severity: 'error', message: `${id}: メイン質問と深掘り質問が同じです。` });
+    const shared = isSharedCouplesDiscussionOpening(questionsById.get(id), series, text, data.sharedDiscussionOpening);
+    const owner = shared ? 'couples/shared-opening' : id;
+    if (owners.has(key) && (!shared || owners.get(key) !== owner)) issues.push({ severity: 'error', message: `${id}: 深掘り質問が ${owners.get(key)} と重複しています。` });
+    else owners.set(key, owner);
+    if (key === normalizeQuestionText(mains.get(id.split('/')[0]))) issues.push({ severity: 'error', message: `${id}: メイン質問と深掘り質問が同じです。` });
     if (hasUnsafeQuestionText(text)) issues.push({ severity: 'error', message: `${id}: 圧力や不適切な表現を検出しました。` });
   }
   for (let i = 0; i < entries.length; i += 1) {
@@ -29,7 +36,7 @@ export function validateFollowUpDataset(data, legacyQuestions, series) {
       }
     }
   }
-  return { issues, questionCount: entries.length };
+  return { issues, questionCount: Object.keys(data.questions).length, promptCount: entries.length };
 }
 
 function main() {
@@ -43,12 +50,16 @@ function main() {
       console.log(`${issue.severity === 'error' ? '✗' : '!'} ${series}: ${issue.message}`);
       if (issue.severity === 'error') errors += 1;
     }
-    for (const [id, text] of Object.entries(data.questions)) {
+    const prompts = [...Object.entries(data.questions), ...Object.entries(data.discussionQuestions || {}).flatMap(([id, texts]) => texts.slice(1).map((text, index) => [`${id}/discussion-${index + 2}`, text]))];
+    const questionsById = new Map(questions.map(question => [question.id, question]));
+    for (const [id, text] of prompts) {
       const key = normalizeQuestionText(text);
-      if (owners.has(key)) { console.error(`✗ シリーズ間の深掘り重複: ${owners.get(key)} / ${series}/${id}`); errors += 1; }
-      else owners.set(key, `${series}/${id}`);
+      const shared = isSharedCouplesDiscussionOpening(questionsById.get(id), series, text, data.sharedDiscussionOpening);
+      const owner = shared ? 'couples/shared-opening' : `${series}/${id}`;
+      if (owners.has(key) && (!shared || owners.get(key) !== owner)) { console.error(`✗ シリーズ間の深掘り重複: ${owners.get(key)} / ${series}/${id}`); errors += 1; }
+      else owners.set(key, owner);
     }
-    console.log(`${series}: ${report.questionCount}/${questions.length} 組 / review=${data.reviewStatus}`);
+    console.log(`${series}: ${report.questionCount}/${questions.length} 組 / 追加質問${report.promptCount}問 / review=${data.reviewStatus}`);
   }
   for (const series of ['adults', 'self-care']) {
     const data = JSON.parse(readFileSync(resolve(root, `shared/questions/${series}.json`), 'utf8'));

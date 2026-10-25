@@ -1,9 +1,10 @@
-import { questionCardMarkup, updateQuestionCardSide } from "./question-card.mjs?v=card-reform-1";
+import { questionCardMarkup, updateQuestionCardSide, updateQuestionCardText, focusQuestionCard } from "./question-card.mjs?v=couples-context-3";
 import { assertDisplayCopy, displayTextForQuestion, MOBILE_COPY_QUERY } from "./display-copy.mjs";
 import {
   chooseSessionQuestions,
   filterQuestions,
-  followUpForQuestion,
+  discussionPromptsForQuestion,
+  conversationStyleForSelection,
   isDevelopmentHost,
 } from "./question-engine.mjs";
 import { QuestionDataError, assertQuestionDataset, questionLoadErrorMessage, canShowReviewedContent, canPreviewDrafts, mergeLegacyFollowUps } from "./content-policy.mjs?v=adults-import-1";
@@ -54,8 +55,8 @@ const series = {
 if (!series) throw new Error(`未対応のOmoi for Seriesです: ${audience}`);
 
 const intensities = [
-  { value: "lite", name: "Lite", description: series.solo ? "日常を振り返る" : "日常の話題" },
-  { value: "deep", name: "Deep", description: "気持ちや価値観" },
+  { value: "lite", name: "Lite", description: audience === "couples" ? "二人のことを話す" : series.solo ? "日常を振り返る" : "日常の話題" },
+  { value: "deep", name: "Deep", description: audience === "couples" ? "第三者の出来事を考える" : "気持ちや価値観" },
 ];
 const conversationStyles = [
   { value: "normal", name: "通常", description: "追加の質問なし" },
@@ -74,6 +75,7 @@ let sessionActive = false;
 let sessionFinished = false;
 let deepWarningVisible = false;
 let revealed = false;
+let discussionIndex = 0;
 let cardNeedsEntrance = false;
 let loadState = "loading";
 let loadError = "";
@@ -86,6 +88,8 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => (
 }[character]));
 const brandMarkup = () => `<span class="brand-prefix">Omoi for</span> <span class="brand-target">${escapeHtml(series.target)}</span>`;
 const selectedPool = () => filterQuestions(questions, { intensity: selectedIntensity });
+const isEpisodeSession = () => audience === "couples" && selectedIntensity === "deep";
+const activeConversationStyle = () => conversationStyleForSelection(audience, selectedIntensity, selectedStyle);
 
 function resetSession(clearHistory = false) {
   deepWarningVisible = false;
@@ -95,6 +99,7 @@ function resetSession(clearHistory = false) {
   sessionActive = false;
   sessionFinished = false;
   revealed = false;
+  discussionIndex = 0;
   cardNeedsEntrance = false;
   if (clearHistory) usedByPool.clear();
 }
@@ -112,6 +117,7 @@ function startSession() {
   sessionFinished = false;
   usedByPool.set(historyKey, selection.usedIds);
   revealed = false;
+  discussionIndex = 0;
   cardNeedsEntrance = true;
   return true;
 }
@@ -127,6 +133,7 @@ function drawNextQuestion() {
   questionsAsked += 1;
   usedByPool.set(historyKey, selection.usedIds);
   revealed = false;
+  discussionIndex = 0;
   cardNeedsEntrance = true;
   return true;
 }
@@ -161,7 +168,9 @@ function renderEmptyPreview() {
 }
 
 function modeControls() {
-  return `<section class="selection-section" aria-labelledby="intensity-heading"><h2 id="intensity-heading">質問の踏み込み度</h2><div class="choice-list choice-pair" role="group" aria-label="質問内容の踏み込み度">${intensities.map((mode) => choiceButton({ group: "intensity", value: mode.value, label: mode.name, description: mode.description, selected: selectedIntensity === mode.value })).join("")}</div></section><section class="selection-section" aria-labelledby="style-heading"><h2 id="style-heading">会話のスタイル</h2><div class="choice-list choice-pair" role="group" aria-label="会話方式">${conversationStyles.map((mode) => choiceButton({ group: "style", value: mode.value, label: mode.name, description: mode.description, selected: selectedStyle === mode.value })).join("")}</div></section>`;
+  const heading = audience === "couples" ? "質問の種類" : "質問の踏み込み度";
+  const styles = isEpisodeSession() ? "" : `<section class="selection-section" aria-labelledby="style-heading"><h2 id="style-heading">会話のスタイル</h2><div class="choice-list choice-pair" role="group" aria-label="会話方式">${conversationStyles.map((mode) => choiceButton({ group: "style", value: mode.value, label: mode.name, description: mode.description, selected: selectedStyle === mode.value })).join("")}</div></section>`;
+  return `<section class="selection-section" aria-labelledby="intensity-heading"><h2 id="intensity-heading">${heading}</h2><div class="choice-list choice-pair" role="group" aria-label="${heading}">${intensities.map((mode) => choiceButton({ group: "intensity", value: mode.value, label: mode.name, description: mode.description, selected: selectedIntensity === mode.value })).join("")}</div>${isEpisodeSession() ? '<p class="selection-note">相談を読んで、あなたの考えを話します。</p>' : ""}</section>${styles}`;
 }
 
 function renderSelection() {
@@ -199,15 +208,46 @@ function renderDeepWarning() {
 }
 
 function focusQuestion(showFollowUp = false) {
-  app.querySelector(showFollowUp ? ".follow-up-text" : ".question-text")?.focus({ preventScroll: true });
+  focusQuestionCard(app.querySelector("#question-card"), showFollowUp);
 }
 
 function currentCardText() {
+  const prompts = discussionPromptsForQuestion(currentQuestion, audience);
   return {
     text: displayTextForQuestion(currentQuestion, "text", displayCopies, copyViewport.matches),
-    followUp: displayTextForQuestion(currentQuestion, "followUp", displayCopies, copyViewport.matches)
-      ?? followUpForQuestion(currentQuestion, audience),
+    followUp: discussionIndex === 0
+      ? displayTextForQuestion(currentQuestion, "followUp", displayCopies, copyViewport.matches) ?? prompts[0]
+      : prompts[discussionIndex],
+    followUpLabel: isEpisodeSession() ? `さらに話す ${discussionIndex + 1} / ${prompts.length}` : undefined,
+    textFormat: currentQuestion.textFormat,
   };
+}
+
+function questionActionsMarkup() {
+  const episode = isEpisodeSession() && activeConversationStyle() === "deep-dive";
+  const more = episode && revealed && discussionIndex + 1 < discussionPromptsForQuestion(currentQuestion, audience).length;
+  const action = activeConversationStyle() === "deep-dive" && !revealed ? "reveal" : more ? "advance-discussion" : "next";
+  const label = isEpisodeSession() ? (action === "reveal" ? "さらに話す" : more ? "次の問いへ" : "次の出来事へ") : "次へ";
+  return `<button class="primary-button" data-action="${action}" aria-controls="question-card" type="button"><span data-action-label>${label}</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></button>
+    ${episode ? `<div class="episode-links">
+      ${revealed && discussionIndex > 0 ? '<button class="text-button" data-action="previous-discussion" aria-controls="question-card" type="button">前の問いへ</button>' : ""}
+      ${revealed ? '<button class="text-button" data-action="revisit" aria-controls="question-card" type="button">出来事に戻る</button>' : ""}
+      ${!revealed || more ? '<button class="text-button" data-action="next" aria-controls="question-card" type="button">次の出来事へ</button>' : ""}
+    </div>` : ""}`;
+}
+
+function refreshQuestionActions() {
+  app.querySelector(".question-actions").innerHTML = questionActionsMarkup();
+}
+
+function changeDiscussion(offset) {
+  if (!isEpisodeSession() || !revealed || cardTransitionActive) return;
+  const index = discussionIndex + offset;
+  if (index < 0 || index >= discussionPromptsForQuestion(currentQuestion, audience).length) return;
+  discussionIndex = index;
+  updateQuestionCardText(app.querySelector("#question-card"), { id: currentQuestion.id, target: series.target, ...currentCardText() });
+  refreshQuestionActions();
+  focusQuestion(true);
 }
 
 function renderQuestion() {
@@ -217,9 +257,8 @@ function renderQuestion() {
     renderSelection();
     return;
   }
-  const { text, followUp } = currentCardText();
+  const { text, followUp, followUpLabel, textFormat } = currentCardText();
   const contentNotes = Array.isArray(question.contentNotes) ? question.contentNotes : [];
-  const mainAction = selectedStyle === "deep-dive" && !revealed ? "reveal" : "next";
   const enterClass = cardNeedsEntrance ? " is-entering" : "";
   cardNeedsEntrance = false;
   app.innerHTML = `<div class="site-shell session-shell">
@@ -228,10 +267,10 @@ function renderQuestion() {
 
       <p class="progress" aria-label="質問 ${questionsAsked}問目">質問 ${questionsAsked}</p>
       <div class="card-stage${enterClass}">
-        ${questionCardMarkup({ id: question.id, target: series.target, text, followUp, solo: series.solo, contentNotes, revealed })}
+        ${questionCardMarkup({ id: question.id, target: series.target, text, followUp, followUpLabel, textFormat, solo: series.solo, contentNotes, revealed })}
       </div>
       <div class="question-actions">
-        <button class="primary-button" data-action="${mainAction}" aria-controls="question-card" type="button">次へ <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg></button>
+        ${questionActionsMarkup()}
       </div>
     </main>
     ${footer()}
@@ -248,7 +287,8 @@ function setQuestionSide(showFollowUp) {
   if (!card || !inner || !front || !back || !nextButton) return;
 
   revealed = showFollowUp;
-  nextButton.dataset.action = showFollowUp || selectedStyle === "normal" ? "next" : "reveal";
+  refreshQuestionActions();
+  const actionButtons = [...app.querySelectorAll(".question-actions button")];
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let timeout;
@@ -257,7 +297,7 @@ function setQuestionSide(showFollowUp) {
     inner.removeEventListener("transitionend", onTransitionEnd);
     cardTransitionActive = false;
     finishCardFlip = null;
-    nextButton.disabled = false;
+    actionButtons.forEach(button => { button.disabled = false; });
     card.removeAttribute("aria-busy");
     if (moveFocus) focusQuestion(showFollowUp);
   };
@@ -267,7 +307,7 @@ function setQuestionSide(showFollowUp) {
   finishCardFlip = complete;
   if (!reducedMotion) {
     cardTransitionActive = true;
-    nextButton.disabled = true;
+    actionButtons.forEach(button => { button.disabled = true; });
     card.setAttribute("aria-busy", "true");
     inner.addEventListener("transitionend", onTransitionEnd);
     // transitionend may not fire if the browser suspends motion or the tab.
@@ -359,7 +399,7 @@ async function loadQuestions() {
 app.addEventListener("click", (event) => {
   const button = event.target.closest("button");
   if (!button || button.disabled) return;
-  if (cardTransitionActive && ["reveal", "next"].includes(button.dataset.action)) return;
+  if (cardTransitionActive && ["reveal", "revisit", "advance-discussion", "previous-discussion", "next"].includes(button.dataset.action)) return;
 
   if (button.dataset.intensity) {
     selectedIntensity = button.dataset.intensity;
@@ -368,6 +408,7 @@ app.addEventListener("click", (event) => {
     return;
   }
   if (button.dataset.style) {
+    if (isEpisodeSession()) return;
     selectedStyle = button.dataset.style;
     revealed = false;
     render();
@@ -403,6 +444,15 @@ app.addEventListener("click", (event) => {
     case "reveal":
       setQuestionSide(true);
       break;
+    case "revisit":
+      if (isEpisodeSession() && revealed) setQuestionSide(false);
+      break;
+    case "advance-discussion":
+      changeDiscussion(1);
+      break;
+    case "previous-discussion":
+      changeDiscussion(-1);
+      break;
     case "next":
       if (drawNextQuestion()) {
         render();
@@ -435,11 +485,8 @@ app.addEventListener("keydown", (event) => {
 
 copyViewport.addEventListener("change", () => {
   if (!sessionActive || !currentQuestion) return;
-  const { text, followUp } = currentCardText();
-  const main = app.querySelector("#main-question");
-  const back = app.querySelector("#follow-up-question");
-  if (main) main.textContent = text;
-  if (back) back.textContent = followUp;
+  const card = app.querySelector("#question-card");
+  if (card) updateQuestionCardText(card, { id: currentQuestion.id, target: series.target, ...currentCardText() });
 });
 render();
 loadQuestions();

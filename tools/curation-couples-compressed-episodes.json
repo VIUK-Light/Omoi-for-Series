@@ -1,0 +1,578 @@
+{
+  "schemaVersion": 1,
+  "series": "couples",
+  "editedAt": "2026-10-25",
+  "reviewStatus": "pending",
+  "source": {
+    "kind": "codex",
+    "model": "GPT-6",
+    "stage": "ai-initial-draft",
+    "generatedAt": "2026-10-25"
+  },
+  "scope": "ユーザー提供の相談画像10件を出来事と葛藤が伝わる長さに編集。ユーザーの短すぎるという指摘を受け、迷う経緯や気持ちを100〜150字程度へ復元。",
+  "adaptationPolicy": "匿名の相談文を検証済みの実話とは扱わない。挨拶・年齢・学歴・容姿や性別等の決めつけ・侮辱・具体的な性描写・隠蔽や監視の手順を省き、出来事と葛藤を残す。恋人同士で考えるための脚色は省略事項に明記。画像や元文の全文、ローカルの画像パスはリポジトリに保存しない。",
+  "unchangedLiteSha256": "54e5db8c0a4a30920e8ea2b32159019399a2f0d9f16d3a6b39ae0ea50819af58",
+  "unchangedDeepSha256": "1156a423922049a686e86706a2aafd22d8ea6bc80fb129809cd548e0f989614a",
+  "rewritten": [
+    {
+      "reference": {
+        "id": "user-image-01",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 1,
+        "verification": "unverified",
+        "contentSha256": "7169c9e2981cc918d014811da35e29f41662451238c2b17d30ea0529e5a2da61"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-011",
+          "audience": "couples",
+          "level": 3,
+          "text": "忙しくて会う時間が減った恋人同士のアキさんとユウさん。\nアキさんは短くても毎日話したいが、ユウさんは月に一度ゆっくり会いたい。\n二人はそれぞれ、何を大切にしていそう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "使える時間が同じでも満足が違うのは、どんな理由が考えられる？",
+          "短い会話を毎日する案と長く会う案を、二人はどんな負担で比べられそう？",
+          "会えない間に寂しさが増えた時、予定した会い方をどう見直せそう？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-011",
+          "audience": "couples",
+          "level": 3,
+          "text": "名字をからかわれてきたアキさんは、結婚でありふれた名字に変われたらと思っていた。\nけれど恋人のユウさんも自分の名字を変えたくて、アキさんの名字を望んでいる。アキさんはユウさんの名字にもためらいがある。\n二人は何を大切に決めたい？",
+          "category": "futureValues",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "二人で一つを選ぶ時、あなたは何を大切にしたい？",
+          "譲りたくない思いが違ったら、どう聞き合いたい？"
+        ]
+      },
+      "preservedCore": "二人とも改姓したいが、相手の名字への抵抗があるという具体的な行き詰まり。",
+      "removedDetails": "挨拶、実際の名字、悪口との語呂合わせ、大学での出会い、反復。",
+      "previousShortText": "結婚を考える恋人二人は、どちらも今の名字を変えたい。\nユウさんはアキさんの名字を望むが、アキさんはユウさんの名字にもためらいがある。\n二人は何を基準に決めたい？",
+      "restoredContext": "からかわれてきた経緯と、ありふれた名字への憧れを戻し、単なる名字の好みの比較ではないことを示した。",
+      "previousThirdPersonPrompts": [
+        "名字を変えたい理由は、二人でどう違う？",
+        "相手が嫌だった経験を、軽く扱わずに聞くには？",
+        "希望が合わない時、何を急がず考えられる？"
+      ],
+      "discussionAxis": "二人の希望が異なる時、何を大切にして決めるか",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "名前や呼ばれ方で、うれしい・嫌だと感じた経験はある？",
+        "二人で一つを選ぶ時、あなたは何を大切にしたい？",
+        "譲りたくない思いが違ったら、どう聞き合いたい？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-02",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 2,
+        "verification": "unverified",
+        "contentSha256": "dd86c3d747292cf914f7c1ca236950528b76ab1cb5becaa9f6ae2bc2bf95f3aa"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-013",
+          "audience": "couples",
+          "level": 3,
+          "text": "口論の後、アキさんはすぐ謝っていつも通りにしたい。\n恋人のユウさんは、何がつらかったのかまだ話したいと思っている。\n二人にとって仲直りは何が違うのだろう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "謝る言葉は受け取れても、気持ちが戻らない時には何が必要そう？",
+          "アキさんが謝った後も話が続くと、どんな気持ちになる可能性がある？",
+          "同じ口論を繰り返さないために、謝罪とは別に決められることは何？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-013",
+          "audience": "couples",
+          "level": 3,
+          "text": "恋人のユウさんとは趣味が合い、結婚の話も出ているが、気持ちを聞いてもらえず寂しいアキさん。\nそんな時、以前親しかった人に再会し、突然結婚を求められた。話はよく聞いてくれるが、浮気した過去もある。\n気持ちと信頼を、何から確かめたい？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "気持ちが満たされることと、信頼できることは自分にはどう違う？",
+          "二人の将来を決める前に、どんなことを確かめ合いたい？"
+        ]
+      },
+      "preservedCore": "趣味の一致と共感の不足がある現在の交際、共感はあるが信頼に不安がある以前の相手からの急な結婚話。",
+      "removedDetails": "年齢、交際年数、年収比較、身体的な相性の具体描写、相手を決めつける呼称。人物の点数比較ではなく未確認の希望と信頼へ圧縮。",
+      "previousShortText": "恋人のユウさんとは趣味が合うが、気持ちを聞いてもらえず寂しいアキさん。\nよく話を聞いてくれるが浮気歴のある昔の相手から、突然結婚を求められた。\n何を確かめてから決める？",
+      "restoredContext": "現恋人とも結婚の話が出ていること、以前の相手との再会、共感と信頼への不安の違いを戻した。",
+      "previousThirdPersonPrompts": [
+        "今の関係で足りないことを、ユウさんは知っている？",
+        "突然の結婚話に、まだ分からないことは何？",
+        "寂しさが満たされることと、信頼できることは同じ？"
+      ],
+      "discussionAxis": "心が満たされる感覚と、相手への信頼を何から確かめるか",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "話を聞いてもらえて、安心した経験があればどんな時？",
+        "気持ちが満たされることと、信頼できることは自分にはどう違う？",
+        "二人の将来を決める前に、どんなことを確かめ合いたい？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-03",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 3,
+        "verification": "unverified",
+        "contentSha256": "3c698e97f9fe82e11d39e2547cdb9bb65189b1be541d6ee332be2bfb607efde4"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-014",
+          "audience": "couples",
+          "level": 3,
+          "text": "恋人のユウさんが待ち合わせに何度も遅れ、アキさんは困っている。\nユウさんは、その都度謝っているので解決したと思っていた。\n次はどんな話が必要そう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "時間通りに来るのが難しい事情もあったら、どんな約束なら続けられそう？",
+          "アキさんが失っているのは待った時間だけか、それ以外もありそう？",
+          "次も遅れるとわかった時、謝る前にユウさんから知らせられることは何？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-014",
+          "audience": "couples",
+          "level": 3,
+          "text": "恋人のユウさんと長く同棲し、仲もよいアキさん。けれど触れ合いは義務に感じるようになった。\n昔好きだった人と浮気をしても後悔がなく、ユウさんを大切に思う気持ちとの間で迷っている。\n関係を続ける前に、何を考える必要がある？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "好きな気持ちと、無理なく付き合えることは自分にはどう違う？",
+          "気持ちや望みが変わったら、二人でどう話したい？"
+        ]
+      },
+      "preservedCore": "恋人への愛情はあるが触れ合いが義務的になり、浮気への後悔もないという葛藤。",
+      "removedDetails": "性的行為や欲求の具体描写、飲酒や再会の経緯、自分への侮辱的な表現。愛情・欲求・秘密と相手の選択を残した。",
+      "previousShortText": "恋人のユウさんを大切に思うアキさん。でも触れ合いは義務に感じ、別の人と浮気をしても後悔がない。\n関係を続ける前に、何を考える必要がある？",
+      "restoredContext": "長い同棲と仲のよさ、触れ合いの義務感、昔好きだった人との浮気、後悔のなさと恋人を大切に思う気持ちの食い違いを戻した。",
+      "previousThirdPersonPrompts": [
+        "愛情があることと、触れ合いたいことは同じ？",
+        "アキさんの迷いを知らないユウさんには、何が選べない？",
+        "義務で応じることをやめたら、何を話し直せそう？"
+      ],
+      "discussionAxis": "愛情と無理をしている気持ちを分け、関係を続ける前に考えること",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "大切な人に合わせて、無理をしたと感じたことはある？",
+        "好きな気持ちと、無理なく付き合えることは自分にはどう違う？",
+        "気持ちや望みが変わったら、二人でどう話したい？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-04",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 4,
+        "verification": "unverified",
+        "contentSha256": "f4f69f94379276cbe06e60f0526de53ee7e73532c2efaa6adb68ca4f6a5537c9"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-015",
+          "audience": "couples",
+          "level": 3,
+          "text": "アキさんは、恋人のユウさんと会う時はスマホをしまうことにした。\nユウさんは喜んだが、アキさんは友人の連絡にも返せず気になっている。\nこの工夫をどう調整できそう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "良かれと思って始めたことでも、負担になったと伝えやすくするには？",
+          "スマホをしまう工夫は、二人で決めた約束とアキさんだけの決意で何が違う？",
+          "連絡を確認する時間を設けるなら、ユウさんが置いていかれたと感じない方法は？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-015",
+          "audience": "couples",
+          "level": 3,
+          "text": "外見を変えてから、周囲に大切に扱われるようになったアキさん。\n見た目以外は変わっていないのに態度が違い、「結局、顔なのか」と人の好意を疑うようになった。恋人の「人柄が好き」という言葉も素直に受け取れない。\n何を手がかりに、信頼を考えられる？",
+          "category": "values",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "あなたが人を信じられるのは、どんな言葉や行動がある時？",
+          "不安になった時、相手にどう接してもらいたい？"
+        ]
+      },
+      "preservedCore": "外見による周囲の扱いの変化で、人からの好意を信じにくくなる葛藤。",
+      "removedDetails": "進学歴、学校名や通学事情、施術や容姿の細部、著名人との比較。恋人との信頼を考える場面は脚色。",
+      "previousShortText": "外見を変えてから、周囲の接し方が優しくなったアキさん。\n恋人の「人柄が好き」という言葉も信じにくくなった。\n大切にされているか、何で確かめられる？",
+      "restoredContext": "自分の中身は変わっていないのに周囲の扱いが変わった驚きと、好意全体への不信感を戻した。恋人とのつながりは既存カードの脚色を維持。",
+      "previousThirdPersonPrompts": [
+        "態度の変化から分かることと、推測はどこで分かれる？",
+        "見た目を褒めることと、人柄を大切にすることは両立する？",
+        "不安を聞いた恋人には、どんな応じ方ができそう？"
+      ],
+      "discussionAxis": "外見による扱いへの不信感から、自分が人を信じる手がかりを考える",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "見た目で人の態度が変わったと感じた経験はある？",
+        "あなたが人を信じられるのは、どんな言葉や行動がある時？",
+        "不安になった時、相手にどう接してもらいたい？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-05",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 5,
+        "verification": "unverified",
+        "contentSha256": "dc653db58b668e54f278c2dbd6167159903f4ae6de2549d4d1708a013698a9e8"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-016",
+          "audience": "couples",
+          "level": 3,
+          "text": "週末に一人で絵を描くのが好きなアキさん。\n恋人のユウさんは一緒に描きたいと言うが、アキさんには一人だから集中できる楽しさもある。\nこの誘いをどう受け止める？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "ユウさんが「趣味に入れてもらえない」と感じたら、どんな説明が届きそう？",
+          "絵を描く時間を共有することと、描いたものを見せることは何が違う？",
+          "ユウさんに別の趣味を勧める案は、気持ちを受け止めたことになると思う？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-016",
+          "audience": "couples",
+          "level": 3,
+          "text": "元恋人のユウさんに新しい相手ができ、遠くで暮らし始めたらしいと知ったアキさん。\n恋愛感情はないと言うが、相手に遊ばれるのではと心配で、交際を止めたい。ただ、今の二人を詳しく知っているわけではない。\n心配と干渉の境目はどこ？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "自分なら、心配と干渉を何で見分ける？",
+          "心配された時、どんな関わりなら受け取りやすい？"
+        ]
+      },
+      "preservedCore": "未練はないと言いながら、元恋人の新しい関係へ介入したくなる気持ち。",
+      "removedDetails": "年齢、国籍・人種や性別への決めつけ、容姿への中傷、移住先の推測。",
+      "previousShortText": "元恋人のユウさんの新しい交際に、アキさんは「傷つくかも」と口を出したい。\nもう恋愛感情はないと言う。\n心配と干渉の境目はどこ？",
+      "restoredContext": "遠くで始まった元恋人の新生活への気がかりと、詳しく知らないまま被害を予測して介入したくなるねじれを戻した。",
+      "previousThirdPersonPrompts": [
+        "アキさんの心配には、どんな根拠がある？",
+        "助けを求められた場合と、求められていない場合で何が違う？",
+        "相手の選択に賛成できなくても、距離を保つ方法は？"
+      ],
+      "discussionAxis": "自分が感じる心配と干渉の境目を、関わられる側の希望も含めて考える",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "誰かを心配して、口を出すか迷った経験はある？",
+        "自分なら、心配と干渉を何で見分ける？",
+        "心配された時、どんな関わりなら受け取りやすい？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-06",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 6,
+        "verification": "unverified",
+        "contentSha256": "e8c72722a8b8cdded8ceb7633363a672274dd1ea8cf6734c3538b55e6f188327"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-017",
+          "audience": "couples",
+          "level": 3,
+          "text": "ユウさんは、恋人のアキさんを喜ばせたくて毎朝長いメッセージを送る。\nアキさんはうれしいが、同じ長さで返す時間が取れない。\n二人は何を確かめるとよさそう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "返事の長さと愛情の深さを、ユウさんが結びつけているとしたら？",
+          "アキさんが短く返す時にも、読んでうれしかったことをどう表せそう？",
+          "長いメッセージを送ること自体がユウさんの楽しみなら、返事の約束は必要？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-017",
+          "audience": "couples",
+          "level": 3,
+          "text": "恋人の人柄に惹かれているアキさんは、結婚を考えると見た目や収入も理想とは違うことが気になる。\n顔が好みでも性格が合わなければつらい。でも、気が合うだけで将来のお金の不安までなくなるわけではない。\n一緒に生きる相手に、何が欠かせない？",
+          "category": "futureValues",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "人柄・見た目・暮らしの安心を、自分ならどう大切にしたい？",
+          "将来の希望やお金の不安を、二人でどう確かめ合いたい？"
+        ]
+      },
+      "preservedCore": "容姿、人柄、経済面のどれを重視するかという結婚の優先順位。",
+      "removedDetails": "挨拶、同じ比較の反復。抽象的な三択を、特定の恋人との判断へ再構成。",
+      "previousShortText": "結婚を考えるアキさんは、恋人の人柄は好きだが、見た目と収入が理想とは違う。\n好きな気持ちと暮らしへの不安がある。\n一緒に生きる相手に、何が欠かせない？",
+      "restoredContext": "人柄・見た目・経済面のどれか一つが満たされても、ほかの不安が消えるわけではないという迷いを戻した。",
+      "previousThirdPersonPrompts": [
+        "人柄・見た目・お金は、同じように比べられる？",
+        "暮らしに必要なお金と、理想の収入はどう違う？",
+        "変わる可能性に期待せず、今の相手と何を話したい？"
+      ],
+      "discussionAxis": "好きな気持ちと生活の見通しを踏まえ、自分に欠かせないものを考える",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "好きな気持ちだけでは決められないと感じた経験はある？",
+        "人柄・見た目・暮らしの安心を、自分ならどう大切にしたい？",
+        "将来の希望やお金の不安を、二人でどう確かめ合いたい？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-07",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 7,
+        "verification": "unverified",
+        "contentSha256": "42d64097bfc2fd5e77c4bc82701d639c698938169997ed09a50a287adff4f7b9"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-019",
+          "audience": "couples",
+          "level": 3,
+          "text": "旅行の思い出を増やしたいアキさんと、いつもの散歩を大事にしたい恋人のユウさん。\nどちらも「二人の時間がほしい」と言うのに、予定が決まらない。\n何が違っていそう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "特別な予定と日常の時間を、どんな割合で試すと違いが見えてきそう？",
+          "旅行と散歩で、二人はどんな思い出や安心を受け取りたいのだろう？",
+          "旅行に使えるお金が少ない時にも、アキさんの望みを満たせる体験はある？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-019",
+          "audience": "couples",
+          "level": 3,
+          "text": "恋人のユウさんとは親密な触れ合いの好みが違い、いつも相手に合わせているアキさん。\n自分の好みを話すと関係が変わりそうで言えず、同じ好みの別の人と会いたいと考え始めた。\n会う前に、二人で何を確かめたい？",
+          "category": "boundaries",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "自分の希望を話す時、どんな反応だと安心できる？",
+          "二人の好みが違う時、どこまで話し合っておきたい？"
+        ]
+      },
+      "preservedCore": "恋人に言えていない好みがあり、関係の外で満たしたいと考えることと、浮気の境界への迷い。",
+      "removedDetails": "年齢、学校歴、特定の性的行為、服従・支配の具体的な希望、相手探しの経路。同性なら浮気ではないという結論は置かない。",
+      "previousShortText": "恋人のユウさんに、親密な触れ合いの好みを言えないアキさん。\n話すより先に、同じ好みの人と会いたいと考え始めた。\n会う前に、二人で何を確かめたい？",
+      "restoredContext": "恋人と好みが違うこと、相手に合わせていること、打ち明けた後の関係の変化への怖さを戻した。",
+      "previousThirdPersonPrompts": [
+        "アキさんは、好みを話すと何が変わるのが怖い？",
+        "会う相手の性別で、二人の約束は変わると思う？",
+        "好みが一致しなくても、二人にはどんな選択肢がある？"
+      ],
+      "discussionAxis": "会う前に二人で確かめたいこと",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "好みや希望を、相手に言いにくいと感じることはある？",
+        "自分の希望を話す時、どんな反応だと安心できる？",
+        "二人の好みが違う時、どこまで話し合っておきたい？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-08",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 8,
+        "verification": "unverified",
+        "contentSha256": "b55644f090ba6faf0f13a56a35db423cf6e17993ec0682e4f622d95f938c0bca"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-024",
+          "audience": "couples",
+          "level": 4,
+          "text": "恋人のユウさんに悩みがあると知り、アキさんは詳しく聞きたい。\nユウさんは、友人から預かった話も関わるので全部は話せないと言う。\nどこまで共有できるとよさそう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "内容を明かさなくても、アキさんが支えになれることはありそう？",
+          "詳しく話せないと言われたアキさんには、どんな不安が残りそう？",
+          "ユウさんが話せる部分を決める時、友人への約束と恋人への配慮をどう考える？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-024",
+          "audience": "couples",
+          "level": 4,
+          "text": "浮気を隠す方法を語る投稿を読んだアキさん。恋人のユウさんも隠しているのではと不安になった。\n何も見つからなくても安心できそうになく、確かめ続けるしかないのか迷っている。\n確かな証拠がない時、信頼をどう考える？",
+          "category": "jealousy",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "はっきりしない時、信じるかどうかを何で判断する？",
+          "安心のためでも、相手にされたくない確認はある？"
+        ]
+      },
+      "preservedCore": "隠し方を語る投稿をきっかけに、証拠で恋人の誠実さを確かめることの限界を考える。",
+      "removedDetails": "浮気の隠蔽手順、履歴や記録の消去方法、決済や連絡手段の使い分け、監視・検知の手順。投稿者の手法をカードの助言として再生産しない。",
+      "previousShortText": "浮気を隠す方法を勧める投稿を見たアキさん。恋人のユウさんも隠しているのではと、疑うようになった。\n確かな証拠がない時、信頼をどう考える？",
+      "restoredContext": "投稿で疑いが生まれる経緯と、確認して何も見つからなくても安心できないという葛藤を戻した。投稿を読んだ恋人の場面への脚色は維持し、隠蔽手順や監視手法は加えていない。",
+      "previousThirdPersonPrompts": [
+        "投稿の体験と、ユウさんについて知る事実は何が違う？",
+        "行動を確かめ続けると、二人の安心はどう変わりそう？",
+        "すべてを証明できなくても、二人は何を話せる？"
+      ],
+      "discussionAxis": "確かめきれない状況で信頼をどう考えるか",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "他人の体験談で、自分の関係まで不安になったことはある？",
+        "はっきりしない時、信じるかどうかを何で判断する？",
+        "安心のためでも、相手にされたくない確認はある？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-09",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 9,
+        "verification": "unverified",
+        "contentSha256": "0efe9f707657853f46c55bbdd63d568b0ca886b17112629a19b20adb12f1f0bd"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-028",
+          "audience": "couples",
+          "level": 4,
+          "text": "将来の話になると、恋人のユウさんはいつも「その時に考えよう」と答える。\nアキさんは今の関係には満足しているが、先が見えず不安だ。\n二人は何を話せるとよさそう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "今すぐ結論が出せなくても、共有できる見通しや気持ちはありそう？",
+          "ユウさんが将来の話を避けるのは、考えがないからとは限らないと思う？",
+          "話す時期を決めても先延ばしが続いたら、アキさんは何を判断できそう？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-028",
+          "audience": "couples",
+          "level": 4,
+          "text": "恋人のユウさんが休職した時、精神面でもお金の面でも支えてきたアキさん。\nユウさんが職場の人と浮気をして別れた後、信じた自分が情けなく、支えた時間まで無意味に思えている。\nその時間を、どう受け止め直せる？",
+          "category": "conflictSupport",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "相手との結果が変わると、支えた時間の意味も変わると思う？",
+          "これから人を支える時、自分のために守りたいことは？"
+        ]
+      },
+      "preservedCore": "精神面・金銭面で支えた恋人に裏切られ、別れた後に自分の努力や支援の意味を見失うこと。",
+      "removedDetails": "年齢、学歴、容姿・能力の比較、浮気相手の評価、性別集団への一般化。努力が交際継続の見返りを保証するとは扱わない。",
+      "previousShortText": "休職中の恋人のユウさんを、気持ちの面でもお金の面でも支えたアキさん。\n浮気で別れた後、支えた時間まで無意味だったと感じている。\nその時間を、どう受け止め直せる？",
+      "restoredContext": "休職中の支援、職場の人との浮気による別れ、信じた自分への否定と支えた時間の意味への迷いを戻した。",
+      "previousThirdPersonPrompts": [
+        "別れた結果と、支えた時の気持ちを分けると何が見える？",
+        "アキさんが失ったと感じるのは、時間・お金・信頼のどれだろう？",
+        "次の恋で、信頼と自分を守る境界をどう両立できる？"
+      ],
+      "discussionAxis": "報われなかったと感じる支えの意味",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "誰かを支えたことが、報われなかったと感じた経験はある？",
+        "相手との結果が変わると、支えた時間の意味も変わると思う？",
+        "これから人を支える時、自分のために守りたいことは？"
+      ]
+    },
+    {
+      "reference": {
+        "id": "user-image-10",
+        "kind": "user-provided",
+        "format": "image",
+        "imageNumber": 10,
+        "verification": "unverified",
+        "contentSha256": "c6f7727549f2696550b2bb94d8704bbb842a86bd8e79d90ca1f9ff855892af38"
+      },
+      "before": {
+        "question": {
+          "id": "editorial-couples-episode-029",
+          "audience": "couples",
+          "level": 4,
+          "text": "アキさんは、恋人のユウさんが人前で二人の失敗談を話すのをやめてほしいと思っている。\nユウさんは楽しい思い出のつもりだった。\n二人はこの違いをどう話せそう？",
+          "category": "romance",
+          "source": "editorial"
+        },
+        "prompts": [
+          "ユウさんにとっても大切な思い出なら、外で話す範囲をどう決められそう？",
+          "同じ失敗談を本人が話す時と、恋人が話す時では受け止め方がどう違う？",
+          "一度話してよいと言った思い出でも、後から嫌になったらどう扱えそう？"
+        ]
+      },
+      "after": {
+        "question": {
+          "id": "editorial-couples-episode-029",
+          "audience": "couples",
+          "level": 4,
+          "text": "恋人のユウさんには内緒で、お金を受け取って別の人と親密に過ごしているアキさん。\n相手への恋愛感情はなく、お金を得るための仕事なので、恋人への裏切りとは違うと思っている。\n本人の仕事という感覚と、二人の合意をどう考える？",
+          "category": "boundaries",
+          "source": "editorial"
+        },
+        "prompts": [
+          "あなたはどう考える？",
+          "「仕事だから」で納得できるか、何を確かめたい？",
+          "判断が分かれることを、二人ならどう話し合っておきたい？"
+        ]
+      },
+      "preservedCore": "対価を伴う親密な交際を本人は仕事と捉え、恋人には知らせていないことと、浮気の認識差。",
+      "removedDetails": "相手への侮辱、具体的な性的行為、アプリや業態の名称、金額、相手探しの手順。恋人が事前に禁止していたという未記載の前提は足さない。",
+      "previousShortText": "恋人のユウさんに内緒で、お金を受け取る親密な交際をしているアキさん。\n仕事のつもりなので、浮気だとは思っていない。\nこの交際を、二人の関係ではどう考える？",
+      "restoredContext": "対価のための仕事という本人の認識、相手への恋愛感情がないという理由、恋人には秘密のままという条件を戻した。",
+      "previousThirdPersonPrompts": [
+        "お金を受け取ることは、恋人との約束を変える？",
+        "秘密を知らないユウさんには、どんな選択ができない？",
+        "仕事という呼び方と、二人が合意した範囲は同じ？"
+      ],
+      "discussionAxis": "自分の認識と二人の合意が違う場合の考え方",
+      "discussionStyle": "opinion-then-reflection",
+      "previousReflectionPrompts": [
+        "自分は平気でも、相手は嫌かもしれないと感じたことはある？",
+        "「仕事だから」で納得できるか、何を確かめたい？",
+        "判断が分かれることを、二人ならどう話し合っておきたい？"
+      ]
+    }
+  ]
+}

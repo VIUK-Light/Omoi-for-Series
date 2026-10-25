@@ -9,6 +9,7 @@ import {
   intensityForQuestion,
   isDevelopmentHost,
   nextQuestionIndex,
+  conversationStyleForSelection,
 } from "../shared/question-engine.mjs";
 
 import { SERIES_CONTRACTS } from "./series-contracts.mjs";
@@ -17,7 +18,17 @@ const root = resolve(new URL("..", import.meta.url).pathname);
 const couples = JSON.parse(readFileSync(resolve(root, "shared/questions/couples.json"), "utf8"));
 const fixedRandom = () => 0.42;
 
-test("legacy series keeps question records unchanged and maps Lite/Deep from its existing levels", () => {
+test("only Couples Deep fixes the conversation style while all other selections keep the chosen style", () => {
+  for(const series of ["couples","family","friends","adults","self-care"]) {
+    for(const intensity of ["lite","deep"]) {
+      for(const style of ["normal","deep-dive"]) {
+        assert.equal(conversationStyleForSelection(series,intensity,style),series==="couples"&&intensity==="deep"?"deep-dive":style);
+      }
+    }
+  }
+});
+
+test("Couples selects modes independently from preserved levels without mutating its records", () => {
   const before = JSON.stringify(couples);
   const levelCounts = Object.fromEntries([1, 2, 3, 4].map((level) => [
     level,
@@ -26,10 +37,10 @@ test("legacy series keeps question records unchanged and maps Lite/Deep from its
   const liteLevelOne = filterQuestions(couples, { intensity: "lite", level: 1 });
   const deepLevelFour = filterQuestions(couples, { intensity: "deep", level: 4 });
   assert.deepEqual(levelCounts, SERIES_CONTRACTS.couples.levels);
-  assert.equal(filterQuestions(couples, { intensity: "lite" }).length, SERIES_CONTRACTS.couples.levels[1] + SERIES_CONTRACTS.couples.levels[2]);
-  assert.equal(filterQuestions(couples, { intensity: "deep" }).length, SERIES_CONTRACTS.couples.levels[3] + SERIES_CONTRACTS.couples.levels[4]);
+  assert.equal(filterQuestions(couples, { intensity: "lite" }).length, SERIES_CONTRACTS.couples.modes.lite);
+  assert.equal(filterQuestions(couples, { intensity: "deep" }).length, SERIES_CONTRACTS.couples.modes.deep);
   assert.equal(liteLevelOne.length, SERIES_CONTRACTS.couples.levels[1]);
-  assert.equal(deepLevelFour.length, SERIES_CONTRACTS.couples.levels[4]);
+  assert.equal(deepLevelFour.length, 4);
   assert.ok(liteLevelOne.every((question) => question.level === 1));
   assert.ok(deepLevelFour.every((question) => question.level === 4));
   assert.equal(JSON.stringify(couples), before);

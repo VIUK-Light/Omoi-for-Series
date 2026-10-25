@@ -16,6 +16,8 @@ import { textSimilarity } from "./validate-grok-questions.mjs";
 
 import { SERIES_CONTRACTS } from "./series-contracts.mjs";
 import { seriesFitIssues } from "./series-fit-rules.mjs";
+import { filterQuestions } from "../shared/question-engine.mjs";
+import { hasVerifiedProvidedCouplesText } from "./couples-provided-content.mjs";
 
 const root = resolve(fileURLToPath(import.meta.url), "../..");
 const expected = Object.fromEntries(["couples", "family", "friends"].map(series => [series, SERIES_CONTRACTS[series]]));
@@ -64,7 +66,7 @@ for (const [audience, contract] of Object.entries(expected)) {
     ids.add(card.id);
     const normalizedText = typeof card.text === "string" ? card.text.trim() : "";
     if (normalizedText !== "") {
-      if (card.source === "editorial") {
+      if (card.source !== "loves") {
         const firstSeenId = editorialTexts.get(normalizedText) ?? lovesTexts.get(normalizedText);
         if (firstSeenId) fail(`${audience}[${index}]: テキスト重複 ${card.id} (${firstSeenId} と同一)`);
         editorialTexts.set(normalizedText, card.id);
@@ -77,8 +79,11 @@ for (const [audience, contract] of Object.entries(expected)) {
     if (!Number.isInteger(card.level) || card.level < 1 || card.level > 4) fail(`${audience}[${index}]: level不正`);
     else levels[card.level] += 1;
     if (typeof card.text !== "string" || card.text.trim() === "") fail(`${audience}[${index}]: textが空`);
-    if (typeof card.text === "string" && card.text.length > MAX_RELEASE_TEXT_LENGTH) fail(`${audience}[${index}]: textが長すぎます (${card.text.length}文字)`);
+    const providedVerbatim = audience === "couples" && hasVerifiedProvidedCouplesText(card);
+    if ((card.source === "user-provided" || card.textFormat !== undefined || card.contentSha256 !== undefined) && !providedVerbatim) fail(`${audience}[${index}]: 提供原文の照合情報が一致しません`);
+    if (typeof card.text === "string" && card.text.length > MAX_RELEASE_TEXT_LENGTH && !providedVerbatim) fail(`${audience}[${index}]: textが長すぎます (${card.text.length}文字)`);
     if (typeof card.category !== "string" || card.category.trim() === "") fail(`${audience}[${index}]: categoryが空`);
+    if (card.intensity !== undefined && !["lite", "deep"].includes(card.intensity)) fail(`${audience}[${index}]: intensity不正`);
     if (!Object.hasOwn(contract.sourceCounts, card.source)) fail(`${audience}[${index}]: source不正 ${card.source}`);
     sources[card.source] = (sources[card.source] || 0) + 1;
     if (forbiddenTexts.includes(card.text)) fail(`${audience}[${index}]: 個人的な固定文言が残っています`);
@@ -89,6 +94,9 @@ for (const [audience, contract] of Object.entries(expected)) {
   }
   for (const [source, count] of Object.entries(contract.sourceCounts)) {
     if (sources[source] !== count) fail(`${audience}: source=${source} が ${sources[source] || 0} 件 (期待 ${count})`);
+  }
+  for (const [intensity, count] of Object.entries(contract.modes || {})) {
+    if (filterQuestions(data, { intensity }).length !== count) fail(`${audience}: ${intensity}の件数が一致しません`);
   }
   console.log(`${audience}: ${data.length}問 / L1-L4 ${Object.values(levels).join('-')} / sources ${JSON.stringify(sources)}`);
 }

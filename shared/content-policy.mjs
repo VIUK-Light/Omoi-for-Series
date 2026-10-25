@@ -1,4 +1,4 @@
-import { isDevelopmentHost } from "./question-engine.mjs";
+import { isDevelopmentHost, isSharedCouplesDiscussionOpening, COUPLES_SHARED_DISCUSSION_OPENING } from "./question-engine.mjs";
 
 export class QuestionDataError extends Error {
   constructor(message) {
@@ -45,6 +45,9 @@ export function mergeLegacyFollowUps(questions, data, series, { allowDrafts = fa
     throw new QuestionDataError(`${series}: 深掘り質問のレビュー情報または質問一覧が不正です。`);
   }
   const ids = new Set(questions.map(question => question.id));
+  if (data.sharedDiscussionOpening !== undefined && (series !== 'couples' || data.sharedDiscussionOpening !== COUPLES_SHARED_DISCUSSION_OPENING)) {
+    throw new QuestionDataError(`${series}: 共通の追加質問が不正です。`);
+  }
   for (const id of Object.keys(data.questions)) {
     if (!ids.has(id)) throw new QuestionDataError(`${series}: 元の質問が存在しない深掘り質問です (${id})。`);
   }
@@ -54,8 +57,33 @@ export function mergeLegacyFollowUps(questions, data, series, { allowDrafts = fa
       throw new QuestionDataError(`${series}: 深掘り質問が未設定または長すぎます (${question.id})。`);
     }
   }
+  if (data.discussionQuestions !== undefined) {
+    if (series !== 'couples' || !data.discussionQuestions || typeof data.discussionQuestions !== 'object' || Array.isArray(data.discussionQuestions)) {
+      throw new QuestionDataError(`${series}: 出来事の追加質問一覧が不正です。`);
+    }
+    for (const [id, prompts] of Object.entries(data.discussionQuestions)) {
+      if (!ids.has(id) || !id.startsWith('editorial-couples-episode-')) throw new QuestionDataError(`${series}: 出来事が存在しない追加質問です (${id})。`);
+      if (!Array.isArray(prompts) || prompts.length < 2 || prompts.length > 5 || prompts[0] !== data.questions[id]
+        || prompts.some(text => typeof text !== 'string' || !text.trim() || text.length > 160)
+        || new Set(prompts.map(text => text.trim())).size !== prompts.length) {
+        throw new QuestionDataError(`${series}: 出来事の追加質問が未設定・重複・不整合です (${id})。`);
+      }
+    }
+  }
+  if (data.sharedDiscussionOpening !== undefined) {
+    for (const question of questions) {
+      if (isSharedCouplesDiscussionOpening(question, series, COUPLES_SHARED_DISCUSSION_OPENING, data.sharedDiscussionOpening)
+        && (data.questions[question.id] !== data.sharedDiscussionOpening || data.discussionQuestions?.[question.id]?.[0] !== data.sharedDiscussionOpening)) {
+        throw new QuestionDataError(`${series}: 共通の問いが追加質問の先頭にありません (${question.id})。`);
+      }
+    }
+  }
   if (!canShowReviewedContent(data.reviewStatus, { allowDrafts })) return questions;
-  return questions.map(question => ({ ...question, followUp: data.questions[question.id].trim() }));
+  return questions.map(question => ({
+    ...question,
+    followUp: data.questions[question.id].trim(),
+    ...(data.discussionQuestions?.[question.id] ? { followUps: data.discussionQuestions[question.id].map(text => text.trim()) } : {}),
+  }));
 }
 
 export function canPreviewDrafts(release, locationLike) {

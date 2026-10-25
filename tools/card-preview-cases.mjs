@@ -2,6 +2,78 @@
 export const CARD_PREVIEW_CASES = [
   {
     "series": "couples",
+    "id": "editorial-couples-episode-011",
+    "side": "text",
+    "label": "提供画像1の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-013",
+    "side": "text",
+    "label": "提供画像2の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-014",
+    "side": "text",
+    "label": "提供画像3の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-015",
+    "side": "text",
+    "label": "提供画像4の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-016",
+    "side": "text",
+    "label": "提供画像5の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-017",
+    "side": "text",
+    "label": "提供画像6の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-019",
+    "side": "text",
+    "label": "提供画像7の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-024",
+    "side": "text",
+    "label": "提供画像8の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-028",
+    "side": "text",
+    "label": "提供画像9の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-029",
+    "side": "text",
+    "label": "提供画像10の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-133",
+    "side": "text",
+    "label": "容姿の好みと恋人への愛情"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-134",
+    "side": "text",
+    "label": "提供原文：配信者との個別DM"
+  },
+  {
+    "series": "couples",
     "id": "editorial-couples-fit-001",
     "side": "text",
     "label": "休日の希望が違う場面"
@@ -11,12 +83,6 @@ export const CARD_PREVIEW_CASES = [
     "id": "values-1-2",
     "side": "text",
     "label": "行き先の三つの選択肢"
-  },
-  {
-    "series": "couples",
-    "id": "editorial-couples-deep-008",
-    "side": "followUp",
-    "label": "自分の時間と選択の深掘り"
   },
   {
     "series": "family",

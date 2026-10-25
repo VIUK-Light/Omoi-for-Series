@@ -59,11 +59,11 @@ test("source edits and source-pair mismatches invalidate the display fingerprint
   assert.ok(validateDisplaySources("couples", changed).issues.some((issue) => issue.includes("原文ハッシュ")));
 });
 
-test("exactly the 12 selected sides are registered and keep their source fingerprints", () => {
+test("exactly the 23 selected sides are registered and keep their source fingerprints", () => {
   const expected = new Set(CARD_PREVIEW_CASES.map(({ series, id, side }) => `${series}/${id}/${side}`));
   const actual = new Set();
-  assert.equal(expected.size, 12);
-  assert.equal(CARD_PREVIEW_CASES.filter(({ side }) => side === "text").length, 6);
+  assert.equal(expected.size, 23);
+  assert.equal(CARD_PREVIEW_CASES.filter(({ side }) => side === "text").length, 18);
   for (const series of seriesIds) {
     const inputs = readDisplaySources(series);
     const before = JSON.stringify(inputs.questions);
@@ -85,4 +85,33 @@ test("shared card markup preserves the authored text and the hidden-face contrac
   assert.ok(markup.includes('aria-label="深掘り質問" aria-hidden="false"'));
   assert.ok(markup.includes("主質問\n&lt;script&gt;"));
   assert.ok(!markup.includes('style="font-size'));
+});
+
+test("episode cards separate the authored event from the final question without changing text", () => {
+  const text = "恋人のアキさんに、ユウさんが尋ねた。\n二人には何が必要そう？";
+  const markup = questionCardMarkup({ id: "editorial-couples-episode-001", target: "Couples", text, followUp: "別の事情があるなら？" });
+  assert.ok(markup.includes('class="episode-scenario"'));
+  assert.ok(markup.includes('<span class="episode-name">アキさん</span>'));
+  assert.ok(markup.includes('<span class="episode-name">ユウさん</span>'));
+  const mainCopy = markup.match(/<h1[^>]*>([\s\S]*?)<\/h1>/u)[1];
+  assert.equal(mainCopy.replace(/<[^>]+>/gu, ""), text);
+  const ordinary = questionCardMarkup({ id: "lite", target: "Couples", text, followUp: "もう少し話すなら？" });
+  assert.ok(!ordinary.includes('class="episode-scenario"'));
+});
+
+test("authored episode paragraphs allow semantic line breaks inside the question", () => {
+  const text = "恋人の二人が\n家計を共有している。\n\n必要な情報を、\nどこまで伝えたい？";
+  const markup = questionCardMarkup({ id: "editorial-couples-episode-001", target: "Couples", text, followUp: "別の視点なら？" });
+  const mainCopy = markup.match(/<h1[^>]*>([\s\S]*?)<\/h1>/u)[1];
+  assert.equal(mainCopy.replace(/<[^>]+>/gu, ""), text);
+  assert.ok(mainCopy.includes('<span class="episode-prompt">必要な情報を、\nどこまで伝えたい？</span>'));
+});
+
+test("verbatim consultations render as readable complete text without splitting the last line into a prompt", () => {
+  const text = "提供された文章。\n質問です。\nアドバイスください。";
+  const markup = questionCardMarkup({ id: "editorial-couples-episode-134", target: "Couples", text, followUp: "別の立場なら？", textFormat: "verbatim-consultation" });
+  const main = markup.match(/<h1[^>]*>([\s\S]*?)<\/h1>/u)[1];
+  assert.equal(main.replace(/<[^>]+>/gu, ""), text);
+  assert.ok(main.includes('class="episode-scenario verbatim-consultation"'));
+  assert.ok(!main.includes('class="episode-prompt"'));
 });

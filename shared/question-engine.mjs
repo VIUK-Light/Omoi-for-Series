@@ -1,5 +1,17 @@
 // Omoi for Series のカード選択ロジック。既存 Omoi とは独立しています。
 
+export const COUPLES_SHARED_DISCUSSION_OPENING = "あなたはどう考える？";
+
+export function conversationStyleForSelection(series, intensity, selectedStyle) {
+  return series === "couples" && intensity === "deep" ? "deep-dive" : selectedStyle;
+}
+
+export function isSharedCouplesDiscussionOpening(question, series, text, declaredOpening) {
+  return series === "couples" && question?.id?.startsWith("editorial-couples-episode-")
+    && intensityForQuestion(question) === "deep"
+    && declaredOpening === COUPLES_SHARED_DISCUSSION_OPENING && text === COUPLES_SHARED_DISCUSSION_OPENING;
+}
+
 export function intensityForQuestion(question) {
   if (question?.intensity === "lite" || question?.intensity === "deep") return question.intensity;
   // 旧3シリーズは質問データを書き換えず、既存Levelから表示用モードを導きます。
@@ -70,12 +82,21 @@ export function nextQuestionIndex(currentIndex, totalQuestions) {
 
 export function followUpForQuestion(question, series) {
   if (typeof question?.followUp === "string" && question.followUp.trim()) return question.followUp.trim();
+  if (series === "couples" && question?.id?.startsWith("editorial-couples-episode-")) {
+    return COUPLES_SHARED_DISCUSSION_OPENING;
+  }
   const defaults = {
     couples: "そう感じるようになったきっかけはありますか？",
     family: "そのことについて、もう少し話したいことはありますか？",
     friends: "そのとき、どんな気持ちでしたか？",
   };
   return defaults[series] || "そのことについて、もう少し考えてみたいことはありますか？";
+}
+
+export function discussionPromptsForQuestion(question, series) {
+  return Array.isArray(question?.followUps) && question.followUps.length
+    ? [...question.followUps]
+    : [followUpForQuestion(question, series)];
 }
 
 export function isDevelopmentHost(locationLike) {

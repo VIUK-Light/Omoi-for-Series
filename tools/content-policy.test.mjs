@@ -38,6 +38,40 @@ test('missing, orphan, duplicate, main-identical and malformed followups are det
   assert.ok(validateFollowUpDataset({...data(),questions:{...data().questions,a:mains[0].text}},mains,'couples').issues.some(x=>x.severity==='error'));
 });
 
+test('multiple episode prompts are validated together and follow the same review gate', () => {
+  const id='editorial-couples-episode-001';
+  const questions=[{id,text:'恋人の二人に、どんな違いがありそう？'}];
+  const prompts=['別の立場から見ると？','違う選択肢は何？','その後、何を確かめられる？'];
+  const sidecar={schemaVersion:1,series:'couples',source,reviewStatus:'pending',questions:{[id]:prompts[0]},discussionQuestions:{[id]:prompts}};
+  const production=mergeLegacyFollowUps(questions,sidecar,'couples');
+  assert.equal(production[0].followUps,undefined);
+  const preview=mergeLegacyFollowUps(questions,sidecar,'couples',{allowDrafts:true});
+  assert.deepEqual(preview[0].followUps,prompts);
+  const approved=mergeLegacyFollowUps(questions,{...sidecar,reviewStatus:'approved'},'couples');
+  assert.deepEqual(approved[0].followUps,prompts);
+  for(const discussionQuestions of [[],{unknown:prompts},{[id]:['違う最初の問い',...prompts.slice(1)]},{[id]:[prompts[0],prompts[0]]},{[id]:[prompts[0],null]}]) {
+    assert.throws(()=>mergeLegacyFollowUps(questions,{...sidecar,discussionQuestions},'couples',{allowDrafts:true}));
+  }
+  const duplicate={...sidecar,discussionQuestions:{[id]:[prompts[0],questions[0].text]}};
+  assert.ok(validateFollowUpDataset(duplicate,questions,'couples').issues.some(issue=>issue.severity==='error'));
+});
+
+test('the shared opinion prompt is allowed only as the declared first question of Couples Deep', () => {
+  const a='editorial-couples-episode-001', b='editorial-couples-episode-002';
+  const opening='あなたはどう考える？';
+  const cards=[{id:a,level:3,text:'出来事Aについて何を考える？'},{id:b,level:4,text:'出来事Bについて何を話す？'}];
+  const sidecar={schemaVersion:1,series:'couples',source,reviewStatus:'pending',sharedDiscussionOpening:opening,questions:{[a]:opening,[b]:opening},discussionQuestions:{[a]:[opening,'自分は何を大切にしたい？','次にどんな話をしたい？'],[b]:[opening,'相手に何を知ってほしい？','どんな関わり方を望む？']}};
+  assert.deepEqual(validateFollowUpDataset(sidecar,cards,'couples').issues.filter(issue=>issue.severity==='error'),[]);
+  assert.ok(validateFollowUpDataset({...sidecar,sharedDiscussionOpening:undefined},cards,'couples').issues.some(issue=>issue.severity==='error'));
+  assert.throws(()=>mergeLegacyFollowUps(cards,{...sidecar,sharedDiscussionOpening:'違う共通文'},'couples'));
+  assert.throws(()=>mergeLegacyFollowUps(cards,{...sidecar,series:'friends'},'friends'));
+  const duplicate=structuredClone(sidecar);
+  duplicate.discussionQuestions[b][1]=duplicate.discussionQuestions[a][1];
+  assert.ok(validateFollowUpDataset(duplicate,cards,'couples').issues.some(issue=>issue.severity==='error'));
+  const liteCards=[{...cards[0],intensity:'lite'},cards[1]];
+  assert.ok(validateFollowUpDataset(sidecar,liteCards,'couples').issues.some(issue=>issue.severity==='error'));
+});
+
 test('nested question arrays are reported as data errors, not connection failures', async () => {
   const {assertQuestionDataset, QuestionDataError, questionLoadErrorMessage} = await import('../shared/content-policy.mjs');
   const record={id:'one',series:'adults',text:'親密さについて何を大切にしたいですか？',followUp:'それをどう伝えたいですか？',source,reviewStatus:'pending'};

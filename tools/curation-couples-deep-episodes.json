@@ -1,0 +1,2806 @@
+{
+  "schemaVersion": 1,
+  "series": "couples",
+  "editedAt": "2026-10-25",
+  "reviewStatus": "pending",
+  "source": {
+    "kind": "codex",
+    "model": "GPT-6",
+    "stage": "ai-initial-draft",
+    "generatedAt": "2026-10-25"
+  },
+  "scope": "ユーザー指示によりDeep全132組を第三者の架空カップルのエピソードへ変更。Lite100組は維持。",
+  "unchangedLiteSha256": "123d4189dd799fc7fb0817ad7b38b1f9cf27d1d3adfd1035b65532e413ef289a",
+  "before": {
+    "total": 232,
+    "deep": 132,
+    "lite": 100,
+    "sourceCounts": {
+      "loves": 95,
+      "editorial": 137
+    }
+  },
+  "after": {
+    "total": 232,
+    "deep": 132,
+    "lite": 100,
+    "sourceCounts": {
+      "loves": 40,
+      "editorial": 192
+    }
+  },
+  "rewritten": [
+    {
+      "before": {
+        "id": "values-3-3",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人にはどこまで本音を言いたい？",
+        "category": "values",
+        "source": "loves",
+        "followUp": "本音を話す前に、相手にしてもらえると助かることは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-001",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のユウさんが勧めた映画を、アキさんは楽しめなかった。\nでも感想を聞かれ、がっかりさせたくなくて「面白かった」と答えた。\nこの返事をどう思う？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "ユウさんが次も同じ作品の続きを選んだら、アキさんはどう伝えられそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-008",
+        "audience": "couples",
+        "level": 3,
+        "text": "デートの予定で、相手に合わせることが負担になるのはどんな時？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "自分の希望も伝えるなら、どんな言い方がよさそう？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-002",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のアキさんは、毎回ユウさんの行きたい店に合わせている。\n楽しいけれど出費が気になり、次の誘いに返事ができずにいる。\n二人は何から話すとよさそう？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "ユウさんが店選びを任されているつもりだったら、話の見え方は変わる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "values-3-6",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合ってから、自分の考え方で変わったところはある？",
+        "category": "values",
+        "source": "loves",
+        "followUp": "これからも自分の中に残しておきたい考えは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-003",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは、恋人のユウさんと付き合ってから貯金を始めた。\n将来の安心は増えたけれど、好きな趣味に使うお金までためらうようになった。\nこの変化をどう見る？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "ユウさんは節約を頼んでいなかったとしたら、何を確かめるとよさそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "values-3-7",
+        "audience": "couples",
+        "level": 3,
+        "text": "2人で大事にしたいルールはある？",
+        "category": "values",
+        "source": "loves",
+        "followUp": "そのルールを変えたくなった時、どう相談したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-004",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合い始めに、毎晩電話すると決めたアキさんとユウさん。\n最近、アキさんは早く寝たいが、ユウさんはその電話を楽しみにしている。\n約束をどう見直せそう？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "電話の回数を減らす以外に、二人の希望に合う方法はありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "values-3-8",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人にだけは分かってほしい価値観はある？",
+        "category": "values",
+        "source": "loves",
+        "followUp": "その価値観が違った時も、大切にしてほしい接し方は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-005",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは恋人のユウさんへ、高価な贈り物を選んだ。\nユウさんはうれしい反面、同じ金額のお返しを期待されている気がしている。\n二人の間にどんな違いがありそう？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "アキさんが「お返しはいらない」と言っても、ユウさんの戸惑いが残るのはなぜ？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-009",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に気をつかいすぎて、疲れることはある？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "二人でいる時、気を張らずに休めるように変えたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-006",
+        "audience": "couples",
+        "level": 4,
+        "text": "ユウさんは、恋人のアキさんが帰ると毎回ぐったりすることに気づいた。\nアキさんは、一緒にいる間は沈黙を作らないよう話し続けていた。\nこの二人に何が起きていそう？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "ユウさんが沈黙も心地よいと思っていたら、何と言葉にすると伝わりそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-010",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人とのやりとりで、寂しく感じることはある？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "その寂しさを、相手へのお願いにするなら何を伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-007",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんがスマホを見ながら相づちを打つので、アキさんは話すのをやめた。\nユウさんは、ちゃんと聞いていたのにと戸惑っている。\nそれぞれ何を受け取ったと思う？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "急ぎの連絡を待っていた場合でも、アキさんの寂しさへの対応は同じでよさそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "values-4-5",
+        "audience": "couples",
+        "level": 4,
+        "text": "自分ばかり好きなのかなって不安になることはある？",
+        "category": "values",
+        "source": "loves",
+        "followUp": "不安を感じる時は、相手にどんなことを知っておいてほしい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-008",
+        "audience": "couples",
+        "level": 4,
+        "text": "デートに誘うのはいつもアキさん。\n恋人のユウさんは毎回喜んで来るが、アキさんは「会いたいのは自分だけかも」と思い始めた。\n何を聞くと気持ちが見えそう？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "ユウさんが、誘われるのを待つほうが相手を尊重できると思っていたら？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "values-4-7",
+        "audience": "couples",
+        "level": 4,
+        "text": "付き合っていて、無理している部分はある？",
+        "category": "values",
+        "source": "loves",
+        "followUp": "今の自分のペースを守るために、減らしたいことはある？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-009",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんに合わせて、アキさんも夜遅い集まりに参加している。\n一緒にいたい気持ちはあるが、翌日はいつも寝不足になる。\n続け方をどう考えられそう？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "途中で帰ると二人の時間が減る場合、ほかに選べる過ごし方はある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "values-4-8",
+        "audience": "couples",
+        "level": 4,
+        "text": "2人の関係で、ちゃんと話し合っておきたいことはある？",
+        "category": "values",
+        "source": "loves",
+        "followUp": "その話を落ち着いてできそうなのは、どんなタイミング？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-010",
+        "audience": "couples",
+        "level": 4,
+        "text": "転職を考えるアキさんは、恋人のユウさんに相談したい。\nユウさんは大事な用事を控え、今は余裕がなさそうだ。\n返事の期限も近い時、どんな切り出し方ができそう？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "ユウさんが今は詳しく聞けない場合、二人で決めておけることは？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-3-2",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合っていて一番大事にしたいことは？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "忙しい時にも、その大切なことを守るにはどうしたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-011",
+        "audience": "couples",
+        "level": 3,
+        "text": "忙しくて会う時間が減った恋人同士のアキさんとユウさん。\nアキさんは短くても毎日話したいが、ユウさんは月に一度ゆっくり会いたい。\n二人はそれぞれ、何を大切にしていそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "使える時間が同じでも満足が違うのは、どんな理由が考えられる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-015",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人とのことで不安になった時、どんなふうに気持ちを伝えたい？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "その話を聞く相手に、最初にしてもらいたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-012",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のアキさんから最近の予定を聞かれたユウさんは、「疑われている」と感じた。\nアキさんは、会える日を知りたかっただけだと言う。\nこのすれ違いをどうほどけそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "同じ質問でも、言い方や聞くタイミングで受け止め方は変わりそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-016",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人とけんかをしたら、どんなふうに仲直りしたい？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "仲直りを急ぐ前に、確かめておきたい気持ちは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-013",
+        "audience": "couples",
+        "level": 3,
+        "text": "口論の後、アキさんはすぐ謝っていつも通りにしたい。\n恋人のユウさんは、何がつらかったのかまだ話したいと思っている。\n二人にとって仲直りは何が違うのだろう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "謝る言葉は受け取れても、気持ちが戻らない時には何が必要そう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-3-5",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人に直してほしいことがあったら言える？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "直してほしいと言われるなら、どんな話し方だと受け止めやすい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-014",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のユウさんが待ち合わせに何度も遅れ、アキさんは困っている。\nユウさんは、その都度謝っているので解決したと思っていた。\n次はどんな話が必要そう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "時間通りに来るのが難しい事情もあったら、どんな約束なら続けられそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-017",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人と過ごしやすくするために、自分から変えてみたい習慣はある？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "その変化を、自分も納得して続けるために必要なことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-015",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは、恋人のユウさんと会う時はスマホをしまうことにした。\nユウさんは喜んだが、アキさんは友人の連絡にも返せず気になっている。\nこの工夫をどう調整できそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "良かれと思って始めたことでも、負担になったと伝えやすくするには？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-018",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人と付き合う中でも、変えずに大切にしたい自分らしさは？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "その自分らしさを、相手にどう知ってもらいたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-016",
+        "audience": "couples",
+        "level": 3,
+        "text": "週末に一人で絵を描くのが好きなアキさん。\n恋人のユウさんは一緒に描きたいと言うが、アキさんには一人だから集中できる楽しさもある。\nこの誘いをどう受け止める？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "ユウさんが「趣味に入れてもらえない」と感じたら、どんな説明が届きそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-019",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人への愛情表現が、お互いの負担にならないために大切なことは？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "受け取り方が違う時、どんなふうに確かめ合いたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-017",
+        "audience": "couples",
+        "level": 3,
+        "text": "ユウさんは、恋人のアキさんを喜ばせたくて毎朝長いメッセージを送る。\nアキさんはうれしいが、同じ長さで返す時間が取れない。\n二人は何を確かめるとよさそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "返事の長さと愛情の深さを、ユウさんが結びつけているとしたら？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-3-9",
+        "audience": "couples",
+        "level": 3,
+        "text": "好きな人にだけ見せる自分ってある？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "その一面を見せられるのは、相手のどんな接し方がある時？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-018",
+        "audience": "couples",
+        "level": 3,
+        "text": "人前では明るいアキさんが、恋人のユウさんと二人きりになると口数が減る。\nユウさんは退屈なのかと心配している。\nアキさんにはどんな気持ちが考えられる？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "ユウさんが理由を一つに決めつけずに聞くなら、どんな聞き方ができそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-3-11",
+        "audience": "couples",
+        "level": 3,
+        "text": "これから2人で増やしたい思い出は？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "その思い出を作るために、まず小さく始められることは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-019",
+        "audience": "couples",
+        "level": 3,
+        "text": "旅行の思い出を増やしたいアキさんと、いつもの散歩を大事にしたい恋人のユウさん。\nどちらも「二人の時間がほしい」と言うのに、予定が決まらない。\n何が違っていそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "特別な予定と日常の時間を、どんな割合で試すと違いが見えてきそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-020",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に嫉妬した時、その気持ちを伝えられる？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "相手の行動を制限せず、自分の気持ちを伝えるなら？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-020",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんが友人と楽しそうに話す姿を見て、アキさんは嫉妬した。\nユウさんには楽しんでほしいので、その場では何も言わなかった。\n後でどう話せそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "ユウさんが「もう会わない」と提案したら、それだけで不安は解消しそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-008",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人が自分以外の友人と親しくしている時、どんな場合に気になる？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "友人関係を尊重しながら、自分の気持ちをどう共有したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-021",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんが、共通の友人にだけ通じる話で盛り上がっていた。\n隣にいたアキさんは疎外感を覚えたが、交友関係に口を出すのもためらう。\n何が気になったのだと思う？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "その友人と会わないよう求めずに、アキさんの気持ちを扱う方法は？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-009",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人が自分以外の人と二人で出かけることをどう感じる？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "ふたりで出かけることについて、事前に相談したい範囲は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-022",
+        "audience": "couples",
+        "level": 4,
+        "text": "ユウさんは友人と二人で食事に行き、後で恋人のアキさんに話した。\nアキさんは先に知りたかったが、ユウさんは報告する必要を感じていなかった。\n何から話し合えそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "事前に知らせることと、許可をもらうことにはどんな違いがある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-4-4",
+        "audience": "couples",
+        "level": 4,
+        "text": "浮気ってどこからだと思う？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "境界の考え方が違ったら、どこから話し合いたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-023",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のアキさんは、ユウさんが別の人へ「会いたい」と送ったと知った。\nユウさんは友人への挨拶だと言うが、アキさんには親密な言葉に感じられた。\n何を確かめる必要がありそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "言葉の意味だけでなく、その後の行動も受け止め方を左右すると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-021",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に話すことと、自分だけにしておくことの境目は？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "相手が話さないと選んだ時、どんな受け止め方をしたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-024",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんに悩みがあると知り、アキさんは詳しく聞きたい。\nユウさんは、友人から預かった話も関わるので全部は話せないと言う。\nどこまで共有できるとよさそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "内容を明かさなくても、アキさんが支えになれることはありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-022",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人同士でも、スマホや個人アカウントで守りたいプライバシーは？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "二人の写真を投稿する時、どんな確認をしておきたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-025",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは、恋人のユウさんのスマホを借りた時、通知の内容を見てしまった。\nユウさんは中身を説明するより、見ないでほしかったと話す。\nまず何を話すとよさそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "偶然目に入った場合と、自分から開いた場合で、考える点はどう変わる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-023",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人と会えない日が続く時、どんなやりとりがあると安心する？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "そのやりとりを、お互いに無理なく続ける工夫は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-026",
+        "audience": "couples",
+        "level": 4,
+        "text": "しばらく会えない恋人のアキさんとユウさん。\nアキさんは毎晩の通話を望むが、ユウさんは生活時間が合わず難しい。\nつながっている感じを、ほかにどう作れそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "すぐ返事が来なくても楽しめるやりとりには、どんなものがある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-024",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人からの愛情表現が物足りない時、どんなふうに希望を伝えたい？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "相手ができることを一緒に考えるなら、何を聞いてみたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-027",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんは家の用事を手伝ってくれる。\nでもアキさんは、たまには「好き」と言ってほしい。ユウさんは行動で伝わっていると思っていた。\n二人の気持ちをどう見る？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "ユウさんが言葉にするのを照れくさいと感じるなら、どんな方法を試せそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-4-10",
+        "audience": "couples",
+        "level": 4,
+        "text": "好きだけど、少し不安になる瞬間はある？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "その不安を話す時、結論より先に聞いてほしいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-028",
+        "audience": "couples",
+        "level": 4,
+        "text": "将来の話になると、恋人のユウさんはいつも「その時に考えよう」と答える。\nアキさんは今の関係には満足しているが、先が見えず不安だ。\n二人は何を話せるとよさそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "今すぐ結論が出せなくても、共有できる見通しや気持ちはありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-4-11",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に「これはやめてほしい」と思うことはある？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "やめてほしいと言った時、どんな受け止め方を望む？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-029",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは、恋人のユウさんが人前で二人の失敗談を話すのをやめてほしいと思っている。\nユウさんは楽しい思い出のつもりだった。\n二人はこの違いをどう話せそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "ユウさんにとっても大切な思い出なら、外で話す範囲をどう決められそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-4-13",
+        "audience": "couples",
+        "level": 4,
+        "text": "スキンシップで「これは嬉しい」「これはまだ不安」はある？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "気持ちが変わった時も、ためらわず止められる合図は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-030",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんに手をつながれ、アキさんは今日は少し離れて歩きたくなった。\n前は自分からつないでいたので、気まずくなるのが心配だ。\nどんなやりとりができそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "前にうれしかったことでも、今日は違うと知ったユウさんはどう応じられそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-025",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人との触れ合いを断りたい時、言いやすくするには何が必要？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "断られた側は、どんな返事をすると安心につながりそう？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-031",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんはハグが好きだが、今日は誰にも触れられたくない。\n恋人のユウさんは疲れていて、いつものハグを楽しみに来た。\n二人はどんな過ごし方を選べそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "触れ合わずにそばにいることを、ユウさんが寂しく感じたら何を話せそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-026",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人の誘いを断る時、関係への不安を感じることはある？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "断る理由を詳しく話さなくても、受け止めてもらえると思える？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-032",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんから泊まりに誘われたアキさんは、今日は帰りたい。\n理由をうまく説明できず、誘いへの返事を先延ばしにしている。\nどんなやりとりなら返事をしやすそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "理由がはっきりしない返事でも、ユウさんには確かめておけることがある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-4-18",
+        "audience": "couples",
+        "level": 4,
+        "text": "この関係が続くか不安になることはある？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "先の約束だけでなく、今の安心のために話したいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-033",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは来年から別の街で暮らす予定だ。\n恋人のユウさんは応援したいが、会えなくなっても関係が続くのか心配している。\n出発までに何を話せるとよさそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "将来ずっと続くと約束できない場合でも、二人で決められることはある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-027",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人への気持ちが変わった時、どんなふうに話し合いたい？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "すぐに答えを出せない気持ちには、どんな時間が必要？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-034",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんと会うのが楽しみだったアキさんが、最近は会う前に迷うようになった。\n疲れのせいか、気持ちの変化かもわからない。\nユウさんへどう伝えられそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "ユウさんがすぐ答えを知りたい時、考える時間をどう扱えそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-028",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人とすれ違いが増えたら、何から話し合いたい？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "二人が落ち着いて話せるきっかけを作るなら？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-035",
+        "audience": "couples",
+        "level": 4,
+        "text": "会うたびに小さな言い合いになる恋人のアキさんとユウさん。\nアキさんは会う回数を減らしたく、ユウさんはもっと会って話したい。\n同じ願いが隠れているとしたら何だろう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "会う回数を決める前に、言い合いになる場面を一つ振り返ると何が見えそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-4-21",
+        "audience": "couples",
+        "level": 4,
+        "text": "ずっと好きでいるために、2人で気をつけたいことは？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "お互いが変わっていくことを、どんなふうに受け止めたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-036",
+        "audience": "couples",
+        "level": 4,
+        "text": "付き合い始めは毎週出かけていたアキさんとユウさん。\n今は家で過ごすことが増え、アキさんは安心、ユウさんはマンネリだと感じている。\nこの変化をどう受け止められそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "最初の頃に戻す以外に、今の二人が楽しめる工夫はありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "love-4-22",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人の過去は知りたい派？知らなくてもいい派？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "過去について、聞かずに大切にしておきたいことはある？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-037",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは、恋人のユウさんが昔よく通った店を知りたい。\nユウさんは以前の交際を思い出すので、その店の話は控えたいと言う。\n二人の希望をどう扱えそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "過去の詳しい話を聞かなくても、今のユウさんを知る方法はある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-113",
+        "audience": "couples",
+        "level": 4,
+        "text": "私たちの気持ちが育つ速さが違う時、どんな付き合い方をしたい？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "気持ちを急がせないために、どんな確かめ方がよさそう？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-038",
+        "audience": "couples",
+        "level": 4,
+        "text": "付き合い始めたアキさんとユウさん。\nアキさんは毎週末会いたいが、ユウさんは月に数回から慣れていきたい。\n二人とも好意はある時、どんなペースを探せそう？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "会う回数が少ないことを、気持ちが弱いことと分けて考えるには？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-019",
+        "audience": "couples",
+        "level": 4,
+        "text": "過去の恋愛について、どのくらい共有したい？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "過去の話で、相手に無理に聞かないようにしたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-039",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のアキさんから以前の交際が終わった理由を聞かれ、ユウさんは話すか迷っている。\n過去の相手の事情も含まれるからだ。\nどんな伝え方が考えられる？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "理由の詳細より、今の付き合いで大切にしたいことを話すと何が変わりそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "other-3-1",
+        "audience": "couples",
+        "level": 3,
+        "text": "今年中に一緒にやりたいことは？",
+        "category": "spicy",
+        "source": "loves",
+        "followUp": "今年の予定の中で、いつ頃なら実現できそう？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-040",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんと恋人のユウさんは、今年中に旅行しようと話していた。\nもう秋だが、忙しさを理由に日程が決まらない。片方は約束、片方は希望だと思っていた。\nどう話し直せそう？",
+        "category": "spicy",
+        "source": "editorial",
+        "followUp": "今年の旅行が難しい場合、約束を大切にしていることをどう示せそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-030",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人に応援してほしい自分の目標はある？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "応援の中で、手伝ってほしいことと任せてほしいことの境目は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-041",
+        "audience": "couples",
+        "level": 3,
+        "text": "ユウさんは資格取得に挑戦する恋人のアキさんへ、資格の準備の進み具合を毎日聞いている。\nアキさんは応援がうれしい一方、確認されると焦ってしまう。\nどんな支え方が合いそう？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "進み具合を聞かれたくない日でも、応援を受け取れる方法はある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-031",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人が一人で抱えているように感じた時、どんな声をかけたい？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "今は話したくないと言われたら、どんなふうに見守りたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-042",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のアキさんが最近元気をなくしている。\nユウさんが尋ねると「まだ話せない」と言うが、一人で抱えているようにも見える。\nユウさんはどう関われそう？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "何度も聞くと負担、何も聞かないと無関心に思える時、間の選択肢は？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "other-4-6",
+        "audience": "couples",
+        "level": 4,
+        "text": "今、恋人に一番言ってほしい言葉は？",
+        "category": "spicy",
+        "source": "loves",
+        "followUp": "その言葉をほしい気持ちを、今ならどんなふうに伝えられる？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-043",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんは、落ち込むアキさんを「きっと大丈夫」と励ました。\nアキさんは、自分でも大丈夫かどうかわからず、話を続けられなくなった。\n何がかみ合わなかったのだろう？",
+        "category": "spicy",
+        "source": "editorial",
+        "followUp": "ユウさんが結果を約束せずに、アキさんへ伝えられる言葉は何だろう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-001",
+        "audience": "couples",
+        "level": 3,
+        "text": "一緒に出かける途中で寄り道するなら、どこに行きたい？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "寄り道は思いつきで決めたい？先に候補を知りたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-044",
+        "audience": "couples",
+        "level": 3,
+        "text": "デート中、アキさんは見つけた展示に寄りたくなった。\n恋人のユウさんは、予約した店まで余裕を持って歩くつもりでいる。\n二人が納得できる決め方はありそう？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "寄り道に賛成かどうかより先に、確かめておくとよい条件は何？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-002",
+        "audience": "couples",
+        "level": 3,
+        "text": "デートの帰りに、二人でどんな時間を過ごしたい？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "帰る時、どんな一言があるとうれしい余韻が残る？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-045",
+        "audience": "couples",
+        "level": 3,
+        "text": "デートの帰り、アキさんは恋人のユウさんともう少し話したい。ユウさんは翌朝の予定に備えて帰りたい。\n二人が納得して別れるには、どんな言葉があるとよさそう？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "ユウさんが帰る時間を先に伝えていた場合、アキさんの受け止め方は変わりそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "date-3-3",
+        "audience": "couples",
+        "level": 3,
+        "text": "一緒に帰るなら何を話したい？",
+        "category": "date",
+        "source": "loves",
+        "followUp": "帰り道で、相手に聞いてみたい一日の出来事は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-046",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人同士のアキさんとユウさん。帰り道、アキさんは今日の感想を話したいが、ユウさんは撮った写真を見返している。\nこのすれ違いを、どう捉える？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "写真を選ぶのがユウさんなりの余韻の楽しみ方なら、二人はどう時間を分けられそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "date-3-4",
+        "audience": "couples",
+        "level": 3,
+        "text": "いつか二人でやってみたいことは？",
+        "category": "date",
+        "source": "loves",
+        "followUp": "実現するまでに、ふたりで楽しめそうな準備は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-047",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人同士のアキさんとユウさんは、二人で旅の資金を貯めている。\nアキさんは思い出の宿を再訪したいが、ユウさんは知らない場所へ行きたい。\n旅で残したいものと増やしたいものは何だろう？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "一度行った場所でも新しい体験はできるという案を、ユウさんはどう受け取りそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "date-3-5",
+        "audience": "couples",
+        "level": 3,
+        "text": "二人でゆっくり過ごすなら何をしたい？",
+        "category": "date",
+        "source": "loves",
+        "followUp": "ゆっくり過ごす日は、時計やスマホをどのくらい気にしたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-048",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは恋人のユウさんとの休日を、予定を決めずに過ごしたい。ユウさんは食事の時間だけでも決めないと落ち着かない。\n二人にとって休める一日は、どう違いそう？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "食事の準備をいつもユウさんがしているなら、予定を決めたい理由はどう見える？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "date-3-6",
+        "audience": "couples",
+        "level": 3,
+        "text": "何も予定がない日、一緒にどう過ごしたい？",
+        "category": "date",
+        "source": "loves",
+        "followUp": "何も決めない日のご飯だけ決めるなら、どうしたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-049",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のユウさんと会う日に、アキさんが急に面白そうな催しを見つけた。ユウさんは今日は何もせず過ごせると楽しみにしていた。\nこの日の予定を、どう決めるとよさそう？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "別々に過ごす案が出たら、それぞれは何を気にするか考えてみると？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "date-4-1",
+        "audience": "couples",
+        "level": 4,
+        "text": "二人だけの思い出として残したいことは？",
+        "category": "date",
+        "source": "loves",
+        "followUp": "その思い出を後で振り返るなら、何を残しておきたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-050",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは恋人のユウさんとの旅行写真を、家族にも見せたい。ユウさんは二人だけの思い出にしておきたいと言う。\n写真の扱いを決める前に、何を確かめたい？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "ユウさんの顔が写っていない写真なら、同じように考える？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "date-4-3",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人としかしたくないデートは？",
+        "category": "date",
+        "source": "loves",
+        "followUp": "そのデートが特別に感じられるのは、どんな部分？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-051",
+        "audience": "couples",
+        "level": 4,
+        "text": "ユウさんは恋人のアキさんを、とっておきの店に誘った。昔の恋人とも来たと知り、アキさんは特別な場所だと思えなくなった。\n二人にとって「特別」はどう違いそう？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "同じ店でも新しい過ごし方をすれば、アキさんの気持ちは変わりうると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "date-4-4",
+        "audience": "couples",
+        "level": 4,
+        "text": "今までで一番幸せだったデートの瞬間は？",
+        "category": "date",
+        "source": "loves",
+        "followUp": "思い浮かぶ場面があれば、また味わいたい要素は何？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-052",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人同士のアキさんとユウさん。一番幸せだったデートを話すと、アキさんは記念日、ユウさんは雨宿りした日を挙げた。\nこの違いから、どんなことが分かりそう？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "ユウさんの答えを聞いて、アキさんが準備を喜ばれていなかったと感じたら？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "date-4-6",
+        "audience": "couples",
+        "level": 4,
+        "text": "二人だけの恒例行事を作るなら何がいい？",
+        "category": "date",
+        "source": "loves",
+        "followUp": "忙しい年にも続けられるよう、気軽にする工夫は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-053",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんと恋人のユウさんは、毎年同じ日に遠出してきた。今年はユウさんに余裕がなく、近所で食事だけにしたいと言う。\n恒例を変えることを、どう考える？",
+        "category": "date",
+        "source": "editorial",
+        "followUp": "アキさんが一年間その日を楽しみにしていた場合、何を残せるとよさそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "memories-3-1",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合う前に不安だったことは？",
+        "category": "memories",
+        "source": "loves",
+        "followUp": "その頃と今で、不安との付き合い方に変化はある？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-054",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは、恋人のユウさんに「付き合う前は、続かないかもと迷った」と聞いて傷ついた。ユウさんは今の信頼を伝えたつもりだった。\n何が伝わりきらなかったと思う？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "当時の迷いを話さないことと、今の気持ちを伝えることは両立できそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "memories-3-2",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合った日のこと、今どう思っている？",
+        "category": "memories",
+        "source": "loves",
+        "followUp": "その日を思い返して、今あらためて伝えたい気持ちは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-055",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人同士のアキさんとユウさん。付き合い始めた日を、アキさんは告白した日、ユウさんは返事をした日だと思っていた。\n記念日を決めるなら、何を大切にするとよさそう？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "一日だけに決めず、それぞれの日を大切にする案をどう感じる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "memories-3-3",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合う前、私たちが付き合うって予想できた？",
+        "category": "memories",
+        "source": "loves",
+        "followUp": "予想できたかどうかに関わらず、意外だった相手の魅力は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-056",
+        "audience": "couples",
+        "level": 3,
+        "text": "ユウさんは、恋人のアキさんに「最初は友達としか思っていなかった」と話した。アキさんは、自分だけ真剣だったようで寂しい。\n気持ちが育つ時期の違いを、どう捉える？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "最初の気持ちより、今に至るまでの変化を聞くと、見え方は変わると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "memories-3-4",
+        "audience": "couples",
+        "level": 3,
+        "text": "私たちが付き合う前、告白されるかもって少しでも思ってた？",
+        "category": "memories",
+        "source": "loves",
+        "followUp": "付き合う前、気持ちが伝わりやすかった言葉や態度はあった？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-057",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは恋人のユウさんとの告白の思い出を、友人に楽しそうに話した。ユウさんは人前で返事を求められ、当時は困ったと言う。\n同じ出来事が違う思い出になるのを、どう考える？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "今は幸せに付き合っていても、当時困った気持ちは別に扱う必要があると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-038",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合い始めた頃より、二人の距離が縮まったと感じるのはどんな時？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "その近さを心地よく保つために、大切にしたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-058",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合って一年のアキさんとユウさん。アキさんは無言でもくつろげる関係を喜び、ユウさんは会話が減ったのが気になる。\n距離が縮まったかどうか、何で分かると思う？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "会話の量は減っていても、相談する内容が深くなっていたら、どう見える？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "memories-3-6",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合ってから変わったことは？",
+        "category": "memories",
+        "source": "loves",
+        "followUp": "変化の中で、これからも続いてほしいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-059",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは恋人のユウさんに誘われ、休日に運動するようになった。体力がついた一方、一人で絵を描く時間が減っている。\nこの変化を、どう考える？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "ユウさんが一緒に続けたいと言ったら、アキさんにはどんな選び方がありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "memories-3-7",
+        "audience": "couples",
+        "level": 3,
+        "text": "付き合ってよかったと思う瞬間は？",
+        "category": "memories",
+        "source": "loves",
+        "followUp": "その良さを、日常でも増やすためにできそうなことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-060",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のユウさんが、疲れたアキさんのために毎回食事を用意している。アキさんは感謝しているが、ユウさんは最近、役割になったように感じる。\n二人は何を話すとよさそう？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "アキさんが感謝を言葉にしていても、ユウさんの負担が残るのはどんな時だと思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-039",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人との間で、これから少しずつ知っていきたいことは？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "相手が話す範囲を選べるよう、どんな聞き方をしたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-061",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは恋人のユウさんの昔の写真を見て、子どもの頃の話を聞きたくなった。ユウさんは写真は見せたいが、その頃の話はしたくない。\n親しくなることと、話す範囲をどう考える？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "話したくない理由も聞かずに、ユウさんをもっと知る方法はありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-040",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人がかけてくれた言葉で、印象に残っているものは？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "その言葉を今の相手に返すなら、どんな気持ちを伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-062",
+        "audience": "couples",
+        "level": 4,
+        "text": "以前「いつでも電話して」と言った恋人のユウさんに、アキさんは夜中も電話するようになった。ユウさんは睡眠が足りないが、約束を変えにくい。\n二人は何を話し直すとよさそう？",
+        "category": "memories",
+        "source": "editorial",
+        "followUp": "その言葉に救われたアキさんの気持ちも、今のユウさんの事情も伝えるなら？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-046",
+        "audience": "couples",
+        "level": 3,
+        "text": "人前で恋人と仲良くする時、どんな距離感が心地いい？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "人前では控えたいことを、いつ相談しておきたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-063",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは友人の集まりで、恋人のユウさんと手をつなごうとした。ユウさんは付き合っていることを、まだ全員には話していない。\nこの場面で、互いに何を確認したい？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "ユウさんが話していない理由をアキさんが知らない場合、何から聞くとよさそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "affection-3-2",
+        "audience": "couples",
+        "level": 3,
+        "text": "二人きりの時だけ甘えたい？",
+        "category": "affection",
+        "source": "loves",
+        "followUp": "二人きりの時、どんな甘え方なら心地よく感じる？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-064",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人同士のアキさんとユウさん。ユウさんは二人きりだと甘えるが、友人の前ではそっけない。アキさんはその差に戸惑っている。\nどんな理由が考えられそう？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "人前で甘えなくても、アキさんが大切にされていると感じられる振る舞いはある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-047",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人と並んで歩く時、どのくらいの距離が心地いい？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "近づきたい時と少し離れたい時を、どう伝え合いたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-065",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは恋人のユウさんと並んで歩きたいが、ユウさんはいつも少し先を歩く。ユウさんは急いでいるつもりがなく、指摘に驚いた。\nこの二人は何を確かめるとよさそう？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "道が混んでいる時と、空いている時では、アキさんの感じ方は変わると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-048",
+        "audience": "couples",
+        "level": 3,
+        "text": "泣きたい時、恋人にはそばにいてほしい？一人で過ごしたい？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "その日の希望を、無理なく伝えられる方法は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-066",
+        "audience": "couples",
+        "level": 3,
+        "text": "つらい出来事があったアキさんは、一人で泣きたい。恋人のユウさんは放っておけず、そばにいようとする。\n二人が求めていることは、それぞれ何だと思う？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "ユウさんが一度帰る場合、見放されたと感じずに済む伝え方はありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-049",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人からの愛情表現で、少し困るものはある？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "その気持ちを伝えるなら、どんな反応で聞いてもらいたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-067",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんは、アキさんの誕生日に内緒で旅行を予約した。\nアキさんはうれしい一方、休みの過ごし方は自分でも選びたかった。\n贈り物でどこまで決めてよいと思う？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "取り消せない予約だった場合、旅行に行くかどうかと感謝を伝えることは分けられそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "affection-4-2",
+        "audience": "couples",
+        "level": 4,
+        "text": "好きって言われすぎると重く感じる？",
+        "category": "affection",
+        "source": "loves",
+        "followUp": "言葉の回数以外で、愛情が自然に伝わるのはどんな時？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-068",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんは、毎日のメッセージに「好き」と書く。アキさんが短い返事をすると、ユウさんは気持ちが冷めたのかと心配する。\n同じ言葉を返すことを、どう考える？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "アキさんは言葉より会う時間を大切にしているとしたら、何を伝え合えそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "affection-4-3",
+        "audience": "couples",
+        "level": 4,
+        "text": "触れ合いで大事にしてほしいことは？",
+        "category": "affection",
+        "source": "loves",
+        "followUp": "触れ合いを途中でやめたい時、すぐ伝わる言い方は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-069",
+        "audience": "couples",
+        "level": 4,
+        "text": "人混みで恋人のアキさんとはぐれないよう、ユウさんはアキさんの腕を引く。\nアキさんは助かることもあるが、自分のペースで歩きたい時もある。\n二人はどう動き方を確かめられそう？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "急いで離れたほうがよい場面と、ゆっくり歩ける場面では、確かめ方は変わる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "affection-4-4",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人として大切にされていると感じる瞬間は？",
+        "category": "affection",
+        "source": "loves",
+        "followUp": "特別な日ではない日に、大事にしてほしい行動は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-070",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは、恋人のユウさんが困っていると思い、頼まれる前に予定を手配した。ユウさんは助かるが、自分で選びたかったとも感じている。\n親切と選ぶ自由を、どう考える？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "手配をまだ変更できる場合と、取り消せない場合で、必要な話は変わると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-050",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人との距離が近すぎると感じることはある？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "離れて過ごしたい時間を、どんなふうに伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-071",
+        "audience": "couples",
+        "level": 4,
+        "text": "同居している恋人同士のアキさんとユウさん。ユウさんは同じ部屋で過ごしたいが、アキさんは帰宅後しばらく別室にいたい。\n一緒に暮らすことに、どんな期待の違いがありそう？",
+        "category": "affection",
+        "source": "editorial",
+        "followUp": "別室にいる時間を先に決めることは、二人の安心につながると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-061",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人と付き合う中で、一人の時間はどのくらい必要？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "一人の時間が足りないと気づいたら、何を相談したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-072",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは毎週末、恋人のユウさんと会っている。最近、一人で楽器を練習する日がほしいが、会うのを楽しみにするユウさんに言い出せない。\nどんな話し方ができそう？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "会う回数が減ることを、ユウさんが気持ちの変化だと受け取ったら？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-062",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人との距離が遠く感じる時、どう気持ちを確かめ合いたい？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "会う回数以外に、つながりを感じられることは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-073",
+        "audience": "couples",
+        "level": 3,
+        "text": "遠距離の恋人、アキさんとユウさん。\nアキさんは数か月先まで会う日を確保したいが、ユウさんは近くなってから決めたい。\n予定が決まる安心と、予定を動かせる自由をどう考える？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "仮の日程を決めるなら、どの時点で確定するかも話しておく必要はありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "contact-distance-3-5",
+        "audience": "couples",
+        "level": 3,
+        "text": "友達との時間と恋人との時間、どっちも大事にできる？",
+        "category": "contactDistance",
+        "source": "loves",
+        "followUp": "友達との先約がある時、恋人にどう伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-074",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のユウさんと会う日に、アキさんは遠方の友人から帰省の連絡をもらった。友人に会えるのはその日だけで、ユウさんとの予定も久しぶりだ。\n何を基準に考える？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "ユウさんが今回のために休みを取っていた場合、選択や伝え方は変わりそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-063",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人との連絡が減ると、気持ちも離れたように感じる？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "連絡が減った理由を、どんなふうに聞いてみたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-075",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人同士のアキさんとユウさん。ユウさんの働く時間が変わり、昼の連絡が減った。事情は知っていても、アキさんは前より遠く感じている。\nこの寂しさを、どう捉える？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "連絡の回数を戻せないとしたら、二人にはどんなつながり方がありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-064",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人と連絡の頻度や方法が違う時、どうすり合わせたい？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "試してみた方法が合わなかったら、どう話し直したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-076",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のアキさんとユウさんは、旅行中は連絡しなくてよいと話した。\nでも旅先のユウさんから届いた写真を見て、アキさんは返事が必要か迷っている。\nこの約束に何を足すとよさそう？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "返事を求めず出来事を分かち合いたい時、どんな伝え方なら誤解が減りそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-065",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に寂しさを伝える時、どんな言葉なら話しやすい？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "聞いた相手に、まずどんな返事をしてもらいたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-077",
+        "audience": "couples",
+        "level": 4,
+        "text": "ユウさんは恋人のアキさんに「最近寂しい」と言われ、「忙しいのは知っているよね」と返した。アキさんは責めたかったわけではなく、黙ってしまった。\n二人の会話に何が足りなかったと思う？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "すぐ会う時間を増やせなくても、ユウさんから伝えられることはありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-066",
+        "audience": "couples",
+        "level": 4,
+        "text": "自分からの連絡が減る時、恋人にどう受け止めてほしい？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "相手に誤解してほしくないことを、先に伝えるなら？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-078",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは疲れて、恋人のユウさんへの返信を後回しにした。その間に短い投稿を見たユウさんは、返事をする余裕はあるはずだと感じた。\n投稿と返信の負担は同じだと思う？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "ユウさんが返事を待っていたのが翌日の待ち合わせの相談なら、どう考える？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-067",
+        "audience": "couples",
+        "level": 4,
+        "text": "すぐに返信できない日のために、恋人とどんな約束をしておきたい？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "その約束を見直したくなった時、どう切り出したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-079",
+        "audience": "couples",
+        "level": 4,
+        "text": "勤務中にスマホを見られないユウさんに、恋人のアキさんは急ぎの用事が伝わらず困った。アキさんは連絡手段を増やしたいが、ユウさんは常に見られる気がして疲れる。\n何を決めるとよさそう？",
+        "category": "contactDistance",
+        "source": "editorial",
+        "followUp": "急ぎの用事と、返事がほしくて不安な時を、二人はどう分けられそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-011",
+        "audience": "couples",
+        "level": 3,
+        "text": "友人との距離感について、恋人と話しておきたいことはある？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "友人との距離感で、恋人の許可を求めず自分で決めたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-080",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは落ち込んだ友人から、夜遅く二人で会いたいと相談された。恋人のユウさんは心配だが、相談内容は友人の秘密でもある。\nどこまで共有するのがよさそう？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "友人の秘密を話さずに、ユウさんが知りたいことを確かめる方法はありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "jealousy-3-3",
+        "audience": "couples",
+        "level": 3,
+        "text": "過去の恋愛話はどこまで話していい？",
+        "category": "jealousy",
+        "source": "loves",
+        "followUp": "過去の恋愛話を今日は聞きたくない時、どう伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-081",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは旅先で、昔の恋人との思い出を何気なく話した。恋人のユウさんは、今の二人の旅行で聞きたくなかったと感じている。\n思い出を話す場面を、どう考える？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "アキさんにとっては大切な人生の話でもある場合、二人はどう扱えそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-074",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人の嘘に気づいた時、話し合う前に確かめたいことは？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "すぐに許すか決めずに、考える時間を取れそう？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-082",
+        "audience": "couples",
+        "level": 3,
+        "text": "ユウさんは恋人のアキさんに「用事がある」と会うのを断り、実際は一人で休んでいた。アキさんは理由を隠されたことが気になる。\n二人は何から話すとよさそう？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "ユウさんが以前「一人で休みたい」と伝えた時に、アキさんが落ち込んでいたら？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-013",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人の交友関係について、二人で決めておきたいことはある？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "交友関係の決め事が窮屈になったら、どう見直したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-083",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人同士のアキさんとユウさんは、けんかの内容を友人に話さないと決めた。\nでもアキさんは一人で考えるのが苦しく、誰かに聞いてほしい。\n二人の秘密と相談する自由をどう考える？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "ユウさんが特定されない話し方なら相談してよい、という案で十分だと思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-075",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人からのどんな関わり方を、束縛だと感じる？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "自由を大切にしながら、安心のために相談できることは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-084",
+        "audience": "couples",
+        "level": 4,
+        "text": "ユウさんは安心のため、恋人のアキさんと位置情報を共有したい。アキさんは見られ続ける感じが苦手だが、断ると疑われそうで迷う。\n二人が話す必要があるのは、どんなこと？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "旅行中だけ共有する案なら、アキさんの感じ方は変わると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-023",
+        "audience": "couples",
+        "level": 4,
+        "text": "二人が安心できる距離感と、それぞれの自由をどう両立したい？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "それぞれが自由に過ごした後、どんな時間を一緒に持ちたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-085",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは友人との旅行を計画した。恋人のユウさんは二人の旅行を節約で延期したばかりなので、複雑な気持ちになった。\n自由に使うお金と、二人の予定をどう考える？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "アキさんが友人との旅行費を以前から別に貯めていた場合、見え方は変わる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "jealousy-4-6",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人を信じるために必要なことは？",
+        "category": "jealousy",
+        "source": "loves",
+        "followUp": "信頼が揺れた時、確認を急がず話せる場をどう作りたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-086",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんが同じ約束を何度か忘れ、アキさんは予定のたびに確認するようになった。ユウさんは信用されていないとつらく感じている。\n信頼を取り戻すには、何が必要だと思う？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "確認を減らすことを先に求める場合と、約束の立て方を変える場合で、何が違いそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-085",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人に本音を言えない時、どんなふうに時間をもらいたい？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "まだ言葉にできない気持ちを、何と言って伝えておきたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-087",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは恋人のユウさんから、一緒に住もうと誘われた。うれしいが迷いもあり、考える時間がほしい。ユウさんは返事がないことを不安に感じている。\n二人は何を共有するとよさそう？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "アキさんが返事の期限も決められない場合、ユウさんにはどんな選択肢がありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-review-024",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人に、言葉にしにくくても共有したいことはある？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "まだうまく説明できないと伝えてから、話し始めてもよさそう？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-088",
+        "audience": "couples",
+        "level": 3,
+        "text": "昇進したアキさんは、恋人のユウさんに報告するのをためらっている。\nユウさんが仕事で悩んでいるので、喜ぶ話をしてよいかわからない。\n気づかいと喜びを分かち合うことをどう考える？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "ユウさんが祝いたい気持ちと羨ましさを両方感じたら、どう言葉にできそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-086",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人に推測で決めつけず、直接聞いてほしいことはある？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "聞いてほしい時、どんな問いかけだと答えやすい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-089",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のユウさんが贈ったマグカップを、アキさんは一度も使っていない。\nユウさんは気に入らなかったと思ったが、アキさんは割るのが怖くて飾っていた。\n確かめずに判断すると何が起きそう？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "使ってほしかったユウさんと、残しておきたいアキさんにはどんな選択肢がある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-087",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に変えてほしいことを言われた時、どんな話し方だと受け止めやすい？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "すぐには変えられないことを、どう説明したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-090",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんは、アキさんの話の途中で自分の話を始めてしまう。\nアキさんは最後まで聞いてほしいが、ユウさんは共感を示したつもりだった。\nどんな変え方なら二人に伝わりそう？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "途中で話し始めたと気づくために、二人で使える合図はありそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-088",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人とけんかをした時のために、二人で決めておきたいルールは？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "ルールが守れなかった後、落ち着いて見直すには？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-091",
+        "audience": "couples",
+        "level": 4,
+        "text": "けんかした日は、その日のうちに仲直りしたいアキさん。\n恋人のユウさんは、一晩考えてから話したい。\n今夜はどうするのがよさそう？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "翌日になってもユウさんの考えがまとまらなかったら、どんな伝え方が考えられる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "conflict-support-4-5",
+        "audience": "couples",
+        "level": 4,
+        "text": "好きな人だからこそ言いにくいことはある？",
+        "category": "conflictSupport",
+        "source": "loves",
+        "followUp": "大切に思っていることも添えて、希望を伝えるなら？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-092",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のアキさんが毎月くれる手作りの贈り物を、ユウさんは置く場所に困っている。\n作ってくれた気持ちはうれしい。\nこの困りごとは、どう伝えるとよさそう？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "アキさんにとって作る時間も大切なら、贈り方にはどんな選択肢がある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-089",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人と違う本音があっても、安心して話せる関係はどんな関係？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "相手の本音に賛成できない時も、伝えたい受け止め方は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-093",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんが「将来は家族の近くに住みたい」と話した。\nアキさんは家族との距離を保ちたいが、冷たいと思われそうで言えない。\nユウさんはどう話を聞けそう？",
+        "category": "conflictSupport",
+        "source": "editorial",
+        "followUp": "どちらも住む場所を譲れないとわかったら、二人にはどんな選択肢が残る？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "future-values-3-1",
+        "audience": "couples",
+        "level": 3,
+        "text": "好きだけでは足りないと思うことは？",
+        "category": "futureValues",
+        "source": "loves",
+        "followUp": "好きな気持ちと別に、話し合っておきたい生活の考えは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-094",
+        "audience": "couples",
+        "level": 3,
+        "text": "交際中のアキさんとユウさんは、一緒に暮らす話を始めた。\nアキさんは貯金を優先したいが、ユウさんは日々の楽しみにもお金を使いたい。\n先に何を話しておくとよさそう？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "使える金額が同じでも安心できる貯金額が違うなら、どう折り合える？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "future-values-3-2",
+        "audience": "couples",
+        "level": 3,
+        "text": "長く付き合うために必要な努力は？",
+        "category": "futureValues",
+        "source": "loves",
+        "followUp": "努力が片方の負担にならないよう、どう確かめたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-095",
+        "audience": "couples",
+        "level": 3,
+        "text": "離れて暮らす恋人のユウさんに、アキさんが毎週会いに行っている。\nユウさんは喜んでいるが、アキさんは移動に疲れてきた。\nこのまま続ける前に、何を確かめたい？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "ユウさんが移動できない事情を抱えていたら、会う回数以外に何を変えられる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "future-values-3-3",
+        "audience": "couples",
+        "level": 3,
+        "text": "自分らしくいられる恋愛ってどんな恋愛？",
+        "category": "futureValues",
+        "source": "loves",
+        "followUp": "恋人と過ごす時も、続けていきたい自分の楽しみは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-096",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんと恋人のユウさんは、共同のアカウントで趣味を発信している。\nいつしかアキさんは、ユウさんが喜びそうな話しか投稿しなくなった。\n二人の発信でそれぞれの好みをどう残せそう？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "投稿する前に毎回相談する仕組みは、安心につながる場合と窮屈な場合があると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "future-values-3-5",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人同士で成長するってどういうこと？",
+        "category": "futureValues",
+        "source": "loves",
+        "followUp": "成長する速さが違っても、どんなふうに応援し合いたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-097",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは新しい挑戦を始め、忙しくても充実している。\n恋人のユウさんは、今の生活を大きく変えたくない。\n二人で成長するとは、同じ方向へ進むことだと思う？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "ユウさんの変わらない暮らしがアキさんを支えているとしたら、見方は変わる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-092",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人と支え合えていると感じるのは、どんな時？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "支える余裕がない時も、気軽に伝え合えるとよさそう？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-098",
+        "audience": "couples",
+        "level": 3,
+        "text": "体調を崩した恋人のアキさんを、ユウさんが毎日手伝っている。\nユウさんにも休みが必要だが、頼ってくれるアキさんに言い出せない。\n二人はどう支え方を変えられる？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "アキさんが「ほかの人には頼みにくい」と言ったら、どこから相談できそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-093",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に頼る時も、自分で決めることを大切にするには？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "相談した後、自分の答えを考える時間はどのくらいほしい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-099",
+        "audience": "couples",
+        "level": 4,
+        "text": "転職に迷うアキさんが、恋人のユウさんに相談した。\nユウさんが勧めた仕事を選びかけたが、アキさん自身はまだ納得できていない。\n決める前に、どんな時間が必要そう？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "ユウさんが「それなら相談した意味がない」と感じたら、相談の役割をどう話せる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-094",
+        "audience": "couples",
+        "level": 4,
+        "text": "二人の将来について、大切にしていきたい約束はある？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "将来の希望が変わった時、その約束をどう話し直したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-100",
+        "audience": "couples",
+        "level": 4,
+        "text": "いつか同じ街に住もうと約束した恋人同士。\nアキさんに今の街で続けたい仕事ができ、ユウさんは引っ越しの準備を始めていた。\n二人は何から話し直すとよさそう？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "ユウさんがすでに準備に時間やお金を使っていたら、話し合うことはどう変わる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-095",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人とこれからもっと知り合うために、どんな時間を持ちたい？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "まだ話したことがない、気軽に聞いてみたいテーマは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-101",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんが苦手な食べ物を、アキさんはいつも注文から外している。\n実はユウさんは最近好きになったが、気づかいを否定するようで言いにくい。\n相手を知ることに終わりはあると思う？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "以前の好みを覚えていることと、今の希望を聞くことはどう組み合わせられる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "future-values-4-4",
+        "audience": "couples",
+        "level": 4,
+        "text": "好きだけど距離が必要な時はあると思う？",
+        "category": "futureValues",
+        "source": "loves",
+        "followUp": "距離を置く時、連絡について話しておきたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-102",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のアキさんが「少し離れて考えたい」と言い、ユウさんは別れの話だと受け取った。\nアキさんには、まだそこまでの結論はない。\n二人は何を確かめるとよさそう？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "距離を置く期間の希望が違ったら、連絡や次に話す日をどう決められる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "future-values-4-5",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人にどこまで頼っていいと思う？",
+        "category": "futureValues",
+        "source": "loves",
+        "followUp": "恋人以外にも頼れるつながりを、どう大切にしたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-103",
+        "audience": "couples",
+        "level": 4,
+        "text": "アキさんは、つらいことを恋人のユウさんにだけ相談している。\nユウさんは頼られてうれしい一方、返事ができない夜も気になる。\nどんな関わり方なら続けられそう？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "アキさんがほかに相談できる人をすぐには見つけられない時、何から始められる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "future-values-4-6",
+        "audience": "couples",
+        "level": 4,
+        "text": "二人で乗り越えたいことは？",
+        "category": "futureValues",
+        "source": "loves",
+        "followUp": "一緒に向き合うことでも、外の助けを借りてよいと思う？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-104",
+        "audience": "couples",
+        "level": 4,
+        "text": "交際中のアキさんとユウさんは、一緒に始めた店の運営で意見が割れている。\n二人だけで解決したいアキさんと、外の意見も聞きたいユウさん。\n相談先を増やすことをどう考える？",
+        "category": "futureValues",
+        "source": "editorial",
+        "followUp": "相談相手が片方の知り合いなら、もう片方も話しやすくするには何が必要？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-099",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人とハグや手つなぎをする時、大事にしてほしいことは？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "前は平気だったことを今は断りたい時、どう確かめ合いたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-105",
+        "audience": "couples",
+        "level": 3,
+        "text": "アキさんは恋人のユウさんに肩をもんでほしいと頼んだ。\n途中で痛くなったが、一生懸命なので言い出せない。\n自分から頼んだことでも、途中で変えたいと伝えるには何が必要そう？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "ユウさんが「頼まれた通りにしたのに」と感じたら、何を切り分けて話せそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "boundaries-3-4",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人に「今日は無理」って言いやすい？",
+        "category": "boundaries",
+        "source": "loves",
+        "followUp": "「今日は無理」に、どんな返事があるとほっとする？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-106",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人同士で遠出する約束の日、アキさんは疲れて動けそうにない。\nユウさんはこの日のために準備していた。\nアキさんの休みたい気持ちと、ユウさんの残念さをどう扱える？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "延期できない予定だった場合、ユウさんが一人で行く選択をどう考える？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "boundaries-3-5",
+        "audience": "couples",
+        "level": 3,
+        "text": "二人きりの時、どれくらい甘えたい？",
+        "category": "boundaries",
+        "source": "loves",
+        "followUp": "甘える時にも、お互いの余裕をどう確かめたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-107",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のアキさんは、二人きりになるとそばに座って甘えたい。\nユウさんは一緒にいても作業に集中する時間がほしい。\n今夜の過ごし方をどう決めるとよさそう？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "時間を分けてもアキさんが寂しいなら、何をもう少し聞いてみたい？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-100",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人との触れ合いで、大切にされていると感じるのはどんな時？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "触れ合いたくない時にも、受け取れる愛情表現は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-108",
+        "audience": "couples",
+        "level": 3,
+        "text": "落ち込む恋人のアキさんを、ユウさんは抱きしめて元気づけたい。\nアキさんは触れ合うより、隣で静かに過ごしてほしい。\nユウさんはどんなふうに気持ちを確かめられる？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "アキさん自身も何をしてほしいかわからない時、どんな過ごし方が選べそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-101",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に「嫌だ」と言われた時、どんな返事をしたい？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "相手が理由を話したくない時も、気持ちを尊重できる伝え方は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-109",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんが二人の写真を撮ろうとすると、アキさんは「今日は嫌」と言った。\n理由は話したくないらしい。\nユウさんは気になる気持ちをどう伝えられる？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "撮らないと決めた後も、ユウさんに寂しさが残るなら何を話せそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "boundaries-4-3",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人同士でも急がなくていいと思うことは？",
+        "category": "boundaries",
+        "source": "loves",
+        "followUp": "急かされていると感じた時、どんなふうにペースを伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-110",
+        "audience": "couples",
+        "level": 4,
+        "text": "付き合い始めたアキさんが、合鍵を渡そうとした。\n恋人のユウさんはうれしいが、自由に出入りする関係になるには早いと感じる。\n二人は鍵にどんな意味を込めていそう？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "アキさんが緊急時のためだけに渡したいなら、受け取り方は変わると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "boundaries-4-4",
+        "audience": "couples",
+        "level": 4,
+        "text": "これからも安心して付き合うために決めたいことは？",
+        "category": "boundaries",
+        "source": "loves",
+        "followUp": "安心のための約束を、気持ちが変わった時に見直すには？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-111",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人同士のアキさんとユウさんは、外食代を交代で払ってきた。\n最近、店ごとの金額差が大きく、アキさんは同じルールでも不公平に感じる。\n一度決めた分担をどう見直せそう？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "毎回同じ金額にそろえる案でも、一方の収入が少なければ負担は同じになる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-102",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人とペースが違う時、お互いの希望をどう確かめたい？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "すぐに一致しない希望は、どんなふうに扱っていきたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-112",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人同士で初めての長い旅行を計画中。\nアキさんは毎日別の街へ行きたいが、ユウさんは一つの場所でゆっくりしたい。\n二人とも楽しめる旅には何が必要そう？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "一日だけ別々に過ごす案が出たら、二人はどんな点を確かめるとよさそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-103",
+        "audience": "couples",
+        "level": 4,
+        "text": "二人が無理せず付き合えているか、どんなふうに確かめ合いたい？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "今の付き合い方を変えたくなった時、話しやすいきっかけは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-113",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のアキさんとユウさんは、会った後に必ず感想を聞き合う。\nユウさんは、少しでも不満を言うと次の誘いがなくなりそうで「全部楽しかった」と答える。\nこの振り返りをどう変えられそう？",
+        "category": "boundaries",
+        "source": "editorial",
+        "followUp": "楽しかったことと、次は変えたいことの両方を話せると、何が変わりそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-106",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人がうれしいと感じる愛情表現は、どんなものだと思う？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "その表現が今もうれしいか、どう確かめてから伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-114",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のユウさんに喜んでほしくて、アキさんは大勢の前で贈り物を渡した。\nユウさんは照れてうまく反応できず、アキさんはがっかりした。\nこの場面を二人はどう受け取っていそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "ユウさんが贈り物自体はうれしかったなら、後からどう伝えられる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-107",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人が寂しい時、どんな支え方を望んでいそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "支え方の希望が日によって違う時、どう聞き直したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-115",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のアキさんとの予定がなくなり、ユウさんは寂しいと送った。\nアキさんはすぐ電話をかけたが、ユウさんは今は話せないと返した。\n寂しいという言葉には何が含まれていそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "電話を断られてアキさんも寂しくなったら、二人は何を伝え合えそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-108",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人が不安な時、聞くことと励ますことのどちらを望んでいそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "予想と本人の希望が違ったら、どんなふうに合わせたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-116",
+        "audience": "couples",
+        "level": 3,
+        "text": "面接がうまくいかなかった恋人のユウさんに、アキさんは次の対策を提案した。\nユウさんは黙り込んでしまった。\nアキさんは次に何を聞くとよさそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "ユウさんが対策も知りたいけれど今はつらいなら、話す順番をどう変えられる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-109",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人が嫉妬や不安を感じた時、話しやすくするには？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "話したくない時にも選べるよう、どんな声をかけたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-117",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人のユウさんが以前の恋人からもらった品を使い続けている。\nアキさんは思い出まで残っているようで気になるが、ユウさんには使い慣れた道具だ。\n物に込める意味の違いをどう話せそう？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "ユウさんに手放すよう求める以外に、アキさんが不安を伝える方法はある？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-110",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人は、会えない日が続く時にどんな連絡を望んでいそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "連絡の希望を本人に聞くなら、どんな聞き方が自然？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-118",
+        "audience": "couples",
+        "level": 3,
+        "text": "遠距離の恋人、アキさんとユウさんは、その日の出来事を送り合っている。\nアキさんは悩みも共有したいが、ユウさんは楽しい話を中心にしたい。\n何を分かち合えるとよさそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "ユウさんも余裕がない日に、悩みを送る前に確かめられることは？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "predictions-3-7",
+        "audience": "couples",
+        "level": 3,
+        "text": "相手は人前で恋人感を出すのは平気だと思う？",
+        "category": "predictions",
+        "source": "loves",
+        "followUp": "人前での距離感を、その場でも気軽に確かめるには？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-119",
+        "audience": "couples",
+        "level": 3,
+        "text": "友人に恋人のアキさんを紹介したユウさんは、二人をすぐ親しくさせようとした。\nアキさんは、友人との付き合い方はゆっくり決めたい。\n恋人の交友関係にどこまで入る必要があると思う？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "ユウさんの友人とアキさんの気が合わなかった場合、交際には何が必要そう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-111",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人が二人の時間に安心できるのは、どんな時だと思う？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "予想を本人に確かめて、新しく気づいたことはある？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-120",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人のユウさんは、アキさんの話を忘れないようメモを取り始めた。\nアキさんは大切にされていると思う一方、発言が残ると気軽に話せなくなる。\n二人は何を確かめるとよさそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "書き留めてよい話と、その場だけにしたい話を分けることはできそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "predictions-4-6",
+        "audience": "couples",
+        "level": 4,
+        "text": "相手が恋人に一番求めていることは何だと思う？",
+        "category": "predictions",
+        "source": "loves",
+        "followUp": "相手が求めることと、自分が無理なくできることをどう話したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-121",
+        "audience": "couples",
+        "level": 4,
+        "text": "忙しい恋人のユウさんを支えようと、アキさんは家事を手伝うと申し出た。\nユウさんは、一緒に出かける時間の方がほしかったと言う。\n二人は支え合いをどう捉えていそう？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "アキさんにも自由な時間が少ないなら、どんな支え方を一緒に選べる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-112",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人が自分に大切にされていると感じるのは、どんな時だと思う？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "本人の答えを聞いて、これからも続けたい行動は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-122",
+        "audience": "couples",
+        "level": 4,
+        "text": "新しい仕事に慣れたユウさんへ、恋人のアキさんは次の挑戦を勧めた。\nユウさんは今の暮らしに満足していて、休む時期もほしい。\n応援することと、先を期待することはどう違う？",
+        "category": "predictions",
+        "source": "editorial",
+        "followUp": "ユウさんが今は挑戦しないと選んだら、アキさんにはどんな応援が残る？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-001",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "別れたいと思ったことはある？",
+        "followUp": "相手も、別れたいと思ったことがあると思う？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-123",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "恋人のユウさんに、アキさんが別れを考えていると話した。\nユウさんは関係を続けたいが、アキさんはまだ迷っている。\n次に話すまでの時間を、どう過ごすとよさそう？",
+        "followUp": "ユウさんが待つのはつらいと伝えたら、返事の時期をどう相談できる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-002",
+        "audience": "couples",
+        "level": 4,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "相手の悪いところだと感じるのは、どんなところ？",
+        "followUp": "その中で、変えてほしい行動を一つ挙げるなら？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-124",
+        "audience": "couples",
+        "level": 4,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "予定を細かく決める恋人のアキさんを、ユウさんは「融通がきかない」と言った。\nアキさんは、準備を任されてきたからだと感じている。\nこの不満をどう整理できる？",
+        "followUp": "計画をユウさんが担当することになったら、二人は何を確かめられそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-003",
+        "audience": "couples",
+        "level": 3,
+        "category": "boundaries",
+        "source": "editorial",
+        "text": "相手に言えずに我慢していることはある？",
+        "followUp": "今話すなら、どんな言葉で伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-125",
+        "audience": "couples",
+        "level": 3,
+        "category": "boundaries",
+        "source": "editorial",
+        "text": "恋人のユウさんが好きな店へ、いつも一緒に行くアキさん。\n実は苦手な料理が多いが、喜ぶユウさんを見ると言い出せない。\nアキさんは何から伝えられそう？",
+        "followUp": "ユウさんが「今まで楽しんでいなかったの？」と驚いたら、どう話を続けられる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-004",
+        "audience": "couples",
+        "level": 3,
+        "category": "reassurance",
+        "source": "editorial",
+        "text": "二人の関係で、寂しさを感じるのはどんな時？",
+        "followUp": "その時、相手にどう関わってほしい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-126",
+        "audience": "couples",
+        "level": 3,
+        "category": "reassurance",
+        "source": "editorial",
+        "text": "恋人のユウさんが留守の間、アキさんは二人の記念日を一人で過ごした。\nユウさんは帰ってから祝うつもりだったが、アキさんは当日の一言がほしかった。\n何を先に共有できたと思う？",
+        "followUp": "後日の大きなお祝いで、当日寂しかった気持ちも埋まると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-005",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "付き合い始めた頃より、気持ちが冷めたと感じることはある？",
+        "followUp": "その変化について、二人で確かめたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-127",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "付き合い始めの頃より、恋人のユウさんからの連絡が落ち着いてきた。\nアキさんは気持ちが冷めたのかと気になるが、ユウさんは安心したからだと言う。\n二人は何を確かめたい？",
+        "followUp": "連絡を増やしてもアキさんの不安が消えないなら、ほかに何を話せそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-006",
+        "audience": "couples",
+        "level": 4,
+        "category": "futureValues",
+        "source": "editorial",
+        "text": "相手との将来を考える時、迷っていることはある？",
+        "followUp": "その迷いを話す時、相手にどんなふうに聞いてほしい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-128",
+        "audience": "couples",
+        "level": 4,
+        "category": "futureValues",
+        "source": "editorial",
+        "text": "恋人のユウさんは、いつか小さな街で暮らしたいと話す。\nアキさんは今の街を離れたくないが、将来を否定するようで言いにくい。\n夢の話をどう始め直せそう？",
+        "followUp": "移る時期がずっと先でも、今から決めておくことはあると思う？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-007",
+        "audience": "couples",
+        "level": 4,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "相手の言動で、まだ心に引っかかっていることはある？",
+        "followUp": "その時の気持ちを、今ならどう伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-129",
+        "audience": "couples",
+        "level": 4,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "友人の前で恋人のアキさんを冗談で呼んだユウさん。\nその場でアキさんも笑ったが、後から傷ついたと話した。\nユウさんは、その時の笑顔をどう受け止め直せる？",
+        "followUp": "ユウさんが謝ってもアキさんの気持ちが戻らない時、次に何ができそう？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-008",
+        "audience": "couples",
+        "level": 4,
+        "category": "boundaries",
+        "source": "editorial",
+        "text": "相手に合わせるうちに、自分らしさを抑えていると感じることはある？",
+        "followUp": "自分のために取り戻したい時間や選択は？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-130",
+        "audience": "couples",
+        "level": 4,
+        "category": "boundaries",
+        "source": "editorial",
+        "text": "恋人のユウさんと好みを合わせるうち、アキさんは好きだった服を着なくなった。\nユウさんは合わせていたことを知らない。\nアキさんが元の好みを話すなら、何を伝えられそう？",
+        "followUp": "ユウさんの好みと違う服で出かけることを、二人はどう受け止められる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-009",
+        "audience": "couples",
+        "level": 3,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "二人の関係で、不公平だと感じる負担はある？",
+        "followUp": "その負担を分け直すなら、何から話したい？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-131",
+        "audience": "couples",
+        "level": 3,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "デートでは、移動時間の長いアキさんの代わりに、恋人のユウさんが食事代を多く払っている。\n最近アキさんは疲れが取れない。\nこの分担をどう見直すとよさそう？",
+        "followUp": "お金の負担と時間の負担を同じように比べられない時、何を基準に話せる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-010",
+        "audience": "couples",
+        "level": 3,
+        "category": "commitment",
+        "source": "editorial",
+        "text": "これからも付き合うなら、二人の間で変えたいことは？",
+        "followUp": "そのために、自分からできそうなことは？"
+      },
+      "after": {
+        "id": "editorial-couples-episode-132",
+        "audience": "couples",
+        "level": 3,
+        "category": "commitment",
+        "source": "editorial",
+        "text": "予定の変更が続くたび、恋人のユウさんは謝り、アキさんは大丈夫と答えてきた。\nでもアキさんは、また同じことが起きるのがつらい。\n次の約束の前に何を話せる？",
+        "followUp": "ユウさんにも予定を確約しにくい事情があるなら、どんな約束なら続けられる？"
+      },
+      "reason": "回答者自身への質問を、架空の恋人同士の出来事と、その別の立場・条件・選択を考える質問へ変更。"
+    }
+  ]
+}

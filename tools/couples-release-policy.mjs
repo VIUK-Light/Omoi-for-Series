@@ -1,4 +1,9 @@
 import { COUPLES_DEEP_ADDITIONS } from "./couples-deep-additions.mjs";
+import { applyCouplesDeepEpisodes } from "./couples-deep-episodes.mjs";
+import { restoreCouplesLiteQuestions } from "./couples-lite-restorations.mjs";
+import { applyResearchedCouplesEpisodes } from "./couples-researched-episodes.mjs";
+import { applyCompressedCouplesEpisodes } from "./couples-compressed-episodes.mjs";
+import { selectCouplesDeepQuestions } from "./couples-deep-selection.mjs";
 
 // Couples公開データの選別方針。移行・検証スクリプトで同じルールを使う。
 export const RELEASE_EXCLUDED_IDS = new Set([
@@ -572,5 +577,6 @@ export function curateCouplesQuestions(canonical) {
       source: "editorial",
     }];
   });
-  return [...curated, ...COUPLES_DEEP_ADDITIONS.map(({followUp, ...card}) => card)];
+  const episodes = applyCouplesDeepEpisodes([...curated, ...COUPLES_DEEP_ADDITIONS.map(({followUp, ...card}) => card)]);
+  return restoreCouplesLiteQuestions(selectCouplesDeepQuestions(applyCompressedCouplesEpisodes(applyResearchedCouplesEpisodes(episodes))));
 }
