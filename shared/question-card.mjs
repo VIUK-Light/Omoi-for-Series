@@ -22,7 +22,9 @@ const isEpisode = (id, target) => target === "Couples" && id.startsWith("editori
 const episodeMarkup = text => questionMarkup(text).replace(/アキさん|ユウさん/gu, name => `<span class="episode-name">${name}</span>`);
 
 function mainQuestionMarkup({ id, target, text, textFormat }) {
-  if (textFormat === "verbatim-consultation") return `<span class="episode-scenario verbatim-consultation">${questionMarkup(text)}</span>`;
+  if (["verbatim-consultation", "edited-consultation"].includes(textFormat)) {
+    return `<span class="episode-scenario ${textFormat}">${questionMarkup(text)}</span>`;
+  }
   // Episode authors put the question on the final line. Keep every character
   // while giving the narrated event and the question separate visual weight.
   const episode = isEpisode(id, target);

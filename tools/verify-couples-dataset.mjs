@@ -24,7 +24,7 @@ import { fileURLToPath } from "node:url";
 import { SERIES_CONTRACTS } from "./series-contracts.mjs";
 import { seriesFitIssues } from "./series-fit-rules.mjs";
 import { curateCouplesQuestions } from "./couples-release-policy.mjs";
-import { hasVerifiedProvidedCouplesText } from "./couples-provided-content.mjs";
+import { hasVerifiedCouplesConsultation } from "./couples-provided-content.mjs";
 
 const CANONICAL_SHA256 = "8157d9f273edf58dd011db8627c16dd110a49d81e76577672502dc4cd47bfc57";
 const CANONICAL_COMMIT = "d98a9c2346c66f9bbc90a7a1eff636f88795cc86";
@@ -185,7 +185,7 @@ console.log("\n[2b] 公開デッキ構成");
   }
   const narrowContext = /学校|授業|先生|クラス|学生|高校|中学|小学校|テスト|勉強|教科|放課後|給食|進路|LINE|異性|彼氏|彼女|僕|俺/u;
   for (const card of migrated) {
-    if (narrowContext.test(card.text) && !hasVerifiedProvidedCouplesText(card)) fail(`学校・特定アプリ・性別前提の文面が残っています: ${card.id}`);
+    if (narrowContext.test(card.text) && !hasVerifiedCouplesConsultation(card)) fail(`学校・特定アプリ・性別前提の文面が残っています: ${card.id}`);
   }
   const normalizedTexts = new Map();
   for (const card of migrated) {
@@ -249,7 +249,7 @@ console.log("\n[5] スキーマ準拠");
       schemaErrors += 1;
       fail(`${card.id}: intensity=${JSON.stringify(card.intensity)}`);
     }
-    if ((card.source === "user-provided" || card.textFormat !== undefined || card.contentSha256 !== undefined) && !hasVerifiedProvidedCouplesText(card)) {
+    if ((card.source === "user-provided" || card.textFormat !== undefined || card.contentSha256 !== undefined) && !hasVerifiedCouplesConsultation(card)) {
       schemaErrors += 1;
       fail(`${card.id}: 提供原文の照合情報が一致しません`);
     }

@@ -9,7 +9,7 @@ import { COUPLES_COMPRESSED_CURATION, applyCompressedCouplesEpisodes } from "./c
 import { COUPLES_DEEP_SELECTION, selectCouplesDeepQuestions } from "./couples-deep-selection.mjs";
 import { filterQuestions, discussionPromptsForQuestion, COUPLES_SHARED_DISCUSSION_OPENING } from "../shared/question-engine.mjs";
 import { mergeLegacyFollowUps } from "../shared/content-policy.mjs";
-import { hasVerifiedProvidedCouplesText } from "./couples-provided-content.mjs";
+import { hasVerifiedCouplesConsultation } from "./couples-provided-content.mjs";
 
 const read = file => JSON.parse(readFileSync(new URL(`../${file}`, import.meta.url), "utf8"));
 const cards = read("shared/questions/couples.json");
@@ -60,7 +60,7 @@ test("editorial history regenerates the exact selected deck and rejects missing 
   assert.throws(() => selectCouplesDeepQuestions([...compressed, { ...compressed.find(q => q.level >= 3), id: "unknown-episode" }]));
 });
 
-test("each of the twelve events has three distinct prompts and pending prompts remain gated in production", () => {
+test("each event has three distinct prompts, or four for the streamer, with pending prompts gated in production", () => {
   const deep = filterQuestions(cards, { intensity: "deep" });
   assert.equal(Object.keys(follow.questions).length, cards.length);
   assert.equal(Object.keys(follow.discussionQuestions).length, 12);
@@ -72,15 +72,18 @@ test("each of the twelve events has three distinct prompts and pending prompts r
   const seen = new Set();
   for (const question of deep) {
     const prompts = follow.discussionQuestions[question.id];
-    assert.equal(prompts.length, 3);
+    assert.equal(prompts.length, question.id === "editorial-couples-episode-134" ? 4 : 3);
     assert.equal(prompts[0], COUPLES_SHARED_DISCUSSION_OPENING);
     assert.equal(follow.questions[question.id], prompts[0]);
-    if (question.textFormat === "verbatim-consultation") assert.ok(hasVerifiedProvidedCouplesText(question));
+    if (question.textFormat === "edited-consultation") {
+      assert.ok(hasVerifiedCouplesConsultation(question));
+      assert.ok(question.text.length >= 100 && question.text.length <= 500, question.id);
+    }
     else assert.ok(question.text.length >= 100 && question.text.length <= 160, question.id);
     for (const [index,prompt] of prompts.entries()) {
       if(index>0) assert.ok(!seen.has(prompt), prompt);
       seen.add(prompt);
-      assert.ok(prompt.length <= 35, question.id);
+      assert.ok(prompt.length <= 160, question.id);
       assert.ok(!/アキさん|ユウさん/u.test(prompt), question.id);
     }
     assert.deepEqual(discussionPromptsForQuestion(preview.find(q => q.id === question.id), "couples"), prompts);
@@ -89,11 +92,11 @@ test("each of the twelve events has three distinct prompts and pending prompts r
     assert.equal(released.followUp, undefined);
     assert.deepEqual(discussionPromptsForQuestion(released, "couples"), [COUPLES_SHARED_DISCUSSION_OPENING]);
   }
-  assert.equal(seen.size, 25);
+  assert.equal(seen.size, 26);
   assert.equal(follow.reviewStatus, "pending");
 });
 
-test("all twelve discussions open with the requested question and retain the two personal reflection prompts", () => {
+test("all twelve discussions open with the requested question and match the current editorial prompts", () => {
   const entries = [
     ...COUPLES_COMPRESSED_CURATION.rewritten.map(entry => ({ id: entry.after.question.id, prompts: entry.after.prompts, axis: entry.discussionAxis, style: entry.discussionStyle })),
     ...selection.added.map(entry => ({ id: entry.question.id, prompts: entry.prompts, axis: entry.discussionAxis, style: entry.discussionStyle })),
@@ -105,9 +108,9 @@ test("all twelve discussions open with the requested question and retain the two
     assert.deepEqual(follow.discussionQuestions[entry.id], entry.prompts);
     assert.equal(entry.prompts[0], COUPLES_SHARED_DISCUSSION_OPENING, entry.id);
   }
-  for(const entry of COUPLES_COMPRESSED_CURATION.rewritten) assert.deepEqual(entry.after.prompts.slice(1),entry.previousReflectionPrompts.slice(1));
-  for(const entry of selection.added) assert.deepEqual(entry.prompts.slice(1),entry.previousReflectionPrompts.slice(1));
-  assert.equal(hash(cards), selection.mainDeckSha256BeforeReflection);
+  for(const entry of COUPLES_COMPRESSED_CURATION.rewritten.filter(entry => !entry.revisionPolicy)) assert.deepEqual(entry.after.prompts.slice(1),entry.previousReflectionPrompts.slice(1));
+  for(const entry of selection.added.filter(entry => !entry.revisionPolicy)) assert.deepEqual(entry.prompts.slice(1),entry.previousReflectionPrompts.slice(1));
+  assert.equal(hash(cards), selection.mainDeckSha256);
   assert.deepEqual(follow.discussionQuestions["editorial-couples-episode-015"], [
     "あなたはどう考える？",
     "あなたが人を信じられるのは、どんな言葉や行動がある時？",
@@ -187,17 +190,24 @@ test("the two new references preserve the face-preference and private-streamer-m
   }
 });
 
-test("the supplied streamer consultation stays byte-for-byte unchanged and has a bounded validation exception", () => {
+test("the streamer revision keeps the requested wording and fan-activity excuses with bounded provenance", () => {
   const question = cards.find(q => q.id === "editorial-couples-episode-134");
+  const entry = selection.added.find(entry => entry.question.id === question.id);
   assert.equal(question.source, "user-provided");
-  assert.equal(question.textFormat, "verbatim-consultation");
-  assert.equal(createHash("sha256").update(question.text).digest("hex"), "3b54bfb7d00747bc4a04c24491b476a46c5c3df0042975287396b38fedd9a4c2");
-  assert.equal(question.text.endsWith("アドバイスください。"), true);
-  assert.ok(!question.text.includes("これはそのままで"));
-  assert.ok(hasVerifiedProvidedCouplesText(question));
-  assert.equal(hasVerifiedProvidedCouplesText({ ...question, text: question.text + "。" }), false);
-  assert.equal(hasVerifiedProvidedCouplesText({ ...question, id: "different-id" }), false);
-  assert.equal(hasVerifiedProvidedCouplesText({ ...question, source: "editorial" }), false);
+  assert.equal(question.textFormat, "edited-consultation");
+  assert.match(question.text, /登録者がまだ二桁のイケメン配信者/u);
+  assert.match(question.text, /好きなのは推しとしてであって、恋愛とは違います/u);
+  assert.match(question.text, /彼氏にバレたら終わり/u);
+  assert.match(question.text, /彼氏がこの配信者に嫉妬したこともあります/u);
+  assert.match(question.text, /やり取りを見られるのも恥ずかしい/u);
+  assert.equal(follow.discussionQuestions[question.id][2], "彼氏が完全に理解してくれて、怒らないし関係も壊れないと100%分かっているなら、それでも隠しますか？");
+  assert.ok(!/心理的なリスク|認めたくありません|どストライク/u.test(question.text));
+  assert.equal(createHash("sha256").update(entry.previousQuestion.text).digest("hex"), entry.originalReference.contentSha256);
+  assert.ok(hasVerifiedCouplesConsultation(question));
+  assert.equal(hasVerifiedCouplesConsultation({ ...question, text: question.text + "。" }), false);
+  assert.equal(hasVerifiedCouplesConsultation({ ...question, id: "different-id" }), false);
+  assert.equal(hasVerifiedCouplesConsultation({ ...question, source: "editorial" }), false);
+  assert.equal(hasVerifiedCouplesConsultation({ ...question, contentSha256: "0".repeat(64) }), false);
   const display = read("shared/display-copy/couples.json").questions[question.id].text;
   assert.equal(display.mobile, question.text);
   assert.equal(display.desktop, question.text);

@@ -14,3 +14,6 @@
 #review-original summary { cursor: pointer; }
 #review-source-text { white-space: pre-line; }
 #review-source-id { font-size: 11px; overflow-wrap: anywhere; }
+#review-prompts { gap: 12px; margin-top: 12px; width: min(100%, 340px); }
+#review-prompts[hidden] { display: none; }
+#review-prompts:not([hidden]) { display: flex; }
