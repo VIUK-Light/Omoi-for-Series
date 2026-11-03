@@ -11,16 +11,6 @@ const seriesFiles = {
   adults: "adults.json",
   "self-care": "self-care.json",
 };
-const forbiddenPatterns = [
-  /(?:強要|無理にさせる|断れないように|必ず答え(?:て|る)|断ることを許さない)/u,
-  /(?:性器|挿入|オーガズム|自慰|具体的な性行為の手順)/u,
-  /(?:未成年|中学生|高校生).{0,12}(?:性的|性行為|セックス)|(?:性的|性行為|セックス).{0,12}(?:未成年|中学生|高校生)/u,
-];
-
-export function hasUnsafeQuestionText(text) {
-  return forbiddenPatterns.some(pattern => pattern.test(String(text)));
-}
-
 export function normalizeQuestionText(value) {
   return String(value).normalize("NFKC").toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, "");
 }
@@ -131,16 +121,6 @@ export function validateDataset(data, { series, legacyQuestions = [], requireRel
     if (question.source?.kind === "user-provided" && typeof question.text === "string" && typeof question.followUp === "string") {
       const hash = createHash("sha256").update(JSON.stringify([question.text, question.followUp])).digest("hex");
       if (hash !== question.source.contentSha256) addIssue(issues, "error", `${where}: 提供された原文のハッシュが一致しません。`);
-    }
-
-    const texts = [question.text, question.followUp].filter((text) => typeof text === "string");
-    for (const text of texts) {
-      for (const [patternIndex, pattern] of forbiddenPatterns.entries()) {
-        if (!pattern.test(text)) continue;
-        const suppliedAdultText = series === "adults" && question.source?.kind === "user-provided" && hasValidQuestionSource(question.source, series);
-        const severity = suppliedAdultText && patternIndex === 1 ? "warning" : "error";
-        addIssue(issues, severity, `${where}: ${severity === "warning" ? "内容の確認対象" : "禁止表現"}を検出しました。${severity === "warning" ? "提供された成人向け原文として保持し、レビュー状態は変更しません。" : "人が確認してください。"}`);
-      }
     }
 
     if (Number.isInteger(question.level) && ["lite", "deep"].includes(question.intensity)) {

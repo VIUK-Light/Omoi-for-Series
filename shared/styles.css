@@ -129,11 +129,15 @@ button:focus-visible, a:focus-visible, .card-copy:focus-visible { outline: 2px s
 .card-copy-content { margin: auto 0; padding: 2px 0; width: 100%; }
 .question-category { color: var(--accent); font-family: var(--font-sans); font-size: 12px; font-weight: 400; letter-spacing: .04em; line-height: 1.65; margin: 0 0 18px; }
 .question-text, .follow-up-text { font-family: var(--font-sans); font-size: 1.5rem; font-weight: 700; letter-spacing: .015em; line-break: strict; line-height: 1.65; margin: 0; overflow-wrap: anywhere; word-break: normal; white-space: pre-line; }
+.episode-scenario { display: block; font-size: 1.125rem; font-weight: 400; line-height: 1.8; text-align: left; }
+.episode-prompt { display: inline-block; }
+.episode-name { white-space: nowrap; }
 .question-text:focus, .follow-up-text:focus { outline: none; }
 .content-notes { color: #77716b; font-size: 10px; line-height: 1.7; margin: 18px 0 0; }
 .card-rule { background: var(--accent); height: 1px; justify-self: center; margin: 0 0 9px; width: 38px; }
 .question-actions { width: 200px; }
 .question-actions .primary-button { gap: 16px; width: 100%; }
+.episode-links { display: flex; flex-wrap: wrap; gap: 12px 18px; justify-content: center; margin-top: 14px; }
 .question-actions .primary-button:disabled { background: #2d2c29; border-color: #2d2c29; color: #d5cec4; cursor: wait; }
 .card-stage.is-entering { animation: card-deal 400ms cubic-bezier(.2,.7,.2,1) both; }
 @keyframes card-deal { from { opacity: 0; transform: translate(12px, 18px) rotate(3deg); } to { opacity: 1; transform: translate(0, 0) rotate(0); } }
