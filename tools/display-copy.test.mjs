@@ -107,11 +107,13 @@ test("authored episode paragraphs allow semantic line breaks inside the question
   assert.ok(mainCopy.includes('<span class="episode-prompt">必要な情報を、\nどこまで伝えたい？</span>'));
 });
 
-test("verbatim consultations render as readable complete text without splitting the last line into a prompt", () => {
+test("verbatim and edited consultations render as complete text without splitting the last line into a prompt", () => {
   const text = "提供された文章。\n質問です。\nアドバイスください。";
-  const markup = questionCardMarkup({ id: "editorial-couples-episode-134", target: "Couples", text, followUp: "別の立場なら？", textFormat: "verbatim-consultation" });
-  const main = markup.match(/<h1[^>]*>([\s\S]*?)<\/h1>/u)[1];
-  assert.equal(main.replace(/<[^>]+>/gu, ""), text);
-  assert.ok(main.includes('class="episode-scenario verbatim-consultation"'));
-  assert.ok(!main.includes('class="episode-prompt"'));
+  for (const textFormat of ["verbatim-consultation", "edited-consultation"]) {
+    const markup = questionCardMarkup({ id: "editorial-couples-episode-134", target: "Couples", text, followUp: "別の立場なら？", textFormat });
+    const main = markup.match(/<h1[^>]*>([\s\S]*?)<\/h1>/u)[1];
+    assert.equal(main.replace(/<[^>]+>/gu, ""), text);
+    assert.ok(main.includes(`class="episode-scenario ${textFormat}"`));
+    assert.ok(!main.includes('class="episode-prompt"'));
+  }
 });
