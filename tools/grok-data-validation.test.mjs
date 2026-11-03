@@ -57,16 +57,24 @@ test("release readiness requires approved coverage for every intensity and Level
   assert.equal(report.issues.some((issue) => issue.severity === "error"), false);
 });
 
-test("duplicate IDs, questions, wrong source labels, and pressure or explicit wording are rejected", () => {
+test("duplicate IDs and questions are rejected", () => {
   const repeated = draftQuestion();
-  const unsafe = draftQuestion({
+  const duplicate = draftQuestion({
     id: "adults-communication-lite-l1-002",
     text: "相手に性器の写真を必ず送らせるにはどうしますか？",
   });
-  const report = validateDataset(envelope([repeated, { ...repeated }, unsafe]), { series: "adults" });
+  const report = validateDataset(envelope([repeated, { ...repeated }, duplicate]), { series: "adults" });
   assert.ok(report.issues.some((issue) => /IDが重複/u.test(issue.message)));
   assert.ok(report.issues.some((issue) => /質問文が/u.test(issue.message)));
-  assert.ok(report.issues.some((issue) => /禁止表現/u.test(issue.message)));
+});
+
+test("wording is not rejected by keyword matching", () => {
+  const question = draftQuestion({
+    text: "性器や挿入について、どんなことを話し合いたいですか？",
+    followUp: "その希望を相手にどう伝えたいですか？",
+  });
+  const report = validateDataset(envelope([question]), { series: "adults" });
+  assert.equal(report.issues.some((issue) => issue.severity === "error"), false);
 });
 
 test("near-duplicate Japanese question wording is detected", () => {

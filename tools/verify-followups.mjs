@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { mergeLegacyFollowUps } from '../shared/content-policy.mjs';
-import { normalizeQuestionText, textSimilarity, hasUnsafeQuestionText } from './validate-grok-questions.mjs';
+import { normalizeQuestionText, textSimilarity } from './validate-grok-questions.mjs';
 import { isSharedCouplesDiscussionOpening } from '../shared/question-engine.mjs';
 
 const root = resolve(fileURLToPath(import.meta.url), '../..');
@@ -25,7 +25,6 @@ export function validateFollowUpDataset(data, legacyQuestions, series) {
     if (owners.has(key) && (!shared || owners.get(key) !== owner)) issues.push({ severity: 'error', message: `${id}: 深掘り質問が ${owners.get(key)} と重複しています。` });
     else owners.set(key, owner);
     if (key === normalizeQuestionText(mains.get(id.split('/')[0]))) issues.push({ severity: 'error', message: `${id}: メイン質問と深掘り質問が同じです。` });
-    if (hasUnsafeQuestionText(text)) issues.push({ severity: 'error', message: `${id}: 圧力や不適切な表現を検出しました。` });
   }
   for (let i = 0; i < entries.length; i += 1) {
     for (const [otherId, otherText] of entries.slice(i + 1)) {

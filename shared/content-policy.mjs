@@ -25,6 +25,11 @@ export function hasValidAiSource(source) {
 
 export function hasValidQuestionSource(source, series) {
   if (hasValidAiSource(source)) return true;
+  if (series === 'adults' && source?.kind === 'x-inspired' && source.stage === 'rewritten') {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(source.generatedAt || '')) return false;
+    const date = new Date(`${source.generatedAt}T00:00:00Z`);
+    return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === source.generatedAt;
+  }
   if (series !== 'adults' || source?.kind !== 'user-provided' || source.stage !== 'provided-draft') return false;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(source.importedAt || '') || !/^[a-f0-9]{64}$/.test(source.contentSha256 || '')) return false;
   const date = new Date(`${source.importedAt}T00:00:00Z`);

@@ -9,8 +9,8 @@
       "category": "closeness",
       "level": 1,
       "intensity": "lite",
-      "text": "親しい相手と過ごすなら、どんな距離感が落ち着きますか？",
-      "followUp": "その距離感を相手に伝えるなら、どんな言葉を選びますか？",
+      "text": "セックス中やその前後で、どのくらいの距離感（密着・少し離れる・抱きしめ合うなど）が落ち着く？",
+      "followUp": "その距離感を相手に伝えるなら、どんな言葉を選ぶ？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -19,7 +19,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -29,8 +31,8 @@
       "category": "communication",
       "level": 1,
       "intensity": "lite",
-      "text": "親密さについて話す時、どんな場所なら話しやすいですか？",
-      "followUp": "その場所で話し始める時、何があると安心できますか？",
+      "text": "セックスや性的な話をするとき、どんな場所なら話しやすい？",
+      "followUp": "その場所で話し始めるとき、何があると安心できる？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -39,7 +41,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -49,8 +53,8 @@
       "category": "body",
       "level": 1,
       "intensity": "lite",
-      "text": "親しい相手と過ごす時、身体がくつろげるのはどんな環境ですか？",
-      "followUp": "その環境を整えるために、相手にお願いしたいことはありますか？",
+      "text": "相手と裸や下着姿で過ごすとき、身体がくつろげる環境はどんな感じ？",
+      "followUp": "その環境を整えるために、相手にお願いしたいことはある？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -59,7 +63,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -69,8 +75,8 @@
       "category": "affection",
       "level": 1,
       "intensity": "lite",
-      "text": "言葉で好意を伝えられるなら、どんな言い方がうれしいですか？",
-      "followUp": "その言い方のどこに温かさを感じますか？",
+      "text": "行為中やその後に、どんな言葉をかけられると「好意を感じる」？",
+      "followUp": "その言い方のどこに温かさや興奮を感じる？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -79,18 +85,20 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
     {
-      "id": "adults-boundaries-lite-l1-005",
+      "id": "adults-boundaries-lite-l2-005",
       "series": "adults",
       "category": "boundaries",
       "level": 1,
       "intensity": "lite",
-      "text": "親しい相手からの呼ばれ方で、心地よいものは何ですか？",
-      "followUp": "二人きりの時と人前で、呼ばれ方を変えたいことはありますか？",
+      "text": "親しい相手からの呼ばれ方で、性的な場面だと特に心地よいものは何？",
+      "followUp": "二人きりのときと人前で、呼ばれ方を変えたいことはある？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -99,7 +107,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -109,8 +119,8 @@
       "category": "privacy",
       "level": 1,
       "intensity": "lite",
-      "text": "二人の写真を誰かに見せる前に、何を確認してほしいですか？",
-      "followUp": "公開する範囲は、どうやって一緒に決めたいですか？",
+      "text": "二人の性的な写真や動画を誰かに見せる前に、何を確認してほしい？",
+      "followUp": "公開する範囲は、どうやって一緒に決めたい？",
       "sensitivity": 1,
       "contentNotes": [
         "privacy"
@@ -119,7 +129,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -129,8 +141,8 @@
       "category": "consent",
       "level": 1,
       "intensity": "lite",
-      "text": "触れてもよいか聞かれる時、どんな言葉だと答えやすいですか？",
-      "followUp": "迷っている時は、どんな返事ができると楽ですか？",
+      "text": "「触っていい？」「挿れていい？」と聞かれるとき、どんな言葉だと答えやすい？",
+      "followUp": "迷っているときは、どんな返事ができると楽？",
       "sensitivity": 1,
       "contentNotes": [
         "consent"
@@ -139,7 +151,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -149,8 +163,8 @@
       "category": "pace",
       "level": 1,
       "intensity": "lite",
-      "text": "親しい相手との予定に、一人の時間をどのくらい残したいですか？",
-      "followUp": "一人で過ごしたい日は、どんなふうに知らせたいですか？",
+      "text": "セックスや親密な予定の合間に、一人の時間をどのくらい残したい？",
+      "followUp": "一人で過ごしたい日は、どんなふうに知らせたい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -159,7 +173,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -169,8 +185,8 @@
       "category": "affection",
       "level": 2,
       "intensity": "lite",
-      "text": "触れ合い以外で、親密さを感じるやりとりはありますか？",
-      "followUp": "そのやりとりを増やすなら、どんな機会を作りたいですか？",
+      "text": "挿入や触れ合い以外で、性的な親密さを感じるやりとりはある？",
+      "followUp": "そのやりとりを増やすなら、どんな機会を作りたい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -179,7 +195,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -189,8 +207,8 @@
       "category": "communication",
       "level": 2,
       "intensity": "lite",
-      "text": "気恥ずかしい話を切り出す時、どんな助けがあると話せますか？",
-      "followUp": "相手から切り出す場合には、どんな配慮があるとうれしいですか？",
+      "text": "恥ずかしい性的な話を切り出すとき、どんな助けがあると話せる？",
+      "followUp": "相手から切り出す場合には、どんな配慮があるとうれしい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -199,7 +217,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -209,8 +229,8 @@
       "category": "body",
       "level": 2,
       "intensity": "lite",
-      "text": "身体について褒められるなら、どんな言葉がうれしいですか？",
-      "followUp": "褒め言葉でも避けてほしい話題はありますか？",
+      "text": "身体や性器について褒められるなら、どんな言葉がうれしい？",
+      "followUp": "褒め言葉でも避けてほしい話題はある？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -219,7 +239,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -229,8 +251,8 @@
       "category": "boundaries",
       "level": 2,
       "intensity": "lite",
-      "text": "人前での愛情表現は、どのくらいが心地よいですか？",
-      "followUp": "二人の希望が違う時は、どう相談したいですか？",
+      "text": "人前での性的な愛情表現は、どのくらいが心地よい？",
+      "followUp": "二人の希望が違うときは、どう相談したい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -239,7 +261,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -249,8 +273,8 @@
       "category": "privacy",
       "level": 2,
       "intensity": "lite",
-      "text": "親しい相手にも見せずに持っていたいものはありますか？",
-      "followUp": "それを見せない理由を説明する必要はあると思いますか？",
+      "text": "親しい相手にも見せずに持っていたい性的なものや習慣はある？",
+      "followUp": "それを見せない理由を説明する必要はあると思う？",
       "sensitivity": 1,
       "contentNotes": [
         "privacy"
@@ -259,7 +283,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -269,8 +295,8 @@
       "category": "pace",
       "level": 2,
       "intensity": "lite",
-      "text": "関係が近づく速さは、どうやって確かめ合いたいですか？",
-      "followUp": "少しゆっくり進みたい時、どんな合図を使えそうですか？",
+      "text": "セックスや関係が近づく速さは、どうやって確かめ合いたい？",
+      "followUp": "少しゆっくり進みたいとき、どんな合図を使えそう？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -279,7 +305,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -289,8 +317,8 @@
       "category": "consent",
       "level": 2,
       "intensity": "lite",
-      "text": "誘いを断った後、どんな反応をしてもらえると安心しますか？",
-      "followUp": "自分が断られた時には、どんな返し方を大切にしたいですか？",
+      "text": "誘いを断った後、どんな反応をしてもらえると安心する？",
+      "followUp": "自分が断られたときには、どんな返し方を大切にしたい？",
       "sensitivity": 1,
       "contentNotes": [
         "consent"
@@ -299,7 +327,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -309,8 +339,8 @@
       "category": "expectations",
       "level": 2,
       "intensity": "lite",
-      "text": "恋人という呼び方には、どんな意味を感じますか？",
-      "followUp": "その意味を相手と話すなら、最初に何を確かめたいですか？",
+      "text": "「恋人」という呼び方には、性的な意味も含めてどんなものを感じる？",
+      "followUp": "その意味を相手と話すなら、最初に何を確かめたい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -319,7 +349,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -329,8 +361,8 @@
       "category": "communication",
       "level": 3,
       "intensity": "lite",
-      "text": "親密さに関する話を聞く時、どんな態度を心がけたいですか？",
-      "followUp": "言葉が出てこない相手には、どう待っていたいですか？",
+      "text": "性的な話や行為についての話を聞くとき、どんな態度を心がけたい？",
+      "followUp": "言葉が出てこない相手には、どう待っていたい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -339,7 +371,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -349,8 +383,8 @@
       "category": "body",
       "level": 3,
       "intensity": "lite",
-      "text": "見た目の話題を避けたい日には、どう知らせたいですか？",
-      "followUp": "その日は代わりに何について話してもらえると楽ですか？",
+      "text": "見た目や身体の話題を避けたい日には、どう知らせたい？",
+      "followUp": "その日は代わりに何について話してもらえると楽？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -359,7 +393,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -369,8 +405,8 @@
       "category": "boundaries",
       "level": 3,
       "intensity": "lite",
-      "text": "心地よい触れ合いの好みが変わったら、どう伝えたいですか？",
-      "followUp": "相手の好みが変わった時は、何から聞きたいですか？",
+      "text": "心地よい触れ合いや体位の好みが変わったら、どう伝えたい？",
+      "followUp": "相手の好みが変わったときは、何から聞きたい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -379,7 +415,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -389,8 +427,8 @@
       "category": "privacy",
       "level": 3,
       "intensity": "lite",
-      "text": "親密な関係の相談をする時、相手のどんな情報は伏せたいですか？",
-      "followUp": "相談する相手を選ぶ時に、何を大切にしますか？",
+      "text": "性的な関係の相談をするとき、相手のどんな情報は伏せたい？",
+      "followUp": "相談する相手を選ぶときに、何を大切にする？",
       "sensitivity": 1,
       "contentNotes": [
         "privacy"
@@ -399,7 +437,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -409,8 +449,8 @@
       "category": "pace",
       "level": 3,
       "intensity": "lite",
-      "text": "疲れていて親密な時間を持てない時、どんな過ごし方を選びたいですか？",
-      "followUp": "その過ごし方を、相手にどう提案できそうですか？",
+      "text": "疲れていてセックスできないとき、どんな過ごし方を選びたい？",
+      "followUp": "その過ごし方を、相手にどう提案できそう？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -419,7 +459,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -429,8 +471,8 @@
       "category": "affection",
       "level": 3,
       "intensity": "lite",
-      "text": "好意の伝え方が相手と違う時、何を知りたいですか？",
-      "followUp": "自分の伝え方については、何を説明したいですか？",
+      "text": "性的な好意の伝え方が相手と違うとき、何を知りたい？",
+      "followUp": "自分の伝え方については、何を説明したい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -439,7 +481,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -449,8 +493,8 @@
       "category": "expectations",
       "level": 3,
       "intensity": "lite",
-      "text": "二人の関係に、周囲の「普通」をどのくらい取り入れたいですか？",
-      "followUp": "自分たちで決め直したい習慣はありますか？",
+      "text": "二人のセックスや関係に、周囲の「普通」をどのくらい取り入れたい？",
+      "followUp": "自分たちで決め直したい習慣はある？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -459,7 +503,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -469,8 +515,8 @@
       "category": "consent",
       "level": 3,
       "intensity": "lite",
-      "text": "親密な誘いへの返事を急がず考えたい時、どんな言葉を使いたいですか？",
-      "followUp": "返事を待つ間、相手にはどう接してほしいですか？",
+      "text": "性的な誘いへの返事を急がず考えたいとき、どんな言葉を使いたい？",
+      "followUp": "返事を待つ間、相手にはどう接してほしい？",
       "sensitivity": 1,
       "contentNotes": [
         "consent"
@@ -479,7 +525,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -489,8 +537,8 @@
       "category": "closeness",
       "level": 4,
       "intensity": "lite",
-      "text": "安心できる親密さには、どんな余白が必要だと思いますか？",
-      "followUp": "その余白が足りないと感じたら、何を調整したいですか？",
+      "text": "安心できるセックスや親密さには、どんな余白が必要だと思う？",
+      "followUp": "その余白が足りないと感じたら、何を調整したい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -499,7 +547,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -509,8 +559,8 @@
       "category": "communication",
       "level": 4,
       "intensity": "lite",
-      "text": "親しい相手に誤解された時、どんなふうに話し直したいですか？",
-      "followUp": "話し直す前に、どんな時間があると落ち着けますか？",
+      "text": "性的なことで親しい相手に誤解されたとき、どんなふうに話し直したい？",
+      "followUp": "話し直す前に、どんな時間があると落ち着く？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -519,7 +569,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -529,8 +581,8 @@
       "category": "body",
       "level": 4,
       "intensity": "lite",
-      "text": "年齢とともに身体が変わることを、どんなふうに受け止めたいですか？",
-      "followUp": "その変化について、親しい相手に望む接し方はありますか？",
+      "text": "年齢とともに身体や性的な反応が変わることを、どんなふうに受け止めたい？",
+      "followUp": "その変化について、親しい相手に望む接し方はある？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -539,7 +591,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -549,8 +603,8 @@
       "category": "boundaries",
       "level": 4,
       "intensity": "lite",
-      "text": "親しい相手との触れ合いで、その都度確かめてほしいことは何ですか？",
-      "followUp": "その確認が自然にできるように、どんな工夫をしたいですか？",
+      "text": "親しい相手との触れ合いや挿入で、その都度確かめてほしいことは何？",
+      "followUp": "その確認が自然にできるように、どんな工夫をしたい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -559,7 +613,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -569,8 +625,8 @@
       "category": "expectations",
       "level": 4,
       "intensity": "lite",
-      "text": "恋愛関係でなくても大切にしたい親密さはありますか？",
-      "followUp": "そのつながりを守るために、どんな時間を使いたいですか？",
+      "text": "恋愛関係でなくても大切にしたい性的な親密さはある？",
+      "followUp": "そのつながりを守るために、どんな時間を使いたい？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -579,7 +635,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -589,8 +647,8 @@
       "category": "privacy",
       "level": 4,
       "intensity": "lite",
-      "text": "関係が終わった後、二人の思い出の品はどう扱いたいですか？",
-      "followUp": "相手と事前に決めておきたい扱い方はありますか？",
+      "text": "関係が終わった後、二人の性的な思い出の品やデータはどう扱いたい？",
+      "followUp": "相手と事前に決めておきたい扱い方はある？",
       "sensitivity": 1,
       "contentNotes": [
         "privacy"
@@ -599,7 +657,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -609,8 +669,8 @@
       "category": "pace",
       "level": 4,
       "intensity": "lite",
-      "text": "長く付き合っていても新しく知りたい相手の一面は何ですか？",
-      "followUp": "それを聞くなら、どんな機会がよさそうですか？",
+      "text": "長く付き合っていても新しく知りたい相手の性的な一面は何？",
+      "followUp": "それを聞くなら、どんな機会がよさそう？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -619,7 +679,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -629,8 +691,8 @@
       "category": "affection",
       "level": 4,
       "intensity": "lite",
-      "text": "愛情への返事を期待する時、自分はどんな気持ちになりますか？",
-      "followUp": "その気持ちを相手に伝えるなら、どんな言葉が近いですか？",
+      "text": "性的な愛情への返事を期待するとき、自分はどんな気持ちになる？",
+      "followUp": "その気持ちを相手に伝えるなら、どんな言葉が近い？",
       "sensitivity": 1,
       "contentNotes": [
         "intimacy"
@@ -639,7 +701,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -649,8 +713,8 @@
       "category": "sexual-values",
       "level": 1,
       "intensity": "deep",
-      "text": "性について考える時、まず大切にしたいことは何ですか？",
-      "followUp": "それを相手に伝えるなら、どんな一言から始めたいですか？",
+      "text": "セックスについて考えるとき、まず「これだけは守りたい」と思うことは何？",
+      "followUp": "それを相手に伝えるなら、どんな一言から始めたい？",
       "sensitivity": 2,
       "contentNotes": [
         "sexual-values"
@@ -659,7 +723,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -669,8 +735,8 @@
       "category": "body-image",
       "level": 1,
       "intensity": "deep",
-      "text": "身体を見られることについて、どんな配慮があると安心できますか？",
-      "followUp": "その配慮をお願いする時、どんな伝え方が合いそうですか？",
+      "text": "裸や性器を見られることについて、どんな配慮があると安心できる？",
+      "followUp": "その配慮をお願いするとき、どんな伝え方が合いそう？",
       "sensitivity": 2,
       "contentNotes": [
         "body-image"
@@ -679,7 +745,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -689,8 +757,8 @@
       "category": "consent",
       "level": 1,
       "intensity": "deep",
-      "text": "親密な誘いに気持ちが乗らない時、どう伝えたいですか？",
-      "followUp": "断った後は、どんな距離で過ごせると落ち着きますか？",
+      "text": "セックスの誘いに気持ちが乗らないとき、どう伝えたい？",
+      "followUp": "断った後は、どんな距離で過ごせると落ち着く？",
       "sensitivity": 2,
       "contentNotes": [
         "consent"
@@ -699,7 +767,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -709,8 +779,8 @@
       "category": "boundaries",
       "level": 1,
       "intensity": "deep",
-      "text": "性的な話題で、今は触れたくない範囲はありますか？",
-      "followUp": "話題を変えたい時に使える言葉を一つ挙げるなら何ですか？",
+      "text": "性的な話題で、今は触れたくない範囲はある？",
+      "followUp": "話題を変えたいときに使える言葉を一つ挙げるなら何？",
       "sensitivity": 2,
       "contentNotes": [
         "intimacy"
@@ -719,7 +789,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -729,8 +801,8 @@
       "category": "sexual-values",
       "level": 1,
       "intensity": "deep",
-      "text": "性的な経験の有無を聞かれることを、どう感じますか？",
-      "followUp": "答えるかどうかを選ぶ時、何を大切にしたいですか？",
+      "text": "過去のセックス経験の有無を聞かれることを、どう感じる？",
+      "followUp": "答えるかどうかを選ぶとき、何を大切にしたい？",
       "sensitivity": 2,
       "contentNotes": [
         "sexual-values"
@@ -739,7 +811,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -749,8 +823,8 @@
       "category": "desire",
       "level": 1,
       "intensity": "deep",
-      "text": "親密な時間を望む気持ちは、どんな形で知らせたいですか？",
-      "followUp": "相手の気持ちを確かめるなら、どんな聞き方を選びますか？",
+      "text": "「今セックスしたい」という気持ちを、どんな形で知らせたい？",
+      "followUp": "相手の気持ちを確かめるなら、どんな聞き方を選ぶ？",
       "sensitivity": 2,
       "contentNotes": [
         "intimacy"
@@ -759,7 +833,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -769,8 +845,8 @@
       "category": "communication",
       "level": 1,
       "intensity": "deep",
-      "text": "性について知らないことを話す時、どんな反応があると安心しますか？",
-      "followUp": "分からないことを一緒に調べるなら、どんな情報源を選びたいですか？",
+      "text": "セックスについて知らないことを話すとき、どんな反応があると安心する？",
+      "followUp": "分からないことを一緒に調べるなら、どんな情報源を選びたい？",
       "sensitivity": 2,
       "contentNotes": [
         "intimacy"
@@ -779,7 +855,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -789,8 +867,8 @@
       "category": "privacy",
       "level": 1,
       "intensity": "deep",
-      "text": "性的な内容のメッセージを受け取る前に、何を確認してほしいですか？",
-      "followUp": "受け取りたくない時は、どんなふうに知らせたいですか？",
+      "text": "性的な内容のメッセージや写真を受け取る前に、何を確認してほしい？",
+      "followUp": "受け取りたくないときは、どんなふうに知らせたい？",
       "sensitivity": 2,
       "contentNotes": [
         "privacy"
@@ -799,7 +877,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -809,8 +889,8 @@
       "category": "desire",
       "level": 2,
       "intensity": "deep",
-      "text": "性への関心が相手と違う時、何から話し合いたいですか？",
-      "followUp": "話し合いで結論を急がないために、どんな約束があるとよいですか？",
+      "text": "セックスへの関心や頻度が相手と違うとき、何から話し合いたい？",
+      "followUp": "話し合いで結論を急がないために、どんな約束があるとよい？",
       "sensitivity": 2,
       "contentNotes": [
         "intimacy"
@@ -819,7 +899,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -829,8 +911,8 @@
       "category": "body-image",
       "level": 2,
       "intensity": "deep",
-      "text": "親密な場面で見た目が気になる時、どんな言葉をかけてほしいですか？",
-      "followUp": "言葉より助けになる接し方はありますか？",
+      "text": "セックス中に見た目や身体が気になるとき、どんな言葉をかけてほしい？",
+      "followUp": "言葉より助けになる接し方はある？",
       "sensitivity": 2,
       "contentNotes": [
         "body-image"
@@ -839,7 +921,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -849,8 +933,8 @@
       "category": "consent",
       "level": 2,
       "intensity": "deep",
-      "text": "一度了承したことでも気持ちが変わったら、どう知らせたいですか？",
-      "followUp": "知らせた直後、相手にはどんな対応を望みますか？",
+      "text": "一度OKしたことでも気持ちが変わったら、どう知らせたい？",
+      "followUp": "知らせた直後、相手にはどんな対応を望む？",
       "sensitivity": 2,
       "contentNotes": [
         "consent"
@@ -859,7 +943,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -869,8 +955,8 @@
       "category": "boundaries",
       "level": 2,
       "intensity": "deep",
-      "text": "親密な場面でやめてほしいことを、どう伝えると話しやすいですか？",
-      "followUp": "言葉にしにくい時に使える合図はありますか？",
+      "text": "セックス中にやめてほしいことを、どう伝えると話しやすい？",
+      "followUp": "言葉にしにくいときに使える合図はある？",
       "sensitivity": 2,
       "contentNotes": [
         "intimacy"
@@ -879,7 +965,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -889,8 +977,8 @@
       "category": "sexual-values",
       "level": 2,
       "intensity": "deep",
-      "text": "性と愛情のつながりを、自分はどう捉えていますか？",
-      "followUp": "相手の捉え方が違う場合、何を理解したいですか？",
+      "text": "セックスと愛情のつながりを、自分はどう捉えている？",
+      "followUp": "相手の捉え方が違う場合、何を理解したい？",
       "sensitivity": 2,
       "contentNotes": [
         "sexual-values"
@@ -899,7 +987,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -909,8 +999,8 @@
       "category": "communication",
       "level": 2,
       "intensity": "deep",
-      "text": "親密な時間について要望を伝えるなら、どのタイミングを選びたいですか？",
-      "followUp": "話を受け取ってもらえたと感じるのは、どんな反応ですか？",
+      "text": "セックスの要望を伝えるなら、どのタイミングを選びたい？",
+      "followUp": "話を受け取ってもらえたと感じるのは、どんな反応？",
       "sensitivity": 2,
       "contentNotes": [
         "intimacy"
@@ -919,7 +1009,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -929,8 +1021,8 @@
       "category": "privacy",
       "level": 2,
       "intensity": "deep",
-      "text": "二人だけの性的な話を、外で話すことについてどう考えますか？",
-      "followUp": "共有する前に確認してほしい範囲はどこですか？",
+      "text": "二人だけの性的な話や行為を、外で話すことについてどう考える？",
+      "followUp": "共有する前に確認してほしい範囲はどこ？",
       "sensitivity": 2,
       "contentNotes": [
         "privacy"
@@ -939,7 +1031,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -949,8 +1043,8 @@
       "category": "sexual-health",
       "level": 2,
       "intensity": "deep",
-      "text": "性に関する健康の話は、どんな切り出し方なら落ち着いて聞けますか？",
-      "followUp": "答えがすぐに分からない時は、どう進めたいですか？",
+      "text": "避妊や性病などの健康の話は、どんな切り出し方なら落ち着いて聞ける？",
+      "followUp": "答えがすぐに分からないときは、どう進めたい？",
       "sensitivity": 2,
       "contentNotes": [
         "sexual-health"
@@ -959,7 +1053,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -969,8 +1065,8 @@
       "category": "desire",
       "level": 3,
       "intensity": "deep",
-      "text": "親密さへの希望を我慢していると気づいたら、どう扱いたいですか？",
-      "followUp": "相手に伝える前に、自分の中で何を整理したいですか？",
+      "text": "セックスへの希望を我慢していると気づいたら、どう扱いたい？",
+      "followUp": "相手に伝える前に、自分の中で何を整理したい？",
       "sensitivity": 3,
       "contentNotes": [
         "intimacy"
@@ -979,7 +1075,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -989,8 +1087,8 @@
       "category": "consent",
       "level": 3,
       "intensity": "deep",
-      "text": "相手の返事が曖昧な時、どんなふうに立ち止まりたいですか？",
-      "followUp": "相手が考える時間を守るために、何ができそうですか？",
+      "text": "相手の返事が曖昧なとき、どんなふうに立ち止まりたい？",
+      "followUp": "相手が考える時間を守るために、何ができそう？",
       "sensitivity": 3,
       "contentNotes": [
         "consent"
@@ -999,7 +1097,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1009,8 +1109,8 @@
       "category": "sexual-values",
       "level": 3,
       "intensity": "deep",
-      "text": "性に関して「こうあるべき」と感じる考えはありますか？",
-      "followUp": "その考えをこれからも大切にしたいか、何を基準に考えますか？",
+      "text": "セックスに関して「こうあるべき」と感じる考えはある？",
+      "followUp": "その考えをこれからも大切にしたいか、何を基準に考える？",
       "sensitivity": 3,
       "contentNotes": [
         "sexual-values"
@@ -1019,7 +1119,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1029,8 +1131,8 @@
       "category": "body-image",
       "level": 3,
       "intensity": "deep",
-      "text": "身体の変化で親密さへの気持ちが揺れる時、何を分かってほしいですか？",
-      "followUp": "自分のペースを守るために、どんな過ごし方を選びたいですか？",
+      "text": "身体の変化でセックスへの気持ちが揺れるとき、何を分かってほしい？",
+      "followUp": "自分のペースを守るために、どんな過ごし方を選びたい？",
       "sensitivity": 3,
       "contentNotes": [
         "body-image"
@@ -1039,7 +1141,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1049,8 +1153,8 @@
       "category": "communication",
       "level": 3,
       "intensity": "deep",
-      "text": "親密な関係で小さな不満を伝える時、何を大切にしたいですか？",
-      "followUp": "相手の受け取り方と自分の意図が違ったら、どう補いたいですか？",
+      "text": "セックスで小さな不満を伝えるとき、何を大切にしたい？",
+      "followUp": "相手の受け取り方と自分の意図が違ったら、どう補いたい？",
       "sensitivity": 3,
       "contentNotes": [
         "intimacy"
@@ -1059,7 +1163,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1069,8 +1175,8 @@
       "category": "boundaries",
       "level": 3,
       "intensity": "deep",
-      "text": "二人で決めた境界線を見直すなら、どんなきっかけで話したいですか？",
-      "followUp": "新しい境界線が合っているか、どう確かめたいですか？",
+      "text": "二人で決めた性的な境界線を見直すなら、どんなきっかけで話したい？",
+      "followUp": "新しい境界線が合っているか、どう確かめたい？",
       "sensitivity": 3,
       "contentNotes": [
         "intimacy"
@@ -1079,7 +1185,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1089,8 +1197,8 @@
       "category": "sexual-health",
       "level": 3,
       "intensity": "deep",
-      "text": "避妊について、二人でどんなことを確認しておきたいですか？",
-      "followUp": "考えが一致しない時、結論を急がず話すために何が必要ですか？",
+      "text": "避妊について、二人でどんなことを確認しておきたい？",
+      "followUp": "考えが一致しないとき、結論を急がず話すために何が必要？",
       "sensitivity": 3,
       "contentNotes": [
         "sexual-health"
@@ -1099,7 +1207,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1109,8 +1219,8 @@
       "category": "expectations",
       "level": 3,
       "intensity": "deep",
-      "text": "性的な親密さのない関係について、自分はどう感じますか？",
-      "followUp": "その形を選ぶ場合、どんなつながりを大切にしたいですか？",
+      "text": "セックスのない関係について、自分はどう感じる？",
+      "followUp": "その形を選ぶ場合、どんなつながりを大切にしたい？",
       "sensitivity": 3,
       "contentNotes": [
         "intimacy"
@@ -1119,7 +1229,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1129,8 +1241,8 @@
       "category": "sexual-values",
       "level": 4,
       "intensity": "deep",
-      "text": "性に関する自分の希望の中で、まだ言葉にしづらいことはありますか？",
-      "followUp": "今の自分が安心して伝えられる範囲はどこまでですか？",
+      "text": "セックスに関する自分の希望の中で、まだ言葉にしづらいことはある？",
+      "followUp": "今の自分が安心して伝えられる範囲はどこまで？",
       "sensitivity": 3,
       "contentNotes": [
         "sexual-values"
@@ -1139,7 +1251,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1149,8 +1263,8 @@
       "category": "consent",
       "level": 4,
       "intensity": "deep",
-      "text": "関係を失う不安がある時も、自分の意思を守るために何が必要ですか？",
-      "followUp": "その不安を一人で抱えないために、どんな支えを選びたいですか？",
+      "text": "関係を失う不安があるときも、自分の性的な意思を守るために何が必要？",
+      "followUp": "その不安を一人で抱えないために、どんな支えを選びたい？",
       "sensitivity": 3,
       "contentNotes": [
         "consent"
@@ -1159,7 +1273,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1169,8 +1285,8 @@
       "category": "desire",
       "level": 4,
       "intensity": "deep",
-      "text": "性への関心が今後変わった時、二人の関係をどう考えていきたいですか？",
-      "followUp": "変化を知らせ合う機会を、どんなふうに作りたいですか？",
+      "text": "セックスへの関心が今後変わったとき、二人の関係をどう考えていきたい？",
+      "followUp": "変化を知らせ合う機会を、どんなふうに作りたい？",
       "sensitivity": 3,
       "contentNotes": [
         "intimacy"
@@ -1179,7 +1295,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1189,8 +1307,8 @@
       "category": "body-image",
       "level": 4,
       "intensity": "deep",
-      "text": "身体についての自分の見方で、少し緩めたい基準はありますか？",
-      "followUp": "その基準を緩められたら、どんな気持ちで過ごせそうですか？",
+      "text": "身体についての自分の見方で、セックスに関して少し緩めたい基準はある？",
+      "followUp": "その基準を緩められたら、どんな気持ちで過ごせそう？",
       "sensitivity": 3,
       "contentNotes": [
         "body-image"
@@ -1199,7 +1317,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1209,8 +1329,8 @@
       "category": "boundaries",
       "level": 4,
       "intensity": "deep",
-      "text": "相手を大切にしながら自分の限界も守るには、何が必要ですか？",
-      "followUp": "その限界を相手に伝えるなら、どんな言葉が近いですか？",
+      "text": "相手を大切にしながら自分の性的な限界も守るには、何が必要？",
+      "followUp": "その限界を相手に伝えるなら、どんな言葉が近い？",
       "sensitivity": 3,
       "contentNotes": [
         "intimacy"
@@ -1219,7 +1339,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1229,8 +1351,8 @@
       "category": "communication",
       "level": 4,
       "intensity": "deep",
-      "text": "親密な関係のすれ違いを話す時、どんな着地点を望みますか？",
-      "followUp": "一度では話し終わらない場合、どう続けたいですか？",
+      "text": "セックスでのすれ違いを話すとき、どんな着地点を望む？",
+      "followUp": "一度では話し終わらない場合、どう続けたい？",
       "sensitivity": 3,
       "contentNotes": [
         "intimacy"
@@ -1239,7 +1361,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1249,8 +1373,8 @@
       "category": "expectations",
       "level": 4,
       "intensity": "deep",
-      "text": "他の人への恋愛感情が生まれた場合の向き合い方を、事前に話したいですか？",
-      "followUp": "話すとしたら、どんな約束を最初に確かめたいですか？",
+      "text": "他の人への恋愛感情や性的な関心が生まれた場合の向き合い方を、事前に話したい？",
+      "followUp": "話すとしたら、どんな約束を最初に確かめたい？",
       "sensitivity": 3,
       "contentNotes": [
         "intimacy"
@@ -1259,7 +1383,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -1269,8 +1395,8 @@
       "category": "sexual-health",
       "level": 4,
       "intensity": "deep",
-      "text": "健康上の事情を親密な相手に伝える範囲は、どう決めたいですか？",
-      "followUp": "自分で範囲を選ぶために、どんな相談先があると心強いですか？",
+      "text": "性的な健康上の事情を親密な相手に伝える範囲は、どう決めたい？",
+      "followUp": "自分で範囲を選ぶために、どんな相談先があると心強い？",
       "sensitivity": 3,
       "contentNotes": [
         "sexual-health"
@@ -1279,7 +1405,9 @@
         "kind": "codex",
         "model": "GPT-6",
         "stage": "ai-initial-draft",
-        "generatedAt": "2026-10-15"
+        "generatedAt": "2026-10-15",
+        "adjusted": true,
+        "adjustmentNote": "tone aligned to user-provided explicit style"
       },
       "reviewStatus": "approved"
     },
@@ -2091,6 +2219,210 @@
           "stage": "ai-initial-draft",
           "generatedAt": "2026-10-15"
         }
+      }
+    },
+    {
+      "id": "adults-desire-deep-l2-017",
+      "series": "adults",
+      "category": "desire",
+      "level": 2,
+      "intensity": "deep",
+      "text": "3Pや複数人でのプレイに興味はある？",
+      "followUp": "ある場合、自分はどんな役割がいいと思う？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "desire",
+        "group-sex"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-desire-deep-l3-016",
+      "series": "adults",
+      "category": "desire",
+      "level": 3,
+      "intensity": "deep",
+      "text": "同性同士のセックスに興奮したり、妄想したことはある？",
+      "followUp": "ある場合、それは純粋な興味？それとも自分もやってみたいと思う？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "desire",
+        "same-sex",
+        "fantasy"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-desire-deep-l2-018",
+      "series": "adults",
+      "category": "desire",
+      "level": 2,
+      "intensity": "deep",
+      "text": "アナルプレイに興味はある？",
+      "followUp": "ある場合、どのくらいまでやってみたいと思う？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "desire",
+        "anal"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-sexual-values-deep-l3-015",
+      "series": "adults",
+      "category": "sexual-values",
+      "level": 3,
+      "intensity": "deep",
+      "text": "相手が他の人とセックスしているところを想像して、興奮したことはある？",
+      "followUp": "その感情は嫉妬？それとも興奮？実際の行為に影響したことはある？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "sexual-values",
+        "ntr",
+        "jealousy"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-desire-deep-l3-017",
+      "series": "adults",
+      "category": "desire",
+      "level": 3,
+      "intensity": "deep",
+      "text": "SMや言葉責め、拘束などに興味はある？",
+      "followUp": "ある場合、どのくらいの強さまでなら大丈夫だと思う？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "desire",
+        "bdsm",
+        "verbal"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-communication-deep-l3-012",
+      "series": "adults",
+      "category": "communication",
+      "level": 3,
+      "intensity": "deep",
+      "text": "自分の性的な趣味を相手に話したことはある？",
+      "followUp": "話したあと、相手の反応はどうだった？関係は変わった？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "communication",
+        "disclosure"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-boundaries-deep-l3-013",
+      "series": "adults",
+      "category": "boundaries",
+      "level": 3,
+      "intensity": "deep",
+      "text": "3Pやアナル、特定のプレイで「これは絶対にやらない」と決めているものはある？",
+      "followUp": "その線引きを相手にどう伝えたい？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "boundaries",
+        "hard-limits"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-desire-deep-l4-014",
+      "series": "adults",
+      "category": "desire",
+      "level": 4,
+      "intensity": "deep",
+      "text": "相手と一緒にエロい動画を見て興奮したことはある？",
+      "followUp": "そのとき、相手の反応や自分の気持ちはどうだった？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "desire",
+        "shared-media"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-desire-deep-l3-020",
+      "series": "adults",
+      "category": "desire",
+      "level": 3,
+      "intensity": "deep",
+      "text": "中出ししたあとに「他の人のものと混ざってる」と想像して興奮したことはある？",
+      "followUp": "その感覚は好き？それとも気になる・嫌？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "desire",
+        "creampie",
+        "mixed"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
+      }
+    },
+    {
+      "id": "adults-sexual-values-deep-l4-014",
+      "series": "adults",
+      "category": "sexual-values",
+      "level": 4,
+      "intensity": "deep",
+      "text": "相手が他の人の精液を飲んだあとキスされたら、どう感じる？",
+      "followUp": "その想像をしたとき、興奮した？嫉妬した？それとも嫌だった？",
+      "sensitivity": 3,
+      "contentNotes": [
+        "sexual-values",
+        "jealousy"
+      ],
+      "reviewStatus": "approved",
+      "source": {
+        "kind": "x-inspired",
+        "stage": "rewritten",
+        "generatedAt": "2026-11-03"
       }
     }
   ],

@@ -85,6 +85,10 @@ node tools/verify-couples-dataset.mjs <cards.ts へのパス> shared/questions/c
 
 ユーザーの取り込み許可を受け、提供された30組の本文・深掘り文を一字も変更せずに追加しました。Adultsは94組です。追加分は`user-provided` / `provided-draft`としてAIが新規生成した64組と分離し、原文中の作成元表記は`source.original`に申告値として保持します。本文と深掘り文のSHA-256を検証し、取り込み前後の一致を確認しています。公開設定とレビュー状態は自動承認しません。
 
+## X着想のAdults質問
+
+Adultsの`x-inspired`質問は、X上の表現を着想源として再構成した質問です。`source.stage: "rewritten"`と有効な`generatedAt`を必須とし、AI生成や提供原文とは別の作成元として記録します。このメタデータは、特定の投稿からの逐語引用や投稿者の特定を意味しません。レビュー状態は各質問の`reviewStatus`で別途管理します。
+
 ### 2026-10-17 Couples Deepの追加
 
 ユーザーの依頼でCodex / GPT-6が10組を作成しました。`tools/couples-deep-additions.mjs`の`editorial-couples-deep-001`〜`010`が追加元で、正本701問と従来の公開222問は変更していません。深掘りsidecarの`questionSources`に個別のAI初期案メタデータを保持します。作成元をGrokとは扱いません。

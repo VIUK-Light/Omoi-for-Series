@@ -101,3 +101,15 @@ test('provided provenance is distinct from verified AI attribution and text chan
   const changed={...data,questions:[{...question,text:text+'追加'}]};
   assert.ok(validateDataset(changed,{series:'adults'}).issues.some(x=>x.severity==='error' && /ハッシュ/u.test(x.message)));
 });
+
+test('rewritten X-inspired Adults questions require valid provenance metadata', async () => {
+  const {hasValidQuestionSource, assertQuestionDataset}=await import('../shared/content-policy.mjs');
+  const source={kind:'x-inspired',stage:'rewritten',generatedAt:'2026-11-03'};
+  const question={id:'adults-desire-deep-l2-017',series:'adults',category:'desire',level:2,intensity:'deep',text:'質問文',followUp:'深掘り質問',sensitivity:3,contentNotes:['desire'],source,reviewStatus:'approved'};
+  assert.equal(hasValidQuestionSource(source,'adults'),true);
+  assert.equal(hasValidQuestionSource(source,'self-care'),false);
+  assert.equal(hasValidQuestionSource({...source,generatedAt:'2026-02-31'},'adults'),false);
+  assert.equal(hasValidQuestionSource({...source,stage:'ai-initial-draft'},'adults'),false);
+  assert.doesNotThrow(()=>assertQuestionDataset({series:'adults',publicationStatus:'published',questions:[question]},'adults',{published:true}));
+  assert.throws(()=>assertQuestionDataset({series:'adults',publicationStatus:'published',questions:[{...question,reviewStatus:'reviewed'}]},'adults',{published:true}),/不備/u);
+});

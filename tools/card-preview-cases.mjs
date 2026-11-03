@@ -110,12 +110,6 @@ export const CARD_PREVIEW_CASES = [
   },
   {
     "series": "adults",
-    "id": "adults-boundaries-lite-l1-005",
-    "side": "followUp",
-    "label": "場面による希望の深掘り"
-  },
-  {
-    "series": "adults",
     "id": "adults-body-image-deep-l3-009",
     "side": "text",
     "label": "提供原文を保った長い質問"

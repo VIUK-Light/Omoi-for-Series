@@ -59,10 +59,10 @@ test("source edits and source-pair mismatches invalidate the display fingerprint
   assert.ok(validateDisplaySources("couples", changed).issues.some((issue) => issue.includes("原文ハッシュ")));
 });
 
-test("exactly the 23 selected sides are registered and keep their source fingerprints", () => {
+test("exactly the 22 selected sides are registered and keep their source fingerprints", () => {
   const expected = new Set(CARD_PREVIEW_CASES.map(({ series, id, side }) => `${series}/${id}/${side}`));
   const actual = new Set();
-  assert.equal(expected.size, 23);
+  assert.equal(expected.size, 22);
   assert.equal(CARD_PREVIEW_CASES.filter(({ side }) => side === "text").length, 18);
   for (const series of seriesIds) {
     const inputs = readDisplaySources(series);
