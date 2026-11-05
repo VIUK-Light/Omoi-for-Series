@@ -1,20 +1,34 @@
-import { questionCardMarkup, updateQuestionCardSide } from "/shared/question-card.mjs?v=card-reform-1";
+import { questionCardMarkup, updateQuestionCardSide, updateQuestionCardText, focusQuestionCard } from "/shared/question-card.mjs?v=couples-context-3";
 import { displayTextForQuestion, MOBILE_COPY_QUERY } from "/shared/display-copy.mjs";
-import { followUpForQuestion } from "/shared/question-engine.mjs";
+import { followUpForQuestion, discussionPromptsForQuestion } from "/shared/question-engine.mjs";
 
 const select = document.querySelector("#review-case");
 const slot = document.querySelector("#review-card-slot");
 const flip = document.querySelector("#review-flip");
+const promptNavigation = document.querySelector("#review-prompts");
+const previousPrompt = document.querySelector("#review-previous-prompt");
+const nextPrompt = document.querySelector("#review-next-prompt");
 const viewport = window.matchMedia(MOBILE_COPY_QUERY);
 let cases = [];
 let index = 0;
 let revealed = false;
 let flipping = false;
+let discussionIndex = 0;
 
 function updateText() {
   const entry = cases[index];
-  slot.querySelector("#main-question").textContent = displayTextForQuestion(entry.question, "text", entry.entries, viewport.matches);
-  slot.querySelector("#follow-up-question").textContent = displayTextForQuestion(entry.question, "followUp", entry.entries, viewport.matches) ?? followUpForQuestion(entry.question, entry.series);
+  const prompts = discussionPromptsForQuestion(entry.question, entry.series);
+  updateQuestionCardText(slot.querySelector("#question-card"), {
+    id: entry.id, target: entry.target, textFormat: entry.question.textFormat,
+    text: displayTextForQuestion(entry.question, "text", entry.entries, viewport.matches),
+    followUp: discussionIndex === 0
+      ? displayTextForQuestion(entry.question, "followUp", entry.entries, viewport.matches) ?? followUpForQuestion(entry.question, entry.series)
+      : prompts[discussionIndex],
+    followUpLabel: prompts.length > 1 ? `さらに話す ${discussionIndex + 1} / ${prompts.length}` : undefined,
+  });
+  promptNavigation.hidden = !revealed || prompts.length < 2;
+  previousPrompt.disabled = discussionIndex === 0;
+  nextPrompt.disabled = discussionIndex === prompts.length - 1;
   document.querySelector("#review-layout").textContent = viewport.matches ? "スマホ用の改行" : "PC用の改行";
 }
 
@@ -23,8 +37,9 @@ function render() {
   document.body.dataset.audience = entry.series;
   select.value = String(index);
   revealed = entry.side === "followUp";
+  discussionIndex = 0;
   slot.innerHTML = questionCardMarkup({
-    id: entry.id, target: entry.target,
+    id: entry.id, target: entry.target, textFormat: entry.question.textFormat,
     text: displayTextForQuestion(entry.question, "text", entry.entries, viewport.matches),
     followUp: displayTextForQuestion(entry.question, "followUp", entry.entries, viewport.matches) ?? followUpForQuestion(entry.question, entry.series),
     solo: entry.series === "self-care", contentNotes: entry.question.contentNotes || [], revealed,
@@ -41,6 +56,17 @@ function render() {
 select.addEventListener("change", () => { if (!flipping) { index = Number(select.value); render(); } });
 document.querySelector("#review-previous").addEventListener("click", () => { if (!flipping && index > 0) { index--; render(); } });
 document.querySelector("#review-next").addEventListener("click", () => { if (!flipping && index < cases.length - 1) { index++; render(); } });
+function advancePrompt(offset) {
+  if (flipping) return;
+  const next = discussionIndex + offset;
+  const prompts = discussionPromptsForQuestion(cases[index].question, cases[index].series);
+  if (next < 0 || next >= prompts.length) return;
+  discussionIndex = next;
+  updateText();
+  focusQuestionCard(slot.querySelector("#question-card"), true);
+}
+previousPrompt.addEventListener("click", () => advancePrompt(-1));
+nextPrompt.addEventListener("click", () => advancePrompt(1));
 flip.addEventListener("click", () => {
   if (flipping) return;
   revealed = !revealed;
@@ -51,7 +77,7 @@ flip.addEventListener("click", () => {
   const complete = () => {
     clearTimeout(timer); inner.removeEventListener("transitionend", done);
     flipping = false; flip.disabled = false; select.disabled = false;
-    card.querySelector(revealed ? ".follow-up-text" : ".question-text").focus({ preventScroll: true });
+    focusQuestionCard(card, revealed);
   };
   const done = (event) => { if (event.target === inner && event.propertyName === "transform") complete(); };
   if (!reducedMotion) {
@@ -59,6 +85,7 @@ flip.addEventListener("click", () => {
     inner.addEventListener("transitionend", done); timer = setTimeout(complete, 800);
   }
   updateQuestionCardSide(card, revealed);
+  updateText();
   flip.textContent = revealed ? "表を見る" : "裏を見る";
   if (reducedMotion) complete();
 });
@@ -69,6 +96,12 @@ try {
   const data = await response.json();
   if (!response.ok) throw new Error(data.error || "確認用データを読み込めませんでした。");
   cases = data.cases;
+  const query = new URLSearchParams(window.location.search);
+  if (query.get("mode") === "couples-deep") {
+    cases = cases.filter(entry => entry.series === "couples" && entry.id.startsWith("editorial-couples-episode-"));
+  }
+  if (!cases.length) throw new Error("確認できるカードがありません。");
+  index = Math.max(0, cases.findIndex(entry => entry.id === query.get("card")));
   select.replaceChildren(...cases.map((entry, i) => {
     const option = document.createElement("option");
     option.value = String(i); option.textContent = `${i + 1}. ${entry.target} · ${entry.label}`; return option;

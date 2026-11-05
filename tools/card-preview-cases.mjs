@@ -2,6 +2,78 @@
 export const CARD_PREVIEW_CASES = [
   {
     "series": "couples",
+    "id": "editorial-couples-episode-011",
+    "side": "text",
+    "label": "提供画像1の圧縮カード"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-013",
+    "side": "text",
+    "label": "結婚するなら、彼氏と元セフレのどっち？"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-014",
+    "side": "text",
+    "label": "浮気したけど、後悔していない"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-015",
+    "side": "text",
+    "label": "結局、顔がよければ大切にされる"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-016",
+    "side": "text",
+    "label": "元カノに未練はない。でも幸せそうなのが気になる"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-017",
+    "side": "text",
+    "label": "顔・性格・金。一つしか選べないなら？"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-019",
+    "side": "text",
+    "label": "同性にスパンキングしてもらうのも浮気？"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-024",
+    "side": "text",
+    "label": "スマホに何もなければ、信じられる？"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-028",
+    "side": "text",
+    "label": "誠実さが好きって、イケメンが現れるまでの話？"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-029",
+    "side": "text",
+    "label": "仕事でエッチしているだけ。嫌なら、その分お金を出してくれる？"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-133",
+    "side": "text",
+    "label": "容姿の好みと恋人への愛情"
+  },
+  {
+    "series": "couples",
+    "id": "editorial-couples-episode-134",
+    "side": "text",
+    "label": "配信者とのDM"
+  },
+  {
+    "series": "couples",
     "id": "editorial-couples-fit-001",
     "side": "text",
     "label": "休日の希望が違う場面"
@@ -11,12 +83,6 @@ export const CARD_PREVIEW_CASES = [
     "id": "values-1-2",
     "side": "text",
     "label": "行き先の三つの選択肢"
-  },
-  {
-    "series": "couples",
-    "id": "editorial-couples-deep-008",
-    "side": "followUp",
-    "label": "自分の時間と選択の深掘り"
   },
   {
     "series": "family",
@@ -41,12 +107,6 @@ export const CARD_PREVIEW_CASES = [
     "id": "editorial-friends-fit-012",
     "side": "followUp",
     "label": "短いメッセージの深掘り"
-  },
-  {
-    "series": "adults",
-    "id": "adults-boundaries-lite-l1-005",
-    "side": "followUp",
-    "label": "場面による希望の深掘り"
   },
   {
     "series": "adults",

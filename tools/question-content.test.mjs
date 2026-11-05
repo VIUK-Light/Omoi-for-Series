@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { mergeLegacyFollowUps, canPreviewDrafts, canShowReviewedContent } from '../shared/content-policy.mjs';
-import { filterQuestions, followUpForQuestion } from '../shared/question-engine.mjs';
+import { filterQuestions, followUpForQuestion, isSharedCouplesDiscussionOpening } from '../shared/question-engine.mjs';
 import { validateDataset, normalizeQuestionText } from './validate-grok-questions.mjs';
 import { SERIES_CONTRACTS } from "./series-contracts.mjs";
 const legacyTotal = ["couples","family","friends"].reduce((n,s)=>n+SERIES_CONTRACTS[s].total,0);
@@ -26,7 +26,10 @@ test('all curated legacy cards have contextual followups without mutating their 
       assert.equal(q.source,base[i].source);
       assert.equal(followUpForQuestion(q,series),sidecar.questions[q.id]);
       assert.notEqual(q.followUp,'そう感じるようになったきっかけはありますか？');
-      assert.ok(!seen.has(q.followUp));seen.add(q.followUp);count+=1;
+      if(!isSharedCouplesDiscussionOpening(q,series,q.followUp,sidecar.sharedDiscussionOpening)) {
+        assert.ok(!seen.has(q.followUp));seen.add(q.followUp);
+      }
+      count+=1;
     }
     assert.equal(JSON.stringify(base),before);
     assert.equal(sidecar.reviewStatus,'pending');
@@ -63,19 +66,25 @@ test('explicitly released records are playable in production while pending addit
   }
 });
 
-test('all retained card pairs have different normalized followups across the five series', () => {
-  const seen = new Set();
+test('authored followups stay unique except for the explicitly shared Couples Deep opening', () => {
+  const seen = new Map();
+  let sharedCount=0;
   for (const series of ['couples','family','friends','adults','self-care']) {
     const legacy=['couples','family','friends'].includes(series);
     const data=read(`shared/${legacy?'followups':'questions'}/${series}.json`);
-    const followUps=legacy?Object.values(data.questions):data.questions.map(question=>question.followUp);
-    for (const text of followUps) {
+    const questions=legacy?read(`shared/questions/${series}.json`):data.questions;
+    for (const question of questions) {
+      const text=legacy?data.questions[question.id]:question.followUp;
       const key=normalizeQuestionText(text);
-      assert.ok(!seen.has(key), `Duplicate followup: ${text}`);
-      seen.add(key);
+      const shared=isSharedCouplesDiscussionOpening(question,series,text,data.sharedDiscussionOpening);
+      const owner=shared?'couples/shared-opening':`${series}/${question.id}`;
+      assert.ok(!seen.has(key)||(shared&&seen.get(key)===owner), `Duplicate followup: ${text}`);
+      seen.set(key,owner);
+      if(shared)sharedCount+=1;
     }
   }
-  assert.equal(seen.size,allTotal);
+  assert.equal(sharedCount,12);
+  assert.equal(seen.size,allTotal-sharedCount+1);
 });
 
 test('provided Adults records retain import provenance and an unchanged text fingerprint', async () => {

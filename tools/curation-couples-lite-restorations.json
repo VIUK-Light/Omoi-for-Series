@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "series": "couples",
+  "editedAt": "2026-10-25",
+  "basis": "user-instruction",
+  "scope": "旧Deepの重い直接質問16組をLiteへ移動。132のエピソードはDeepに保持。",
+  "before": {
+    "lite": 100,
+    "deep": 132
+  },
+  "after": {
+    "lite": 116,
+    "deep": 132,
+    "total": 248
+  },
+  "restored": [
+    {
+      "before": {
+        "id": "editorial-couples-deep-001",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "別れたいと思ったことはある？",
+        "followUp": "相手も、別れたいと思ったことがあると思う？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-001",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "別れたいと思ったことはある？",
+        "intensity": "lite",
+        "followUp": "その気持ちが生まれた時、関係について何を考えていた？"
+      },
+      "reason": "別れを考えた気持ちを直接話す問いとして復元。既存Liteには別れを扱う問いがない。深掘りだけは、相手の心を推測させる元の文から、自分の気持ちと関係を振り返る問いへ改稿。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-003",
+        "audience": "couples",
+        "level": 3,
+        "category": "boundaries",
+        "source": "editorial",
+        "text": "相手に言えずに我慢していることはある？",
+        "followUp": "今話すなら、どんな言葉で伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-003",
+        "audience": "couples",
+        "level": 3,
+        "category": "boundaries",
+        "source": "editorial",
+        "text": "相手に言えずに我慢していることはある？",
+        "intensity": "lite",
+        "followUp": "今話すなら、どんな言葉で伝えたい？"
+      },
+      "reason": "相手に伝えられず我慢している内容を話す問いとして復元。既存Liteの「聞かれたくない話題」と異なり、自分の言えなかった希望を扱う。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-004",
+        "audience": "couples",
+        "level": 3,
+        "category": "reassurance",
+        "source": "editorial",
+        "text": "二人の関係で、寂しさを感じるのはどんな時？",
+        "followUp": "その時、相手にどう関わってほしい？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-004",
+        "audience": "couples",
+        "level": 3,
+        "category": "reassurance",
+        "source": "editorial",
+        "text": "二人の関係で、寂しさを感じるのはどんな時？",
+        "intensity": "lite",
+        "followUp": "その時、相手にどう関わってほしい？"
+      },
+      "reason": "関係の中で寂しさが生まれる場面を話す問いとして復元。既存Liteの「寂しい時にどう接してほしいか」と、原因と対応の役割を分ける。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-005",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "付き合い始めた頃より、気持ちが冷めたと感じることはある？",
+        "followUp": "その変化について、二人で確かめたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-005",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "付き合い始めた頃より、気持ちが冷めたと感じることはある？",
+        "intensity": "lite",
+        "followUp": "その変化について、二人で確かめたいことは？"
+      },
+      "reason": "恋愛感情が冷めたと感じる変化を話す問いとして復元。既存Liteの出会った頃の印象や連絡頻度とは異なる、気持ち自体の変化を扱う。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-006",
+        "audience": "couples",
+        "level": 4,
+        "category": "futureValues",
+        "source": "editorial",
+        "text": "相手との将来を考える時、迷っていることはある？",
+        "followUp": "その迷いを話す時、相手にどんなふうに聞いてほしい？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-006",
+        "audience": "couples",
+        "level": 4,
+        "category": "futureValues",
+        "source": "editorial",
+        "text": "相手との将来を考える時、迷っていることはある？",
+        "intensity": "lite",
+        "followUp": "その迷いを話す時、相手にどんなふうに聞いてほしい？"
+      },
+      "reason": "相手との将来への迷いを具体的に話す問いとして復元。既存Liteの理想のカップル像や大切な価値観とは異なり、現時点で決めきれないことを扱う。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-007",
+        "audience": "couples",
+        "level": 4,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "相手の言動で、まだ心に引っかかっていることはある？",
+        "followUp": "その時の気持ちを、今ならどう伝えたい？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-007",
+        "audience": "couples",
+        "level": 4,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "相手の言動で、まだ心に引っかかっていることはある？",
+        "intensity": "lite",
+        "followUp": "その時の気持ちを、今ならどう伝えたい？"
+      },
+      "reason": "過去の言動で今も残る傷つきや引っかかりを話す問いとして復元。既存Liteの避けてほしい言い方の一般論とは役割を分ける。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-008",
+        "audience": "couples",
+        "level": 4,
+        "category": "boundaries",
+        "source": "editorial",
+        "text": "相手に合わせるうちに、自分らしさを抑えていると感じることはある？",
+        "followUp": "自分のために取り戻したい時間や選択は？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-008",
+        "audience": "couples",
+        "level": 4,
+        "category": "boundaries",
+        "source": "editorial",
+        "text": "相手に合わせるうちに、自分らしさを抑えていると感じることはある？",
+        "intensity": "lite",
+        "followUp": "自分のために取り戻したい時間や選択は？"
+      },
+      "reason": "相手に合わせる中で自分らしさを抑えている感覚を話す問いとして復元。単なる休日の好みや予定の調整ではなく、自己抑制を扱う。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-009",
+        "audience": "couples",
+        "level": 3,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "二人の関係で、不公平だと感じる負担はある？",
+        "followUp": "その負担を分け直すなら、何から話したい？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-009",
+        "audience": "couples",
+        "level": 3,
+        "category": "conflictSupport",
+        "source": "editorial",
+        "text": "二人の関係で、不公平だと感じる負担はある？",
+        "intensity": "lite",
+        "followUp": "その負担を分け直すなら、何から話したい？"
+      },
+      "reason": "関係における負担の不公平を話す問いとして復元。既存Liteには役割や負担の偏りを直接扱う問いがない。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-deep-010",
+        "audience": "couples",
+        "level": 3,
+        "category": "commitment",
+        "source": "editorial",
+        "text": "これからも付き合うなら、二人の間で変えたいことは？",
+        "followUp": "そのために、自分からできそうなことは？"
+      },
+      "after": {
+        "id": "editorial-couples-deep-010",
+        "audience": "couples",
+        "level": 3,
+        "category": "commitment",
+        "source": "editorial",
+        "text": "これからも付き合うなら、二人の間で変えたいことは？",
+        "intensity": "lite",
+        "followUp": "そのために、自分からできそうなことは？"
+      },
+      "reason": "交際を続けるために変えたいことを話す問いとして復元。既存Liteの理想像や約束づくりより、現在の関係を変える希望に焦点を置く。"
+    },
+    {
+      "before": {
+        "id": "love-4-4",
+        "audience": "couples",
+        "level": 4,
+        "text": "浮気ってどこからだと思う？",
+        "category": "romance",
+        "source": "loves",
+        "followUp": "境界の考え方が違ったら、どこから話し合いたい？"
+      },
+      "after": {
+        "id": "love-4-4",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "loves",
+        "text": "浮気ってどこからだと思う？",
+        "intensity": "lite",
+        "followUp": "境界の考え方が違ったら、どこから話し合いたい？"
+      },
+      "reason": "浮気と感じる境界を話す問いとして復元。既存Liteの嫉妬の有無や返信への不安とは異なり、関係の境界の認識差を扱う。Loves由来の主質問を逐語保持する。"
+    },
+    {
+      "before": {
+        "id": "values-4-5",
+        "audience": "couples",
+        "level": 4,
+        "text": "自分ばかり好きなのかなって不安になることはある？",
+        "category": "values",
+        "source": "loves",
+        "followUp": "不安を感じる時は、相手にどんなことを知っておいてほしい？"
+      },
+      "after": {
+        "id": "values-4-5",
+        "audience": "couples",
+        "level": 4,
+        "category": "values",
+        "source": "loves",
+        "text": "自分ばかり好きなのかなって不安になることはある？",
+        "intensity": "lite",
+        "followUp": "不安を感じる時は、相手にどんなことを知っておいてほしい？"
+      },
+      "reason": "好きな気持ちが一方通行に感じられる不安を話す問いとして復元。既存Liteの連絡が遅い時の不安に限定されない。Loves由来の主質問を逐語保持する。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-009",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人に気をつかいすぎて、疲れることはある？",
+        "category": "values",
+        "source": "editorial",
+        "followUp": "二人でいる時、気を張らずに休めるように変えたいことは？"
+      },
+      "after": {
+        "id": "editorial-couples-fit-009",
+        "audience": "couples",
+        "level": 4,
+        "category": "values",
+        "source": "editorial",
+        "text": "恋人に気をつかいすぎて、疲れることはある？",
+        "intensity": "lite",
+        "followUp": "二人でいる時、気を張らずに休めるように変えたいことは？"
+      },
+      "reason": "相手への気づかいが疲れにつながることを話す問いとして復元。自分らしさを抑える問いとは、休息や気を張る負担という観点で分ける。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-022",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人同士でも、スマホや個人アカウントで守りたいプライバシーは？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "二人の写真を投稿する時、どんな確認をしておきたい？"
+      },
+      "after": {
+        "id": "editorial-couples-fit-022",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "恋人同士でも、スマホや個人アカウントで守りたいプライバシーは？",
+        "intensity": "lite",
+        "followUp": "二人の写真を投稿する時、どんな確認をしておきたい？"
+      },
+      "reason": "スマホや個人アカウントのプライバシーを話す問いとして復元。既存Liteの連絡頻度の問いと異なり、親密さと個人の領域を扱う。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-075",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人からのどんな関わり方を、束縛だと感じる？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "自由を大切にしながら、安心のために相談できることは？"
+      },
+      "after": {
+        "id": "editorial-couples-fit-075",
+        "audience": "couples",
+        "level": 4,
+        "category": "jealousy",
+        "source": "editorial",
+        "text": "恋人からのどんな関わり方を、束縛だと感じる？",
+        "intensity": "lite",
+        "followUp": "自由を大切にしながら、安心のために相談できることは？"
+      },
+      "reason": "束縛と感じる関わり方を話す問いとして復元。既存Liteの心配が負担になる問いに対し、自由や行動の制限という観点を明確にする。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-074",
+        "audience": "couples",
+        "level": 3,
+        "text": "恋人の嘘に気づいた時、話し合う前に確かめたいことは？",
+        "category": "jealousy",
+        "source": "editorial",
+        "followUp": "すぐに許すか決めずに、考える時間を取れそう？"
+      },
+      "after": {
+        "id": "editorial-couples-fit-074",
+        "audience": "couples",
+        "level": 3,
+        "category": "jealousy",
+        "source": "editorial",
+        "text": "恋人の嘘に気づいた時、話し合う前に確かめたいことは？",
+        "intensity": "lite",
+        "followUp": "すぐに許すか決めずに、考える時間を取れそう？"
+      },
+      "reason": "嘘に気づいた際の信頼の揺れや、確かめる順序を話す問いとして復元。既存Liteの信頼を育てる日常行動と異なり、揺らいだ時の対応を扱う。"
+    },
+    {
+      "before": {
+        "id": "editorial-couples-fit-025",
+        "audience": "couples",
+        "level": 4,
+        "text": "恋人との触れ合いを断りたい時、言いやすくするには何が必要？",
+        "category": "romance",
+        "source": "editorial",
+        "followUp": "断られた側は、どんな返事をすると安心につながりそう？"
+      },
+      "after": {
+        "id": "editorial-couples-fit-025",
+        "audience": "couples",
+        "level": 4,
+        "category": "romance",
+        "source": "editorial",
+        "text": "恋人との触れ合いを断りたい時、言いやすくするには何が必要？",
+        "intensity": "lite",
+        "followUp": "断られた側は、どんな返事をすると安心につながりそう？"
+      },
+      "reason": "触れ合いを断る際に言い出しやすくする条件を話す問いとして復元。既存Liteのハグの好みや体の話への配慮とは異なり、断る場面を扱う。"
+    }
+  ]
+}

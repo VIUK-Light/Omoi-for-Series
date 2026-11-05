@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {seriesFitIssues} from './series-fit-rules.mjs';
+import {COUPLES_EPISODE_CURATION} from './couples-deep-episodes.mjs';
+import {COUPLES_LITE_RESTORATIONS} from './couples-lite-restorations.mjs';
 const read=name=>JSON.parse(readFileSync(new URL(`../${name}`,import.meta.url),'utf8'));
 
 test('generic morality, public outrage and unrelated categories are rejected for relationship series',()=>{
@@ -19,11 +21,23 @@ test('actual relationship conflicts, boundaries and emotional depth are retained
 test('every retained Couples, Family and Friends question passes the audience-fit guard',()=>{
  for(const s of ['couples','family','friends']) for(const q of read(`shared/questions/${s}.json`)) assert.deepEqual(seriesFitIssues(q,s),[],`${s}/${q.id}`);
 });
-test('removed and superseded questions never remain in cards or followup mappings',()=>{
+test('historical curation stays reproducible before the separately audited Deep episode revision',()=>{
  for(const s of ['couples','family','friends']){
   const report=read(`tools/curation-${s}.json`);
-  const cards=read(`shared/questions/${s}.json`);
+  const restoredIds=new Set(COUPLES_LITE_RESTORATIONS.restored.map(({after})=>after.id));
+  let cards=read(`shared/questions/${s}.json`).filter(q=>s!=='couples'||!restoredIds.has(q.id));
   const follow=read(`shared/followups/${s}.json`);
+  // The episode audit records the exact previous card pairs. Validate the older
+  // audit against that layer; the new audit is checked in couples-deep-episodes.test.
+  if(s==='couples') {
+   cards=cards.filter(q=>q.level<3);
+   follow.questions=Object.fromEntries(cards.map(q=>[q.id,follow.questions[q.id]]));
+   for(const {before} of COUPLES_EPISODE_CURATION.rewritten) {
+    const {followUp,...question}=before;
+    cards.push(question);
+    follow.questions[before.id]=followUp;
+   }
+  }
   const ids=new Set(cards.map(q=>q.id));
   for(const entry of report.removed){const id=entry.id??entry.before?.id;assert.ok(!ids.has(id),`${s}: removed ${id}`);assert.ok(!Object.hasOwn(follow.questions,id));}
   const rewrites=report.rewritten??report.rewrites??report.changed;
