@@ -8,6 +8,7 @@
     "generatedAt": "2026-10-15"
   },
   "reviewStatus": "pending",
+  "discussionReviewStatus": "approved",
   "questions": {
     "editorial-couples-fit-001": "一緒の予定と別々の予定を、どんなふうに組み合わせたい？",
     "values-1-2": "その場所で、ふたりでどんな時間を過ごしてみたい？",

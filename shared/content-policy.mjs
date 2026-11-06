@@ -1,4 +1,4 @@
-import { isDevelopmentHost, isSharedCouplesDiscussionOpening, COUPLES_SHARED_DISCUSSION_OPENING } from "./question-engine.mjs";
+import { intensityForQuestion, isDevelopmentHost, isSharedCouplesDiscussionOpening, COUPLES_SHARED_DISCUSSION_OPENING } from "./question-engine.mjs";
 
 export class QuestionDataError extends Error {
   constructor(message) {
@@ -49,12 +49,16 @@ export function mergeLegacyFollowUps(questions, data, series, { allowDrafts = fa
   if (!['pending', 'approved'].includes(data.reviewStatus) || !data.questions || typeof data.questions !== 'object' || Array.isArray(data.questions)) {
     throw new QuestionDataError(`${series}: 深掘り質問のレビュー情報または質問一覧が不正です。`);
   }
-  const ids = new Set(questions.map(question => question.id));
+  if (data.discussionReviewStatus !== undefined
+    && (data.discussionQuestions === undefined || !['pending', 'approved'].includes(data.discussionReviewStatus))) {
+    throw new QuestionDataError(`${series}: 出来事の追加質問のレビュー情報が不正です。`);
+  }
+  const questionsById = new Map(questions.map(question => [question.id, question]));
   if (data.sharedDiscussionOpening !== undefined && (series !== 'couples' || data.sharedDiscussionOpening !== COUPLES_SHARED_DISCUSSION_OPENING)) {
     throw new QuestionDataError(`${series}: 共通の追加質問が不正です。`);
   }
   for (const id of Object.keys(data.questions)) {
-    if (!ids.has(id)) throw new QuestionDataError(`${series}: 元の質問が存在しない深掘り質問です (${id})。`);
+    if (!questionsById.has(id)) throw new QuestionDataError(`${series}: 元の質問が存在しない深掘り質問です (${id})。`);
   }
   for (const question of questions) {
     const text = data.questions[question.id];
@@ -67,7 +71,10 @@ export function mergeLegacyFollowUps(questions, data, series, { allowDrafts = fa
       throw new QuestionDataError(`${series}: 出来事の追加質問一覧が不正です。`);
     }
     for (const [id, prompts] of Object.entries(data.discussionQuestions)) {
-      if (!ids.has(id) || !id.startsWith('editorial-couples-episode-')) throw new QuestionDataError(`${series}: 出来事が存在しない追加質問です (${id})。`);
+      const question = questionsById.get(id);
+      if (!question || !id.startsWith('editorial-couples-episode-') || intensityForQuestion(question) !== 'deep') {
+        throw new QuestionDataError(`${series}: Deepの出来事に対応しない追加質問です (${id})。`);
+      }
       if (!Array.isArray(prompts) || prompts.length < 2 || prompts.length > 5 || prompts[0] !== data.questions[id]
         || prompts.some(text => typeof text !== 'string' || !text.trim() || text.length > 160)
         || new Set(prompts.map(text => text.trim())).size !== prompts.length) {
@@ -83,12 +90,18 @@ export function mergeLegacyFollowUps(questions, data, series, { allowDrafts = fa
       }
     }
   }
-  if (!canShowReviewedContent(data.reviewStatus, { allowDrafts })) return questions;
-  return questions.map(question => ({
-    ...question,
-    followUp: data.questions[question.id].trim(),
-    ...(data.discussionQuestions?.[question.id] ? { followUps: data.discussionQuestions[question.id].map(text => text.trim()) } : {}),
-  }));
+  const showFollowUps = canShowReviewedContent(data.reviewStatus, { allowDrafts });
+  const showDiscussion = canShowReviewedContent(data.discussionReviewStatus ?? data.reviewStatus, { allowDrafts });
+  if (!showFollowUps && !showDiscussion) return questions;
+
+  return questions.map(question => {
+    const discussion = showDiscussion ? data.discussionQuestions?.[question.id] : undefined;
+    return {
+      ...question,
+      ...(showFollowUps ? { followUp: data.questions[question.id].trim() } : {}),
+      ...(discussion ? { followUps: discussion.map(text => text.trim()) } : {}),
+    };
+  });
 }
 
 export function canPreviewDrafts(release, locationLike) {
