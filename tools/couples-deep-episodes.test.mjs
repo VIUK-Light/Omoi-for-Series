@@ -60,7 +60,7 @@ test("editorial history regenerates the exact selected deck and rejects missing 
   assert.throws(() => selectCouplesDeepQuestions([...compressed, { ...compressed.find(q => q.level >= 3), id: "unknown-episode" }]));
 });
 
-test("each event has three distinct prompts, or four for the streamer, with pending prompts gated in production", () => {
+test("production shows all Deep discussion prompts and keeps Lite follow-ups pending", () => {
   const deep = filterQuestions(cards, { intensity: "deep" });
   assert.equal(Object.keys(follow.questions).length, cards.length);
   assert.equal(Object.keys(follow.discussionQuestions).length, 12);
@@ -88,12 +88,16 @@ test("each event has three distinct prompts, or four for the streamer, with pend
     }
     assert.deepEqual(discussionPromptsForQuestion(preview.find(q => q.id === question.id), "couples"), prompts);
     const released = production.find(q => q.id === question.id);
-    assert.equal(released.followUps, undefined);
     assert.equal(released.followUp, undefined);
-    assert.deepEqual(discussionPromptsForQuestion(released, "couples"), [COUPLES_SHARED_DISCUSSION_OPENING]);
+    assert.deepEqual(discussionPromptsForQuestion(released, "couples"), prompts);
+  }
+  for (const question of filterQuestions(production, { intensity: "lite" })) {
+    assert.equal(question.followUp, undefined);
+    assert.equal(question.followUps, undefined);
   }
   assert.equal(seen.size, 26);
   assert.equal(follow.reviewStatus, "pending");
+  assert.equal(follow.discussionReviewStatus, "approved");
 });
 
 test("all twelve discussions open with the requested question and match the current editorial prompts", () => {

@@ -58,7 +58,8 @@ function main() {
       if (owners.has(key) && (!shared || owners.get(key) !== owner)) { console.error(`✗ シリーズ間の深掘り重複: ${owners.get(key)} / ${series}/${id}`); errors += 1; }
       else owners.set(key, owner);
     }
-    console.log(`${series}: ${report.questionCount}/${questions.length} 組 / 追加質問${report.promptCount}問 / review=${data.reviewStatus}`);
+    const discussionReview = data.discussionReviewStatus ? ` / discussionReview=${data.discussionReviewStatus}` : '';
+    console.log(`${series}: ${report.questionCount}/${questions.length} 組 / 追加質問${report.promptCount}問 / review=${data.reviewStatus}${discussionReview}`);
   }
   for (const series of ['adults', 'self-care']) {
     const data = JSON.parse(readFileSync(resolve(root, `shared/questions/${series}.json`), 'utf8'));

@@ -38,9 +38,9 @@ test('missing, orphan, duplicate, main-identical and malformed followups are det
   assert.ok(validateFollowUpDataset({...data(),questions:{...data().questions,a:mains[0].text}},mains,'couples').issues.some(x=>x.severity==='error'));
 });
 
-test('multiple episode prompts are validated together and follow the same review gate', () => {
+test('episode prompts can be approved separately from legacy follow-ups', () => {
   const id='editorial-couples-episode-001';
-  const questions=[{id,text:'恋人の二人に、どんな違いがありそう？'}];
+  const questions=[{id,level:3,text:'恋人の二人に、どんな違いがありそう？'}];
   const prompts=['別の立場から見ると？','違う選択肢は何？','その後、何を確かめられる？'];
   const sidecar={schemaVersion:1,series:'couples',source,reviewStatus:'pending',questions:{[id]:prompts[0]},discussionQuestions:{[id]:prompts}};
   const production=mergeLegacyFollowUps(questions,sidecar,'couples');
@@ -48,7 +48,13 @@ test('multiple episode prompts are validated together and follow the same review
   const preview=mergeLegacyFollowUps(questions,sidecar,'couples',{allowDrafts:true});
   assert.deepEqual(preview[0].followUps,prompts);
   const approved=mergeLegacyFollowUps(questions,{...sidecar,reviewStatus:'approved'},'couples');
-  assert.deepEqual(approved[0].followUps,prompts);
+  assert.equal(approved[0].followUp,prompts[0]);
+  assert.equal(approved[0].followUps,undefined);
+  const discussionOnly=mergeLegacyFollowUps(questions,{...sidecar,discussionReviewStatus:'approved'},'couples');
+  assert.equal(discussionOnly[0].followUp,undefined);
+  assert.deepEqual(discussionOnly[0].followUps,prompts);
+  assert.throws(()=>mergeLegacyFollowUps(questions,{...sidecar,discussionReviewStatus:'invalid'},'couples'),/レビュー情報/u);
+  assert.throws(()=>mergeLegacyFollowUps([{...questions[0],intensity:'lite'}],{...sidecar,discussionReviewStatus:'approved'},'couples'),/Deepの出来事/u);
   for(const discussionQuestions of [[],{unknown:prompts},{[id]:['違う最初の問い',...prompts.slice(1)]},{[id]:[prompts[0],prompts[0]]},{[id]:[prompts[0],null]}]) {
     assert.throws(()=>mergeLegacyFollowUps(questions,{...sidecar,discussionQuestions},'couples',{allowDrafts:true}));
   }

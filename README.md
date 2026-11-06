@@ -58,7 +58,7 @@ Omoi for Series は既存の「Omoi」とは別のプロダクトです。既存
 
 正本Loves701問を保護したまま、Couples向けのデッキは現在**128問**です。Lite116組は日常から寂しさ・将来の迷いまで二人自身のことを話す質問、Deep12組はユーザー提供の相談12件です。うち11件は経緯と迷いが伝わる要約、配信者の相談1件は明示指示により全文をそのまま収録しています。出典は正本文面を維持したLoves由来42問、編集質問85問、提供原文1問です。
 
-2026-10-16の整理（477→222問）は[`tools/curation-couples.json`](tools/curation-couples.json)、2026-10-17のDeep10組追加は`tools/couples-deep-additions.mjs`に記録しています。その後、2026-10-25のユーザー指示でDeep全132組をエピソード形式へ置換しました。今回の変更前後・旧新ID・生成元は[`tools/curation-couples-deep-episodes.json`](tools/curation-couples-deep-episodes.json)に記録し、Lite100組の本文と深掘りの維持をハッシュで検証します。新しい個別深掘りは既存と同じ`pending`で、localhostで確認できます。
+2026-10-16の整理（477→222問）は[`tools/curation-couples.json`](tools/curation-couples.json)、2026-10-17のDeep10組追加は`tools/couples-deep-additions.mjs`に記録しています。その後、2026-10-25のユーザー指示でDeep全132組をエピソード形式へ置換しました。今回の変更前後・旧新ID・生成元は[`tools/curation-couples-deep-episodes.json`](tools/curation-couples-deep-episodes.json)に記録し、Lite100組の本文と深掘りの維持をハッシュで検証します。Couples Deepの出来事に続く追加質問は、`discussionReviewStatus`で個別に公開承認しています。
 
 Loves由来カードは`source: "loves"`、編集質問は`source: "editorial"`です。除外と編集のID単位の契約は[`tools/couples-release-policy.mjs`](tools/couples-release-policy.mjs)で管理します。過去の編集を再現した後、`tools/couples-deep-selection.mjs`で提供された10件と追加2件だけをDeepに残し、最後に`tools/couples-lite-restorations.mjs`で旧Deepの直接質問16組をLiteへ移します。テンプレートから生成されるsupplementalカードは正本701問に含めていません。
 
@@ -143,7 +143,7 @@ AI初期案を検証しただけでは公開されません。公開にはレビ
 
 `draftPreview: true`のシリーズはlocalhost / 127.0.0.1でのみレビュー前の実際のカードを試せます。画面に生成元・レビュー前のラベルは表示せず、レビュー状態はデータ側で管理します。本番では未承認の追加質問を採用しません。新2シリーズは`published`で、レビュー前データのプレビューは無効です。空の質問は表示しません。
 
-既存シリーズの深掘りは、内容を人が確認した後に`shared/followups/<series>.json`の`reviewStatus`を`approved`へ変更すると本番でも利用できます。新2シリーズは各質問の承認と、データ・マニフェスト両方の公開状態変更が必要です。
+既存シリーズの深掘りは、内容を人が確認した後に`shared/followups/<series>.json`の`reviewStatus`を`approved`へ変更すると本番でも利用できます。Couples Deepの`discussionQuestions`は`discussionReviewStatus`で承認します。新2シリーズは各質問の承認と、データ・マニフェスト両方の公開状態変更が必要です。
 
 追加の検証: `node tools/verify-followups.mjs` / `node --test tools/*.test.mjs`。AI生成元は`grok` / `Grok`または`codex` / `GPT-6`の正しい組み合わせを検証します。提供データは取り込み時の原文ハッシュと元の申告情報を別に保持します。AIによる内容チェックと人のレビュー承認は別に管理します。
 
@@ -180,9 +180,9 @@ GitHub Pagesでビルド工程なしに配信する静的サイトです。ブ�
 
 初期版のDeep132組を、性別を固定しない架空の恋人同士「アキさん・ユウさん」の出来事として作成しました。その後のユーザー指示で、現在は下記の提供相談12件だけに限定しています。表は具体的な場面と主問い、裏は最初に「あなたはどう考える？」、続いてその相談を軸にした2問を表示します。
 
-CouplesのDeepは深掘りに固定し、会話スタイルの選択欄を表示しません。「さらに話す」でカードが裏返り、同じ出来事の追加質問を「次の問いへ」「前の問いへ」で順に考えます。配信者DMは4問、ほかの11件は3問で、進捗は`1 / 4`や`1 / 3`の形で表示します。「出来事に戻る」で表を読み返し、再びめくると直前の追加質問から再開できます。途中でも「次の出来事へ」で進めます。CouplesのLiteと他4シリーズは通常・深掘りを選べます。個別深掘りのレビュー状態は変更せず、本番で未承認の場合も最初の共通質問「あなたはどう考える？」を表示します。
+CouplesのDeepは深掘りに固定し、会話スタイルの選択欄を表示しません。「さらに話す」でカードが裏返り、同じ出来事の追加質問を「次の問いへ」「前の問いへ」で順に考えます。配信者DMは4問、ほかの11件は3問で、進捗は`1 / 4`や`1 / 3`の形で表示します。「出来事に戻る」で表を読み返し、再びめくると直前の追加質問から再開できます。途中でも「次の出来事へ」で進めます。CouplesのLiteと他4シリーズは通常・深掘りを選べます。Couples Deepの追加質問は本番でも順に表示します。
 
-追加質問は`shared/followups/couples.json`の`discussionQuestions`で管理し、各配列の先頭は既存の`questions[id]`と一致させます。最初に追加した264問と生成元は`tools/curation-couples-discussions.json`に履歴として残し、その後の実例参考改稿は`tools/curation-couples-researched-episodes.json`で管理します。配列全体が既存のレビューゲートを通った時だけ表示されます。
+追加質問は`shared/followups/couples.json`の`discussionQuestions`で管理し、各配列の先頭は既存の`questions[id]`と一致させます。最初に追加した264問と生成元は`tools/curation-couples-discussions.json`に履歴として残し、その後の実例参考改稿は`tools/curation-couples-researched-episodes.json`で管理します。`discussionReviewStatus`が`approved`の場合、配列全体を本番で表示します。
 
 Liteへの移動16組は`tools/curation-couples-lite-restorations.json`に記録しました。旧ID・主質問・出典・Levelを維持し、深掘りは15組を保持、別れの問いの1組だけ相手の内心を推測する内容から自分の気持ちを振り返る内容へ改稿しています。この移動の段階では元のLite100組とDeep132の出来事を維持していました。現在のDeepは末尾の選択記録の12件だけです。
 

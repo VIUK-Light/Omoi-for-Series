@@ -7,7 +7,7 @@ import {
   conversationStyleForSelection,
   isDevelopmentHost,
 } from "./question-engine.mjs";
-import { QuestionDataError, assertQuestionDataset, questionLoadErrorMessage, canShowReviewedContent, canPreviewDrafts, mergeLegacyFollowUps } from "./content-policy.mjs?v=adults-import-2";
+import { QuestionDataError, assertQuestionDataset, questionLoadErrorMessage, canShowReviewedContent, canPreviewDrafts, mergeLegacyFollowUps } from "./content-policy.mjs?v=couples-deep-review-1";
 
 // Omoi for Series専用の共通UI。既存「Omoi」のデータや質問定義は読み込みません。
 const audience = document.body.dataset.audience;
