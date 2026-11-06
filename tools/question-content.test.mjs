@@ -41,7 +41,7 @@ test('original AI datasets retain 64 pairs each and provided Adults additions re
     const data=read(`shared/questions/${series}.json`);
     const generated=data.questions.filter(q=>q.source.kind==='codex');
     assert.equal(generated.length,64);
-    assert.equal(data.questions.length,series==='adults'?94:64);
+    assert.equal(data.questions.length,SERIES_CONTRACTS[series].total);
     assert.equal(new Set(data.questions.map(q=>q.followUp)).size,data.questions.length);
     assert.ok(data.questions.every(q=>q.reviewStatus==='approved'));
     assert.equal(data.releaseApproval.basis,'user-release-instruction');
@@ -61,8 +61,8 @@ test('explicitly released records are playable in production while pending addit
     const production=canPreviewDrafts(release,{protocol:'https:',hostname:'omoi-for.viuk-light.org'});
     assert.equal(local,false);assert.equal(production,false);
     assert.equal(canShowReviewedContent('pending',{allowDrafts:production}),false);
-    assert.equal(data.questions.filter(q=>canShowReviewedContent(q.reviewStatus,{allowDrafts:local})).length,series==='adults'?94:64);
-    assert.equal(data.questions.filter(q=>canShowReviewedContent(q.reviewStatus,{allowDrafts:production})).length,series==='adults'?94:64);
+    assert.equal(data.questions.filter(q=>canShowReviewedContent(q.reviewStatus,{allowDrafts:local})).length,SERIES_CONTRACTS[series].total);
+    assert.equal(data.questions.filter(q=>canShowReviewedContent(q.reviewStatus,{allowDrafts:production})).length,SERIES_CONTRACTS[series].total);
   }
 });
 
