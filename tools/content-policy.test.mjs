@@ -48,7 +48,8 @@ test('episode prompts can be approved separately from legacy follow-ups', () => 
   const preview=mergeLegacyFollowUps(questions,sidecar,'couples',{allowDrafts:true});
   assert.deepEqual(preview[0].followUps,prompts);
   const approved=mergeLegacyFollowUps(questions,{...sidecar,reviewStatus:'approved'},'couples');
-  assert.deepEqual(approved[0].followUps,prompts);
+  assert.equal(approved[0].followUp,prompts[0]);
+  assert.equal(approved[0].followUps,undefined);
   const discussionOnly=mergeLegacyFollowUps(questions,{...sidecar,discussionReviewStatus:'approved'},'couples');
   assert.equal(discussionOnly[0].followUp,undefined);
   assert.deepEqual(discussionOnly[0].followUps,prompts);

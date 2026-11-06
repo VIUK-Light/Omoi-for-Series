@@ -91,7 +91,7 @@ export function mergeLegacyFollowUps(questions, data, series, { allowDrafts = fa
     }
   }
   const showFollowUps = canShowReviewedContent(data.reviewStatus, { allowDrafts });
-  const showDiscussion = canShowReviewedContent(data.discussionReviewStatus ?? data.reviewStatus, { allowDrafts });
+  const showDiscussion = canShowReviewedContent(data.discussionReviewStatus ?? 'pending', { allowDrafts });
   if (!showFollowUps && !showDiscussion) return questions;
 
   return questions.map(question => {
