@@ -90,7 +90,7 @@ node tools/verify-series-datasets.mjs
 
 ## AdultsとSelf-Careのデータ
 
-2026-10-15のユーザー許可により、CodexでAdultsとSelf-Careを各64組（メイン＋固有の深掘り）作成しました。Lite / Deep × Level 1〜4の8区分に各8組です。作成元は`codex` / `GPT-6`で、Grok生成とは記録しません。既存3シリーズにもCouples232・Family166・Friends150の計548文の個別深掘りを追加しています。作成元はAI初期案として識別可能なまま保持しています。AdultsとSelf-Careは2026-10-16のユーザーの明示的な公開指示により承認済みです。既存3シリーズの深掘りは`pending`です。今後Grokに依頼するためのプロンプトは[`prompts/grok-adults-questions.md`](prompts/grok-adults-questions.md)と[`prompts/grok-self-care-questions.md`](prompts/grok-self-care-questions.md)にあります。出力先のJSON枠は`shared/questions/adults.json`と`shared/questions/self-care.json`です。現在はAdults94組・Self-Care64組を公開しています。
+2026-10-15のユーザー許可により、CodexでAdultsとSelf-Careを各64組（メイン＋固有の深掘り）作成しました。Lite / Deep × Level 1〜4の8区分に各8組です。作成元は`codex` / `GPT-6`で、Grok生成とは記録しません。既存3シリーズにもCouples232・Family166・Friends150の計548文の個別深掘りを追加しています。作成元はAI初期案として識別可能なまま保持しています。AdultsとSelf-Careは2026-10-16のユーザーの明示的な公開指示により承認済みです。既存3シリーズの深掘りは`pending`です。今後Grokに依頼するためのプロンプトは[`prompts/grok-adults-questions.md`](prompts/grok-adults-questions.md)と[`prompts/grok-self-care-questions.md`](prompts/grok-self-care-questions.md)にあります。出力先のJSON枠は`shared/questions/adults.json`と`shared/questions/self-care.json`です。現在のデータはAdults103組・Self-Care64組です。
 
 ### AI出力のJSON形式（Grok / Codex）
 
