@@ -150,6 +150,10 @@ for (const audience of newSeries) {
   }
   if (release?.status === "unpublished" && release.developmentPreview !== true) fail(`${audience}: 未公開シリーズは開発プレビュー設定を明示してください`);
   if (release?.status === "published" && data.questions.length === 0) fail(`${audience}: 空の質問データを公開できません`);
+  if (release?.status === "published") {
+    const { total } = SERIES_CONTRACTS[audience];
+    if (data.questions.length !== total) fail(`${audience}: 件数 ${data.questions.length} (期待 ${total})`);
+  }
 
   const contentReport = validateDataset(data, {
     series: audience,
