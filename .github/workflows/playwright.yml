@@ -21,6 +21,10 @@ jobs:
           node-version: lts/*
           cache: npm
       - run: npm ci
+      - name: Unit tests and dataset contracts
+        run: |
+          npm test
+          npm run verify:data
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
       - name: Run browser tests

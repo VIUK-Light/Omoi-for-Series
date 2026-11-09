@@ -6,3 +6,7 @@ export const SERIES_CONTRACTS = Object.freeze({
   adults: { total: 103 },
   'self-care': { total: 64 },
 });
+
+// Original datasets remain contracts of the historical editions. Us is an
+// adaptation, not another source of legacy follow-up questions.
+export const US_CONTRACT = Object.freeze({ total: 316, family: 166, friends: 150 });

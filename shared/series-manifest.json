@@ -8,16 +8,18 @@
       "followUpFile": "couples.json"
     },
     "family": {
-      "status": "published",
+      "status": "archived",
       "questionFile": "family.json",
-      "draftPreview": true,
-      "followUpFile": "family.json"
+      "draftPreview": false,
+      "followUpFile": "family.json",
+      "replacement": "us"
     },
     "friends": {
-      "status": "published",
+      "status": "archived",
       "questionFile": "friends.json",
-      "draftPreview": true,
-      "followUpFile": "friends.json"
+      "draftPreview": false,
+      "followUpFile": "friends.json",
+      "replacement": "us"
     },
     "adults": {
       "status": "published",
@@ -28,6 +30,12 @@
       "status": "published",
       "questionFile": "self-care.json",
       "draftPreview": false
+    },
+    "us": {
+      "status": "unpublished",
+      "questionFile": "us.json",
+      "developmentPreview": true,
+      "draftPreview": true
     }
   }
 }

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omoi for Us — 相手の選択を予想するゲーム</title>
+  <meta name="description" content="家族や友人と、相手の選択を予想して遊ぶOmoi for Us。2〜6人、スマホ1台。条件が変わったら、もう一度予想！">
+  <link rel="canonical" href="https://omoi-for.viuk-light.org/us/">
+  <link rel="icon" href="../shared/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/omoi-us-ui-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="game.css?v=us-v3-1">
+</head>
+<body>
+  <a class="us-skip-link" href="#us-main">本文へ移動</a>
+  <div id="us-app" class="us-shell" aria-busy="true">
+    <header class="us-header"><a class="us-brand" href="../">Omoi for Us</a><a class="us-text-link" href="howto.html">遊び方</a></header>
+    <main id="us-main"><h1 class="us-page-title">問いを読み込んでいます。</h1></main>
+  </div>
+  <dialog id="us-dialog" aria-labelledby="us-dialog-title">
+    <h2 id="us-dialog-title">ここで終えますか？</h2>
+    <p>今の問いの得点は取り消し、ここまでの結果を表示します。</p>
+    <div class="us-dialog-actions"><button class="us-primary" data-action="confirm-finish" type="button">ここで終える</button><button class="us-secondary" data-action="cancel-finish" type="button">ゲームに戻る</button></div>
+  </dialog>
+  <p id="us-announcement" class="us-sr-only" role="status" aria-live="polite"></p>
+  <noscript><p class="us-noscript">このゲームにはJavaScriptが必要です。<a href="howto.html">遊び方を見る</a></p></noscript>
+  <script type="module" src="app.js?v=us-v3-1"></script>
+</body>
+</html>

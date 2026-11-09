@@ -16,6 +16,7 @@ body {
 body[data-audience] { background: #fff; }
 body[data-audience="family"] { --accent: #526c48; --accent-soft: #edf2e8; }
 body[data-audience="friends"] { --accent: #4e718a; --accent-soft: #eaf1f6; }
+body[data-audience="us"] { --accent: #2947ef; --accent-soft: #e8eeff; }
 body[data-audience="adults"] { --accent: #795b79; --accent-soft: #f2eaf3; }
 body[data-audience="self-care"] { --accent: #b75d47; --accent-soft: #faece6; }
 button, a { font: inherit; -webkit-tap-highlight-color: transparent; }
@@ -177,6 +178,7 @@ button:focus-visible, a:focus-visible, .card-copy:focus-visible { outline: 2px s
 .hub-links a.series-couples { --series-accent: #b95f36; }
 .hub-links a.series-family { --series-accent: #526c48; }
 .hub-links a.series-friends { --series-accent: #4e718a; }
+.hub-links a.series-us { --series-accent: #2947ef; }
 .hub-links a.series-adults { --series-accent: #795b79; }
 .hub-links a.series-self-care { --series-accent: #b75d47; }
 .hub-links .brand-target { color: var(--series-accent); }

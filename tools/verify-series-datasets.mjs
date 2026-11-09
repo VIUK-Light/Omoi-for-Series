@@ -18,6 +18,7 @@ import { SERIES_CONTRACTS } from "./series-contracts.mjs";
 import { seriesFitIssues } from "./series-fit-rules.mjs";
 import { filterQuestions } from "../shared/question-engine.mjs";
 import { hasVerifiedCouplesConsultation } from "./couples-provided-content.mjs";
+import { validateUsDataset } from "./verify-us-dataset.mjs";
 
 const root = resolve(fileURLToPath(import.meta.url), "../..");
 const expected = Object.fromEntries(["couples", "family", "friends"].map(series => [series, SERIES_CONTRACTS[series]]));
@@ -111,9 +112,11 @@ try {
 if (manifest?.schemaVersion !== 1) fail("シリーズ公開設定のschemaVersionが1ではありません");
 for (const audience of Object.keys(expected)) {
   const release = manifest?.series?.[audience];
-  if (release?.status !== "published" || release?.questionFile !== `${audience}.json`) {
+  const archived = ["family", "friends"].includes(audience);
+  if (release?.status !== (archived ? "archived" : "published") || release?.questionFile !== `${audience}.json`) {
     fail(`${audience}: 既存シリーズの公開状態または質問JSONパスが不正です`);
   }
+  if (archived && (release?.replacement !== "us" || release?.draftPreview !== false)) fail(`${audience}: Usへの移行設定が不正です`);
   if (release?.followUpFile !== `${audience}.json`) fail(`${audience}: 深掘り質問JSONパスが不正です`);
   try {
     const followUps = JSON.parse(readFileSync(resolve(root, `shared/followups/${audience}.json`), "utf8"));
@@ -122,7 +125,8 @@ for (const audience of Object.keys(expected)) {
     for (const issue of report.issues) if (issue.severity === "error") fail(`${audience}: ${issue.message}`);
   } catch (error) { fail(`${audience}: 深掘り質問データを検証できません: ${error.message}`); }
 }
-if (Object.keys(manifest?.series || {}).length !== 5) fail("公開マニフェストは5シリーズを管理する必要があります");
+const manifestIds = Object.keys(manifest?.series || {}).sort();
+if (JSON.stringify(manifestIds) !== JSON.stringify(["adults", "couples", "family", "friends", "self-care", "us"])) fail("公開マニフェストは現行・保存用・Usの6エントリーを管理する必要があります");
 
 for (const audience of newSeries) {
   const path = resolve(root, `shared/questions/${audience}.json`);
@@ -242,8 +246,14 @@ const crossAudienceDuplicateGroups = [...textOwners.values()]
   .filter((owners) => new Set(owners.map((record) => record.audience)).size > 1);
 console.log(`シリーズ間の完全一致: ${crossAudienceDuplicateGroups.length}グループ`);
 
+try {
+  const us = JSON.parse(readFileSync(resolve(root, "shared/questions/us.json"), "utf8"));
+  for (const issue of validateUsDataset(us, manifest)) fail(`us: ${issue}`);
+  console.log(`us: ${us.questions?.length || 0}問 / ${manifest.series.us?.status || "状態不明"} / Family・Friendsの原文は保存`);
+} catch (error) { fail(`us: 改稿データを検証できません: ${error.message}`); }
+
 if (failures.length) {
   console.error(`結果: FAIL — ${failures.length}件`);
   process.exit(1);
 }
-console.log("結果: PASS — 5シリーズのデータ契約と公開ゲートに適合しています。");
+console.log("結果: PASS — 既存データ・保存用2シリーズ・Usの契約と公開ゲートに適合しています。");
