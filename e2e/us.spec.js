@@ -1,11 +1,20 @@
 const { test, expect } = require('@playwright/test');
 const STORAGE = 'omoi-for-us:game:v1';
 const snapshot = page => page.evaluate(key => JSON.parse(sessionStorage.getItem(key)), STORAGE);
-async function start(page, count = 2, deck = 'family') {
-  await page.goto(`/us/?deck=${deck}`);
+async function enterSetup(page) {
+  await expect(page.locator('[data-action="intro-next"], [data-action="start"]')).toBeVisible();
+  if (await page.locator('[data-action="intro-next"]').count()) await page.locator('[data-action="intro-next"]').click();
   await expect(page.locator('[data-action="start"]')).toBeVisible();
+}
+async function openSetup(page, path = '/us/') {
+  await page.goto(path);
+  await enterSetup(page);
+}
+async function start(page, count = 2, deck = 'family', rounds = 1) {
+  await openSetup(page, `/us/?deck=${deck}`);
   while (await page.locator('[data-name-index]').count() > count) await page.locator('[data-action="remove-player"]').last().click();
   while (await page.locator('[data-name-index]').count() < count) await page.locator('[data-action="add-player"]').click();
+  await page.locator(`[data-rounds="${rounds}"]`).click();
   await page.locator('[data-action="start"]').click();
   await expect(page.locator('[data-choice]')).toHaveCount(3);
 }
@@ -25,6 +34,8 @@ test('the hub has one Us entry and keeps the other three series', async ({ page 
   await page.goto('/');
   await expect(page.locator('.hub-links a')).toHaveCount(4);
   await page.locator('.hub-links a[href="us/"]').click();
+  await expect(page.getByRole('heading', { name: '遊び方', exact: true })).toBeVisible();
+  await enterSetup(page);
   await expect(page.getByRole('heading', { name: /知っているつもり/ })).toBeVisible();
   await expect(page.locator('[data-name-index]')).toHaveCount(4);
 });
@@ -33,14 +44,14 @@ test('Us loads both bundled font weights without external requests or console er
   const external = [], errors = [];
   page.on('request', request => { if (!['127.0.0.1', 'localhost'].includes(new URL(request.url()).hostname)) external.push(request.url()); });
   page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
-  await page.goto('/us/'); await expect(page.locator('[data-action="start"]')).toBeVisible();
+  await openSetup(page);
   await page.evaluate(() => document.fonts.ready);
   expect(await page.evaluate(() => Array.from(document.fonts).filter(font => font.family.includes('Omoi Us UI') && font.status === 'loaded').length)).toBe(2);
   expect(external).toEqual([]); expect(errors).toEqual([]);
 });
 
 test('deleting a middle person and adding another creates unique names and starts', async ({ page }) => {
-  await page.goto('/us/');
+  await openSetup(page);
   await page.locator('[data-action="remove-player"][data-index="1"]').click();
   await page.locator('[data-action="add-player"]').click();
   const names = await page.locator('[data-name-index]').evaluateAll(inputs => inputs.map(input => input.value));
@@ -60,6 +71,7 @@ test('the main player commits on screen and the guess screen reveals no selected
   await expect(page.locator('.question-card-front .us-option')).toHaveCount(3);
   await page.reload();
   await expect(page.locator('[data-action="reveal"]')).toBeVisible();
+  await expect(page.locator('.us-notice')).toHaveCount(0);
   await expect(page.locator('[data-choice], .us-revealed')).toHaveCount(0);
   await page.locator('[data-action="reselect"]').click();
   expect((await snapshot(page)).answer).toBeNull();
@@ -135,6 +147,7 @@ for (const deck of ['family', 'friends']) test(`both archived ${deck} routes pre
   for (const suffix of ['/', '/howto.html']) {
     await page.goto(`/${deck}${suffix}`);
     await page.locator(`a[href="../us/?deck=${deck}"]`).click();
+    await enterSetup(page);
     await expect(page.locator(`[data-deck="${deck}"]`)).toHaveAttribute('aria-pressed', 'true');
   }
 });
@@ -172,7 +185,7 @@ test('pass and early finish discard the unfinished turn but preserve completed p
 
 test('damaged saved progress recovers to setup', async ({ page }) => {
   await page.addInitScript(key => sessionStorage.setItem(key, '{bad'), STORAGE);
-  await page.goto('/us/'); await expect(page.locator('[data-action="start"]')).toBeVisible();
+  await openSetup(page);
   await expect(page.locator('.us-notice')).toContainText('前のゲームを読み込めませんでした。');
 });
 
@@ -209,7 +222,7 @@ for (const width of [320, 390, 768, 1280]) test(`all game states including entra
 });
 
 test('names stay escaped and long labels fit on a small screen', async ({ page }) => {
-  await page.setViewportSize({ width: 320, height: 844 }); await page.goto('/us/');
+  await page.setViewportSize({ width: 320, height: 844 }); await openSetup(page);
   await page.locator('[data-name-index="0"]').fill('<img src=x>'); await page.locator('[data-name-index="1"]').fill('あいうえおかきくけこさしすせそた');
   await page.locator('[data-action="start"]').click(); await expect(page.locator('#us-main img')).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -236,4 +249,98 @@ test('Couples, Adults and Self-Care retain their existing card flows', async ({ 
     await expect(page.locator('.question-card-back')).toHaveAttribute('aria-hidden', 'false');
     await page.locator('[data-action="finish"]').click(); await expect(page.getByRole('heading', { name: 'おつかれさま' })).toBeVisible();
   }
+});
+
+test('first entry shows four rules before setup and remembers dismissal in the same tab', async ({ page }) => {
+  await page.goto('/us/?deck=friends');
+  await expect(page.getByRole('heading', { name: '遊び方', exact: true })).toBeVisible();
+  await expect(page.locator('.us-tutorial li')).toHaveCount(4);
+  await expect(page.locator('[data-name-index], [data-action="start"]')).toHaveCount(0);
+  await page.locator('[data-action="intro-next"]').click();
+  await expect(page.locator('[data-deck="friends"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('[data-rounds="3"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#us-rounds-help')).toHaveText('1人3回ずつ主役・全12問');
+  await page.reload();
+  await expect(page.locator('[data-action="start"]')).toBeVisible();
+  await expect(page.locator('.us-tutorial')).toHaveCount(0);
+});
+
+test('reviewing the rules preserves names, deck and chosen length', async ({ page }) => {
+  await openSetup(page);
+  await page.locator('[data-name-index="0"]').fill('アキ');
+  await page.locator('[data-deck="friends"]').click();
+  await page.locator('[data-rounds="5"]').click();
+  await expect(page.locator('#us-rounds-help')).toHaveText('1人5回ずつ主役・全20問');
+  await page.locator('[data-action="show-intro"]').click();
+  await expect(page.locator('.us-tutorial li')).toHaveCount(4);
+  await page.locator('[data-action="intro-next"]').click();
+  await expect(page.locator('[data-name-index="0"]')).toHaveValue('アキ');
+  await expect(page.locator('[data-deck="friends"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('[data-rounds="5"]')).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('[data-action="start"]').click();
+  expect((await snapshot(page)).rounds).toBe(5);
+  await expect(page.locator('.us-progress')).toContainText('1 / 5 周目');
+});
+
+test('three rounds rotate fairly and another round retains scores, draws and silent resume', async ({ page }) => {
+  await openSetup(page);
+  while (await page.locator('[data-name-index]').count() > 2) await page.locator('[data-action="remove-player"]').last().click();
+  await expect(page.locator('#us-rounds-help')).toHaveText('1人3回ずつ主役・全6問');
+  await page.locator('[data-action="start"]').click();
+  const seen = new Set();
+  for (let turn = 0; turn < 6; turn++) {
+    await expect(page.locator('.us-progress')).toContainText(`${Math.floor(turn / 2) + 1} / 3 周目`);
+    await expect(page.locator('.us-progress')).toContainText(`${turn % 2 + 1} / 2 人目`);
+    const state = await snapshot(page);
+    expect(seen.has(state.questionId)).toBe(false); seen.add(state.questionId);
+    if (turn === 2) {
+      await page.reload();
+      await expect(page.locator('[data-choice]')).toHaveCount(3);
+      await expect(page.locator('.us-notice')).toHaveCount(0);
+    }
+    await complete(page);
+  }
+  await expect(page.locator('.us-rank-score')).toHaveText(['3点', '3点']);
+  await page.locator('[data-action="continue"]').click();
+  await expect(page.locator('.us-progress')).toContainText('4 / 4 周目');
+  expect((await snapshot(page)).completedTurns).toHaveLength(6);
+  expect(seen.has((await snapshot(page)).questionId)).toBe(false);
+  await complete(page); await complete(page);
+  await expect(page.locator('.us-rank-score')).toHaveText(['4点', '4点']);
+  await page.locator('[data-action="again"]').click();
+  expect((await snapshot(page)).rounds).toBe(3);
+  expect((await snapshot(page)).completedTurns).toEqual([]);
+});
+
+test('version 3 can resume without resetting progress or displaying a resume banner', async ({ page }) => {
+  await start(page); await page.locator('[data-choice="3"]').click();
+  await page.evaluate(key => {
+    const game = JSON.parse(sessionStorage.getItem(key));
+    game.version = 3; delete game.rounds; delete game.initialRounds;
+    sessionStorage.setItem(key, JSON.stringify(game));
+  }, STORAGE);
+  await page.reload();
+  await expect(page.locator('[data-action="reveal"]')).toBeVisible();
+  await expect(page.locator('.us-notice, .us-tutorial')).toHaveCount(0);
+  await page.locator('[data-action="reveal"]').click();
+  await expect(page.locator('.us-revealed .us-choice-number')).toHaveText('3');
+  expect((await snapshot(page)).rounds).toBe(1);
+});
+
+test('reloading an extended game preserves the originally chosen length for a fresh game', async ({ page }) => {
+  await start(page, 2, 'friends', 1);
+  await complete(page); await complete(page);
+  await page.locator('[data-action="continue"]').click();
+  await complete(page); await complete(page);
+  await page.reload();
+  await expect(page.locator('.us-rank-score')).toHaveText(['2点', '2点']);
+  await expect(page.locator('.us-notice')).toHaveCount(0);
+  await page.getByRole('link', { name: '遊び方', exact: true }).click();
+  await expect(page).toHaveURL(/\/us\/howto.html$/);
+  await page.locator('header .us-text-link').click();
+  await expect(page.locator('.us-rank-score')).toHaveText(['2点', '2点']);
+  await page.locator('[data-action="again"]').click();
+  expect((await snapshot(page)).rounds).toBe(1);
+  expect((await snapshot(page)).completedTurns).toEqual([]);
+  await expect(page.locator('.us-progress')).toContainText('1 / 1 周目');
 });

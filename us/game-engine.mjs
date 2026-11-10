@@ -1,6 +1,7 @@
 // All answers are choices for the current turn, never personality assessments.
 export const STORAGE_KEY = 'omoi-for-us:game:v1';
-export const GAME_VERSION = 3;
+export const GAME_VERSION = 4;
+export const DEFAULT_ROUNDS = 3;
 const SCREENS = ['choose', 'guess', 'score', 'results'];
 const signatureCache = new WeakMap();
 
@@ -34,9 +35,10 @@ export function nextPlayerName(names) {
   return `プレイヤー${number}`;
 }
 
-export function createGame({ names, audience }, cards, random = Math.random) {
+export function createGame({ names, audience, rounds = DEFAULT_ROUNDS }, cards, random = Math.random) {
   if (!['family', 'friends'].includes(audience)) throw new Error('家族用か友人用を選んでください。');
   if (!Array.isArray(names) || names.length < 2 || names.length > 6) throw new Error('参加者は2〜6人で設定してください。');
+  if (!Number.isSafeInteger(rounds) || rounds < 1 || !Number.isSafeInteger(rounds * names.length)) throw new Error('周回数を確認してください。');
   const players = names.map((name, index) => {
     const label = typeof name === 'string' ? name.trim() : '';
     if ([...label].length > 16) throw new Error('名前は16文字以内で入力してください。');
@@ -46,7 +48,7 @@ export function createGame({ names, audience }, cards, random = Math.random) {
   const deck = shuffled(eligibleIds(cards, audience), random);
   if (!deck.length) throw new Error('この種類の問いがありません。');
   return {
-    version: GAME_VERSION, catalog: catalogSignature(cards), audience, players,
+    version: GAME_VERSION, catalog: catalogSignature(cards), audience, players, rounds, initialRounds: rounds,
     screen: 'choose', turnIndex: 0,
     questionId: deck[0], remainingIds: deck.slice(1), usedIds: [deck[0]],
     answer: null, correctIds: [], conditionOpen: false,
@@ -54,7 +56,8 @@ export function createGame({ names, audience }, cards, random = Math.random) {
   };
 }
 
-export function mainPlayer(state) { return state.players[state.turnIndex]; }
+export function mainPlayer(state) { return state.players[state.turnIndex % state.players.length]; }
+export function totalTurns(state) { return state.players.length * state.rounds; }
 export function currentCard(state, cards) { return cards.find(card => card.id === state.questionId); }
 
 function nextCard(state, cards, random) {
@@ -76,7 +79,12 @@ function nextCard(state, cards, random) {
 // The main player commits privately, everyone guesses, then one reveal and one
 // scoring step finish the turn. The optional conversation never adds points.
 export function advanceGame(state, action, cards, random = Math.random) {
-  if (!state || !action || state.screen === 'results') return state;
+  if (!state || !action) return state;
+  if (action.type === 'CONTINUE') {
+    if (state.screen !== 'results' || state.endedEarly || !Number.isSafeInteger((state.rounds + 1) * state.players.length)) return state;
+    return nextCard({ ...structuredClone(state), rounds: state.rounds + 1, turnIndex: state.completedTurns.length }, cards, random);
+  }
+  if (state.screen === 'results') return state;
   const next = structuredClone(state);
   switch (action.type) {
     case 'ANSWER':
@@ -115,7 +123,7 @@ export function advanceGame(state, action, cards, random = Math.random) {
       next.answer = null;
       next.correctIds = [];
       next.conditionOpen = false;
-      if (state.turnIndex + 1 === state.players.length) {
+      if (state.turnIndex + 1 === totalTurns(state)) {
         next.screen = 'results';
         return next;
       }
@@ -155,25 +163,30 @@ export function rankings(state) {
 export function restoreGame(serialized, cards) {
   try {
     const state = JSON.parse(serialized);
+    // Version 3 used the same turn flow, with one round and no rounds field.
+    if (state?.version === 3 && !Object.hasOwn(state, 'rounds') && !Object.hasOwn(state, 'initialRounds')) { state.version = GAME_VERSION; state.rounds = 1; state.initialRounds = 1; }
     if (!state || state.version !== GAME_VERSION || state.catalog !== catalogSignature(cards)) return null;
     if (!['family', 'friends'].includes(state.audience) || !SCREENS.includes(state.screen)) return null;
     if (!Array.isArray(state.players) || state.players.length < 2 || state.players.length > 6) return null;
     if (state.players.some((player, index) => player?.id !== `p${index + 1}` || typeof player.name !== 'string' || !player.name.trim() || [...player.name].length > 16)) return null;
     if (new Set(state.players.map(player => player.name)).size !== state.players.length) return null;
-    if (!Number.isInteger(state.turnIndex) || state.turnIndex < 0 || state.turnIndex >= state.players.length || typeof state.endedEarly !== 'boolean' || typeof state.conditionOpen !== 'boolean') return null;
+    if (!Number.isSafeInteger(state.rounds) || state.rounds < 1 || !Number.isSafeInteger(totalTurns(state))) return null;
+    if (!Number.isSafeInteger(state.initialRounds) || state.initialRounds < 1 || state.initialRounds > state.rounds) return null;
+    if (!Number.isInteger(state.turnIndex) || state.turnIndex < 0 || state.turnIndex >= totalTurns(state) || typeof state.endedEarly !== 'boolean' || typeof state.conditionOpen !== 'boolean') return null;
     const pool = new Set(eligibleIds(cards, state.audience));
     const validCards = ids => Array.isArray(ids) && new Set(ids).size === ids.length && ids.every(id => pool.has(id));
     if (!pool.has(state.questionId) || !validCards(state.remainingIds) || !validCards(state.usedIds) || !state.usedIds.includes(state.questionId)) return null;
     if (state.remainingIds.some(id => state.usedIds.includes(id)) || state.remainingIds.length + state.usedIds.length !== pool.size) return null;
-    if (!Array.isArray(state.completedTurns) || state.completedTurns.length > state.players.length) return null;
+    if (!Array.isArray(state.completedTurns) || state.completedTurns.length > totalTurns(state)) return null;
     const validPlayers = (ids, mainId) => Array.isArray(ids) && new Set(ids).size === ids.length && ids.every(id => id !== mainId && state.players.some(player => player.id === id));
-    if (state.completedTurns.some((turn, index) => !turn || turn.playerId !== state.players[index].id || !pool.has(turn.questionId) || !validPlayers(turn.correctIds, turn.playerId) || Object.keys(turn).some(key => !['playerId', 'questionId', 'correctIds'].includes(key)))) return null;
+    if (state.completedTurns.some((turn, index) => !turn || turn.playerId !== state.players[index % state.players.length].id || !pool.has(turn.questionId) || !validPlayers(turn.correctIds, turn.playerId) || Object.keys(turn).some(key => !['playerId', 'questionId', 'correctIds'].includes(key)))) return null;
     if (!validPlayers(state.correctIds, mainPlayer(state).id)) return null;
     const needsAnswer = ['guess', 'score'].includes(state.screen);
     if (needsAnswer ? !currentCard(state, cards).options.some(option => option.id === state.answer) : state.answer !== null) return null;
     if (state.screen !== 'score' && (state.correctIds.length || state.conditionOpen)) return null;
     if (state.screen === 'results') {
-      if (state.completedTurns.length !== (state.endedEarly ? state.turnIndex : state.players.length)) return null;
+      if (state.completedTurns.length !== (state.endedEarly ? state.turnIndex : totalTurns(state))) return null;
+      if (!state.endedEarly && state.turnIndex !== totalTurns(state) - 1) return null;
     } else if (state.endedEarly || state.completedTurns.length !== state.turnIndex) return null;
     return state;
   } catch {

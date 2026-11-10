@@ -1,5 +1,5 @@
-@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/omoi-us-ui-regular.woff2?v=us-rules-4") format("woff2"); }
-@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/omoi-us-ui-bold.woff2?v=us-rules-4") format("woff2"); }
+@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/omoi-us-ui-regular.woff2?v=us-rounds-5") format("woff2"); }
+@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/omoi-us-ui-bold.woff2?v=us-rounds-5") format("woff2"); }
 :root { --us-blue: #2947ef; --us-soft: #eef1fb; --us-ink: #272622; --us-line: #dedbd5; --us-muted: #77716b; --us-font: "Omoi Us UI", "BIZ UDPGothic", "BIZ UDGothic", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; }
 html { overflow-anchor: none; }
 body { --font-sans: var(--us-font); font-family: var(--us-font); }
@@ -19,9 +19,17 @@ button, a { text-underline-offset: 4px; }
 #us-main { margin: 0 auto; padding: 44px 0 36px; width: min(100%, 560px); }
 .us-page-title, .us-hero-title { font-size: clamp(28px, 5vw, 36px); font-weight: 700; letter-spacing: -.045em; line-height: 1.5; margin: 0; overflow-wrap: anywhere; }
 .us-intro { color: #716b64; font-size: 14px; line-height: 1.85; margin: 12px 0 0; }
+.us-tutorial { counter-reset: us-step; display: grid; gap: 20px; list-style: none; margin: 28px 0 20px; padding: 0; }
+.us-tutorial li { border-bottom: 1px solid var(--us-line); counter-increment: us-step; padding: 0 0 18px 34px; position: relative; }
+.us-tutorial li::before { align-items: center; background: var(--us-soft); border-radius: 50%; color: var(--us-blue); content: counter(us-step); display: flex; font-size: 12px; font-weight: 700; height: 24px; justify-content: center; left: 0; position: absolute; top: 0; width: 24px; }
+.us-tutorial h2 { font-size: 16px; line-height: 1.65; margin: 0; }
+.us-tutorial p { color: #716b64; font-size: 14px; line-height: 1.85; margin: 6px 0 0; }
+.us-tutorial-note { text-align: left; }
 .us-fieldset { border: 0; margin: 28px 0 0; padding: 0; min-width: 0; }
 .us-fieldset legend, .us-section-title { color: #6b655e; font-size: 12px; font-weight: 700; letter-spacing: .04em; line-height: 1.5; margin: 0 0 10px; padding: 0; }
 .us-decks { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.us-rounds { display: grid; gap: 10px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.us-rounds .us-round { font-size: 16px; min-height: 50px; padding: 10px; }
 .us-deck { align-items: center; background: #fff; border: 1px solid var(--us-line); border-radius: 12px; display: flex; font-size: 18px; font-weight: 700; gap: 8px; justify-content: center; min-height: 64px; padding: 14px; }
 .us-deck[aria-pressed="true"] { background: var(--us-soft); border-color: var(--us-blue); color: var(--us-blue); }
 .us-deck svg { height: 16px; width: 16px; }

@@ -7,7 +7,7 @@ const cards = ['family', 'friends'].flatMap(audience => Array.from({ length: 8 }
   options: [{ id: '1', text: 'ひとつ目' }, { id: '2', text: 'ふたつ目' }, { id: '3', text: 'みっつ目' }],
 })));
 const fixed = () => .99;
-const begin = (count = 4, audience = 'family', deck = cards) => createGame({ names: Array.from({ length: count }, (_, i) => `人${i + 1}`), audience }, deck, fixed);
+const begin = (count = 4, audience = 'family', deck = cards, rounds = 1) => createGame({ names: Array.from({ length: count }, (_, i) => `人${i + 1}`), audience, rounds }, deck, fixed);
 function reveal(state, deck = cards) {
   return advanceGame(advanceGame(state, { type: 'ANSWER', choice: '2' }, deck), { type: 'REVEAL' }, deck);
 }
@@ -167,6 +167,81 @@ test('a replay preserves the people and deck and clears all progress', () => {
   assert.equal(fresh.screen, 'choose');
   assert.equal(fresh.answer, null);
   assert.deepEqual(fresh.completedTurns, []);
+});
+
+test('three rounds are the default and every player gets an equal turn in all rounds', () => {
+  const defaultGame = createGame({ names: ['人1', '人2'], audience: 'family' }, cards, fixed);
+  assert.equal(defaultGame.rounds, 3);
+  for (const count of [2, 4, 6]) for (const rounds of [3, 5]) {
+    let state = begin(count, 'friends', cards, rounds);
+    for (let turn = 0; turn < count * rounds; turn++) {
+      assert.equal(state.screen, 'choose');
+      assert.equal(mainPlayer(state).id, `p${turn % count + 1}`);
+      state = complete(state, state.players.filter(player => player.id !== mainPlayer(state).id).map(player => player.id));
+      assert.deepEqual(restoreGame(JSON.stringify(state), cards), state);
+    }
+    assert.equal(state.screen, 'results');
+    assert.equal(state.completedTurns.length, count * rounds);
+    assert.ok(scoreTotals(state).every(player => player.score === (count - 1) * rounds));
+  }
+});
+
+test('continuing adds a full round, preserves points and the unplayed pool, and cannot double advance', () => {
+  let state = complete(complete(begin(2), ['p2']), ['p1']);
+  const oldPool = [...state.remainingIds];
+  const previousQuestion = state.questionId;
+  state = advanceGame(state, { type: 'CONTINUE' }, cards, fixed);
+  assert.equal(state.rounds, 2);
+  assert.equal(state.initialRounds, 1);
+  assert.equal(state.turnIndex, 2);
+  assert.equal(mainPlayer(state).id, 'p1');
+  assert.equal(state.screen, 'choose');
+  assert.equal(state.questionId, oldPool[0]);
+  assert.notEqual(state.questionId, previousQuestion);
+  assert.deepEqual(state.remainingIds, oldPool.slice(1));
+  assert.deepEqual(scoreTotals(state).map(player => player.score), [1, 1]);
+  assert.equal(advanceGame(state, { type: 'CONTINUE' }, cards), state);
+  assert.deepEqual(restoreGame(JSON.stringify(state), cards), state);
+  state = complete(complete(state, ['p2']), ['p1']);
+  assert.equal(state.screen, 'results');
+  assert.deepEqual(scoreTotals(state).map(player => player.score), [2, 2]);
+  const early = advanceGame(begin(), { type: 'FINISH' }, cards);
+  assert.equal(advanceGame(early, { type: 'CONTINUE' }, cards), early);
+});
+
+test('an unfinished second round keeps only completed points on early finish', () => {
+  let state = begin(2, 'family', cards, 3);
+  for (let turn = 0; turn < 3; turn++) state = complete(state, state.players.filter(player => player.id !== mainPlayer(state).id).map(player => player.id));
+  state = advanceGame(reveal(state), { type: 'TOGGLE_ALL_CORRECT' }, cards);
+  state = advanceGame(state, { type: 'FINISH' }, cards);
+  assert.equal(state.completedTurns.length, 3);
+  assert.equal(state.answer, null);
+  assert.deepEqual(scoreTotals(state).map(player => player.score), [1, 2]);
+  assert.deepEqual(restoreGame(JSON.stringify(state), cards), state);
+});
+
+test('version 3 games migrate with one round without losing a committed answer or points', () => {
+  for (const game of [begin(2), reveal(begin(2)), complete(complete(begin(2), ['p2']), ['p1'])]) {
+    const legacy = structuredClone(game);
+    legacy.version = 3; delete legacy.rounds; delete legacy.initialRounds;
+    assert.deepEqual(restoreGame(JSON.stringify(legacy), cards), game);
+  }
+});
+
+test('invalid round counts and completed-turn order cannot be restored', () => {
+  for (const rounds of [0, -1, 1.5, '3', Number.MAX_SAFE_INTEGER]) {
+    assert.throws(() => begin(2, 'family', cards, rounds), /周回数/u);
+    const bad = begin(); bad.rounds = rounds;
+    assert.equal(restoreGame(JSON.stringify(bad), cards), null);
+  }
+  const wrongOrder = complete(begin(2, 'family', cards, 3), ['p2']);
+  wrongOrder.completedTurns[0].playerId = 'p2';
+  assert.equal(restoreGame(JSON.stringify(wrongOrder), cards), null);
+  const wrongEnd = complete(complete(begin(2), ['p2']), ['p1']);
+  wrongEnd.turnIndex = 0;
+  assert.equal(restoreGame(JSON.stringify(wrongEnd), cards), null);
+  const wrongInitial = begin(2); wrongInitial.initialRounds = 2;
+  assert.equal(restoreGame(JSON.stringify(wrongInitial), cards), null);
 });
 
 test('restore rejects old versions and corrupt stage, pool, answer and score relationships', () => {
