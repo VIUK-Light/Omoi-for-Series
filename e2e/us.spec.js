@@ -201,6 +201,16 @@ for (const width of [320, 390, 768, 1280]) {
   test(`setup, question, condition and scoring fit a ${width}px-wide screen`, async ({ page }) => {
     await page.setViewportSize({ width, height: width >= 768 ? 900 : 844 });
     await start(page, 4);
+    const entryWidths = await page.evaluate(async () => {
+      const widths = [];
+      const until = performance.now() + 450;
+      do {
+        widths.push(document.documentElement.scrollWidth);
+        await new Promise(requestAnimationFrame);
+      } while (performance.now() < until);
+      return widths;
+    });
+    expect(Math.max(...entryWidths)).toBeLessThanOrEqual(width);
     const noOverflow = async () => expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await noOverflow();
     await phase(page);

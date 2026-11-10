@@ -44,6 +44,8 @@ button, a { text-underline-offset: 4px; }
 .us-progress { align-items: center; color: var(--us-muted); display: flex; flex-wrap: wrap; font-size: 12px; gap: 10px; justify-content: center; line-height: 1.5; margin: 0; max-width: 340px; }
 .us-progress span + span { border-left: 1px solid var(--us-line); color: var(--us-ink); overflow-wrap: anywhere; padding-left: 10px; }
 .us-session .card-stage { margin: 16px 0 22px; }
+.us-session .card-stage.is-entering { animation-name: us-card-deal; }
+@keyframes us-card-deal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 .us-question .question-card-face { padding: 26px 22px; }
 .us-question .question-text { font-size: 22px; line-height: 1.65; margin-bottom: 20px; text-wrap: balance; }
 .us-options { display: grid; gap: 7px; list-style: none; margin: 18px 0 0; padding: 0; }
