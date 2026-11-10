@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createGame, advanceGame, mainPlayer, scoreTotals, rankings, restoreGame } from '../us/game-engine.mjs';
+import { createGame, advanceGame, mainPlayer, scoreTotals, rankings, restoreGame, nextPlayerName } from '../us/game-engine.mjs';
 
 const cards = ['family', 'friends'].flatMap(audience => Array.from({ length: 8 }, (_, index) => ({
   id: `${audience}-${index}`, audience, prompt: `${audience}の問い${index}`, condition: `追加条件${index}`,
@@ -9,8 +9,7 @@ const cards = ['family', 'friends'].flatMap(audience => Array.from({ length: 8 }
 const fixed = () => .99;
 const begin = (count = 4, audience = 'family', deck = cards) => createGame({ names: Array.from({ length: count }, (_, i) => `人${i + 1}`), audience }, deck, fixed);
 function phase(state, selected = [], deck = cards) {
-  let next = advanceGame(state, { type: 'OPEN_ANSWER' }, deck);
-  next = advanceGame(next, { type: 'ANSWER', choice: '2' }, deck);
+  let next = advanceGame(state, { type: 'ANSWER', choice: '2' }, deck);
   for (const playerId of selected) next = advanceGame(next, { type: 'TOGGLE_CORRECT', playerId }, deck);
   return advanceGame(next, { type: 'ADVANCE' }, deck, fixed);
 }
@@ -51,8 +50,7 @@ test('no correct predictions still completes a round and all totals stay zero', 
 test('answer and score actions are phase-bound and repeated next cannot double-count', () => {
   const initial = begin();
   assert.equal(advanceGame(initial, { type: 'ADVANCE' }, cards), initial);
-  assert.equal(advanceGame(initial, { type: 'ANSWER', choice: '2' }, cards), initial);
-  let state = advanceGame(initial, { type: 'OPEN_ANSWER' }, cards);
+  let state = initial;
   assert.equal(advanceGame(state, { type: 'ANSWER', choice: '9' }, cards), state);
   state = advanceGame(state, { type: 'ANSWER', choice: '1' }, cards);
   assert.equal(advanceGame(state, { type: 'ANSWER', choice: '2' }, cards), state);
@@ -67,8 +65,7 @@ test('answer and score actions are phase-bound and repeated next cannot double-c
 });
 
 test('scorers can be toggled off and editing an answer clears the draft checks', () => {
-  let state = advanceGame(begin(), { type: 'OPEN_ANSWER' }, cards);
-  state = advanceGame(state, { type: 'ANSWER', choice: '2' }, cards);
+  let state = advanceGame(begin(), { type: 'ANSWER', choice: '2' }, cards);
   state = advanceGame(state, { type: 'TOGGLE_CORRECT', playerId: 'p2' }, cards);
   state = advanceGame(state, { type: 'TOGGLE_CORRECT', playerId: 'p2' }, cards);
   assert.deepEqual(state.correctIds, []);
@@ -161,4 +158,71 @@ test('setup limits participants and readable names, and empty names get player n
   const state = createGame({ names: [' ', '名前'], audience: 'family' }, cards);
   assert.equal(state.players[0].name, 'プレイヤー1');
   assert.ok(state.remainingIds.every(id => id.startsWith('family-')));
+});
+
+test('adding participants after deleting any middle row never creates a default name collision', () => {
+  for (const count of [3, 4, 5, 6]) for (let removed = 0; removed < count; removed++) {
+    const names = Array.from({ length: count }, (_, index) => `プレイヤー${index + 1}`);
+    names.splice(removed, 1);
+    names.push(nextPlayerName(names));
+    assert.equal(new Set(names).size, count);
+    assert.doesNotThrow(() => createGame({ names, audience: 'family' }, cards));
+  }
+  assert.equal(nextPlayerName(['', 'プレイヤー2']), 'プレイヤー3');
+  assert.equal(nextPlayerName([' プレイヤー1 ', 'アキ']), 'プレイヤー2');
+});
+
+test('both answers survive the active question and only a change flag survives completion', () => {
+  let state = advanceGame(begin(2), { type: 'ANSWER', choice: '1' }, cards);
+  state = advanceGame(state, { type: 'ADVANCE' }, cards);
+  assert.equal(state.baseAnswer, '1');
+  assert.deepEqual(restoreGame(JSON.stringify(state), cards), state);
+  state = advanceGame(state, { type: 'ANSWER', choice: '2' }, cards);
+  assert.equal(state.baseAnswer, '1');
+  assert.equal(state.answer, '2');
+  assert.deepEqual(restoreGame(JSON.stringify(state), cards), state);
+  const passed = advanceGame(state, { type: 'PASS' }, cards, fixed);
+  assert.equal(passed.baseAnswer, null);
+  const finished = advanceGame(state, { type: 'FINISH' }, cards);
+  assert.equal(finished.baseAnswer, null);
+  state = advanceGame(state, { type: 'ADVANCE' }, cards, fixed);
+  assert.equal(state.completedTurns[0].answerChanged, true);
+  assert.deepEqual(Object.keys(state.completedTurns[0]).sort(), ['answerChanged', 'awards', 'playerId', 'questionId']);
+  assert.equal(state.baseAnswer, null);
+  state = phase(phase(state));
+  assert.equal(state.completedTurns[1].answerChanged, false);
+  assert.deepEqual(restoreGame(JSON.stringify(state), cards), state);
+});
+
+test('six players can score everyone with 36 actions and nobody with 24, without scoring the main player', () => {
+  for (const correct of [false, true]) {
+    let state = begin(6), actions = 0;
+    while (state.screen !== 'results') {
+      state = advanceGame(state, { type: 'ANSWER', choice: '1' }, cards); actions++;
+      if (correct) {
+        state = advanceGame(state, { type: 'TOGGLE_ALL_CORRECT' }, cards); actions++;
+        assert.equal(state.correctIds.length, 5);
+        assert.ok(!state.correctIds.includes(mainPlayer(state).id));
+      }
+      state = advanceGame(state, { type: 'ADVANCE' }, cards, fixed); actions++;
+    }
+    assert.equal(actions, correct ? 36 : 24);
+    assert.ok(scoreTotals(state).every(player => player.score === (correct ? 10 : 0)));
+  }
+  let state = advanceGame(begin(), { type: 'ANSWER', choice: '1' }, cards);
+  state = advanceGame(state, { type: 'TOGGLE_ALL_CORRECT' }, cards);
+  state = advanceGame(state, { type: 'TOGGLE_ALL_CORRECT' }, cards);
+  assert.deepEqual(state.correctIds, []);
+});
+
+test('restore rejects an unavailable first answer, an old version and invalid discovery flags', () => {
+  const changed = phase(begin(2));
+  for (const value of [null, '9', undefined]) {
+    const state = structuredClone(changed); state.baseAnswer = value;
+    assert.equal(restoreGame(JSON.stringify(state), cards), null);
+  }
+  const old = begin(); old.version = 1;
+  assert.equal(restoreGame(JSON.stringify(old), cards), null);
+  const completed = phase(changed); delete completed.completedTurns[0].answerChanged;
+  assert.equal(restoreGame(JSON.stringify(completed), cards), null);
 });

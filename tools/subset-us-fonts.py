@@ -21,7 +21,7 @@ def main():
     destination = ROOT / "us/fonts"
     destination.mkdir(exist_ok=True)
     files = [ROOT / "shared/questions/us.json", ROOT / "howto.html"]
-    files += list((ROOT / "us").glob("*.html")) + list((ROOT / "us").glob("*.js"))
+    files += list((ROOT / "us").glob("*.html")) + list((ROOT / "us").glob("*.js")) + list((ROOT / "us").glob("*.mjs"))
     for series in ["family", "friends"]:
         files += list((ROOT / series).glob("*.html"))
     text = "".join(file.read_text() for file in files)

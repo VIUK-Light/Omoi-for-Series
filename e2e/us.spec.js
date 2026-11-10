@@ -13,7 +13,6 @@ async function start(page, count = 2, deck = 'family') {
 }
 
 async function phase(page, allCorrect = true) {
-  await page.getByRole('button', { name: '主役の答えへ', exact: true }).click();
   await page.locator('[data-choice="2"]').click();
   if (allCorrect) {
     const choices = page.locator('[data-player-id]');
@@ -47,6 +46,73 @@ test('Us loads its bundled UD fonts without an external font service', async ({ 
   expect(errors).toEqual([]);
 });
 
+test('removing a middle participant and adding another preserves unique names and starts normally', async ({ page }) => {
+  await page.goto('/us/');
+  await page.locator('[data-action="remove-player"][data-index="1"]').click();
+  await page.locator('[data-action="add-player"]').click();
+  const names = await page.locator('[data-name-index]').evaluateAll(inputs => inputs.map(input => input.value));
+  expect(new Set(names).size).toBe(4);
+  await page.locator('[data-action="start"]').click();
+  await expect(page.locator('#question-card')).toBeVisible();
+  await expect(page.locator('.us-error')).toHaveCount(0);
+});
+
+test('six people finish with 36 game clicks using all-correct and see discoveries without saved answer choices', async ({ page }) => {
+  await start(page, 6);
+  let clicks = 0;
+  const click = async locator => { await locator.click(); clicks++; };
+  for (let turn = 0; turn < 6; turn++) {
+    await click(page.locator('[data-choice="1"]'));
+    await click(page.locator('[data-action="toggle-all-correct"]'));
+    await expect(page.locator('[data-player-id][aria-pressed="true"]')).toHaveCount(5);
+    await click(page.locator('[data-action="advance"]'));
+    await expect(page.locator('.question-card-back .us-first-answer .us-choice-number')).toHaveText('1');
+    await page.reload();
+    await expect(page.locator('.question-card-back .us-first-answer .us-choice-number')).toHaveText('1');
+    await click(page.locator('[data-choice="2"]'));
+    await expect(page.locator('.us-answer-change')).toHaveText('答えが変わった');
+    await expect(page.locator('.us-revealed .us-choice-number')).toHaveText('2');
+    await click(page.locator('[data-action="toggle-all-correct"]'));
+    await click(page.locator('[data-action="advance"]'));
+  }
+  expect(clicks).toBe(36);
+  await expect(page.locator('.us-discoveries')).toContainText('6人のうち、6人が条件で答えを変えました。');
+  await page.getByText('問いを振り返る', { exact: true }).click();
+  await expect(page.locator('.us-discoveries li')).toHaveCount(6);
+  const stored = await snapshot(page);
+  expect(stored.baseAnswer).toBeNull();
+  expect(stored.answer).toBeNull();
+  expect(stored.completedTurns.every(turn => !('answer' in turn) && !('baseAnswer' in turn))).toBe(true);
+  expect(await page.locator('.us-rank-score').allTextContents()).toEqual(Array(6).fill('10点'));
+});
+
+test('larger display survives reload and fits narrow screens while keeping choices interactive', async ({ page }) => {
+  await start(page, 2);
+  await page.locator('[data-action="toggle-large-text"]').click();
+  await expect(page.locator('[data-action="toggle-large-text"]')).toHaveAttribute('aria-pressed', 'true');
+  expect((await page.locator('.card-stage').boundingBox()).width).toBeGreaterThan(340);
+  expect(await page.locator('[data-choice="1"]').evaluate(button => parseFloat(getComputedStyle(button).fontSize))).toBeGreaterThanOrEqual(20);
+  await page.reload();
+  await expect(page.locator('[data-action="toggle-large-text"]')).toHaveAttribute('aria-pressed', 'true');
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+  await page.locator('[data-choice="1"]').click();
+  await page.locator('[data-action="advance"]').click();
+  await expect(page.locator('.us-condition')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('older game formats recover with an update notice instead of incomplete answer comparisons', async ({ page }) => {
+  await start(page, 2);
+  await page.evaluate(key => { const game = JSON.parse(sessionStorage.getItem(key)); game.version = 1; delete game.baseAnswer; sessionStorage.setItem(key, JSON.stringify(game)); }, STORAGE);
+  await page.reload();
+  await expect(page.locator('[data-action="start"]')).toBeVisible();
+  await expect(page.locator('.us-notice')).toContainText('更新');
+  expect(await snapshot(page)).toBeNull();
+});
+
 test('Us preserves the shared card when it flips and makes only the visible face interactive', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await start(page, 2);
@@ -58,7 +124,6 @@ test('Us preserves the shared card when it flips and makes only the visible face
   await expect(page.locator('.question-card-back')).toHaveAttribute('aria-hidden', 'true');
   expect(await page.locator('.question-card-back').evaluate(face => face.inert)).toBe(true);
   await page.evaluate(() => { window.usCardBeforeFlip = document.querySelector('#question-card'); });
-  await page.getByRole('button', { name: '主役の答えへ', exact: true }).click();
   await expect(page.locator('.question-card-front [data-choice]')).toHaveCount(3);
   await expect(page.locator('.question-card-back [data-choice]')).toHaveCount(0);
   await page.locator('[data-choice="2"]').click();
@@ -67,7 +132,6 @@ test('Us preserves the shared card when it flips and makes only the visible face
   await expect(page.locator('.question-card-front')).toHaveAttribute('aria-hidden', 'true');
   expect(await page.locator('.question-card-front').evaluate(face => face.inert)).toBe(true);
   await expect.poll(() => page.locator('.question-card-inner').evaluate(inner => Math.abs(new DOMMatrix(getComputedStyle(inner).transform).m11 + 1))).toBeLessThan(.001);
-  await page.getByRole('button', { name: '主役の答えへ', exact: true }).click();
   await expect(page.locator('.question-card-front [data-choice]')).toHaveCount(0);
   await expect(page.locator('.question-card-back [data-choice]')).toHaveCount(3);
 });
@@ -146,7 +210,6 @@ test('passing after a scored base phase redraws for the same main player and rol
 
 test('answer correction clears draft checks and the main player is never a scorer', async ({ page }) => {
   await start(page);
-  await page.locator('[data-action="open-answer"]').click();
   await page.locator('[data-choice="1"]').click();
   await expect(page.locator('[data-player-id="p1"]')).toHaveCount(0);
   await page.locator('[data-player-id="p2"]').click();
@@ -162,7 +225,7 @@ test('damaged stored progress recovers to setup', async ({ page }) => {
   await page.addInitScript(key => sessionStorage.setItem(key, '{invalid'), STORAGE);
   await page.goto('/us/');
   await expect(page.getByRole('button', { name: 'はじめる', exact: true })).toBeVisible();
-  await expect(page.getByText('前のゲームを読み込めませんでした。新しくはじめられます。')).toBeVisible();
+  await expect(page.locator('.us-notice')).toContainText('前のゲームを読み込めませんでした。');
 });
 
 test('an old link preselects its deck without silently discarding a game of the other kind', async ({ page }) => {
@@ -215,10 +278,11 @@ for (const width of [320, 390, 768, 1280]) {
     await noOverflow();
     await phase(page);
     await noOverflow();
-    await page.locator('[data-action="open-answer"]').click();
     await page.locator('[data-choice="1"]').click();
     await noOverflow();
-    await expect(page.locator('.us-question-reference')).toBeVisible();
+    await page.locator('.us-condition-reference summary').click();
+    await expect(page.locator('.us-condition-reference p').first()).toBeVisible();
+    await noOverflow();
   });
 }
 
@@ -244,12 +308,10 @@ test('keyboard play preserves focus and reduced motion removes the condition ani
   await page.keyboard.press('Enter');
   await expect(page.locator('.us-question h1')).toBeFocused();
   await page.keyboard.press('Tab');
-  await expect(page.locator('[data-action="open-answer"]')).toBeFocused();
-  await page.keyboard.press('Enter');
-  await page.keyboard.press('Tab');
   await expect(page.locator('[data-choice="1"]')).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page.locator('.us-score-title')).toBeFocused();
+  await page.keyboard.press('Tab');
   await page.keyboard.press('Tab');
   await page.keyboard.press('Tab');
   await expect(page.locator('[data-player-id="p2"]')).toBeFocused();

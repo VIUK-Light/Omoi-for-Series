@@ -1,6 +1,6 @@
 // All answers are choices for the current turn, never personality assessments.
 export const STORAGE_KEY = 'omoi-for-us:game:v1';
-export const GAME_VERSION = 1;
+export const GAME_VERSION = 2;
 const SCREENS = ['question', 'answer', 'score', 'results'];
 const signatureCache = new WeakMap();
 
@@ -27,6 +27,13 @@ function eligibleIds(cards, audience) {
   return cards.filter(card => card.audience === audience).map(card => card.id);
 }
 
+export function nextPlayerName(names) {
+  const used = new Set(names.map((name, index) => name.trim() || `プレイヤー${index + 1}`));
+  let number = 1;
+  while (used.has(`プレイヤー${number}`)) number++;
+  return `プレイヤー${number}`;
+}
+
 export function createGame({ names, audience }, cards, random = Math.random) {
   if (!['family', 'friends'].includes(audience)) throw new Error('家族用か友人用を選んでください。');
   if (!Array.isArray(names) || names.length < 2 || names.length > 6) throw new Error('参加者は2〜6人で設定してください。');
@@ -42,7 +49,7 @@ export function createGame({ names, audience }, cards, random = Math.random) {
     version: GAME_VERSION, catalog: catalogSignature(cards), audience, players,
     screen: 'question', stage: 'base', turnIndex: 0,
     questionId: deck[0], remainingIds: deck.slice(1), usedIds: [deck[0]],
-    answer: null, correctIds: [], turnAwards: { base: [], changed: [] },
+    answer: null, baseAnswer: null, correctIds: [], turnAwards: { base: [], changed: [] },
     completedTurns: [], endedEarly: false,
   };
 }
@@ -62,7 +69,7 @@ function nextCard(state, cards, random) {
   const questionId = remaining.shift();
   return {
     ...state, questionId, remainingIds: remaining, usedIds: [...used, questionId],
-    screen: 'question', stage: 'base', answer: null, correctIds: [],
+    screen: 'question', stage: 'base', answer: null, baseAnswer: null, correctIds: [],
     turnAwards: { base: [], changed: [] },
   };
 }
@@ -73,12 +80,8 @@ export function advanceGame(state, action, cards, random = Math.random) {
   if (!state || !action || state.screen === 'results') return state;
   const next = structuredClone(state);
   switch (action.type) {
-    case 'OPEN_ANSWER':
-      if (state.screen !== 'question') return state;
-      next.screen = 'answer';
-      return next;
     case 'ANSWER': {
-      if (state.screen !== 'answer' || !currentCard(state, cards)?.options.some(option => option.id === action.choice)) return state;
+      if (!['question', 'answer'].includes(state.screen) || !currentCard(state, cards)?.options.some(option => option.id === action.choice)) return state;
       next.answer = action.choice;
       next.correctIds = [];
       next.screen = 'score';
@@ -95,19 +98,27 @@ export function advanceGame(state, action, cards, random = Math.random) {
         ? state.correctIds.filter(id => id !== action.playerId)
         : [...state.correctIds, action.playerId];
       return next;
+    case 'TOGGLE_ALL_CORRECT': {
+      if (state.screen !== 'score') return state;
+      const ids = state.players.filter(player => player.id !== mainPlayer(state).id).map(player => player.id);
+      next.correctIds = ids.every(id => state.correctIds.includes(id)) ? [] : ids;
+      return next;
+    }
     case 'ADVANCE':
       if (state.screen !== 'score') return state;
       next.turnAwards[state.stage] = [...state.correctIds];
       if (state.stage === 'base') {
+        next.baseAnswer = state.answer;
         next.stage = 'changed';
         next.screen = 'question';
         next.answer = null;
         next.correctIds = [];
         return next;
       }
-      next.completedTurns.push({ playerId: mainPlayer(state).id, questionId: state.questionId, awards: next.turnAwards });
+      next.completedTurns.push({ playerId: mainPlayer(state).id, questionId: state.questionId, awards: next.turnAwards, answerChanged: state.baseAnswer !== state.answer });
       next.turnAwards = { base: [], changed: [] };
       next.answer = null;
+      next.baseAnswer = null;
       next.correctIds = [];
       if (state.turnIndex + 1 === state.players.length) {
         next.screen = 'results';
@@ -123,6 +134,7 @@ export function advanceGame(state, action, cards, random = Math.random) {
       next.screen = 'results';
       next.endedEarly = true;
       next.answer = null;
+      next.baseAnswer = null;
       next.correctIds = [];
       next.turnAwards = { base: [], changed: [] };
       return next;
@@ -167,17 +179,20 @@ export function restoreGame(serialized, cards) {
     const validPlayers = (ids, mainId) => Array.isArray(ids) && new Set(ids).size === ids.length
       && ids.every(id => id !== mainId && state.players.some(player => player.id === id));
     const validAwards = (awards, mainId) => awards && validPlayers(awards.base, mainId) && validPlayers(awards.changed, mainId);
-    if (state.completedTurns.some((turn, index) => !turn || turn.playerId !== state.players[index].id || !pool.has(turn.questionId) || !validAwards(turn.awards, turn.playerId))) return null;
+    if (state.completedTurns.some((turn, index) => !turn || turn.playerId !== state.players[index].id || !pool.has(turn.questionId) || !validAwards(turn.awards, turn.playerId) || typeof turn.answerChanged !== 'boolean')) return null;
     const mainId = mainPlayer(state).id;
     if (!validPlayers(state.correctIds, mainId) || !validAwards(state.turnAwards, mainId)) return null;
     if (state.answer !== null && !currentCard(state, cards).options.some(option => option.id === state.answer)) return null;
+    if (state.baseAnswer !== null && !currentCard(state, cards).options.some(option => option.id === state.baseAnswer)) return null;
+    if (state.stage === 'base' && state.baseAnswer !== null) return null;
+    if (state.stage === 'changed' && state.screen !== 'results' && state.baseAnswer === null) return null;
     if (state.screen === 'score' && state.answer === null) return null;
     if (state.screen === 'question' && state.answer !== null) return null;
     if (state.screen !== 'score' && state.correctIds.length) return null;
     if (state.turnAwards.changed.length || (state.stage === 'base' && state.turnAwards.base.length)) return null;
     if (state.screen === 'results') {
       const expected = state.endedEarly ? state.turnIndex : state.players.length;
-      if (state.completedTurns.length !== expected || state.turnAwards.base.length || state.answer !== null) return null;
+      if (state.completedTurns.length !== expected || state.turnAwards.base.length || state.answer !== null || state.baseAnswer !== null) return null;
     } else if (state.endedEarly || state.completedTurns.length !== state.turnIndex) return null;
     return state;
   } catch {

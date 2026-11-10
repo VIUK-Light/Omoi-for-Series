@@ -5,7 +5,7 @@
   "source": {
     "kind": "codex",
     "stage": "editorial-adaptation",
-    "generatedAt": "2026-11-09",
+    "generatedAt": "2026-11-10",
     "basedOnCommit": "f0042facf16bc8f792a19fa912b3b5fe17618346"
   },
   "questions": [
@@ -1139,15 +1139,15 @@
         "id": "family-communication-2-3",
         "textSha256": "207d1cbb7a2771b03e8d5ad4fd56c05bc76929702577775d5a331c9002e7f447"
       },
-      "prompt": "家族に謝る時、どう切り出すのが自分に合う？",
+      "prompt": "家族に謝りたい。最初の伝え方を一つ選ぶなら？",
       "options": [
         {
           "id": "1",
-          "text": "まずごめんと伝える"
+          "text": "会って、まず謝る"
         },
         {
           "id": "2",
-          "text": "何が悪かったか説明する"
+          "text": "会って、事情から説明する"
         },
         {
           "id": "3",
@@ -1279,7 +1279,7 @@
         "id": "family-communication-2-8",
         "textSha256": "1a4a383b18f5a63a6975fe1d4bb3eabd214f76027cbcb53b320e68460eb6b6b9"
       },
-      "prompt": "家族に直してほしい習慣。どう伝えたい？",
+      "prompt": "家族に直してほしい習慣。最初に伝える内容は？",
       "options": [
         {
           "id": "1",
@@ -1587,7 +1587,7 @@
         "id": "family-communication-2-19",
         "textSha256": "230489663a9601c5932562d6d1fa2d89617fe9f46a8d466e5dc4babf7514c888"
       },
-      "prompt": "家族に言いにくいこと。どう伝えたい？",
+      "prompt": "家族に言いにくいこと。最初の伝え方は？",
       "options": [
         {
           "id": "1",
@@ -1599,7 +1599,7 @@
         },
         {
           "id": "3",
-          "text": "話せる部分から始める"
+          "text": "今、話せる部分だけ話す"
         }
       ],
       "condition": "その件について、家族は問題がないと思っている。",
@@ -1923,7 +1923,7 @@
         "id": "family-values-2-32",
         "textSha256": "b03739738663da7ca1dd321ebb5c853fd7128aa8245b50330de9f203b1541bad"
       },
-      "prompt": "意味が分からない家族のルール。どうする？",
+      "prompt": "意味が分からない家族のルール。最初にすることは？",
       "options": [
         {
           "id": "1",
@@ -2455,7 +2455,7 @@
         "id": "editorial-family-fit-012",
         "textSha256": "989578946f7b3274e05d602ef80a699d5d720f713d264f5869fb8f27204ba51f"
       },
-      "prompt": "家族の期待と自分の希望が違う。どう話す？",
+      "prompt": "家族の期待と自分の希望が違う。最初に話す内容は？",
       "options": [
         {
           "id": "1",
@@ -2763,7 +2763,7 @@
         "id": "family-values-3-16",
         "textSha256": "cdf9d7c143668711ca0f575d3a0a4c2abc6516a913472968ccc578a8849cf6db"
       },
-      "prompt": "家族の意見は理解できるけれど、納得はできない。どう伝える？",
+      "prompt": "家族の意見は理解できるけれど納得できない。最初の返事は？",
       "options": [
         {
           "id": "1",
@@ -3099,7 +3099,7 @@
         "id": "family-communication-3-28",
         "textSha256": "1263f909161703c4d987ee2cd46ec298a4a5170593a69307ae6a91ccb524e7c0"
       },
-      "prompt": "家族が本音を話したがっている。どう向き合う？",
+      "prompt": "家族が本音を話したがっている。最初の返事は？",
       "options": [
         {
           "id": "1",
@@ -3155,7 +3155,7 @@
         "id": "family-communication-3-30",
         "textSha256": "8aa42fa2b532d8a6d0dd4ff404b50970e01e87ea51affc95f1a0e0c6d5370548"
       },
-      "prompt": "家族と避けてきた話題。どう扱いたい？",
+      "prompt": "家族と避けてきた話題。最初の一歩として選ぶなら？",
       "options": [
         {
           "id": "1",
@@ -3575,7 +3575,7 @@
         "id": "family-boundaries-3-46",
         "textSha256": "b917a5014266d39eb6a4f2b6ea96aa8f8306f745442a87d80e2090e8fd28f76e"
       },
-      "prompt": "家族に境界線を伝えた後、罪悪感がある。どうする？",
+      "prompt": "家族に境界線を伝えた後の罪悪感。まず何を考えたい？",
       "options": [
         {
           "id": "1",
@@ -3631,7 +3631,7 @@
         "id": "family-boundaries-3-48",
         "textSha256": "282c67b0b633808a30db182ef6b6e7e6011a2c249b1a26d65f9e9ff8b9886431"
       },
-      "prompt": "自分の時間や空間を尊重してほしい。どう伝える？",
+      "prompt": "自分の時間や空間を尊重してほしい。最初に話す内容は？",
       "options": [
         {
           "id": "1",
@@ -3855,7 +3855,7 @@
         "id": "family-communication-4-7",
         "textSha256": "e34fec705a44fc834c878b500bb54d597ad8cbd277953bdbf837ae634e0eb04d"
       },
-      "prompt": "家族に謝ってほしいことがある。どうする？",
+      "prompt": "家族に謝ってほしいことがある。まず何から始めたい？",
       "options": [
         {
           "id": "1",
@@ -4443,7 +4443,7 @@
         "id": "family-values-4-34",
         "textSha256": "818f00ea72d16bee7b1f91bfebc7ef3d58a3119a93a8bf8f539b9d8070702902"
       },
-      "prompt": "家族の中で置き去りに感じた。どう伝えたい？",
+      "prompt": "家族の中で置き去りに感じた。希望を一つだけ伝えるなら？",
       "options": [
         {
           "id": "1",
@@ -4555,7 +4555,7 @@
         "id": "editorial-family-fit-018",
         "textSha256": "8bf17a49cdf200b442868c5c447e88622f4ed428837b4d519b7a300195ab1d0b"
       },
-      "prompt": "家族が困っている時、できる範囲をどう伝える？",
+      "prompt": "家族への手助けで、最初に伝えておきたいのは？",
       "options": [
         {
           "id": "1",
@@ -5647,7 +5647,7 @@
         "id": "editorial-friends-fit-038",
         "textSha256": "d47a67f7414cf5feb0d027e9902bd6f23ff9415a4d4e50d1bd2107fb9a7f352a"
       },
-      "prompt": "友人の様子がいつもと違う。どう聞く？",
+      "prompt": "友人の様子がいつもと違う。最初にかける言葉は？",
       "options": [
         {
           "id": "1",
@@ -5983,7 +5983,7 @@
         "id": "editorial-friends-fit-052",
         "textSha256": "83a73d0473b0170e867f896cf4669324802b571a9811d6d10cb516255658d9ae"
       },
-      "prompt": "友人と意見が違う。どう話すと落ち着ける？",
+      "prompt": "友人と意見が違う。話し合いの最初にしたいことは？",
       "options": [
         {
           "id": "1",
@@ -6235,7 +6235,7 @@
         "id": "editorial-friends-fit-063",
         "textSha256": "19bc7f1dfe581a6b07e9e6e999dff7f966598f1c9bad63d65bedc2420fee6f6f"
       },
-      "prompt": "友人を頼ってよいか迷った時、どうする？",
+      "prompt": "友人を頼ってよいか迷った。最初の一言で伝えるなら？",
       "options": [
         {
           "id": "1",
@@ -6627,7 +6627,7 @@
         "id": "editorial-friends-fit-078",
         "textSha256": "36e8c1548cc6b5c57a8e8f9f2e6a844a0f8af670c5098e72bb58536d013305bd"
       },
-      "prompt": "友人の小さな変化に気づいた。どう伝えたい？",
+      "prompt": "友人の小さな変化に気づいた。最初の反応は？",
       "options": [
         {
           "id": "1",
@@ -6655,7 +6655,7 @@
         "id": "editorial-friends-fit-079",
         "textSha256": "3528c53ccfdbc444f44ac7b8d04f740dd5fbf045f07d118ad60d71501399f7c1"
       },
-      "prompt": "友人の話を聞く余裕がない日。どう伝える？",
+      "prompt": "友人の話を聞く余裕がない日。最初にどう返事をする？",
       "options": [
         {
           "id": "1",
@@ -6711,7 +6711,7 @@
         "id": "editorial-friends-fit-082",
         "textSha256": "2cca3a823d9fbe77bc7a6f83f0fbb94cf608b87acec25e2f9bd37f48998f3a2e"
       },
-      "prompt": "友人と比べてしまう話題。どう付き合いたい？",
+      "prompt": "友人と比べてしまう話題。まず何から変えたい？",
       "options": [
         {
           "id": "1",
@@ -6795,19 +6795,19 @@
         "id": "editorial-friends-fit-085",
         "textSha256": "af424fc41957ab97f8beb8a3dd265ed1bd44d9280b695a7c671524ae0169d758"
       },
-      "prompt": "友人に話したことを秘密にしてほしい。どう伝える？",
+      "prompt": "友人に秘密の話をする前、最初に確かめたいのは？",
       "options": [
         {
           "id": "1",
-          "text": "話す前に約束する"
+          "text": "誰にも話さないと約束できるか"
         },
         {
           "id": "2",
-          "text": "どの部分が秘密か具体的に言う"
+          "text": "どこまでを秘密として扱うか"
         },
         {
           "id": "3",
-          "text": "話した後でもお願いする"
+          "text": "今、その話を聞く余裕があるか"
         }
       ],
       "condition": "その話には、友人も知っている別の人が関わっている。",
@@ -6879,7 +6879,7 @@
         "id": "editorial-friends-fit-088",
         "textSha256": "8fee09d1884980cbe951ebab56fe5e893d9ebc4795271b1b902fafbdc0fb902c"
       },
-      "prompt": "友人の言葉が今も心に残っている。どう伝えたい？",
+      "prompt": "友人の言葉が今も心に残っている。最初に話す内容は？",
       "options": [
         {
           "id": "1",
@@ -6935,7 +6935,7 @@
         "id": "editorial-friends-fit-091",
         "textSha256": "6ed16235ea22a29c92f52e51600eeac15d033d83efdf0a915bc96932da3232a0"
       },
-      "prompt": "昔の友人とのやりとり。今ならどう伝え直したい？",
+      "prompt": "昔の友人とのやりとりを伝え直すなら、最初に何を話す？",
       "options": [
         {
           "id": "1",
@@ -7075,7 +7075,7 @@
         "id": "editorial-friends-fit-099",
         "textSha256": "93442896e0d960c6f93cb4e3e2e8764dec14e8e0c51b3d13dacb344fe83a063c"
       },
-      "prompt": "友人と話しづらくなった話題。どう扱いたい？",
+      "prompt": "友人と話しづらくなった話題。次に会った時の最初の一歩は？",
       "options": [
         {
           "id": "1",
@@ -7187,7 +7187,7 @@
         "id": "editorial-friends-fit-104",
         "textSha256": "dceaf41d59e30b315650827e7dc2db14ade25cd3fd34ea173ba2d7b76864b441"
       },
-      "prompt": "友人が自分を責めている。どう聞きたい？",
+      "prompt": "友人が自分を責めている。最初にどう応じたい？",
       "options": [
         {
           "id": "1",
@@ -7202,7 +7202,7 @@
           "text": "友人のよいところを伝える"
         }
       ],
-      "condition": "友人は、励ましよりも今の気持ちを聞いてほしいと言う。",
+      "condition": "その友人は、同じことで何度か落ち込んでいる。",
       "reviewStatus": "pending"
     },
     {
@@ -7271,7 +7271,7 @@
         "id": "editorial-friends-fit-107",
         "textSha256": "c89940f4ae43f2ad7d5c33e2856c1581e4b150ca3368c7402c3548f88bfb4c30"
       },
-      "prompt": "友人に頼られることが負担になった。どう知らせる？",
+      "prompt": "友人に頼られることが負担になった。最初に何を伝える？",
       "options": [
         {
           "id": "1",
@@ -7495,7 +7495,7 @@
         "id": "editorial-friends-fit-117",
         "textSha256": "edc301e01cd5a92aaea35a447e700fc505f820c254932c83f4c8905c7435ea6c"
       },
-      "prompt": "友人の相談が重く感じられた。どう伝えたい？",
+      "prompt": "友人の相談が重く感じられた。最初にどう伝える？",
       "options": [
         {
           "id": "1",
@@ -7523,7 +7523,7 @@
         "id": "editorial-friends-fit-119",
         "textSha256": "798efc961579da67ad46fd0da162f478a5a04f0be2d37aa49ac3408ee9281ae4"
       },
-      "prompt": "友人と同じ行き違いが続く。どう話し合う？",
+      "prompt": "友人と同じ行き違いが続く。話し合いで最初に扱うのは？",
       "options": [
         {
           "id": "1",
@@ -7579,7 +7579,7 @@
         "id": "editorial-friends-fit-122",
         "textSha256": "6a7aab14e087f1a304d6ed94fadfbe2bf9dba7ada99e1011ef3edc67dcbadcf0"
       },
-      "prompt": "友人との誤解を話すなら、どんな場が落ち着く？",
+      "prompt": "友人との誤解を落ち着いて話す。最初に選ぶ方法は？",
       "options": [
         {
           "id": "1",
@@ -7607,7 +7607,7 @@
         "id": "editorial-friends-fit-124",
         "textSha256": "ef26c26cb0de6af8b3a62d4ffe25450237ba96cd5d8b281928390a79caac398d"
       },
-      "prompt": "友人に本音を話す前、何を確かめたい？",
+      "prompt": "友人に本音を話す前、最初に確かめたいのは？",
       "options": [
         {
           "id": "1",
@@ -7663,7 +7663,7 @@
         "id": "editorial-friends-fit-126",
         "textSha256": "0206c6bcd95b350aec35e8a708a321c20e8a3b319616a906977f43731c9e7ea0"
       },
-      "prompt": "友人に話す時期を迷っている。いつ切り出したい？",
+      "prompt": "友人に話す時期を迷っている。切り出す合図にするなら？",
       "options": [
         {
           "id": "1",
@@ -8027,7 +8027,7 @@
         "id": "editorial-friends-fit-141",
         "textSha256": "add310fbbbb87bb1ed4109f55dfe321a34caba7852977c5c52f0eadf89d89c11"
       },
-      "prompt": "友人に気持ちを分かってほしい。どう伝える？",
+      "prompt": "友人に気持ちを分かってほしい。最初に何を伝える？",
       "options": [
         {
           "id": "1",
@@ -8083,7 +8083,7 @@
         "id": "editorial-friends-fit-144",
         "textSha256": "4c058a8a0b8998d3a5a6283f00e6eea74e2db5f6bf4362a17bcd66f95feb869a"
       },
-      "prompt": "友人のつらい話を聞く時、自分を守るために何を決める？",
+      "prompt": "友人のつらい話を聞く前、自分のために一つ先に決めるなら？",
       "options": [
         {
           "id": "1",
@@ -8503,7 +8503,7 @@
         "id": "editorial-friends-fit-160",
         "textSha256": "e1f057ac32b47aaefb9d94109086166b631a026894e61462f98ca502d1a867de"
       },
-      "prompt": "友人を傷つけたと気づいた。どう話を始める？",
+      "prompt": "友人を傷つけたと気づいた。最初に伝える一言は？",
       "options": [
         {
           "id": "1",
@@ -8511,14 +8511,14 @@
         },
         {
           "id": "2",
-          "text": "相手の受け止め方を聞く"
+          "text": "相手がどう感じたか尋ねる"
         },
         {
           "id": "3",
-          "text": "話せる時を尋ねる"
+          "text": "今、話してよいか尋ねる"
         }
       ],
-      "condition": "相手は、今は話したくない様子だった。",
+      "condition": "相手とは、明日も同じ場所で顔を合わせる予定がある。",
       "reviewStatus": "pending"
     },
     {

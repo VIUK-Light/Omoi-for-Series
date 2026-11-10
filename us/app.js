@@ -1,6 +1,6 @@
-import { createGame, advanceGame, currentCard, mainPlayer, rankings, scoreTotals, restoreGame, STORAGE_KEY } from './game-engine.mjs';
+import { createGame, advanceGame, currentCard, mainPlayer, rankings, scoreTotals, restoreGame, nextPlayerName, STORAGE_KEY } from './game-engine.mjs?v=us-game-3';
 import { playableCards } from './deck.mjs';
-import { gameCardMarkup } from './card-view.mjs';
+import { gameCardMarkup } from './card-view.mjs?v=us-game-3';
 import { updateQuestionCardSide, focusQuestionCard } from '../shared/question-card.mjs';
 
 const app = document.querySelector('#us-app');
@@ -17,6 +17,8 @@ let loadError = '';
 let setupError = '';
 let notice = '';
 let storageAvailable = true;
+let largeText = false;
+try { largeText = sessionStorage.getItem('omoi-for-us:large-text') === 'true'; } catch { /* Use the default display when storage is unavailable. */ }
 
 const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
 const check = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -25,7 +27,7 @@ const minus = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" fi
 
 function header(active = false) {
   return `<header class="us-header"><a class="us-brand" href="../"><span class="brand-prefix">Omoi for</span> <span class="brand-target">Us</span></a>${active
-    ? '<button class="us-text-button" data-action="finish" type="button">ここで終える</button>'
+    ? `<div class="us-header-actions"><button class="us-text-button" data-action="toggle-large-text" type="button" aria-pressed="${largeText}">${largeText ? '標準に戻す' : '大きく表示'}</button><button class="us-text-button" data-action="finish" type="button">ここで終える</button></div>`
     : '<a class="us-text-link" href="howto.html">遊び方</a>'}</header>`;
 }
 function notices() { return notice ? `<p class="us-notice" role="status">${escape(notice)}</p>` : ''; }
@@ -48,6 +50,7 @@ function shell(content, active = false) {
     updateQuestionCardSide(previous, wasRevealed);
   } else if (next) next.closest('.card-stage').classList.add('is-entering');
   app.classList.toggle('us-session-shell', active);
+  app.classList.toggle('us-large-text', largeText);
   app.replaceChildren(template.content);
   if (sameCard) {
     // Keep the actual card and its 3D layer across state changes. Establish the
@@ -77,7 +80,7 @@ function readSavedGame() {
     notice = '前のゲームから再開しました。';
   } else {
     try { sessionStorage.removeItem(STORAGE_KEY); } catch { storageAvailable = false; }
-    notice = '前のゲームを読み込めませんでした。新しくはじめられます。';
+    notice = '前のゲームを読み込めませんでした。内容の更新や保存状態の変更があったため、新しくはじめてください。';
   }
 }
 function saveGame() {
@@ -106,10 +109,10 @@ function questionScreen() {
   const card = currentCard(game, cards);
   const choosing = game.screen === 'answer';
   const instruction = choosing
-    ? `${escape(mainPlayer(game).name)}さん、答えを選んでください。`
-    : game.stage === 'changed' ? 'もう一度、指で一斉に予想！' : '主役は心の中で決めて、みんなは指で一斉に予想！';
-  shell(`${progress()}${gameCardMarkup(card, game, mainPlayer(game))}<p class="us-instruction">${instruction}</p>
-    <div class="us-actions">${choosing ? '<button class="us-secondary" data-action="back-to-question" type="button">問いに戻る</button>' : primary('主役の答えへ', 'open-answer')}
+    ? `${escape(mainPlayer(game).name)}さん、答えを選び直してください。`
+    : `<span>${game.stage === 'changed' ? '条件を読んで、もう一度一斉に予想。' : '主役は心の中で決めて、一斉に予想。'}</span><span>そろったら、主役が答えをタップ。</span>`;
+  shell(`${progress()}<p class="us-instruction">${instruction}</p>${gameCardMarkup(card, game, mainPlayer(game))}
+    <div class="us-actions">${choosing ? '<button class="us-secondary" data-action="back-to-question" type="button">問いに戻る</button>' : ''}
     <button class="us-text-button" data-action="pass" type="button">この問いをパス</button></div>`, true);
 }
 function scoreScreen() {
@@ -120,7 +123,9 @@ function scoreScreen() {
 function results() {
   const rows = game.endedEarly ? scoreTotals(game) : rankings(game);
   const ranking = rows.map(row => `<li class="us-rank-row${!game.endedEarly && row.rank === 1 ? ' is-first' : ''}">${!game.endedEarly ? `<span class="us-rank">${row.rank}位</span>` : ''}<span class="us-rank-name">${escape(row.name)}</span><span class="us-rank-score">${row.score}点</span></li>`).join('');
-  shell(`<h1 class="us-page-title" tabindex="-1">${game.endedEarly ? 'ここまでの結果' : '今回の結果'}</h1><p class="us-intro">${game.endedEarly ? `${game.completedTurns.length}人の番を終えました。` : 'みんなの、意外な一面は見つかった？'}</p>${game.endedEarly ? '<p class="us-helper">途中終了のため、順位は付けていません。</p>' : ''}
+  const changed = game.completedTurns.filter(turn => turn.answerChanged).length;
+  const discoveries = game.completedTurns.length ? `<section class="us-discoveries" aria-labelledby="us-discoveries-title"><h2 id="us-discoveries-title">今日の発見</h2><p>${game.completedTurns.length}人のうち、${changed}人が条件で答えを変えました。</p><details><summary>問いを振り返る</summary><ul>${game.completedTurns.map(turn => `<li><strong>${escape(game.players.find(player => player.id === turn.playerId).name)}</strong><span>${turn.answerChanged ? '答えが変わった' : '答えは同じだった'}</span><p>${escape(cards.find(card => card.id === turn.questionId).prompt)}</p></li>`).join('')}</ul></details></section>` : '';
+  shell(`<h1 class="us-page-title" tabindex="-1">${game.endedEarly ? 'ここまでの結果' : '今回の結果'}</h1><p class="us-intro">${game.endedEarly ? `${game.completedTurns.length}人の番を終えました。` : 'みんなの、意外な一面は見つかった？'}</p>${game.endedEarly ? '<p class="us-helper">途中終了のため、順位は付けていません。</p>' : ''}${discoveries}
     <ol class="us-rank-list" aria-label="得点">${ranking}</ol><div class="us-actions">${primary('もう一度', 'again')}<button class="us-secondary" data-action="setup" type="button">メンバー・種類を変える</button></div>`);
 }
 
@@ -174,7 +179,7 @@ document.addEventListener('click', event => {
   }
   switch (button.dataset.action) {
     case 'add-player':
-      if (!game && names.length < 6) { names.push(`プレイヤー${names.length + 1}`); render(); app.querySelector(`[data-name-index="${names.length - 1}"]`)?.focus(); }
+      if (!game && names.length < 6) { names.push(nextPlayerName(names)); render(); app.querySelector(`[data-name-index="${names.length - 1}"]`)?.focus(); }
       break;
     case 'remove-player':
       if (!game && names.length > 2) { names.splice(Number(button.dataset.index), 1); render(); app.querySelector('[data-action="add-player"]')?.focus(); }
@@ -201,7 +206,19 @@ document.addEventListener('click', event => {
         notice = '前のゲームから再開しました。'; saveGame(); render(true);
       }
       break;
-    case 'open-answer': act({ type: 'OPEN_ANSWER' }); break;
+    case 'toggle-large-text':
+      largeText = !largeText;
+      try { sessionStorage.setItem('omoi-for-us:large-text', String(largeText)); } catch { /* The display still changes in memory. */ }
+      render(); app.querySelector('[data-action="toggle-large-text"]')?.focus({ preventScroll: true });
+      break;
+    case 'toggle-all-correct':
+      if (game?.screen === 'score') {
+        const scroll = window.scrollY;
+        game = advanceGame(game, { type: 'TOGGLE_ALL_CORRECT' }, cards);
+        saveGame(); render(); app.querySelector('[data-action="toggle-all-correct"]')?.focus({ preventScroll: true });
+        window.scrollTo({ top: scroll, behavior: 'instant' });
+      }
+      break;
     case 'edit-answer': act({ type: 'EDIT_ANSWER' }); break;
     case 'back-to-question':
       if (game?.screen === 'answer') { game = { ...game, screen: 'question', answer: null }; saveGame(); render(true); }

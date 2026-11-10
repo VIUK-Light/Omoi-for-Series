@@ -1,5 +1,5 @@
-@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/omoi-us-ui-regular.woff2") format("woff2"); }
-@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/omoi-us-ui-bold.woff2") format("woff2"); }
+@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/omoi-us-ui-regular.woff2?v=us-game-3") format("woff2"); }
+@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/omoi-us-ui-bold.woff2?v=us-game-3") format("woff2"); }
 :root { --us-blue: #2947ef; --us-soft: #eef1fb; --us-ink: #272622; --us-line: #dedbd5; --us-muted: #77716b; --us-font: "Omoi Us UI", "BIZ UDPGothic", "BIZ UDGothic", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; }
 html { overflow-anchor: none; }
 body { --font-sans: var(--us-font); font-family: var(--us-font); }
@@ -12,6 +12,7 @@ button, a { text-underline-offset: 4px; }
 .us-shell { max-width: 760px; min-height: 100svh; padding: 28px 32px 22px; margin: 0 auto; }
 .us-session-shell { max-width: 1000px; }
 .us-header { align-items: center; display: flex; gap: 16px; justify-content: space-between; min-height: 32px; }
+.us-header-actions { align-items: center; display: flex; gap: 14px; }
 .us-brand { color: var(--us-ink); font-size: 18px; font-weight: 700; letter-spacing: -.025em; line-height: 1.5; text-decoration: none; white-space: nowrap; }
 .us-text-link, .us-text-button { align-content: center; background: none; border: 0; color: var(--us-muted); font-size: 12px; line-height: 1.5; min-height: 40px; padding: 9px 0; text-align: center; text-decoration: none; }
 .us-text-link:hover, .us-text-button:hover { color: var(--us-blue); }
@@ -49,15 +50,16 @@ button, a { text-underline-offset: 4px; }
 .us-question .question-card-face { padding: 26px 22px; }
 .us-question .question-text { font-size: 22px; line-height: 1.65; margin-bottom: 20px; text-wrap: balance; }
 .us-options { display: grid; gap: 7px; list-style: none; margin: 18px 0 0; padding: 0; }
-.us-option { align-items: center; background: #f7f8fc; border: 1px solid #e2e5ee; border-radius: 8px; display: flex; font-size: 15px; gap: 10px; line-height: 1.6; min-height: 44px; padding: 8px 10px; text-align: left; width: 100%; }
+.us-option { align-items: center; background: #f7f8fc; border: 1px solid #e2e5ee; border-radius: 8px; display: flex; font-size: 16px; gap: 10px; line-height: 1.6; min-height: 44px; padding: 8px 10px; text-align: left; width: 100%; }
 .question-card-back .us-option { background: #fff; }
 .us-choice-number { align-items: center; background: #e8edfc; border-radius: 50%; color: var(--us-blue); display: inline-flex; flex: 0 0 22px; font-size: 12px; font-weight: 700; height: 22px; justify-content: center; }
 .us-option-text { min-width: 0; overflow-wrap: anywhere; }
 button.us-option:hover, button.us-option:focus-visible { border-color: var(--us-blue); }
 .us-question .us-condition-title { color: #a04d26; font-size: 12px; font-weight: 700; letter-spacing: .04em; line-height: 1.6; margin: 0 0 12px; }
 .us-condition-copy { font-size: 18px; font-weight: 700; line-break: strict; line-height: 1.75; margin: 0; overflow-wrap: anywhere; text-wrap: balance; white-space: pre-line; }
-.us-question-reference { color: #625c54; font-size: 12px; line-height: 1.75; margin: 18px 0 0; overflow-wrap: anywhere; text-align: left; white-space: pre-line; }
-.us-instruction { color: #716b64; font-size: 12px; line-height: 1.8; margin: 0; max-width: 340px; text-align: center; text-wrap: balance; }
+.us-question-reference { color: #625c54; font-size: 14px; line-height: 1.75; margin: 18px 0 0; overflow-wrap: anywhere; text-align: left; white-space: pre-line; }
+.us-instruction { color: #625c54; font-size: 14px; line-height: 1.8; margin: 12px 0 0; max-width: 340px; text-align: center; text-wrap: balance; }
+.us-instruction span { display: block; }
 .us-actions { display: grid; gap: 4px; margin: 16px auto 0; width: min(100%, 340px); }
 .us-actions .us-text-button { justify-self: center; width: fit-content; }
 .us-actions .us-helper { margin: 2px 0 0; }
@@ -67,6 +69,14 @@ button.us-option:hover, button.us-option:focus-visible { border-color: var(--us-
 .us-answer-edit-icon { color: var(--us-blue); flex: 0 0 15px; height: 15px; margin-left: auto; }
 .us-reason { color: var(--us-muted); font-size: 12px; line-height: 1.8; margin: 16px 0; }
 .us-score-label { color: #6b655e; font-size: 12px; font-weight: 700; line-height: 1.6; margin: 0 0 10px; text-align: left; }
+.us-scorers-heading { align-items: center; display: flex; gap: 8px; justify-content: space-between; margin: 0 0 6px; }
+.us-scorers-heading .us-score-label { margin: 0; }
+.us-all-correct { color: var(--us-blue); min-height: 44px; padding: 10px 0 10px 12px; }
+.us-first-answer { margin: 16px 0; text-align: left; }
+.us-answer-label { color: #625c54; display: block; font-size: 12px; line-height: 1.6; margin: 0 0 6px; text-align: left; }
+.us-first-answer p { align-items: flex-start; display: flex; font-size: 14px; gap: 8px; line-height: 1.7; margin: 0; overflow-wrap: anywhere; }
+.us-first-answer .us-choice-number { margin-top: 1px; }
+.us-answer-change { color: var(--us-blue); font-size: 14px; font-weight: 700; line-height: 1.7; margin: 14px 0 0; }
 .us-scorers { display: grid; gap: 7px; }
 .us-scorer { align-items: center; background: #fff; border: 1px solid var(--us-line); border-radius: 8px; display: flex; font-size: 15px; gap: 10px; line-height: 1.6; min-height: 44px; padding: 8px 10px; text-align: left; }
 .us-scorer[aria-pressed="true"] { background: #f2f4fd; border-color: var(--us-blue); }
@@ -84,6 +94,27 @@ button.us-option:hover, button.us-option:focus-visible { border-color: var(--us-
 .us-rank { color: var(--us-muted); flex: 0 0 32px; font-size: 12px; }
 .us-rank-name { min-width: 0; overflow-wrap: anywhere; }
 .us-rank-score { color: var(--us-blue); margin-left: auto; white-space: nowrap; }
+.us-discoveries { border-top: 1px solid var(--us-line); margin-top: 24px; padding-top: 20px; }
+.us-discoveries h2 { font-size: 18px; line-height: 1.6; margin: 0; }
+.us-discoveries p, .us-discoveries summary { font-size: 14px; line-height: 1.8; }
+.us-discoveries summary { color: var(--us-blue); cursor: pointer; min-height: 44px; padding: 9px 0; }
+.us-discoveries ul { list-style: none; margin: 8px 0; padding: 0; }
+.us-discoveries li { border-bottom: 1px solid var(--us-line); padding: 14px 0; }
+.us-discoveries strong { display: block; font-size: 15px; overflow-wrap: anywhere; }
+.us-discoveries li span { color: var(--us-blue); font-size: 12px; }
+.us-discoveries li p { color: #625c54; margin: 8px 0 0; white-space: pre-line; }
+.us-large-text .card-stage { width: min(100%, 480px); }
+.us-large-text .us-question .question-text { font-size: 26px; }
+.us-large-text .us-condition-copy { font-size: 22px; }
+.us-large-text .us-option { font-size: 20px; min-height: 50px; }
+.us-large-text .us-question-reference, .us-large-text .us-first-answer p { font-size: 16px; }
+.us-large-text .us-condition-reference, .us-large-text .us-answer-label { font-size: 14px; }
+.us-large-text .us-scorer { font-size: 18px; min-height: 50px; }
+.us-large-text .us-revealed { font-size: 22px; }
+.us-large-text .us-score-title { font-size: 24px; }
+.us-large-text .us-reason, .us-large-text .us-answer-change { font-size: 16px; }
+.us-large-text .us-score-label, .us-large-text .us-all-correct { font-size: 14px; }
+.us-large-text .us-instruction { max-width: 480px; }
 .us-notice, .us-error { border-radius: 8px; font-size: 12px; line-height: 1.8; margin: 18px 0; padding: 12px 14px; }
 .us-notice { background: var(--us-soft); }
 .us-error { background: #fff0eb; color: #8b3017; }
