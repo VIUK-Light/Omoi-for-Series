@@ -47,6 +47,31 @@ test('Us loads its bundled UD fonts without an external font service', async ({ 
   expect(errors).toEqual([]);
 });
 
+test('Us preserves the shared card when it flips and makes only the visible face interactive', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await start(page, 2);
+  await page.locator('.card-stage').evaluate(stage => Promise.all(stage.getAnimations().map(animation => animation.finished)));
+  const card = page.locator('#question-card');
+  const bounds = await card.boundingBox();
+  expect(bounds.width).toBeLessThanOrEqual(340);
+  expect(bounds.height / bounds.width).toBeGreaterThanOrEqual(88 / 63 - .01);
+  await expect(page.locator('.question-card-back')).toHaveAttribute('aria-hidden', 'true');
+  expect(await page.locator('.question-card-back').evaluate(face => face.inert)).toBe(true);
+  await page.evaluate(() => { window.usCardBeforeFlip = document.querySelector('#question-card'); });
+  await page.getByRole('button', { name: '主役の答えへ', exact: true }).click();
+  await expect(page.locator('.question-card-front [data-choice]')).toHaveCount(3);
+  await expect(page.locator('.question-card-back [data-choice]')).toHaveCount(0);
+  await page.locator('[data-choice="2"]').click();
+  await page.locator('[data-action="advance"]').click();
+  expect(await page.evaluate(() => window.usCardBeforeFlip === document.querySelector('#question-card'))).toBe(true);
+  await expect(page.locator('.question-card-front')).toHaveAttribute('aria-hidden', 'true');
+  expect(await page.locator('.question-card-front').evaluate(face => face.inert)).toBe(true);
+  await expect.poll(() => page.locator('.question-card-inner').evaluate(inner => Math.abs(new DOMMatrix(getComputedStyle(inner).transform).m11 + 1))).toBeLessThan(.001);
+  await page.getByRole('button', { name: '主役の答えへ', exact: true }).click();
+  await expect(page.locator('.question-card-front [data-choice]')).toHaveCount(0);
+  await expect(page.locator('.question-card-back [data-choice]')).toHaveCount(3);
+});
+
 for (const deck of ['family', 'friends']) {
   test(`both old ${deck} routes explain the move and preselect the matching Us deck`, async ({ page }) => {
     for (const suffix of ['/', '/howto.html']) {

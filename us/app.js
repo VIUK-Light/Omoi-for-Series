@@ -1,5 +1,7 @@
 import { createGame, advanceGame, currentCard, mainPlayer, rankings, scoreTotals, restoreGame, STORAGE_KEY } from './game-engine.mjs';
 import { playableCards } from './deck.mjs';
+import { gameCardMarkup } from './card-view.mjs';
+import { updateQuestionCardSide, focusQuestionCard } from '../shared/question-card.mjs';
 
 const app = document.querySelector('#us-app');
 const dialog = document.querySelector('#us-dialog');
@@ -22,12 +24,38 @@ const plus = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12
 const minus = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>';
 
 function header(active = false) {
-  return `<header class="us-header"><a class="us-brand" href="../">Omoi for Us</a>${active
+  return `<header class="us-header"><a class="us-brand" href="../"><span class="brand-prefix">Omoi for</span> <span class="brand-target">Us</span></a>${active
     ? '<button class="us-text-button" data-action="finish" type="button">ここで終える</button>'
     : '<a class="us-text-link" href="howto.html">遊び方</a>'}</header>`;
 }
 function notices() { return notice ? `<p class="us-notice" role="status">${escape(notice)}</p>` : ''; }
-function shell(content, active = false) { app.innerHTML = `${header(active)}<main id="us-main">${content}${notices()}</main>`; }
+function shell(content, active = false) {
+  const previous = app.querySelector('#question-card');
+  const template = document.createElement('template');
+  template.innerHTML = `${header(active)}<main id="us-main"${active ? ' class="us-session"' : ''}>${content}${notices()}</main>`;
+  const next = template.content.querySelector('#question-card');
+  const sameCard = previous && next && previous.dataset.questionId === next.dataset.questionId;
+  const wasRevealed = previous?.classList.contains('is-revealed');
+  const reveal = next?.classList.contains('is-revealed');
+  if (sameCard) {
+    for (const side of ['front', 'back']) {
+      const oldFace = previous.querySelector(`.question-card-${side}`);
+      const newFace = next.querySelector(`.question-card-${side}`);
+      oldFace.replaceChildren(...newFace.childNodes);
+      oldFace.setAttribute('aria-label', newFace.getAttribute('aria-label'));
+    }
+    next.replaceWith(previous);
+    updateQuestionCardSide(previous, wasRevealed);
+  } else if (next) next.closest('.card-stage').classList.add('is-entering');
+  app.classList.toggle('us-session-shell', active);
+  app.replaceChildren(template.content);
+  if (sameCard) {
+    // Keep the actual card and its 3D layer across state changes. Establish the
+    // previous side before toggling so the shared flip transition can run.
+    previous.getBoundingClientRect();
+    updateQuestionCardSide(previous, reveal);
+  }
+}
 function primary(label, action, extra = '') { return `<button class="us-primary" data-action="${action}" type="button" ${extra}>${label}</button>`; }
 
 function readSavedGame() {
@@ -74,39 +102,19 @@ function setup() {
 function progress() {
   return `<p class="us-progress"><span>${game.turnIndex + 1} / ${game.players.length} 人目</span><span>${escape(mainPlayer(game).name)}の番</span></p>`;
 }
-function condition(card) {
-  return game.stage === 'changed' ? `<aside class="us-condition" aria-labelledby="us-condition-title"><h2 id="us-condition-title">条件が変わったら？</h2><p>${escape(card.condition)}</p></aside>` : '';
-}
-function questionCard(card, choosing = false) {
-  const options = card.options.map(option => {
-    const content = `<span class="us-choice-number">${option.id}</span><span class="us-option-text">${escape(option.text)}</span>`;
-    return `<li>${choosing ? `<button class="us-option" data-choice="${option.id}" type="button">${content}</button>` : `<div class="us-option">${content}</div>`}</li>`;
-  }).join('');
-  return `<article class="us-question" data-question-id="${escape(card.id)}"><h1 tabindex="-1">${escape(card.prompt)}</h1><ol class="us-options" aria-label="3つの選択肢">${options}</ol></article>`;
-}
 function questionScreen() {
   const card = currentCard(game, cards);
   const choosing = game.screen === 'answer';
   const instruction = choosing
     ? `${escape(mainPlayer(game).name)}さん、答えを選んでください。`
     : game.stage === 'changed' ? 'もう一度、指で一斉に予想！' : '主役は心の中で決めて、みんなは指で一斉に予想！';
-  shell(`${progress()}${questionCard(card, choosing)}${condition(card)}<p class="us-instruction">${instruction}</p>
+  shell(`${progress()}${gameCardMarkup(card, game, mainPlayer(game))}<p class="us-instruction">${instruction}</p>
     <div class="us-actions">${choosing ? '<button class="us-secondary" data-action="back-to-question" type="button">問いに戻る</button>' : primary('主役の答えへ', 'open-answer')}
     <button class="us-text-button" data-action="pass" type="button">この問いをパス</button></div>`, true);
 }
 function scoreScreen() {
-  const card = currentCard(game, cards);
-  const answer = card.options.find(option => option.id === game.answer);
-  const person = mainPlayer(game);
-  const scorers = game.players.filter(player => player.id !== person.id).map(player => {
-    const selected = game.correctIds.includes(player.id);
-    return `<button class="us-scorer" data-player-id="${player.id}" type="button" aria-pressed="${selected}"><span class="us-checkbox" aria-hidden="true">${selected ? check : ''}</span><span class="us-scorer-name">${escape(player.name)}</span>${selected ? '<span class="us-point" aria-hidden="true">+1</span>' : ''}</button>`;
-  }).join('');
   const next = game.stage === 'base' ? '条件変更へ' : game.turnIndex + 1 === game.players.length ? '結果を見る' : '次の人へ';
-  const conditionReference = game.stage === 'changed' ? `<details class="us-condition-reference"><summary>追加された条件を見る</summary><p>${escape(card.condition)}</p></details>` : '';
-  shell(`<h1 class="us-score-title" tabindex="-1">${escape(person.name)}の答え</h1><button class="us-revealed" data-action="edit-answer" type="button" aria-label="答えを選び直す" aria-describedby="us-revealed-text"><span class="us-choice-number">${answer.id}</span><span id="us-revealed-text" class="us-option-text">${escape(answer.text)}</span><svg class="us-answer-edit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 5 5-12 12-6 1 1-6L16 3ZM14 5l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
-    <p class="us-question-reference">問い：${escape(card.prompt)}</p>${conditionReference}<p class="us-reason">そう選んだ理由を話してみよう。</p>
-    <section aria-labelledby="us-scorers-heading"><h2 id="us-scorers-heading" class="us-score-label">当たった人を選ぶ</h2><div class="us-scorers">${scorers}</div></section>
+  shell(`${progress()}${gameCardMarkup(currentCard(game, cards), game, mainPlayer(game))}
     <div class="us-actions">${primary(next, 'advance')}<p class="us-helper">得点は次へ進むと確定します。</p><button class="us-text-button" data-action="pass" type="button">この問いをパス</button></div>`, true);
 }
 function results() {
@@ -127,7 +135,9 @@ function render(moveFocus = false) {
   else questionScreen();
   if (moveFocus) {
     window.scrollTo({ top: 0, behavior: 'instant' });
-    app.querySelector('h1')?.focus({ preventScroll: true });
+    const card = app.querySelector('#question-card');
+    if (card && game.screen !== 'score') focusQuestionCard(card, game.stage === 'changed');
+    else app.querySelector('.question-card-face[aria-hidden="false"] .us-score-title, main > h1')?.focus({ preventScroll: true });
   }
 }
 

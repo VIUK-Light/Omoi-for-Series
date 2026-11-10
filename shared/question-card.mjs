@@ -42,26 +42,35 @@ export function updateQuestionCardText(card, { id, target, text, followUp, follo
   if (followUpLabel) card.querySelector(".question-category").textContent = followUpLabel;
 }
 
-// Shared by the product and the localhost review screen.
-export function questionCardMarkup({ id, target, text, followUp, followUpLabel, textFormat, solo = false, contentNotes = [], revealed = false }) {
+// One card surface for the conversation decks and the Us game. Callers escape
+// their content before passing it here; the frame owns both accessible faces.
+export function questionCardFrameMarkup({ id, target, frontContent, backContent, revealed = false, className = '', frontLabel = 'メインの質問', backLabel = '深掘り質問' }) {
   const brand = `<span class="brand-prefix">Omoi for</span> <span class="brand-target">${questionMarkup(target)}</span>`;
-  const noteLabels = contentNotes.map((category) => categoryLabels[category] || category);
-  const notes = noteLabels.length
-    ? `<p class="content-notes">内容の話題: ${noteLabels.map(questionMarkup).join("・")}</p>` : "";
-  return `<article id="question-card" data-question-id="${questionMarkup(id)}" class="question-card${revealed ? " is-revealed" : ""}" aria-labelledby="${revealed ? "follow-up-question" : "main-question"}">
+  return `<article id="question-card" data-question-id="${questionMarkup(id)}" class="question-card${className ? ` ${questionMarkup(className)}` : ''}${revealed ? " is-revealed" : ""}" aria-labelledby="${revealed ? "follow-up-question" : "main-question"}">
     <div class="question-card-inner">
-      <section class="question-card-face question-card-front" aria-label="メインの質問" aria-hidden="${revealed}" ${revealed ? "inert" : ""}>
+      <section class="question-card-face question-card-front" aria-label="${questionMarkup(frontLabel)}" aria-hidden="${revealed}" ${revealed ? "inert" : ""}>
         <p class="card-series-name">${brand}</p>
-        <div class="card-copy"><div class="card-copy-content"><h1 id="main-question" class="question-text" tabindex="-1">${mainQuestionMarkup({ id, target, text, textFormat })}</h1>${notes}</div></div>
+        <div class="card-copy"><div class="card-copy-content">${frontContent}</div></div>
         <span class="card-rule" aria-hidden="true"></span>
       </section>
-      <section class="question-card-face question-card-back" aria-label="深掘り質問" aria-hidden="${!revealed}" ${revealed ? "" : "inert"}>
+      <section class="question-card-face question-card-back" aria-label="${questionMarkup(backLabel)}" aria-hidden="${!revealed}" ${revealed ? "" : "inert"}>
         <p class="card-series-name">${brand}</p>
-        <div class="card-copy"><div class="card-copy-content"><p id="follow-up-progress" class="question-category">${questionMarkup(followUpLabel || (solo ? "もう少し考えてみる" : "もう少し話してみる"))}</p><h2 id="follow-up-question" class="follow-up-text" aria-describedby="follow-up-progress" tabindex="-1">${isEpisode(id, target) ? episodeMarkup(followUp) : questionMarkup(followUp)}</h2>${notes}</div></div>
+        <div class="card-copy"><div class="card-copy-content">${backContent}</div></div>
         <span class="card-rule" aria-hidden="true"></span>
       </section>
     </div>
   </article>`;
+}
+
+// Shared by the product and the localhost review screen.
+export function questionCardMarkup({ id, target, text, followUp, followUpLabel, textFormat, solo = false, contentNotes = [], revealed = false }) {
+  const noteLabels = contentNotes.map((category) => categoryLabels[category] || category);
+  const notes = noteLabels.length
+    ? `<p class="content-notes">内容の話題: ${noteLabels.map(questionMarkup).join("・")}</p>` : "";
+  return questionCardFrameMarkup({ id, target, revealed,
+    frontContent: `<h1 id="main-question" class="question-text" tabindex="-1">${mainQuestionMarkup({ id, target, text, textFormat })}</h1>${notes}`,
+    backContent: `<p id="follow-up-progress" class="question-category">${questionMarkup(followUpLabel || (solo ? "もう少し考えてみる" : "もう少し話してみる"))}</p><h2 id="follow-up-question" class="follow-up-text" aria-describedby="follow-up-progress" tabindex="-1">${isEpisode(id, target) ? episodeMarkup(followUp) : questionMarkup(followUp)}</h2>${notes}`,
+  });
 }
 
 export function focusQuestionCard(card, showFollowUp = false) {
