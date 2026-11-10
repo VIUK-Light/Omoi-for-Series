@@ -1,6 +1,6 @@
-import { createGame, advanceGame, currentCard, mainPlayer, rankings, scoreTotals, restoreGame, nextPlayerName, STORAGE_KEY } from './game-engine.mjs?v=us-game-3';
+import { createGame, advanceGame, currentCard, mainPlayer, rankings, scoreTotals, restoreGame, nextPlayerName, STORAGE_KEY } from './game-engine.mjs?v=us-rules-4';
 import { playableCards } from './deck.mjs';
-import { gameCardMarkup } from './card-view.mjs?v=us-game-3';
+import { gameCardMarkup } from './card-view.mjs?v=us-rules-4';
 import { updateQuestionCardSide, focusQuestionCard } from '../shared/question-card.mjs';
 
 const app = document.querySelector('#us-app');
@@ -96,7 +96,7 @@ function saveGame() {
 function setup() {
   const decks = [['family', '家族'], ['friends', '友人']].map(([value, label]) => `<button class="us-deck" type="button" data-deck="${value}" aria-pressed="${audience === value}">${audience === value ? check : ''}${label}</button>`).join('');
   const roster = names.map((name, index) => `<div class="us-name-row"><label class="us-number" for="us-name-${index}"><span aria-hidden="true">${index + 1}</span><span class="us-sr-only">参加者${index + 1}の名前</span></label><input id="us-name-${index}" data-name-index="${index}" value="${escape(name)}" maxlength="32" autocomplete="off" aria-describedby="us-name-help"><button class="us-icon-button" data-action="remove-player" data-index="${index}" type="button" aria-label="参加者${index + 1}を外す" ${names.length <= 2 ? 'disabled' : ''}>${minus}</button></div>`).join('');
-  shell(`<h1 class="us-hero-title" tabindex="-1">知っているつもりの、<br><span>あなたへ。</span></h1><p class="us-intro">相手の選択を予想して、<br>まだ知らない一面に出会う。</p>
+  shell(`<h1 class="us-hero-title" tabindex="-1">知っているつもりの、<br><span>あなたへ。</span></h1><p class="us-intro">主役が画面で答えを選び、みんなが予想。<br>当たった人は1点。全員1回ずつで終了。</p>
     <fieldset class="us-fieldset"><legend>誰と遊ぶ？</legend><div class="us-decks">${decks}</div></fieldset>
     <section class="us-fieldset" aria-labelledby="us-players-heading"><h2 class="us-section-title" id="us-players-heading">参加する人</h2><div class="us-roster">${roster}</div><button class="us-add" type="button" data-action="add-player" ${names.length >= 6 ? 'disabled' : ''}>${plus}人を追加</button><p class="us-sr-only" id="us-name-help">名前は16文字以内。空欄の場合はプレイヤー番号を使います。</p></section>
     <p class="us-helper">2〜6人・スマホ1台</p>${setupError ? `<p class="us-error" role="alert">${escape(setupError)}</p>` : ''}<div class="us-start">${primary('はじめる', 'start')}</div>${parkedGame ? '<div class="us-actions"><button class="us-secondary" data-action="resume" type="button">前のゲームへ戻る</button></div>' : ''}`);
@@ -106,27 +106,25 @@ function progress() {
   return `<p class="us-progress"><span>${game.turnIndex + 1} / ${game.players.length} 人目</span><span>${escape(mainPlayer(game).name)}の番</span></p>`;
 }
 function questionScreen() {
-  const card = currentCard(game, cards);
-  const choosing = game.screen === 'answer';
+  const choosing = game.screen === 'choose';
   const instruction = choosing
-    ? `${escape(mainPlayer(game).name)}さん、答えを選び直してください。`
-    : `<span>${game.stage === 'changed' ? '条件を読んで、もう一度一斉に予想。' : '主役は心の中で決めて、一斉に予想。'}</span><span>そろったら、主役が答えをタップ。</span>`;
-  shell(`${progress()}<p class="us-instruction">${instruction}</p>${gameCardMarkup(card, game, mainPlayer(game))}
-    <div class="us-actions">${choosing ? '<button class="us-secondary" data-action="back-to-question" type="button">問いに戻る</button>' : ''}
+    ? `<span>${escape(mainPlayer(game).name)}さんだけが画面を見て、</span><span>答えを1つ選んでください。選ぶと隠れます。</span>`
+    : '<span>答えは決まりました。画面をみんなに見せて、</span><span>1・2・3で一斉に予想しましょう。</span>';
+  shell(`${progress()}<p class="us-instruction">${instruction}</p>${gameCardMarkup(currentCard(game, cards), game, mainPlayer(game))}
+    <div class="us-actions">${choosing ? '' : `${primary('答えを公開', 'reveal')}<p class="us-helper">全員の予想がそろったらタップしてください。</p><button class="us-text-button" data-action="reselect" type="button">予想の前に選び直す</button>`}
     <button class="us-text-button" data-action="pass" type="button">この問いをパス</button></div>`, true);
 }
 function scoreScreen() {
-  const next = game.stage === 'base' ? '条件変更へ' : game.turnIndex + 1 === game.players.length ? '結果を見る' : '次の人へ';
+  const next = game.turnIndex + 1 === game.players.length ? '結果を見る' : '次の人へ';
   shell(`${progress()}${gameCardMarkup(currentCard(game, cards), game, mainPlayer(game))}
-    <div class="us-actions">${primary(next, 'advance')}<p class="us-helper">得点は次へ進むと確定します。</p><button class="us-text-button" data-action="pass" type="button">この問いをパス</button></div>`, true);
+    <div class="us-actions">${primary(next, 'advance')}<button class="us-text-button" data-action="toggle-condition" type="button">${game.conditionOpen ? '答えと得点に戻る' : 'この条件ならどう？（おまけ）'}</button><p class="us-helper">得点は次へ進むと確定します。</p><button class="us-text-button" data-action="pass" type="button">この問いをパス</button></div>`, true);
 }
 function results() {
   const rows = game.endedEarly ? scoreTotals(game) : rankings(game);
   const ranking = rows.map(row => `<li class="us-rank-row${!game.endedEarly && row.rank === 1 ? ' is-first' : ''}">${!game.endedEarly ? `<span class="us-rank">${row.rank}位</span>` : ''}<span class="us-rank-name">${escape(row.name)}</span><span class="us-rank-score">${row.score}点</span></li>`).join('');
-  const changed = game.completedTurns.filter(turn => turn.answerChanged).length;
-  const discoveries = game.completedTurns.length ? `<section class="us-discoveries" aria-labelledby="us-discoveries-title"><h2 id="us-discoveries-title">今日の発見</h2><p>${game.completedTurns.length}人のうち、${changed}人が条件で答えを変えました。</p><details><summary>問いを振り返る</summary><ul>${game.completedTurns.map(turn => `<li><strong>${escape(game.players.find(player => player.id === turn.playerId).name)}</strong><span>${turn.answerChanged ? '答えが変わった' : '答えは同じだった'}</span><p>${escape(cards.find(card => card.id === turn.questionId).prompt)}</p></li>`).join('')}</ul></details></section>` : '';
-  shell(`<h1 class="us-page-title" tabindex="-1">${game.endedEarly ? 'ここまでの結果' : '今回の結果'}</h1><p class="us-intro">${game.endedEarly ? `${game.completedTurns.length}人の番を終えました。` : 'みんなの、意外な一面は見つかった？'}</p>${game.endedEarly ? '<p class="us-helper">途中終了のため、順位は付けていません。</p>' : ''}${discoveries}
-    <ol class="us-rank-list" aria-label="得点">${ranking}</ol><div class="us-actions">${primary('もう一度', 'again')}<button class="us-secondary" data-action="setup" type="button">メンバー・種類を変える</button></div>`);
+  const questions = game.completedTurns.length ? `<section class="us-discoveries" aria-labelledby="us-discoveries-title"><h2 id="us-discoveries-title">今日の問い</h2><details><summary>問いを振り返る</summary><ul>${game.completedTurns.map(turn => `<li><strong>${escape(game.players.find(player => player.id === turn.playerId).name)}</strong><p>${escape(cards.find(card => card.id === turn.questionId).prompt)}</p></li>`).join('')}</ul></details></section>` : '';
+  shell(`<h1 class="us-page-title" tabindex="-1">${game.endedEarly ? 'ここまでの結果' : '今回の結果'}</h1><p class="us-intro">${game.endedEarly ? `${game.completedTurns.length}人の番を終えました。` : 'みんなの、意外な一面は見つかった？'}</p>${game.endedEarly ? '<p class="us-helper">途中終了のため、順位は付けていません。</p>' : ''}
+    <ol class="us-rank-list" aria-label="得点">${ranking}</ol>${questions}<div class="us-actions">${primary('もう一度', 'again')}<button class="us-secondary" data-action="setup" type="button">メンバー・種類を変える</button></div>`);
 }
 
 function render(moveFocus = false) {
@@ -141,7 +139,7 @@ function render(moveFocus = false) {
   if (moveFocus) {
     window.scrollTo({ top: 0, behavior: 'instant' });
     const card = app.querySelector('#question-card');
-    if (card && game.screen !== 'score') focusQuestionCard(card, game.stage === 'changed');
+    if (card && (game.screen !== 'score' || game.conditionOpen)) focusQuestionCard(card, game.conditionOpen);
     else app.querySelector('.question-card-face[aria-hidden="false"] .us-score-title, main > h1')?.focus({ preventScroll: true });
   }
 }
@@ -149,12 +147,11 @@ function render(moveFocus = false) {
 function act(action) {
   const next = advanceGame(game, action, cards);
   if (next === game) return;
-  const passedAwards = action.type === 'PASS' && game.turnAwards.base.length;
   game = next;
   notice = '';
   saveGame();
   render(true);
-  if (action.type === 'PASS') announcement.textContent = passedAwards ? '問いを替えました。この問いの得点は取り消しました。' : '同じ主役で、新しい問いを引きました。';
+  if (action.type === 'PASS') announcement.textContent = '同じ主役で、新しい問いを引きました。';
 }
 
 app.addEventListener('input', event => {
@@ -219,10 +216,9 @@ document.addEventListener('click', event => {
         window.scrollTo({ top: scroll, behavior: 'instant' });
       }
       break;
-    case 'edit-answer': act({ type: 'EDIT_ANSWER' }); break;
-    case 'back-to-question':
-      if (game?.screen === 'answer') { game = { ...game, screen: 'question', answer: null }; saveGame(); render(true); }
-      break;
+    case 'reselect': act({ type: 'RESELECT' }); break;
+    case 'reveal': act({ type: 'REVEAL' }); break;
+    case 'toggle-condition': act({ type: 'TOGGLE_CONDITION' }); break;
     case 'advance': act({ type: 'ADVANCE' }); break;
     case 'pass': act({ type: 'PASS' }); break;
     case 'finish':

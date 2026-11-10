@@ -1,7 +1,7 @@
 // All answers are choices for the current turn, never personality assessments.
 export const STORAGE_KEY = 'omoi-for-us:game:v1';
-export const GAME_VERSION = 2;
-const SCREENS = ['question', 'answer', 'score', 'results'];
+export const GAME_VERSION = 3;
+const SCREENS = ['choose', 'guess', 'score', 'results'];
 const signatureCache = new WeakMap();
 
 export function catalogSignature(cards) {
@@ -47,9 +47,9 @@ export function createGame({ names, audience }, cards, random = Math.random) {
   if (!deck.length) throw new Error('この種類の問いがありません。');
   return {
     version: GAME_VERSION, catalog: catalogSignature(cards), audience, players,
-    screen: 'question', stage: 'base', turnIndex: 0,
+    screen: 'choose', turnIndex: 0,
     questionId: deck[0], remainingIds: deck.slice(1), usedIds: [deck[0]],
-    answer: null, baseAnswer: null, correctIds: [], turnAwards: { base: [], changed: [] },
+    answer: null, correctIds: [], conditionOpen: false,
     completedTurns: [], endedEarly: false,
   };
 }
@@ -69,28 +69,29 @@ function nextCard(state, cards, random) {
   const questionId = remaining.shift();
   return {
     ...state, questionId, remainingIds: remaining, usedIds: [...used, questionId],
-    screen: 'question', stage: 'base', answer: null, baseAnswer: null, correctIds: [],
-    turnAwards: { base: [], changed: [] },
+    screen: 'choose', answer: null, correctIds: [], conditionOpen: false,
   };
 }
 
-// Invalid or repeated actions return the same object. A phase can award points
-// only when leaving its score screen; checked participants are a set, not taps.
+// The main player commits privately, everyone guesses, then one reveal and one
+// scoring step finish the turn. The optional conversation never adds points.
 export function advanceGame(state, action, cards, random = Math.random) {
   if (!state || !action || state.screen === 'results') return state;
   const next = structuredClone(state);
   switch (action.type) {
-    case 'ANSWER': {
-      if (!['question', 'answer'].includes(state.screen) || !currentCard(state, cards)?.options.some(option => option.id === action.choice)) return state;
+    case 'ANSWER':
+      if (state.screen !== 'choose' || !currentCard(state, cards)?.options.some(option => option.id === action.choice)) return state;
       next.answer = action.choice;
-      next.correctIds = [];
-      next.screen = 'score';
+      next.screen = 'guess';
       return next;
-    }
-    case 'EDIT_ANSWER':
-      if (state.screen !== 'score') return state;
-      next.screen = 'answer';
-      next.correctIds = [];
+    case 'RESELECT':
+      if (state.screen !== 'guess') return state;
+      next.answer = null;
+      next.screen = 'choose';
+      return next;
+    case 'REVEAL':
+      if (state.screen !== 'guess') return state;
+      next.screen = 'score';
       return next;
     case 'TOGGLE_CORRECT':
       if (state.screen !== 'score' || action.playerId === mainPlayer(state).id || !state.players.some(player => player.id === action.playerId)) return state;
@@ -104,22 +105,16 @@ export function advanceGame(state, action, cards, random = Math.random) {
       next.correctIds = ids.every(id => state.correctIds.includes(id)) ? [] : ids;
       return next;
     }
+    case 'TOGGLE_CONDITION':
+      if (state.screen !== 'score') return state;
+      next.conditionOpen = !state.conditionOpen;
+      return next;
     case 'ADVANCE':
       if (state.screen !== 'score') return state;
-      next.turnAwards[state.stage] = [...state.correctIds];
-      if (state.stage === 'base') {
-        next.baseAnswer = state.answer;
-        next.stage = 'changed';
-        next.screen = 'question';
-        next.answer = null;
-        next.correctIds = [];
-        return next;
-      }
-      next.completedTurns.push({ playerId: mainPlayer(state).id, questionId: state.questionId, awards: next.turnAwards, answerChanged: state.baseAnswer !== state.answer });
-      next.turnAwards = { base: [], changed: [] };
+      next.completedTurns.push({ playerId: mainPlayer(state).id, questionId: state.questionId, correctIds: [...state.correctIds] });
       next.answer = null;
-      next.baseAnswer = null;
       next.correctIds = [];
+      next.conditionOpen = false;
       if (state.turnIndex + 1 === state.players.length) {
         next.screen = 'results';
         return next;
@@ -127,16 +122,13 @@ export function advanceGame(state, action, cards, random = Math.random) {
       next.turnIndex++;
       return nextCard(next, cards, random);
     case 'PASS':
-      // Both phases belong to one question. Discard its awards together, so a
-      // redraw cannot give the same player extra scoring opportunities.
       return nextCard(next, cards, random);
     case 'FINISH':
       next.screen = 'results';
       next.endedEarly = true;
       next.answer = null;
-      next.baseAnswer = null;
       next.correctIds = [];
-      next.turnAwards = { base: [], changed: [] };
+      next.conditionOpen = false;
       return next;
     default:
       return state;
@@ -146,9 +138,7 @@ export function advanceGame(state, action, cards, random = Math.random) {
 export function scoreTotals(state) {
   const scores = new Map(state.players.map(player => [player.id, 0]));
   for (const turn of state.completedTurns) {
-    for (const stage of ['base', 'changed']) {
-      for (const id of turn.awards[stage]) scores.set(id, scores.get(id) + 1);
-    }
+    for (const id of turn.correctIds) scores.set(id, scores.get(id) + 1);
   }
   return state.players.map(player => ({ ...player, score: scores.get(player.id) }));
 }
@@ -166,33 +156,24 @@ export function restoreGame(serialized, cards) {
   try {
     const state = JSON.parse(serialized);
     if (!state || state.version !== GAME_VERSION || state.catalog !== catalogSignature(cards)) return null;
-    if (!['family', 'friends'].includes(state.audience) || !SCREENS.includes(state.screen) || !['base', 'changed'].includes(state.stage)) return null;
+    if (!['family', 'friends'].includes(state.audience) || !SCREENS.includes(state.screen)) return null;
     if (!Array.isArray(state.players) || state.players.length < 2 || state.players.length > 6) return null;
     if (state.players.some((player, index) => player?.id !== `p${index + 1}` || typeof player.name !== 'string' || !player.name.trim() || [...player.name].length > 16)) return null;
     if (new Set(state.players.map(player => player.name)).size !== state.players.length) return null;
-    if (!Number.isInteger(state.turnIndex) || state.turnIndex < 0 || state.turnIndex >= state.players.length || typeof state.endedEarly !== 'boolean') return null;
+    if (!Number.isInteger(state.turnIndex) || state.turnIndex < 0 || state.turnIndex >= state.players.length || typeof state.endedEarly !== 'boolean' || typeof state.conditionOpen !== 'boolean') return null;
     const pool = new Set(eligibleIds(cards, state.audience));
     const validCards = ids => Array.isArray(ids) && new Set(ids).size === ids.length && ids.every(id => pool.has(id));
     if (!pool.has(state.questionId) || !validCards(state.remainingIds) || !validCards(state.usedIds) || !state.usedIds.includes(state.questionId)) return null;
     if (state.remainingIds.some(id => state.usedIds.includes(id)) || state.remainingIds.length + state.usedIds.length !== pool.size) return null;
     if (!Array.isArray(state.completedTurns) || state.completedTurns.length > state.players.length) return null;
-    const validPlayers = (ids, mainId) => Array.isArray(ids) && new Set(ids).size === ids.length
-      && ids.every(id => id !== mainId && state.players.some(player => player.id === id));
-    const validAwards = (awards, mainId) => awards && validPlayers(awards.base, mainId) && validPlayers(awards.changed, mainId);
-    if (state.completedTurns.some((turn, index) => !turn || turn.playerId !== state.players[index].id || !pool.has(turn.questionId) || !validAwards(turn.awards, turn.playerId) || typeof turn.answerChanged !== 'boolean')) return null;
-    const mainId = mainPlayer(state).id;
-    if (!validPlayers(state.correctIds, mainId) || !validAwards(state.turnAwards, mainId)) return null;
-    if (state.answer !== null && !currentCard(state, cards).options.some(option => option.id === state.answer)) return null;
-    if (state.baseAnswer !== null && !currentCard(state, cards).options.some(option => option.id === state.baseAnswer)) return null;
-    if (state.stage === 'base' && state.baseAnswer !== null) return null;
-    if (state.stage === 'changed' && state.screen !== 'results' && state.baseAnswer === null) return null;
-    if (state.screen === 'score' && state.answer === null) return null;
-    if (state.screen === 'question' && state.answer !== null) return null;
-    if (state.screen !== 'score' && state.correctIds.length) return null;
-    if (state.turnAwards.changed.length || (state.stage === 'base' && state.turnAwards.base.length)) return null;
+    const validPlayers = (ids, mainId) => Array.isArray(ids) && new Set(ids).size === ids.length && ids.every(id => id !== mainId && state.players.some(player => player.id === id));
+    if (state.completedTurns.some((turn, index) => !turn || turn.playerId !== state.players[index].id || !pool.has(turn.questionId) || !validPlayers(turn.correctIds, turn.playerId) || Object.keys(turn).some(key => !['playerId', 'questionId', 'correctIds'].includes(key)))) return null;
+    if (!validPlayers(state.correctIds, mainPlayer(state).id)) return null;
+    const needsAnswer = ['guess', 'score'].includes(state.screen);
+    if (needsAnswer ? !currentCard(state, cards).options.some(option => option.id === state.answer) : state.answer !== null) return null;
+    if (state.screen !== 'score' && (state.correctIds.length || state.conditionOpen)) return null;
     if (state.screen === 'results') {
-      const expected = state.endedEarly ? state.turnIndex : state.players.length;
-      if (state.completedTurns.length !== expected || state.turnAwards.base.length || state.answer !== null || state.baseAnswer !== null) return null;
+      if (state.completedTurns.length !== (state.endedEarly ? state.turnIndex : state.players.length)) return null;
     } else if (state.endedEarly || state.completedTurns.length !== state.turnIndex) return null;
     return state;
   } catch {

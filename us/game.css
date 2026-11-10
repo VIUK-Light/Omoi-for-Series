@@ -1,5 +1,5 @@
-@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/omoi-us-ui-regular.woff2?v=us-game-3") format("woff2"); }
-@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/omoi-us-ui-bold.woff2?v=us-game-3") format("woff2"); }
+@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/omoi-us-ui-regular.woff2?v=us-rules-4") format("woff2"); }
+@font-face { font-family: "Omoi Us UI"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/omoi-us-ui-bold.woff2?v=us-rules-4") format("woff2"); }
 :root { --us-blue: #2947ef; --us-soft: #eef1fb; --us-ink: #272622; --us-line: #dedbd5; --us-muted: #77716b; --us-font: "Omoi Us UI", "BIZ UDPGothic", "BIZ UDGothic", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; }
 html { overflow-anchor: none; }
 body { --font-sans: var(--us-font); font-family: var(--us-font); }
@@ -58,7 +58,7 @@ button.us-option:hover, button.us-option:focus-visible { border-color: var(--us-
 .us-question .us-condition-title { color: #a04d26; font-size: 12px; font-weight: 700; letter-spacing: .04em; line-height: 1.6; margin: 0 0 12px; }
 .us-condition-copy { font-size: 18px; font-weight: 700; line-break: strict; line-height: 1.75; margin: 0; overflow-wrap: anywhere; text-wrap: balance; white-space: pre-line; }
 .us-question-reference { color: #625c54; font-size: 14px; line-height: 1.75; margin: 18px 0 0; overflow-wrap: anywhere; text-align: left; white-space: pre-line; }
-.us-instruction { color: #625c54; font-size: 14px; line-height: 1.8; margin: 12px 0 0; max-width: 340px; text-align: center; text-wrap: balance; }
+.us-instruction { color: #625c54; font-size: 14px; line-height: 1.8; margin: 12px 0 0; overflow-wrap: anywhere; text-align: center; text-wrap: balance; width: min(100%, 340px); }
 .us-instruction span { display: block; }
 .us-actions { display: grid; gap: 4px; margin: 16px auto 0; width: min(100%, 340px); }
 .us-actions .us-text-button { justify-self: center; width: fit-content; }
@@ -72,11 +72,10 @@ button.us-option:hover, button.us-option:focus-visible { border-color: var(--us-
 .us-scorers-heading { align-items: center; display: flex; gap: 8px; justify-content: space-between; margin: 0 0 6px; }
 .us-scorers-heading .us-score-label { margin: 0; }
 .us-all-correct { color: var(--us-blue); min-height: 44px; padding: 10px 0 10px 12px; }
-.us-first-answer { margin: 16px 0; text-align: left; }
+.us-public-answer { margin: 16px 0; text-align: left; }
 .us-answer-label { color: #625c54; display: block; font-size: 12px; line-height: 1.6; margin: 0 0 6px; text-align: left; }
-.us-first-answer p { align-items: flex-start; display: flex; font-size: 14px; gap: 8px; line-height: 1.7; margin: 0; overflow-wrap: anywhere; }
-.us-first-answer .us-choice-number { margin-top: 1px; }
-.us-answer-change { color: var(--us-blue); font-size: 14px; font-weight: 700; line-height: 1.7; margin: 14px 0 0; }
+.us-public-answer p { align-items: flex-start; display: flex; font-size: 14px; gap: 8px; line-height: 1.7; margin: 0; overflow-wrap: anywhere; }
+.us-public-answer .us-choice-number { margin-top: 1px; }
 .us-scorers { display: grid; gap: 7px; }
 .us-scorer { align-items: center; background: #fff; border: 1px solid var(--us-line); border-radius: 8px; display: flex; font-size: 15px; gap: 10px; line-height: 1.6; min-height: 44px; padding: 8px 10px; text-align: left; }
 .us-scorer[aria-pressed="true"] { background: #f2f4fd; border-color: var(--us-blue); }
@@ -107,14 +106,14 @@ button.us-option:hover, button.us-option:focus-visible { border-color: var(--us-
 .us-large-text .us-question .question-text { font-size: 26px; }
 .us-large-text .us-condition-copy { font-size: 22px; }
 .us-large-text .us-option { font-size: 20px; min-height: 50px; }
-.us-large-text .us-question-reference, .us-large-text .us-first-answer p { font-size: 16px; }
+.us-large-text .us-question-reference, .us-large-text .us-public-answer p { font-size: 16px; }
 .us-large-text .us-condition-reference, .us-large-text .us-answer-label { font-size: 14px; }
 .us-large-text .us-scorer { font-size: 18px; min-height: 50px; }
 .us-large-text .us-revealed { font-size: 22px; }
 .us-large-text .us-score-title { font-size: 24px; }
-.us-large-text .us-reason, .us-large-text .us-answer-change { font-size: 16px; }
+.us-large-text .us-reason { font-size: 16px; }
 .us-large-text .us-score-label, .us-large-text .us-all-correct { font-size: 14px; }
-.us-large-text .us-instruction { max-width: 480px; }
+.us-large-text .us-instruction { width: min(100%, 480px); }
 .us-notice, .us-error { border-radius: 8px; font-size: 12px; line-height: 1.8; margin: 18px 0; padding: 12px 14px; }
 .us-notice { background: var(--us-soft); }
 .us-error { background: #fff0eb; color: #8b3017; }

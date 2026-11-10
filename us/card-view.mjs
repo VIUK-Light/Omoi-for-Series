@@ -10,42 +10,34 @@ function options(card, choosing) {
   }).join('')}</ol>`;
 }
 
-function firstAnswer(card, game) {
-  const answer = card.options.find(option => option.id === game.baseAnswer);
-  return answer ? `<div class="us-first-answer"><span class="us-answer-label">最初の答え</span><p><span class="us-choice-number">${answer.id}</span><span>${escape(answer.text)}</span></p></div>` : '';
-}
-
-function questionFace(card, game, changed, active) {
-  if (!changed) return `<h1 id="main-question" class="question-text" tabindex="-1">${escape(card.prompt)}</h1>${options(card, active)}`;
-  return `<aside class="us-card-condition${active ? ' us-condition' : ''}" aria-labelledby="follow-up-question"><h2 id="follow-up-question" class="follow-up-text us-condition-title" tabindex="-1">条件が変わったら？</h2><p class="us-condition-copy">${escape(card.condition)}</p></aside>${firstAnswer(card, game)}<p class="us-question-reference">${escape(card.prompt)}</p>${options(card, active)}`;
-}
-
-function scoreFace(card, game, person, changed) {
+function scoreFace(card, game, person) {
   const answer = card.options.find(option => option.id === game.answer);
-  const tag = changed ? 'h2' : 'h1';
-  const id = changed ? 'follow-up-question' : 'main-question';
   const scorers = game.players.filter(player => player.id !== person.id).map(player => {
     const selected = game.correctIds.includes(player.id);
     return `<button class="us-scorer" data-player-id="${player.id}" type="button" aria-pressed="${selected}"><span class="us-checkbox" aria-hidden="true">${selected ? check : ''}</span><span class="us-scorer-name">${escape(player.name)}</span>${selected ? '<span class="us-point" aria-hidden="true">+1</span>' : ''}</button>`;
   }).join('');
   const allCorrect = game.correctIds.length === game.players.length - 1;
-  const switched = game.baseAnswer !== game.answer;
-  return `<${tag} id="${id}" class="us-score-title" tabindex="-1">${escape(person.name)}の答え</${tag}>
-    ${changed ? `${firstAnswer(card, game)}<p class="us-answer-label">条件変更後の答え</p>` : ''}
-    <button class="us-revealed" data-action="edit-answer" type="button" aria-label="答えを選び直す" aria-describedby="us-revealed-text"><span class="us-choice-number">${answer.id}</span><span id="us-revealed-text" class="us-option-text">${escape(answer.text)}</span><svg class="us-answer-edit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 5 5-12 12-6 1 1-6L16 3ZM14 5l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
-    ${changed ? `<details class="us-condition-reference"><summary>問いと追加条件を見る</summary><p>${escape(card.prompt)}</p><p>${escape(card.condition)}</p></details>` : `<p class="us-question-reference">問い：${escape(card.prompt)}</p>`}
-    ${changed ? `<p class="us-answer-change" role="status">${switched ? '答えが変わった' : '答えは変わらなかった'}</p>` : ''}
-    <p class="us-reason">${changed ? switched ? 'どの条件が決め手になった？' : '条件が変わっても、大切にしたことは？' : 'そう選んだ理由を話してみよう。'}</p><section aria-labelledby="us-scorers-heading"><div class="us-scorers-heading"><h3 id="us-scorers-heading" class="us-score-label">当たった人を選ぶ</h3><button class="us-text-button us-all-correct" data-action="toggle-all-correct" aria-pressed="${allCorrect}" type="button">${allCorrect ? '全員を外す' : '全員的中'}</button></div><div class="us-scorers">${scorers}</div></section>`;
+  return `<h1 id="main-question" class="us-score-title" tabindex="-1">${escape(person.name)}の答え</h1>
+    <div class="us-revealed"><span class="us-choice-number">${answer.id}</span><span class="us-option-text">${escape(answer.text)}</span></div>
+    <p class="us-question-reference">問い：${escape(card.prompt)}</p><p class="us-reason">そう選んだ理由を話してみよう。</p>
+    <section aria-labelledby="us-scorers-heading"><div class="us-scorers-heading"><h2 id="us-scorers-heading" class="us-score-label">当たった人を選ぶ</h2><button class="us-text-button us-all-correct" data-action="toggle-all-correct" aria-pressed="${allCorrect}" type="button">${allCorrect ? '全員を外す' : '全員的中'}</button></div><div class="us-scorers">${scorers}</div></section>`;
+}
+
+function conditionFace(card, game) {
+  // The selected answer must not enter either face's markup until reveal.
+  const answer = game.screen === 'score' ? card.options.find(option => option.id === game.answer) : null;
+  return `<aside class="us-card-condition${game.conditionOpen ? ' us-condition' : ''}" aria-labelledby="follow-up-question"><h2 id="follow-up-question" class="follow-up-text us-condition-title" tabindex="-1">もしも、この条件なら？</h2><p class="us-condition-copy">${escape(card.condition)}</p></aside>
+    <p class="us-question-reference">${escape(card.prompt)}</p>${answer ? `<div class="us-public-answer"><span class="us-answer-label">主役が選んだ答え</span><p><span class="us-choice-number">${answer.id}</span><span>${escape(answer.text)}</span></p></div>` : ''}
+    ${options(card, false)}<p class="us-reason">ここからは自由に話すおまけ。追加の得点はありません。</p>`;
 }
 
 export function gameCardMarkup(card, game, person) {
-  const changed = game.stage === 'changed';
   const score = game.screen === 'score';
   return `<div class="card-stage">${questionCardFrameMarkup({
-    id: card.id, target: 'Us', className: 'us-question', revealed: changed,
-    frontLabel: score && !changed ? '主役の答え' : '問いと3つの選択肢',
-    backLabel: score && changed ? '条件変更後の主役の答え' : '条件変更と3つの選択肢',
-    frontContent: score && !changed ? scoreFace(card, game, person, false) : questionFace(card, game, false, !changed),
-    backContent: score && changed ? scoreFace(card, game, person, true) : questionFace(card, game, true, changed),
+    id: card.id, target: 'Us', className: 'us-question', revealed: game.conditionOpen,
+    frontLabel: score ? '主役の答えと得点' : game.screen === 'choose' ? '主役だけが答えを選ぶ' : 'みんなで予想する',
+    backLabel: 'おまけの会話',
+    frontContent: score ? scoreFace(card, game, person) : `<h1 id="main-question" class="question-text" tabindex="-1">${escape(card.prompt)}</h1>${options(card, game.screen === 'choose')}`,
+    backContent: conditionFace(card, game),
   })}</div>`;
 }
