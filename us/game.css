@@ -92,7 +92,7 @@ button.us-option:hover, button.us-option:focus-visible { border-color: var(--us-
 .us-prose li { margin-bottom: 12px; }
 .us-prose a { color: var(--us-blue); }
 .us-noscript { margin: 30px auto; max-width: 640px; padding: 20px; }
-.us-sr-only { clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+.us-sr-only { border: 0; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px; }
 .us-skip-link { background: #fff; color: var(--us-blue); left: 10px; padding: 12px; position: fixed; top: -100px; z-index: 100; }
 .us-skip-link:focus { top: 10px; }
 #us-dialog { border: 1px solid var(--us-line); border-radius: 16px; color: var(--us-ink); max-width: 420px; padding: 26px; width: calc(100% - 32px); }
